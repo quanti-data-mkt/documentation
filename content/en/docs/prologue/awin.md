@@ -26,3 +26,5 @@ Setup instructions
 2.  In the region drop-down menu, select your region.
 3.  Enter the API token you found in Step 1.
 4.  Click Save & Test. Quanti: will take it from here and sync your Awin data.
+
+### [Tables](https://dbdiagram.io/d/[Awin-Connector]-Data-Model-6511611dffbf5169f06f6e48)
