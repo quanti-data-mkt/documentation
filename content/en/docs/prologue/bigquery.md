@@ -42,8 +42,6 @@ You need to grant Quanti: access to your BigQuery cluster so we can create and m
 
 2.  Find your project on the list and make a note of the project ID in the ID column. You will need it to configure Quanti:.
 
-    ![Project ID](https://Quanti:.com/static-assets-docs/_next/static/media/project-id.650063a1.png)
-
 ### Find Quanti: service account[link](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#findQuanti:serviceaccount_1)
 
 1.  Log in to your Quanti: account.
@@ -60,7 +58,6 @@ You need to grant Quanti: access to your BigQuery cluster so we can create and m
 
 7.  Make a note of the Quanti: service account. You will need to grant it permissions in BigQuery.
 
-    ![Service Account](https://Quanti:.com/static-assets-docs/_next/static/media/service-account.9ef9d4be.png)
 
 ### (Optional) Create service account[link](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#optionalcreateserviceaccount_1)
 
@@ -90,15 +87,10 @@ If you want to use your service account to control access to BigQuery, instead o
 
 2.  Select + GRANT ACCESS.
 
-    ![Add IAM User](https://Quanti:.com/static-assets-docs/_next/static/media/new-grant-access.3ac27cce.png)
-
 3.  In the New Principals field, enter the Quanti: service account you found in [Step 2](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#findQuanti:serviceaccount) or the service account you created in [Step 3](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#optionalcreateserviceaccount). The service account is the entire email address.
 
-    ![Add Quanti: Service Account](https://Quanti:.com/static-assets-docs/_next/static/media/AddServiceAccount.01c764f1.png)
 
 4.  Click Select a role > BigQuery > BigQuery User.
-
-    ![Add Quanti: Service Account](https://Quanti:.com/static-assets-docs/_next/static/media/SelectRole.a478f322.png)
 
     > NOTE: For more information about roles, see [our documentation](https://Quanti:.com/docs/destinations/bigquery#rolesandpermissions).
 
@@ -116,17 +108,11 @@ You must give the service account (in the setup form) Storage Object Admin per
 
 2.  Select the bucket you want to use.
 
-    ![select_gcs_bucket](https://Quanti:.com/static-assets-docs/_next/static/media/select_gcs_bucket.4ad12321.png)
-
 3.  Go to Permissions and then click Add Principals.
-
-    ![select_permission_and_add_members](https://Quanti:.com/static-assets-docs/_next/static/media/select_permission.b5973b43.png)
 
 4.  In the Add principals window, enter the Quanti: service account you found in [Step 2](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#findQuanti:serviceaccount) or the service account you created in [Step 3](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#optionalcreateserviceaccount).
 
 5.  From the Select a role drop-down, select Storage Object Admin.
-
-    ![add_member_and_give_storage_object_admin_permission](https://Quanti:.com/static-assets-docs/_next/static/media/storage_object_admin_permission.2c26e0a3.png)
 
 #### Set the life cycle of objects in the bucket[link](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#setthelifecycleofobjectsinthebucket_1)
 
@@ -136,21 +122,15 @@ You must set a lifecycle rule so that data older than one day is deleted from yo
 
 2.  In the list, find the bucket you are using for Quanti:, and in the Lifecycle rules column, select its rules.
 
-    ![Select_Bucket's_lifecycle_rule](https://Quanti:.com/static-assets-docs/_next/static/media/bucket_life_cycle.13c7ef0a.png)
-
 3.  Click Add rule. A detail view will open.
 
 4.  In Select object conditions, select Age and enter 1.
 
 5.  Click Continue.
 
-    ![Set_age_of_object](https://Quanti:.com/static-assets-docs/_next/static/media/set_object_lifecycle_rule.58bd4bd7.png)
-
 6.  In Select action, select Delete.
 
 7.  Click Continue and then click Save.
-
-    ![Set_action_of_object](https://Quanti:.com/static-assets-docs/_next/static/media/set_object_lifecycle_rule_2.abd031f2.png)
 
 ### Complete Quanti: configuration[link](https://Quanti:.com/integrations/big_query?groupId=admirable_durability&unsaved=false&testing=false#completeQuanti:configuration_1)
 
