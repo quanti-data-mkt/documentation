@@ -13,7 +13,7 @@ weight: 110
 toc: true
 ---
 
-Follow our setup guide to connect Affilae to QUANTI:
+Follow our setup guide to connect Affilae to QUANTI:coucou
 
 * * * * *
 
