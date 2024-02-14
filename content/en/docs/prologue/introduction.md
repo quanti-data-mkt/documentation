@@ -17,6 +17,9 @@ toc: true
 
 There are two main ways to get started with Doks:
 {{ $image := resources.GetRemote "https://gohugo.io/img/hugo-logo.png" }}
+{{ with $image }}
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+{{ end }}
 
 ### Tutorial
 
