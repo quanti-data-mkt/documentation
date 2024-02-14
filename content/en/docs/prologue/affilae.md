@@ -32,8 +32,9 @@ Setup instructions
 1.  Log in to your [Affilae account](https://app.affilae.com/fr/login).
 2.  In the bottom-left corner, click My account, then select API keys.
 {{ $image := .Resources.Get "affilae1.png" }}{{ with $image }}<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">{{ end }}
-3.  You will can find your API key but it may you do not have the permission level good enough. In this case, you have to make a request to your account manager.
-4.  Make a note of the API key. You will need it to configure QUANTI:.
+![affilae-api-keys](affilae1.png "affilae-api-keys")
+4.  You will can find your API key but it may you do not have the permission level good enough. In this case, you have to make a request to your account manager.
+5.  Make a note of the API key. You will need it to configure QUANTI:.
 
 ### Finish Quanti: configuration
 
