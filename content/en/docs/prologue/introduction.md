@@ -23,6 +23,8 @@ There are two main ways to get started with Doks:
 
 ### Tutorial
 
+![Coucou](https://gohugo.io/img/hugo-logo.png "Title")
+
 {{< alert icon="👉" text="The Tutorial is intended for novice to intermediate users." />}}
 
 Step-by-step instructions on how to start a new Doks project. [Tutorial →](https://getdoks.org/tutorial/introduction/)
