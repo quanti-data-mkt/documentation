@@ -55,8 +55,9 @@ https://clientname.piwik.pro/analytics/#/**5678h0td6-f434-4ggt-932j-b8767cd8d5d2
 ### Create a Custom request
 
 This connector Piwikpro don't offer standard reports. You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwikpro Analytics UI.
-{{ $image := .Resources.Get "piwik3.png" }}
-![piwik-pro-personnalised-report](piwik3.png "affilae-api-keys")
+{{ $imagep3 := .Resources.Get "piwik3.png" }}
+{{ $resizedImage1 := $imagep3.Resize "50%" }}
+![piwik-pro-personnalised-report]({{ $resizedImage1.RelPermalink }} "Image title")
 1.  Create a new report.
 2.  Select your fields (Dimensions and metrics).
 {{ $image := .Resources.Get "piwik4.png" }}
