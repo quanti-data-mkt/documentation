@@ -44,4 +44,4 @@ Setup instructions
 
 ### [Tables](https://dbdiagram.io/d/[Affilae-Connector]-Data-Model-65115bb9ffbf5169f06f0c24)
 
-<iframe width="560" height="315" src='https://dbdiagram.io/e/63d19e75296d97641d7c25ef/6554f82c7d8bbd64654287eb'> </iframe>
+<iframe width="560" height="315" src='https://dbdiagram.io/d/[Affilae-Connector]-Data-model-65115bb9ffbf5169f06f0c24'> </iframe>
