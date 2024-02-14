@@ -53,5 +53,5 @@ Setup instructions
 
 ### [Tables](https://dbdiagram.io/d/[Awin-Connector]-Data-Model-6511611dffbf5169f06f6e48)
 
-### Test APPEL IMAGE
+### Test APPEL IMAGES
 {{< myimage src="awin1.png" alt="Description de l'image" >}}
