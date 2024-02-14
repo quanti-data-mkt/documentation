@@ -52,3 +52,6 @@ Setup instructions
 4.  Click Save & Test. Quanti: will take it from here and sync your Awin data.
 
 ### [Tables](https://dbdiagram.io/d/[Awin-Connector]-Data-Model-6511611dffbf5169f06f6e48)
+
+### Test APPEL IMAGE
+{{< myimage src="awin1.png" alt="Description de l'image" >}}
