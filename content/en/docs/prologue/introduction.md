@@ -16,10 +16,10 @@ toc: true
 ## Get started
 
 There are two main ways to get started with Doks:
-{{ $image := resources.GetRemote "https://gohugo.io/img/hugo-logo.png" }}
-{{ with $image }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
+{{$image := resources.GetRemote "https://gohugo.io/img/hugo-logo.png"}}
+{{with $image}}
+  <img src="https://gohugo.io/img/hugo-logo.png" width="{{ .Width }}" height="{{ .Height }}">
+{{end}}
 
 ### Tutorial
 
