@@ -16,6 +16,7 @@ toc: true
 ## Get started
 
 There are two main ways to get started with Doks:
+{{ $image := resources.GetRemote "https://gohugo.io/img/hugo-logo.png" }}
 
 ### Tutorial
 
