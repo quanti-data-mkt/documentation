@@ -44,6 +44,4 @@ Setup instructions
 
 ### [Tables](https://dbdiagram.io/d/[Affilae-Connector]-Data-Model-65115bb9ffbf5169f06f0c24)
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://dbdiagram.io/d/[Affilae-Connector]-Data-Model-65115bb9ffbf5169f06f0c24" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+<iframe width="560" height="315" src='https://dbdiagram.io/e/63d19e75296d97641d7c25ef/6554f82c7d8bbd64654287eb'> </iframe>
