@@ -35,7 +35,7 @@ Setup instructions
 
 1.  Log in to your [RTB House account](https://panel.rtbhouse.com/#/auth/login).
 2.  When you are connected to your account, the advertiser Id is displayed in the url of your search bar after '/dashboard/' and before the '?'.
-    https://panel.rtbhouse.com/#/dashboard/*******?
+    https://panel.rtbhouse.com/#/dashboard/__*******__?
 3.  Make a note of the advertiser ID. You will need it to configure QUANTI:.
 
 ### Conversions counting convention

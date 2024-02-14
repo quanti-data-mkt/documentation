@@ -31,14 +31,17 @@ Setup instructions
 
 1.  Log in to your [Awin account](https://ui.awin.com/idp/en/awin/login).
 2.  In the top-right corner, click your profile name, then select API Credentials.
+{{ $image := .Resources.Get "awin1.png" }}
 3.  In the Password field, enter your login password.
 4.  Click Show my API token.
+{{ $image := .Resources.Get "awin2.png" }}
 5.  Make a note of the API token. You will need it to configure QUANTI:.
 
 ### Find Advertiser ID
 
 1.  In the top-right corner, when you fly over Dashboard tab, you can see the list of your accounts
 2.  Numbers between brackets are your advertiser IDs needed.
+{{ $image := .Resources.Get "awin3.png" }}
 3.  Make a note of the Advertiser ID. You will need it to configure QUANTI:.
 
 ### Finish Quanti: configuration

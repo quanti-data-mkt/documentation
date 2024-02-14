@@ -31,12 +31,14 @@ Setup instructions
 
 1.  Log in to your [Rakuten account](https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=https%3A%2F%2Fauth.rakutenmarketing.com%2Fauth%2Fadmin%2Frakuten-advertising%2Fconsole%2F&state=0bfc7308-d6d6-411a-a3a2-c858f86852ac&response_mode=fragment&response_type=code&scope=openid&nonce=37498c3d-5f4c-4dbd-826f-da13d0cb7827&code_challenge=isEfEnMMx8QHWhWZptlAkdHIxfB3UrcJcjFMuWFf07o&code_challenge_method=S256).
 2.  Go to [Rakuten Advertising - Insight & Analytics Portal](https://iap.rakutenmarketing.com/insights/trends/affiliate)
+{{ $image := .Resources.Get "rakuten1.png" }}
 3.  Click on tab Analytics < Affiliate Reporting and "+ Build a new report"
+{{ $image := .Resources.Get "rakuten2.png" }}
 4.  Click on button "Add and Remove columns" and add the only and entire list below : 
     - Transaction Date
-    - # of impressions
-    - # of Clicks
-    - # of orders
+    - \# of impressions
+    - \# of Clicks
+    - \# of orders
     - Gross Commissions
     - Total Commissions
     - Sales
@@ -53,7 +55,9 @@ Setup instructions
     - Offer Name
     - Link Id
     - Link Name
+{{ $image := .Resources.Get "rakuten3.png" }}
 5. Near the blue button "View Report", click on the arrow and "Get API" and copy the url generated.
+{{ $image := .Resources.Get "rakuten4.png" }}
 
 ### Finish Quanti: configuration
 
