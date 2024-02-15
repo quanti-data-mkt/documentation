@@ -31,7 +31,7 @@ Setup instructions
 
 1.  Log in to your [Affilae account](https://app.affilae.com/fr/login).
 2.  In the bottom-left corner, click My account, then select API keys.
-{{ $image := .Resources.Get "affilae1.png" }}
+<img src="affilae1.png" style="width:50px;" />
 4.  You will can find your API key but it may you do not have the permission level good enough. In this case, you have to make a request to your account manager.
 5.  Make a note of the API key. You will need it to configure QUANTI:.
 
@@ -41,6 +41,6 @@ Setup instructions
 2.  Enter the API key you found in Step 1.
 3.  Click Save & Test. Quanti: will take it from here and sync your Affilae data.
 
-### [Tables](https://dbdiagram.io/d/[Affilae-Connector]-Data-Model-65115bb9ffbf5169f06f0c24)
+### [Tables](https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e)
 
-<iframe width="560" height="315" src='https://dbdiagram.io/d/[Affilae-Connector]-Data-model-65115bb9ffbf5169f06f0c24'> </iframe>
+<iframe width="560" height="315" src='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e'> </iframe>
