@@ -37,4 +37,7 @@ Setup instructions
 2.  Enter your Account credentials you found in Step 1.
 3.  Click Save & Test. Quanti: will take it from here and sync your Stylight data.
 
-### [Tables](https://dbdiagram.io/d/[-Stylight-Connector-]-Data-model-65c0b938ac844320ae75cb9c)
+### Tables
+
+Link trought the complete document : [ERD](https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803)
+<iframe width="400" height="315" src='https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803'> </iframe>

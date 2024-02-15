@@ -34,10 +34,10 @@ Setup instructions
 ### Find your API credentials
 
 1.  Go on your profile parameters : Menu < Profile < API Keys.
-{{ $image := .Resources.Get "piwik1.png" }}
+</br><img src="piwik1.png" style="width:200px;" />
 2.  Create a new API Key clicking on the blue button "Create a Key".
 3.  Give it a name and make a note of the API credentials. You will need it to configure QUANTI:.
-{{ $image := .Resources.Get "piwik2.png" }}
+</br><img src="piwik2.png" style="width:400px;" />
 
 ### Find your Website ID
 
@@ -55,17 +55,15 @@ https://clientname.piwik.pro/analytics/#/**5678h0td6-f434-4ggt-932j-b8767cd8d5d2
 ### Create a Custom request
 
 This connector Piwikpro don't offer standard reports. You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwikpro Analytics UI.
-{{ $imagep3 := .Resources.Get "piwik3.png" }}
-{{ $resizedImage1 := $imagep3.Resize "50%" }}
-![piwik-pro-personnalised-report]({{ $resizedImage1.RelPermalink }} "Image title")
+</br><img src="piwik3.png" style="width:400px;" />
 1.  Create a new report.
 2.  Select your fields (Dimensions and metrics).
-{{ $image := .Resources.Get "piwik4.png" }}
+</br><img src="piwik4.png" style="width:250px;" />
 3.  Save your report.
 4.  In the filters bar, click on the button '...' (3 dots) and click on "See API call"
-{{ $image := .Resources.Get "piwik5.png" }}
+</br><img src="piwik5.png" style="width:500px;" />
 5.  A pop-in opens : make a note of the fields's name. You will need it to configure your custom request on QUANTI:.
-{{ $image := .Resources.Get "piwik6.png" }}
+</br><img src="piwik6.png" style="width:400px;" />
 6.  On QUANTI: UI, click on the button "Create".
 7.  Name your custom request : It will be use to name your table on your Warehouse.
 8.  Copy/ Paste your dimensions and metrics from your Piwikpro personalized report. You can add several fields separating by commas and clicking on "add +".
@@ -75,4 +73,7 @@ This connector Piwikpro don't offer standard reports. You have to create your ow
 
 Click Save & Test. Quanti: will take it from here and sync your Piwikpro data.
 
-### [Tables](https://dbdiagram.io/d/[-Piwik-Pro-Connector-]-Data-model-65c4a93aac844320aeb8b15e)
+### Tables
+
+Link trought the complete document : [ERD](https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2)
+<iframe width="400" height="315" src='https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2'> </iframe>

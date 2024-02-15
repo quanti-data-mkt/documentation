@@ -31,7 +31,7 @@ Setup instructions
 
 1.  Log in to your [CJ account](https://signin.cj.com/login).
 2.  In the top-right corner, you can click on a multi-selection field which permit you to pick your different accounts. The advertiser IDs are the CID near each account name.
-{{ $image := .Resources.Get "cj1.png" }}
+</br><img src="cj1.png" style="width:250px;" />
 3.  Make a note of the advertiser ID. You will need it to configure QUANTI:.
 4.  N.B : With the CJ connector, you will can recover datas from only one advertiser. You have to create several connector if you have several advertiser accounts.
 
@@ -47,4 +47,7 @@ Setup instructions
 3.  Enter the token you found in Step 2.
 3.  Click Save & Test. Quanti: will take it from here and sync your CJ data.
 
-### [Tables](https://dbdiagram.io/d/[CJ-connector]-Data-model-655780093be149578736156c)
+### Tables
+
+Link trought the complete document : [ERD](https://dbdiagram.io/e/655780093be149578736156c/65ce18c5ac844320ae3901e3)
+<iframe width="400" height="315" src='https://dbdiagram.io/e/655780093be149578736156c/65ce18c5ac844320ae3901e3'> </iframe>

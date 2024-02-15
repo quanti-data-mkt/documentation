@@ -51,4 +51,7 @@ Setup instructions
 3.  Enter your advertiser ID you found in Step 2.
 4.  Click Save & Test. Quanti: will take it from here and sync your RTB House data.
 
-### [Tables](https://dbdiagram.io/d/[RTB-House-connector]-Data-model-65bcd2efac844320ae4e9293)
+### Tables
+
+Link trought the complete document : [ERD](https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6)
+<iframe width="400" height="315" src='https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6'> </iframe>
