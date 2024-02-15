@@ -2,7 +2,7 @@
 
 ## Url : 
 
-https://quanti-data-mkt.github.io/documentation/docs/prologue/cj/
+https://quanti-data-mkt.github.io/documentation
 
 ## Start project 
 

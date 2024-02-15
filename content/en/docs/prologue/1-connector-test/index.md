@@ -12,7 +12,11 @@ weight: 100
 
 ## Image 
 
+### Image markdown 
+
 ![Texte alternatif](connector-test-1.png "Titre de l'image").
 
+### Image html 
 
+<img src="connector-test-1.png" style="width:50px;" />
 
