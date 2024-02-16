@@ -44,5 +44,5 @@ Setup instructions
 
 ### Tables
 
-To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e){:target="_blank" }
-<iframe height="400" src='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e'> </iframe>
+To zoom, open the ERD in a new window : <a href='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e' target='_blank'>ERD</a>
+<iframe width='100%' height="400" src='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e'> </iframe>
