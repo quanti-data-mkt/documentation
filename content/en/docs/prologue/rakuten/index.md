@@ -68,8 +68,13 @@ If you have several Rakuten accounts and want to fill a unique table, you have t
 
 ### Finish Quanti: configuration
 
+```bash
+//ran-reporting.rakutenmarketing.com/en/reports/[<REPORT-KEY>]/filters?date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API-TOKEN>]
+```
+
 1.  In the connector setup form, enter the name of your choice.
-2.  Paste the url generated you found on step 1.
+2.  Paste the Report key from the URL generated.
+3.  Paste the API token from the URL generated.
 4.  Click Save & Test. Quanti: will take it from here and sync your Rakuten data.
 
 ### Tables
