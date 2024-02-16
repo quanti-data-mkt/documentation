@@ -45,4 +45,4 @@ Setup instructions
 ### Tables
 
 Link trought the complete document : [ERD](https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e)
-<iframe width="400" height="315" src='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e'> </iframe>
+<iframe width="100%" height="400" src='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e'> </iframe>

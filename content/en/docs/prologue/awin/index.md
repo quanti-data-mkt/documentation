@@ -39,7 +39,7 @@ Setup instructions
 
 ### Find Advertiser ID
 
-1.  In the top-right corner, when you fly over Dashboard tab, you can see the list of your accounts
+1.  In the top-right corner, when you hover Dashboard tab, you can see the list of your accounts
 2.  Numbers between brackets are your advertiser IDs needed.
 </br><img src="awin3.png" style="width:150px;" />
 3.  Make a note of the Advertiser ID. You will need it to configure QUANTI:.
