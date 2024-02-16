@@ -13,6 +13,8 @@ weight: 110
 toc: true
 ---
 
+*Last update : 2024-02-16*
+
 Follow our setup guide to connect Piwikpro to QUANTI:
 
 * * * * *
@@ -75,5 +77,5 @@ Click Save & Test. Quanti: will take it from here and sync your Piwikpro data.
 
 ### Tables
 
-Link trought the complete document : [ERD](https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2)
-<iframe width="400" height="315" src='https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2'> </iframe>
+To zoom, open the ERD in a new window : <a href='https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2' target='_blank'>ERD</a>
+<iframe width='100%' height="400" src='https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2'> </iframe>

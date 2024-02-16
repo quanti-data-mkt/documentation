@@ -13,6 +13,8 @@ weight: 110
 toc: true
 ---
 
+*Last update : 2024-02-16*
+
 Follow our setup guide to connect Effinity to QUANTI:
 
 * * * * *
@@ -40,4 +42,7 @@ Setup instructions
 2.  Enter the API key you found in Step 1.
 3.  Click Save & Test. Quanti: will take it from here and sync your Effinity data.
 
-### [Tables](https://dbdiagram.io/d/[Effinity-connector]-Data-model-65577c543be149578735ccf9)
+### Tables
+
+To zoom, open the ERD in a new window : <a href='https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6' target='_blank'>ERD</a>
+<iframe width='100%' height="400" src='https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6'> </iframe>

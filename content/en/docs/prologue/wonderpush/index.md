@@ -13,6 +13,8 @@ weight: 110
 toc: true
 ---
 
+*Last update : 2024-02-16*
+
 Follow our setup guide to connect Wonderpush to QUANTI:
 
 * * * * *
@@ -41,5 +43,5 @@ Setup instructions
 
 ### Tables
 
-Link trought the complete document : [ERD](https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28)
-<iframe width="400" height="315" src='https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28'> </iframe>
+To zoom, open the ERD in a new window : <a href='https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28' target='_blank'>ERD</a>
+<iframe width='100%' height="400" src='https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28'> </iframe>

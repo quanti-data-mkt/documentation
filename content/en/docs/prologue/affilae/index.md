@@ -13,6 +13,8 @@ weight: 110
 toc: true
 ---
 
+*Last update : 2024-02-16*
+
 Follow our setup guide to connect Affilae to QUANTI:
 
 * * * * *
