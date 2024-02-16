@@ -33,7 +33,7 @@ Setup instructions
 
 1.  Log in to your [Rakuten account](https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=https%3A%2F%2Fauth.rakutenmarketing.com%2Fauth%2Fadmin%2Frakuten-advertising%2Fconsole%2F&state=0bfc7308-d6d6-411a-a3a2-c858f86852ac&response_mode=fragment&response_type=code&scope=openid&nonce=37498c3d-5f4c-4dbd-826f-da13d0cb7827&code_challenge=isEfEnMMx8QHWhWZptlAkdHIxfB3UrcJcjFMuWFf07o&code_challenge_method=S256).
 2.  Click on tab Reporting < Statistics
-</br><img src="rakuten1.png" style="width:400px;" />
+</br><img src="rakuten1.png" style="width:100%" />
 3.  Click on the button "+ Build a new report"
 </br><img src="rakuten2.png" style="width:400px;" />
 4.  Click on button "Add and Remove columns" and add the only and entire list below :
@@ -59,17 +59,18 @@ Setup instructions
     - Link Id
     - Link Name
 5. Near the blue button "View Report", click on the arrow and "Get API" and copy the url generated.
-</br><img src="rakuten4.png" style="width:500px;" />
+</br><img src="rakuten4.png" style="width:100%" />
 
 ### Importante information
 
 If you have several Rakuten accounts and want to fill a unique table, you have to create several Rakuten connectors of course and especially respect the list's order and metrics's names. You can change the list order by moving column headings.
-</br><img src="rakuten5.png" style="width:500px;" />
+</br><img src="rakuten5.png" style="width:100%" />
 
 ### Finish Quanti: configuration
 
 ```bash
-//ran-reporting.rakutenmarketing.com/en/reports/[<REPORT-KEY>]/filters?date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API-TOKEN>]
+//ran-reporting.rakutenmarketing.com/en/reports/[<REPORT-KEY>]/filters?
+date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API-TOKEN>]
 ```
 
 1.  In the connector setup form, enter the name of your choice.

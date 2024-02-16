@@ -33,10 +33,10 @@ Setup instructions
 
 1.  Log in to your [Awin account](https://ui.awin.com/idp/en/awin/login).
 2.  In the top-right corner, click your profile name, then select API Credentials.
-</br><img src="awin1.png" style="width:200px;" />
+</br><img src="awin1.png" style="width:250px;" />
 3.  In the Password field, enter your login password.
 4.  Click Show my API token.
-</br><img src="awin2.png" style="width:500px;" />
+</br><img src="awin2.png" style="width:100%" />
 5.  Make a note of the API token. You will need it to configure QUANTI:.
 
 ### Find Advertiser ID

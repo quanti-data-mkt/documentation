@@ -39,7 +39,7 @@ Setup instructions
 </br><img src="piwik1.png" style="width:200px;" />
 2.  Create a new API Key clicking on the blue button "Create a Key".
 3.  Give it a name and make a note of the API credentials. You will need it to configure QUANTI:.
-</br><img src="piwik2.png" style="width:400px;" />
+</br><img src="piwik2.png" style="width:100%" />
 
 ### Find your Website ID
 
@@ -60,12 +60,12 @@ This connector Piwikpro don't offer standard reports. You have to create your ow
 </br><img src="piwik3.png" style="width:400px;" />
 1.  Create a new report.
 2.  Select your fields (Dimensions and metrics).
-</br><img src="piwik4.png" style="width:250px;" />
+</br><img src="piwik4.png" style="width:100%" />
 3.  Save your report.
 4.  In the filters bar, click on the button '...' (3 dots) and click on "See API call"
-</br><img src="piwik5.png" style="width:500px;" />
+</br><img src="piwik5.png" style="width:100%" />
 5.  A pop-in opens : make a note of the fields's name. You will need it to configure your custom request on QUANTI:.
-</br><img src="piwik6.png" style="width:400px;" />
+</br><img src="piwik6.png" style="width:100%" />
 6.  On QUANTI: UI, click on the button "Create".
 7.  Name your custom request : It will be use to name your table on your Warehouse.
 8.  Copy/ Paste your dimensions and metrics from your Piwikpro personalized report. You can add several fields separating by commas and clicking on "add +".
