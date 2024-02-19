@@ -34,17 +34,17 @@ Setup instructions
 1.  Log in to [Adobe Experience Cloud](https://developer.adobe.com/) with your Adobe Experience Cloud IDs.
 2.  Click on tab Console < APIs and services and look the services list.
 3.  Search the Adobe Analytics service and create a new projet.
-</br><img src="adobe1.png" style="width:200px;" />
+</br><img src="adobe1.png" style="width:250px;" />
 - Select OAuth server-to-server
 - Give a distinctive name to your projet (Ex: Quanti Reverse connector API) and click Next.
 </br><img src="adobe2.png" style="width:100%;" />
 - Select your organisation name and click on "Save configured API".
 4.  Next, you arrive on your new project page. You will see your API Key (Client ID). Make a note of the API key. You will need it to configure QUANTI:.
-</br><img src="adobe3.png" style="width:100%;" />
+</br><img src="adobe3.png" style="width:250px;" />
 5.  Click on tag "Generate access token" and make a note of the API key. You will need it to configure QUANTI:.
-</br><img src="adobe4.png" style="width:100%;" />
+</br><img src="adobe4.png" style="width:250px;" />
 6.  Click on tag "Scopes" and make a note of the Scopes. You will need it to configure QUANTI:.
-</br><img src="adobe5.png" style="width:200px" />
+</br><img src="adobe5.png" style="width:400px" />
 
 ### Create your classification
 
