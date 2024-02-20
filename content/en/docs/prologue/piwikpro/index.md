@@ -73,7 +73,7 @@ This connector Piwikpro don't offer standard reports. You have to create your ow
 
 ### Quanti: configuration
 
-Click Save & Test. Quanti: will take it from here and sync your Piwikpro data.
+Click Save & Test. Quanti: will take it from here and sync your Piwikpro datas.
 
 ### Tables
 
