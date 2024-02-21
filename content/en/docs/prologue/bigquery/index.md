@@ -43,7 +43,7 @@ Setup instructions
 In this step, copy the service account email adresse provided by QUANTI: and follow the steps bellow:
 1.  Go on IAM & Admin product on BigQuery UI. Click on icon Menu < IAM & Admin < IAM
 </br><img src="bigquery2.png" style="width:400px;" />
-2.  Click on GRANT ACCESS button.
+2.  Click GRANT ACCESS button.
 </br><img src="bigquery3.png" style="width:300px;" />
 3.  Copy/ paste the service account email adresse, assign roles bellow and click Save :
 - Browser
