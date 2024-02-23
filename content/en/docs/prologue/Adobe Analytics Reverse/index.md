@@ -41,18 +41,23 @@ Setup instructions
 - Select your organisation name and click on "Save configured API".
 4.  Next, you arrive on your new project page. You will see your API Key (Client ID). Make a note of the API key. You will need it to configure QUANTI:.
 </br><img src="adobe3.png" style="width:250px;" />
-5.  Click on tag "Generate access token" and make a note of the API key. You will need it to configure QUANTI:.
+5.  Click on tab "Generate access token" and make a note  of the API key. You will need it to configure QUANTI:.
 </br><img src="adobe4.png" style="width:250px;" />
-6.  Click on tag "Scopes" and make a note of the Scopes. You will need it to configure QUANTI:.
-</br><img src="adobe5.png" style="width:400px" />
 
-### Create your classification
+### Declare your classification
 
 1.  Log in to [Adobe Analytics UI](https://experience.adobe.com/) and go on your Adobe Analytics product.
-2.  click on tab Admin < 
+2.  Click on tab Admin < Report Suite < Select your Report Suite < Edit Settings < Conversion < Conversion Classification
+3.  Select Classification Type "Campaign" and add classification bellow
+</br><img src="adobe6.png" style="width:250px;" />
+4.  Make a note of classification name fields. You will need it to configure QUANTI:
 
-### Create your custom metrics
-1.  click on tab Admin < 
+### Declare your custom metrics
+
+1.  Click on tab Admin < Report Suite < Select your Report Suite < Edit Settings < Conversion < Success Events
+2.  Select events and add informations bellow
+</br><img src="adobe7.png" style="width:400px;" />
+3.  Make a note of events and correspondances. You will need it to configure QUANTI:
 
 ### Quanti: Data Warehouse configuration
 
@@ -60,13 +65,43 @@ This step consist to configure datas recovering
 1.  In the connector setup form, select your data warehouse, name your dataset and table where recover datas
 3.  Click Next.
 
-### Quanti: Query configuration
+### Create your Data Source Query
+
+A certain number of fields are waited by Adobe Analytics. You have to create it respecting the schema bellow :
+- date (DATE - YYYY-mm-dd)
+- Unique_key (STRING - Matching with your Classification)
+- sum(event1) (FLOAT)
+- sum(event2) (FLOAT)
+- sum(event3) (FLOAT)
+
+### Quanti: Data Source connnector configuration
 
 This step consist to extract datas from your table.
-1.  Build a new request from your table and give alias to your fields queried. Your query must be compose only waited fields by Adobe Analytics.
-1.  In the connector setup form, copy/ paste your query
+1.  Build a new SQL request from your table with the last step and give alias to your fields queried. Your query must be compose only waited fields by Adobe Analytics. 
+2.  In the connector setup form, copy/ paste your query.
+3.  Click Next.
+4.  Give the Adobe Key (Event name created to the step 3 in Adobe UI) for each metric waited.
+5.  Your unique key have to be attributed to the Adobe Key "Tracking_code" which is the field permit to join your Data Source with your Classification.
 
-### Tables
+### Create your Classification Query
 
-To zoom, open the ERD in a new window : <a href='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e' target='_blank'>ERD</a>
-<iframe width='100%' height="400" src='https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e'> </iframe>
+A certain number of fields are waited by Adobe Analytics. You have to create it respecting the schema bellow :
+- Unique_key (STRING - Matching with your Data Source)
+- Platform_account_id (STRING)
+- Platform_account_name (STRING)
+- Platform_campaign_id (STRING)
+- Platform_campaign_name (STRING)
+- Platform_adgroup_id (STRING)
+- Platform_adgroup_name (STRING)
+- Platform_ad_id (STRING)
+- Platform_ad_name (STRING)
+
+### Quanti: Classification connnector configuration
+
+This step consist to extract classification table from your Data Warehouse.
+1.  Build a new SQL request from your table with the last step and give alias to your fields queried. Your query must be compose only waited fields by Adobe Analytics. 
+2.  In the connector setup form, copy/ paste your query.
+3.  Click Next.
+4.  Give the Adobe Key (Event name created to the step 3 in Adobe UI) for each metric waited.
+5.  Your unique key have to be attributed to the Adobe Key "Tracking" which is the field permit to join your Classfication to your Data Source .
+
