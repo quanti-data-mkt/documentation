@@ -72,7 +72,7 @@ They don't use the same API point and don't import the same data type. That's wh
 - Data source Adobe Reverse Connector is used to import metrics.
 - Classification Adobe Reverse Connector is used to import dimensions.
 In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.
-</br><img src="adobe7.png" style="width:100%;" />
+</br><img src="adobe8.png" style="width:100%;" />
 
 ### Create your Data Source Query
 
