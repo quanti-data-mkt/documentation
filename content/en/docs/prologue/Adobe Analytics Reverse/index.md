@@ -48,14 +48,14 @@ Setup instructions
 
 1.  Log in to [Adobe Analytics UI](https://experience.adobe.com/) and go on your Adobe Analytics product.
 2.  Click on tab Admin < Report Suite < Select your Report Suite < Edit Settings < Conversion < Conversion Classification
-3.  Select Classification Type "Campaign" and add classification bellow
+3.  Select Classification Type "Campaign" and add your classification fields names.
 </br><img src="adobe6.png" style="width:250px;" />
-4.  Make a note of classification name fields. You will need it to configure QUANTI:
+4.  Make a note of classification fields names. You will need it to configure QUANTI:
 
 ### Declare your custom metrics
 
 1.  Click on tab Admin < Report Suite < Select your Report Suite < Edit Settings < Conversion < Success Events
-2.  Select events and add informations bellow
+2.  Select events of your choice and add your custom metrics name
 </br><img src="adobe7.png" style="width:400px;" />
 3.  Make a note of events and correspondances. You will need it to configure QUANTI:
 
@@ -65,43 +65,52 @@ This step consist to configure datas recovering
 1.  In the connector setup form, select your data warehouse, name your dataset and table where recover datas
 3.  Click Next.
 
+### 2 connectors types to set
+
+You going have to set 2 connectors type : Data source Adobe Reverse Connector and Classification Adobe Reverse Connector.
+They don't use the same API point and don't import the same data type. That's why we presente you the subject separating it in two distinct connectors.
+- Data source Adobe Reverse Connector is used to import metrics.
+- Classification Adobe Reverse Connector is used to import dimensions.
+In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.
+</br><img src="adobe7.png" style="width:100%;" />
+
 ### Create your Data Source Query
 
-A certain number of fields are waited by Adobe Analytics. You have to create it respecting the schema bellow :
+This step consist to create a SQL query which permit to import datas in Adobe analytics UI. The selected fields in your query must coincidence with custom metrics that you created above. You can import all custom metrics you want but you have to respect 2 mandatory fields : Date and tracking_code.
+- Date field : Make coincidence a field with a date data type field from your query with the date field waited by the connector.
+- Tracking_code field : Make coincidence a string data type field from your query with the tracking_code waited by the connector.
+Tracking_code + date are the unique keys of your query which permit afterwards to match your data source with classification dimensions that we will configure together later in this tutorial.
+Data type waited :
 - date (DATE - YYYY-mm-dd)
-- Unique_key (STRING - Matching with your Classification)
-- sum(event1) (FLOAT)
-- sum(event2) (FLOAT)
-- sum(event3) (FLOAT)
+- tracking_code (STRING - Matching with your Classification)
+- event1 (FLOAT)
+- event2 (FLOAT)
+- event3 (FLOAT)
+All custom events must be FLOAT type.
 
 ### Quanti: Data Source connnector configuration
 
 This step consist to extract datas from your table.
-1.  Build a new SQL request from your table with the last step and give alias to your fields queried. Your query must be compose only waited fields by Adobe Analytics. 
+1.  Build a new SQL request from your table following the last step and give alias to your fields queried. Your query must be compose only waited fields by Adobe Analytics. 
 2.  In the connector setup form, copy/ paste your query.
 3.  Click Next.
-4.  Give the Adobe Key (Event name created to the step 3 in Adobe UI) for each metric waited.
-5.  Your unique key have to be attributed to the Adobe Key "Tracking_code" which is the field permit to join your Data Source with your Classification.
+4.  Make correspondance between query fields and fields waited by Adobe Analytics.
+- Tracking_code field and date field are waited by Adobe Analytics : You have to indicate which fields are used for it in your query.
+- You also have to fill each text input using custom metrics names created earlier in your Adobe Analytics UI.
+5.  Click View details.
 
 ### Create your Classification Query
 
-A certain number of fields are waited by Adobe Analytics. You have to create it respecting the schema bellow :
-- Unique_key (STRING - Matching with your Data Source)
-- Platform_account_id (STRING)
-- Platform_account_name (STRING)
-- Platform_campaign_id (STRING)
-- Platform_campaign_name (STRING)
-- Platform_adgroup_id (STRING)
-- Platform_adgroup_name (STRING)
-- Platform_ad_id (STRING)
-- Platform_ad_name (STRING)
+This step consist to create a SQL query which permit to import dimensions in Adobe analytics UI. The selected fields in your query must coincidence with classification name that you created above. You have to respect one mandatory field : tracking_code. Make coincidence a string data type field from your query with the tracking_code waited by the connector.
+Tracking_code must be the unique key of your query and permit afterwards to match your classification dimensions with your data source.
 
 ### Quanti: Classification connnector configuration
 
 This step consist to extract classification table from your Data Warehouse.
-1.  Build a new SQL request from your table with the last step and give alias to your fields queried. Your query must be compose only waited fields by Adobe Analytics. 
+1.  Build a new SQL request from your table following the last step and give alias to your fields queried. Your query must be compose only waited fields by Adobe Analytics. 
 2.  In the connector setup form, copy/ paste your query.
 3.  Click Next.
-4.  Give the Adobe Key (Event name created to the step 3 in Adobe UI) for each metric waited.
-5.  Your unique key have to be attributed to the Adobe Key "Tracking" which is the field permit to join your Classfication to your Data Source .
-
+4.  Make correspondance between query fields and fields waited by Adobe Analytics.
+- Tracking_code field is waited by Adobe Analytics : You have to indicate which field is used for it in your query.
+- You also have to fill each text input using classification names created earlier in Adobe Analytics UI in the step 2 above.
+5.  Click View details.
