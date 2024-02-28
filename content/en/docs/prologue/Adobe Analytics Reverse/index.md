@@ -31,7 +31,7 @@ Setup Instructions
 
 ### Create Your Credentials
 
-1.  Access the Adobe Experience Cloud using your Adobe Experience Cloud credentials.
+1.  Access the [Adobe Developer Console](https://developer.adobe.com/console/home) using your Adobe Experience Cloud credentials.
 2.  Navigate to the Console tab, specifically the APIs and services section, and review the available services.
 3.  Locate the Adobe Analytics service and proceed to create a new project.
 </br><img src="adobe1.png" style="width:250px;" />
@@ -57,12 +57,12 @@ Setup Instructions
 1.  Click on the tab Admin > Report Suite > Select your Report Suite > Edit Settings > Conversion > Success Events.
 2.  Select events of your choice and add your custom metrics names.
 </br><img src="adobe7.png" style="width:400px;" />
-3.  Write down events and matches. You will need them to configure QUANTI:
+3.  Write down events and meanings. You will need them to configure QUANTI:
 
 ### Quanti: Data Warehouse configuration
 
 These steps show how to configure data recovery:
-1.  In the connector setup form, select your data warehouse, name your dataset and table from which to recover data.
+1.  In the connector setup form, select your data warehouse.
 2.  Click Next.
 
 ### 2 connectors types to set
@@ -78,7 +78,6 @@ In Data Warehousing language, we can talk about "Fact table" for data source imp
 These steps show how to create a SQL query which permits to import data into Adobe Analytics UI. The selected fields in your query must coincide with custom metrics that you created above. You can import all custom metrics you want, but you have to respect two mandatory fields: Date and tracking_code.
 - Date field: Make a coincidence between a field with a date data type from your query and the date field expected by the connector.
 - Tracking_code field: Make a coincidence between a string data type field from your query and the tracking_code expected by the connector. Tracking_code + date are the unique keys of your query which permit afterwards to match your data source with classification dimensions that we will configure together later in this tutorial.
-Tracking_code + date are the unique keys of your query which permit afterwards to match your data source with classification dimensions that we will configure together later in this tutorial.
 Data type expected :
 - date (DATE - YYYY-mm-dd)
 - tracking_code (STRING - Matching with your Classification)
