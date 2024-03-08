@@ -41,8 +41,8 @@ Setup Instructions
 - Select your organization's name and click on "Save configured API".
 4.  Then on the new project page, you will see your API Key (Client ID). Note the API key. You will need it to configure QUANTI:
 </br><img src="adobe3.png" style="width:250px;" />
-5.  Click on the tab “Generate access token” and note the API key. You will need it to configure QUANTI:
-</br><img src="adobe4.png" style="width:250px;" />
+5.  Click on OAuth Server-to-Server < 'Retrieve Client Secret'. Note the Client Secret. You will need it to configure QUANTI:
+</br><img src="adobe4.png" style="width:350px;" />
 
 ### Declare your classification
 
