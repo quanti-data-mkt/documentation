@@ -1,10 +1,6 @@
 # Table of contents
 
-* [GETTING STARTED](README.md)
-  * [Privacy Policy](changelog/index.md)
-  * [Example page](changelog/quick-start.md)
-  * [FAQ](changelog/faq.md)
-* [DATAWAREHOUSE](code\_of\_conduct/README.md)
+* [DATAWAREHOUSE](README.md)
   * [Big Query dataware House | Quanti Setup Guide](code\_of\_conduct/bigquery.md)
   * [Big Query Data Warehouse setup](code\_of\_conduct/index.md)
 * [ANALYTICS CONNECTORS](analytics-connectors/README.md)
@@ -24,3 +20,7 @@
   * [QUANTI: Tag](security/index.md)
 * [REVERSE CONNECTORS](reverse-connectors/README.md)
   * [Adobe Analytics Reverse connector](reverse-connectors/index.md)
+* [GETTING STARTED](<README (1).md>)
+  * [Privacy Policy](changelog/index.md)
+  * [Example page](changelog/quick-start.md)
+  * [FAQ](changelog/faq.md)
