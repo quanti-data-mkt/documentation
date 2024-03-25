@@ -20,6 +20,7 @@
   * [QUANTI: Tag](security/index.md)
 * [REVERSE CONNECTORS](reverse-connectors/README.md)
   * [Adobe Analytics Reverse connector](reverse-connectors/index.md)
+  * [Google Ads - reverse connector](reverse-connectors/google-ads-reverse-connector.md)
 * [GETTING STARTED](<README (1).md>)
   * [Privacy Policy](changelog/index.md)
   * [Example page](changelog/quick-start.md)
