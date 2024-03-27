@@ -68,6 +68,18 @@ These steps show how to configure data recovery:
 1. In the connector setup form, select your data warehouse.
 2. Click Next.
 
+**Create your data source**
+
+1. Click on the tab Admin > Data sources > Select your Report Suite in the top-right corner > Create
+2. Now, on the page for creating a new data source, in the first multi-select field, choose: Ad Campaigns, and in the second multi-select field, choose: Generic Pay-Per-Click Service. Click Next.
+3. A pop-up will open and ask you to name your data source and provide an email address where notifications will be sent each time data is uploaded.
+4. Check the box to give your consent, then click on "Next".&#x20;
+5. Check the metrics you wish to import and fill in the fields with any additional metrics you wish to import, then click on "Next".
+6. In the selection fields, for each metric listed, select the events you created previously in the "Declare your custom metrics" step. Then click "Next".
+7. Check the box labeled "Tracking codes" and click on "Next".
+8. In the selection field for Tracking codes, select "Tracking Code".
+9. Then click "Next", "Save" and "Close".
+
 #### 2 connectors types to set
 
 You will have to set 2 connectors type : Data source Adobe Reverse Connector and Classification Adobe Reverse Connector. They don’t use the same API point and don’t import the same data type. Therefore, we formally present you with the subject, separating it into two distinct connectors
@@ -115,7 +127,23 @@ These steps show how to extract a classification table from your Data Warehouse:
 3. Click Next.
 4. Make correspondence between query fields and fields expected by Adobe Analytics.
 
-* Tracking\_code field is expected by Adobe Analytics: You have to indicate which field is used for it in your query.
+* Key field is expected by Adobe Analytics: You have to indicate which field is used for it in your query.
 * You also have to fill each text input using classification names created earlier in Adobe Analytics UI in step 2 above.
 
 5. Click View details.
+
+{% hint style="info" %}
+Important concept:
+
+Example Use Case: I want to know the expenses made on my advertising platforms for each of my traffic sources to my site. Therefore, I will need to identify the traffic sent to my site and match it with the metrics imported from the data source to have a clear dispatch of my campaign performances between my sources and campaigns.
+
+To align the metrics you import from external sources into Adobe Analytics (such as impressions, clicks, or spend from your advertising platforms) with internal Adobe Analytics metrics (for example: visits, conversions, or revenue), it is crucial to match them using their join key. The join key is represented as follows:
+
+* Data Source: The information pushed in the Tracking Code field. In this use case example, this would ideally be the advertisement ID, which would be linked to its broadcast performance for a given date.
+*   Classification: Information Pushed into the Key Field
+
+    In this use case scenario, the ideal information to be pushed into the key field would be the advertisement ID, which would be linked to the campaign nomenclature, i.e., the organization of the advertising accounts (Name and ID), consisting of various campaigns (Name and ID), which in turn are made up of ad groups (Name and ID), each comprising advertisements (Name and ID).
+* Paid Traffic Inbound: Information pushed into a URL parameter. In this use case example, ideally, it would be the ID of the advertisement that generated the visit to the site. After configuring the URL parameter used on the Adobe Analytics interface beforehand and matching it with "Tracking Code", the idea is then to use it on all your campaign links generating inbound traffic to your site so you can ultimately reconcile your spending with your traffic sources and/or campaigns.\
+
+{% endhint %}
+
