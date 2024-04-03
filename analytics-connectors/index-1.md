@@ -10,38 +10,54 @@ menu:
     parent: prologue
 weight: 110
 toc: true
-description: 'Follow our setup guide to connect Piwikpro to QUANTI:'
+description: >-
+  Follow our setup guide to connect your Piwik Pro Analytics connector with
+  QUANTI:
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# Piwikpro connector
-
-_Last update : 2024-02-16_
-
-Follow our setup guide to connect Piwikpro to QUANTI:
+# PIWIK connector
 
 ***
 
-### Prerequisites
+## <mark style="background-color:yellow;">Prerequisites</mark>
 
-To connect Piwikpro to QUANTI, you need an [Piwikpro](https://piwikpro.fr/) account.
+To connect Piwikpro to QUANTI, you need an [Piwikpro](https://piwik.pro/?pk\_campaign=ecommerce-data-connector\&pk\_source=quanti.io\&pk\_medium=partnership) account.
 
 ***
 
-### Setup instructions
+## <mark style="background-color:yellow;">Setup instructions</mark>
 
-#### Find your domain
+### Find your domain
 
-1. The expected information in this field is the domain displayed on your search bar when you are connected to your Piwik Account.
+The expected information in this field is the domain displayed on your search bar when you are connected to your Piwik Account.
 
-#### Find your API credentials
+### Find your API credentials
 
-1. Go on your profile parameters : Menu < Profile < API Keys.\
-   ![](../content/en/docs/prologue/piwikpro/piwik1.png)
-2. Create a new API Key clicking on the blue button "Create a Key".
-3. Give it a name and make a note of the API credentials. You will need it to configure QUANTI:.\
-   ![](../content/en/docs/prologue/piwikpro/piwik2.png)
+1. Go on your profile parameters : **Menu** > **Profile** > **API Keys**
 
-#### Find your Website ID
+<div align="center" data-full-width="true">
+
+<figure><img src="../content/en/docs/prologue/piwikpro/piwik1.png" alt="piwik-pro-analytics-credentials" width="241"><figcaption><p>screenshot from our piwik account admin</p></figcaption></figure>
+
+</div>
+
+2. To generate a new API Key, please click on the "Create a Key" button, which is highlighted in blue.
+3. Name your instance and carefully record the API credentials. These are essential for the configuration of QUANTI.
+
+<figure><img src="../content/en/docs/prologue/piwikpro/piwik2.png" alt=""><figcaption><p>API credentials from piwik pro analytics admin</p></figcaption></figure>
+
+### Find your Website ID
 
 1. You can find your Website ID in the url when you are connected to your Piwikpro account and you are naviguating on Piwikpro Analytics.
 2. This is the information contained between term '/analytics/' and '/dashboard/' in the url. Example : "5678h0td6-f434-4ggt-932j-b8767cd8d5d2". https://clientname.piwik.pro/analytics/#/**5678h0td6-f434-4ggt-932j-b8767cd8d5d2**/dashboards/c5asdbf3-7340-47a8-a7e3-edcfd56652fa/
