@@ -55,12 +55,14 @@ The expected information in this field is the domain displayed on your search ba
 2. To generate a new API Key, please click on the "Create a Key" button, which is highlighted in blue.
 3. Name your instance and carefully record the API credentials. These are essential for the configuration of QUANTI.
 
-<figure><img src="../content/en/docs/prologue/piwikpro/piwik2.png" alt=""><figcaption><p>API credentials from piwik pro analytics admin</p></figcaption></figure>
+<figure><img src="../content/en/docs/prologue/piwikpro/piwik2.png" alt=""><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure>
 
 ### Find your Website ID
 
-1. You can find your Website ID in the url when you are connected to your Piwikpro account and you are naviguating on Piwikpro Analytics.
-2. This is the information contained between term '/analytics/' and '/dashboard/' in the url. Example : "5678h0td6-f434-4ggt-932j-b8767cd8d5d2". https://clientname.piwik.pro/analytics/#/**5678h0td6-f434-4ggt-932j-b8767cd8d5d2**/dashboards/c5asdbf3-7340-47a8-a7e3-edcfd56652fa/
+1. To locate your Website ID while using Piwik Pro Analytics, navigate to your Piwikpro account. Your Website ID is displayed in the URL during your session.
+2. This is the information contained between term '/analytics/' and '/dashboard/' in the url.&#x20;
+
+Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 #### Quanti: configuration
 
@@ -87,7 +89,7 @@ This connector Piwikpro don't offer standard reports. You have to create your ow
 8. Copy/ Paste your dimensions and metrics from your Piwikpro personalized report. You can add several fields separating by commas and clicking on "add +".
 9. Repeat operation as many time it's necessary.
 
-#### Quanti: configuration
+## <mark style="background-color:yellow;">Quanti: configuration</mark>
 
 Click Save & Test. Quanti: will take it from here and sync your Piwikpro datas.
 
