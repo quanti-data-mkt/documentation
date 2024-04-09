@@ -1,6 +1,6 @@
 ---
 description: >-
-  Les méthodes de transformation proposée par Quanti: repose sur un principe
+  Les méthodes de transformation proposée par Quanti: reposent sur un principe
   appelé la réconciliation.
 ---
 
