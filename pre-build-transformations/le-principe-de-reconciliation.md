@@ -10,7 +10,7 @@ La réconciliation est la capacité à mettre en correspondance des données pro
 Plus concrètement, elle permet de rapprocher des données de provenance ad-centric avec des données de provenance site-centric afin de connaitre les retombés économiques de la diffusion publicitaire.
 
 {% hint style="info" %}
-Exemple : Grâce aux méthode de transformation Quanti:, il est par exemple possible d'avoir au sein de la même table, les dépenses faites sur Google Ads (Ad-centric) et le chiffre d'affaires généré par la source Google / cpc (Site-centric) et ensuite d'en calculer automatiquement le retour sur les investissements publicitaires (ROAS - Return On Ads Spend)
+Exemple : Grâce aux méthodes de transformation Quanti:, il est par exemple possible d'avoir au sein de la même table, les dépenses faites sur Google Ads (Ad-centric) et le chiffre d'affaires généré par la source Google / cpc (Site-centric) et ensuite d'en calculer automatiquement le retour sur les investissements publicitaires (ROAS - Return On Ads Spend)
 {% endhint %}
 
 Nous ne sommes pas seuls sur le marché. De nombreuses suites de connecteurs vous permettent de récupérer automatiquement les données de vos plateformes publicitaires. Mais elles ne permettent pas de réconcilier directement les données de votre analytics.
