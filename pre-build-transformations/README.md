@@ -1,16 +1,36 @@
+---
+description: >-
+  Ce chapitre traite le sujet de la transformation et du travail d'agrégation
+  mené par Quanti: appelé LA RÉCONCILIATION.
+---
+
 # PRE-BUILD TRANSFORMATIONS
 
-L'un des principals enjeux du pilotage quotidien de ses performances publicitaires, de ses dépenses budgétaires et de son acquisition, est la manière dont le responsable va se servir de ses données pour accompagner la prise de décision.\
-Les données sont correctement utilisées quand le système mis en place permet d'accélérer la prise de décision par **l'automatisation** des process :&#x20;
+L'un des principaux enjeux du pilotage des performances e-commerce est la méthode choisie pour accéder aux données. Le système mis en place est considéré comme performant quand celui-ci permet au responsable de gagner du temps sur le traitement, l'analyse et la prise de décisions par **l'automatisation** des process :
 
-* Centralisation de la collecte (API).
-* Rangement et organisation des données (Transformations).
-* Exploitation des données et calcul des KPIs (Visualisations de rapports).
+1. Centralisation de la collecte (API)
+2. Organisation des données (Transformations)
+3. Exploitation des données et calcul des KPIs (Visualisations de rapports)
 
-Ce chapitre traite le sujet de la transformation et du travail d'agrégation menée par Quanti: qui nécessite des connaissances métier acquis par d'importants investissements en R\&D :&#x20;
+Ce chapitre traite le sujet de la **transformation** et du travail d'agrégation mené par Quanti: appelé [**LA RÉCONCILIATION**](le-principe-de-reconciliation.md) qui nécessite des connaissances métier acquises par d'importants investissements en R\&D qui ont permit de développer :&#x20;
 
-* Une connaissance parfaite des particularités des API des partenaires publicitaires (Meta, Google  Ads, Microsoft Ads, ...), qui mettent à disposition de ses utilisateurs/annonceurs de nombreuses données de campagne. Celles-ci peuvent être très variées d'un partenaire à l'autre. Les données rendues accessibles par un partenaire publicitaire, correspondent à chaque fois à leur contexte de diffusion et à leurs particularités (levier utilisé, type de support, technologies, ...). La recherche et l'accès aux informations peut s'avérer complexe par la diversité et la quantité de données disponibles.&#x20;
-* Le développement d'une méthode qui permet de standardiser et d'uniformiser les données initialement en provenance de plateformes publicitaires différentes.
-* La capacité à rapprocher des données de navigation (Site-centric - Ex: Google Analytics 4) et de données de campagnes (Ad-centric - Ex: Meta) en vue du calcul automatique d'indicateurs clé de performances (Ex: ROAS - Return Of Ads Spend).\
-  &#x20;\
-  L'idée générale de cette étape de transformation est de rendre la données plus digeste et plus exploitable à des fins de visualisation et de prises de décision.
+* Une connaissance parfaite des particularités des API des partenaires publicitaires qui nous permet d'extraire les données correctement et de centraliser leur stockage sur des data warehouse dédié par client. Les API mettent à disposition des annonceurs de nombreuses données de campagne. Celles-ci peuvent être très variées d'un partenaire à l'autre. Les données rendues accessibles par un partenaire publicitaire, correspondent à chaque fois au contexte de diffusion et à leurs spécificités (levier utilisé, type de support, technologies, ...). La recherche et l'accès aux informations peut s'avérer complexe par la diversité et la quantité de données disponibles.&#x20;
+* Une méthode qui permet de standardiser et d'uniformiser les données initialement en provenance de plateformes publicitaires différentes.
+* Une méthode qui permet de rapprocher des données de navigation (Site-centric - Ex: Google Analytics 4) et de données de campagnes (Ad-centric - Ex: Meta) en vue du calcul automatisé d'indicateurs clé de performances (Ex: Return Of Ads Spend).
+
+L'idée générale de cette étape de transformation est de rendre les données plus digestes et plus exploitables à des fins de visualisation, d'analyses et de prises de décision.
+
+## Découvrir nos pre-build transformations
+
+{% content-ref url="ads_import.md" %}
+[ads\_import.md](ads\_import.md)
+{% endcontent-ref %}
+
+{% content-ref url="ads_import_conv.md" %}
+[ads\_import\_conv.md](ads\_import\_conv.md)
+{% endcontent-ref %}
+
+{% content-ref url="quanti_ids.md" %}
+[quanti\_ids.md](quanti\_ids.md)
+{% endcontent-ref %}
+
