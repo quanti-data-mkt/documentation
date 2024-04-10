@@ -46,7 +46,7 @@ The expected information in this field is the domain displayed on your search ba
 
 1. Go on your profile parameters : **Menu** > **Profile** > **API Keys**
 
-<div align="center" data-full-width="true">
+<div align="center" data-full-width="false">
 
 <figure><img src="../content/en/docs/prologue/piwikpro/piwik1.png" alt="piwik-pro-analytics-credentials" width="241"><figcaption><p>screenshot from our piwik account admin</p></figcaption></figure>
 
@@ -55,7 +55,11 @@ The expected information in this field is the domain displayed on your search ba
 2. To generate a new API Key, please click on the "Create a Key" button, which is highlighted in blue.
 3. Name your instance and carefully record the API credentials. These are essential for the configuration of QUANTI.
 
-<figure><img src="../content/en/docs/prologue/piwikpro/piwik2.png" alt=""><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure>
+<div data-full-width="false">
+
+<figure><img src="../content/en/docs/prologue/piwikpro/piwik2.png" alt="" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure>
+
+</div>
 
 ### Find your Website ID
 
