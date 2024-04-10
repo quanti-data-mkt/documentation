@@ -5,7 +5,7 @@
   * [Big Query Data Warehouse setup](code\_of\_conduct/index.md)
 * [ANALYTICS CONNECTORS](analytics-connectors/README.md)
   * [Piano connector](analytics-connectors/index.md)
-  * [PIWIK connector](analytics-connectors/index-1.md)
+  * [Piwik Pro connector](analytics-connectors/index-1.md)
 * [MARKETING CONNECTORS](readme/README.md)
   * [Affilae connector](readme/index.md)
   * [Awin connector](readme/index-1.md)
