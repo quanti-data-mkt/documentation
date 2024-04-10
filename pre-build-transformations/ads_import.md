@@ -1,12 +1,12 @@
 ---
-description: Présentation de la table d'agrégation des données de diffusion publicitaire
+description: Présentation de la table d'agrégation des données de diffusion publicitaire.
 ---
 
 # Ads\_import
 
 ## Présentation
 
-Ads\_import est une table construite par la méthode Quanti: qui permet de regrouper les données de diffusion publicitaire de toutes ses plateformes au sein d'une seule table.\
+Ads\_import est une table construite par une méthode Quanti: qui permet de regrouper les données de diffusion publicitaire de toutes ses plateformes au sein d'une seule table.\
 Afin de pouvoir respecter ce principe de centralisation, il est indispensable que les données soient regroupées autour de champs communs à chaque plateforme.
 
 ## Les champs de la table
@@ -28,7 +28,7 @@ Pour en apprendre plus sur les quanti\_ids, se rendre dans [quanti\_ids.md](quan
 
 Les métriques de la table sont :&#x20;
 
-* platform\_spend : qui somme les dépenses publicitaires faites.
-* platform\_clicks : qui somme les clics sur les publicités faites par les internautes.
-* platform\_impressions : qui somme les impressions des publicités sur le réseau de diffusion des plateformes.
+* platform\_spend : qui comptabilise les dépenses publicitaires faites.
+* platform\_clicks : qui comptabilise les clics sur les publicités faites par les internautes.
+* platform\_impressions : qui comptabilise les impressions des publicités sur les réseaux de diffusion des plateformes.
 
