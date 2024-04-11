@@ -11,6 +11,17 @@ menu:
 weight: 110
 toc: true
 description: 'Follow our setup guide to connect QUANTI: to BigQuery'
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # Big Query Data Warehouse setup
