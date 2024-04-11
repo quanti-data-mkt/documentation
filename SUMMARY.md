@@ -1,7 +1,6 @@
 # Table of contents
 
 * [DATAWAREHOUSE](README.md)
-  * [Big Query dataware House | Quanti Setup Guide](code\_of\_conduct/bigquery.md)
   * [Big Query Data Warehouse setup](code\_of\_conduct/index.md)
 * [ANALYTICS CONNECTORS](analytics-connectors/README.md)
   * [Piano connector](analytics-connectors/index.md)

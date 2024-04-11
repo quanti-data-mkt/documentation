@@ -15,42 +15,56 @@ description: 'Follow our setup guide to connect QUANTI: to BigQuery'
 
 # Big Query Data Warehouse setup
 
-_Last update : 2024-02-16_
-
-Follow our setup guide to connect QUANTI: to BigQuery
-
 ***
 
-### Prerequisites
+## Prerequisites
 
 To connect QUANTI: to BigQuery, you need an [Google Cloud Platform](https://cloud.google.com/gcp) account.
 
 ***
 
-### Setup instructions
+## Setup instructions
 
-#### Quanti: configuration
+### Quanti: configuration
 
 1. In the connector setup form, enter a distinctive name of your choice.
 2. Select your sector category and company size.
-3. Enter your BigQuery projet ID. You can find it by clicking in the selection field on the header of your BigQuery UI.\
-   ![](../content/en/docs/prologue/bigquery/bigquery1.png)
+3.  Enter your BigQuery projet ID. You can find it by clicking in the selection field on the header of your BigQuery UI.\
+    \
+
+
+    <figure><img src="../content/en/docs/prologue/bigquery/bigquery1.png" alt="" width="563"><figcaption><p>Screenshot of BigQuery UI</p></figcaption></figure>
+
+
 4. Select your Data Location. The physical place where QUANTI: will use to deposit your datas.
 5. Click Next.
 
-#### Service Account configuration
+### Service Account configuration
 
 In this step, copy the service account email adresse provided by QUANTI: and follow the steps bellow:
 
-1. Go on IAM & Admin product on BigQuery UI. Click on icon Menu < IAM & Admin < IAM\
-   ![](../content/en/docs/prologue/bigquery/bigquery2.png)
-2. Click GRANT ACCESS button.\
-   ![](../content/en/docs/prologue/bigquery/bigquery3.png)
+1.  Go on IAM & Admin product on BigQuery UI. Click on icon Menu < IAM & Admin < IAM\
+    \
+
+
+    <figure><img src="../content/en/docs/prologue/bigquery/bigquery2.png" alt="" width="375"><figcaption><p>Screenshot of access to the BigQuery IAM UI</p></figcaption></figure>
+
+
+2.  Click GRANT ACCESS button.\
+    \
+
+
+    <figure><img src="../content/en/docs/prologue/bigquery/bigquery3.png" alt=""><figcaption><p>Screenshot of the "Grant Acess" button</p></figcaption></figure>
+
+
 3. Copy/ paste the service account email adresse, assign roles bellow and click Save :
 
 * Browser
 * Bigquery Admin
-* Storage Admin\
-  ![](../content/en/docs/prologue/bigquery/bigquery4.png)
+*   Storage Admin\
+    \
+
+
+    <figure><img src="../content/en/docs/prologue/bigquery/bigquery4.png" alt="" width="375"><figcaption><p>Screenshot of the needed roles for BigQuery</p></figcaption></figure>
 
 4. In QUANTI: UI, click Next Button to launch the connections tests.

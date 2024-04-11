@@ -21,7 +21,7 @@ Follow our setup guide to connect Affilae to QUANTI:
 
 ***
 
-### Prerequisites
+### <mark style="background-color:blue;">Prerequisites</mark>
 
 To connect Affilae to QUANTI, you need an [Affilae](https://affilae.com/fr/logiciel-affiliation/) account.
 
