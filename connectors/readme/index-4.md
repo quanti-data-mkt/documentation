@@ -33,7 +33,7 @@ To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/) a
 
 1. Connect to your [TimeOne platform](https://login.timeonegroup.com/).
 2. Your Advertiser Id is shown on the header bar when you arrive in Dashboard home.\
-   ![](../content/en/docs/prologue/timeone/timeone1.png)
+   ![](../../content/en/docs/prologue/timeone/timeone1.png)
 3. Your uniqId is given by your Account Manager. please, referre to him.
 
 #### Finish Quanti: configuration

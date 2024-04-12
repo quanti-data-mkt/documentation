@@ -34,32 +34,23 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
 ***
 
-## Setup instructions
+## <mark style="background-color:yellow;">Setup instructions</mark>
 
 ### Find your credentials
 
 1.  Go on your profile parameters to the top-right corner : See profile < API Key\
-    \
 
 
-    <figure><img src="../content/en/docs/prologue/piano/piano1.png" alt=""><figcaption><p>Screenshot of Piano UI</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/piano/piano1.png" alt=""><figcaption></figcaption></figure>
+2. Create a new API Key clicking on the blue button "Create a new API Key".
 
+<figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption></figcaption></figure>
 
-2.  Create a new API Key clicking on the blue button "Create a new API Key".\
-    \
+1. Give it a name and a description. Let the box ticked and save it.
 
+<figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="" width="375"><figcaption></figcaption></figure>
 
-    <figure><img src="../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption></figcaption></figure>
-
-
-3.  Give it a name and a description. Let the box ticked and save it.\
-    \
-
-
-    <figure><img src="../content/en/docs/prologue/piano/piano3.png" alt="" width="375"><figcaption><p>Creation API pop-in</p></figcaption></figure>
-
-
-4. Make a note of the API credentials. You will need it to configure QUANTI:.
+1. Make a note of the API credentials. You will need it to configure QUANTI:.
 
 ### Find your Website ID
 
@@ -80,14 +71,14 @@ This connector Piano don't offer standard reports. You have to create your own r
     \
 
 
-    <figure><img src="../content/en/docs/prologue/piano/piano4.png" alt="" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/piano/piano4.png" alt="" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
 
 
 2.  Now, you are in the Data Query tool. The main idea is to create a new reporting like your next custom query wanted using the good fields in ligns and columns. You will have to recover the API keys for each field. Start by show the API Key by clicking on the option : Follow steps on the screenshot bellow.\
     \
 
 
-    <figure><img src="../content/en/docs/prologue/piano/piano5.png" alt=""><figcaption><p>Find a field's key</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/piano/piano5.png" alt=""><figcaption><p>Find a field's key</p></figcaption></figure>
 
 
 3. Make a note of all API Keys of your fields as you compose your reporting. You will need it to configure QUANTI:. you will need two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.

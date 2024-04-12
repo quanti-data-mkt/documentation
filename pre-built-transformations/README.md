@@ -1,18 +1,22 @@
 ---
 description: >-
-  Ce chapitre traite le sujet des pre-build transformations et du travail
-  d'agrégation proposés par Quanti:
+  Quanti: offers pre-built tables to simplify data exploitation. Let's jump into
+  transformations.
 ---
 
-# PRE-BUILD TRANSFORMATIONS
+# PRE-BUILT TRANSFORMATIONS
 
-## Automatisation des processus
+***
 
-L'un des principaux enjeux du pilotage des performances e-commerce est la méthode choisie pour accéder aux données. Le système mis en place est considéré comme performant quand celui-ci permet au responsable de gagner du temps dans la prise de décisions par l'**automatisation des processus** d'accès aux données :
+## Why pre-prebuilt transformations ?
 
-1. Centralisation de la collecte (API)
-2. Organisation des données (Transformations)
-3. Exploitation des données et calcul des KPIs (Visualisations de rapports)
+Having data in your cloud is one thing. \
+Having structured data ready for analysis is another.\
+Once your data is fed into the tables, it remains scattered across different data sets. Consolidating these data can be lengthy and tedious.
+
+QUANTI: manage some transformations, always useful for 100% of our customers.
+
+
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2024-04-09 à 16.39.08.png" alt=""><figcaption></figcaption></figure>
 
@@ -26,7 +30,7 @@ Ce chapitre traite le sujet de la **transformation** et du travail d'agrégation
 
 L'idée générale de cette étape de transformation est de rendre les données plus digestes et plus exploitables à des fins de visualisation, d'analyses et de prises de décision.
 
-## Découvrir nos pre-build transformations
+## Pre-built tables
 
 {% content-ref url="ads_import.md" %}
 [ads\_import.md](ads\_import.md)
