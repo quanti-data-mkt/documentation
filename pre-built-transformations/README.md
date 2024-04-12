@@ -20,7 +20,7 @@ QUANTI: manage some transformations, always useful for 100% of our customers.
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2024-04-09 à 16.39.08.png" alt=""><figcaption></figcaption></figure>
 
-## Une méthode exclusive développée par Quanti:
+## How
 
 Ce chapitre traite le sujet de la **transformation** et du travail d'agrégation mené par Quanti: appelé [**LA RÉCONCILIATION**](le-principe-de-reconciliation.md) qui nécessite des connaissances métier acquises par d'importants investissements en R\&D qui ont permit de développer :&#x20;
 

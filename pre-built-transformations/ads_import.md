@@ -15,17 +15,17 @@ layout:
 
 # ads\_import
 
-```sql
-IF(cpc <> 0,spend / cpc,0)
-```
-
 ## Introduction
 
 **ads\_import** is a pre-built table that allows for the consolidation of impression, click, and spend data from all platforms into a single table.&#x20;
 
 Without ads\_import :&#x20;
 
+<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-12 à 17.11.28 (1).png" alt=""><figcaption><p>Example without ads_import</p></figcaption></figure>
 
+With ads\_import
+
+<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-12 à 16.40.33.png" alt=""><figcaption><p>Example with ads_import</p></figcaption></figure>
 
 ## Schema
 
