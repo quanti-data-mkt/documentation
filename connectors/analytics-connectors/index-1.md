@@ -23,10 +23,10 @@ layout:
   outline:
     visible: true
   pagination:
-    visible: true
+    visible: false
 ---
 
-# Piwik Pro connector
+# Piwik Pro - Analytics connector
 
 ***
 
@@ -108,6 +108,6 @@ There is no pre-built queries for Piwik Pro at this moment
 
 ***
 
-## <mark style="background-color:yellow;">Tables Diagramm (ERD)</mark>
+## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
 
 There is no ERD for Piwik Pro at this moment

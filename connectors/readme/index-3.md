@@ -11,44 +11,58 @@ menu:
 weight: 110
 toc: true
 description: 'Follow our setup guide to connect CJ to QUANTI:'
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
-# CJ connector
-
-_Last update : 2024-02-16_
-
-Follow our setup guide to connect CJ to QUANTI:
+# Commission Junction  - Marketing connector
 
 ***
 
-### Prerequisites
+## <mark style="background-color:blue;">Prerequisites</mark>
 
 To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/) account.
 
 ***
 
-### Setup instructions
+## <mark style="background-color:blue;">Setup instructions</mark>
 
-#### Find Advertiser ID
+### Find Advertiser ID
 
 1. Log in to your [CJ account](https://signin.cj.com/login).
-2. In the top-right corner, you can click on a multi-selection field which permit you to pick your different accounts. The advertiser IDs are the CID near each account name.\
-   ![](../../content/en/docs/prologue/cj/cj1.png)
+2.  In the top-right corner, you can click on a multi-selection field which permit you to pick your different accounts. The advertiser IDs are the CID near each account name.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/cj/cj1.png" alt="" width="302"><figcaption><p>Access path to find advertiser ID</p></figcaption></figure>
+
+
 3. Make a note of the advertiser ID. You will need it to configure QUANTI:.
 4. N.B : With the CJ connector, you will can recover datas from only one advertiser. You have to create several connector if you have several advertiser accounts.
 
-#### Find Token
+### Find Token
 
 1. To recover the token needed, no other way that to request it to your account manager.
 2. Make a note of the API token. You will need it to configure QUANTI:.
 
-#### Finish Quanti: configuration
+### Finish Quanti: configuration
 
 1. In the connector setup form, enter the name of your choice.
 2. Enter the advertiser ID you found in Step 1.
 3. Enter the token you found in Step 2.
 4. Click Save & Test. Quanti: will take it from here and sync your CJ data.
 
-#### Tables
+***
+
+## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
 To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/655780093be149578736156c/65ce18c5ac844320ae3901e3)

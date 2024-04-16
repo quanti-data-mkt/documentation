@@ -2,6 +2,17 @@
 description: >-
   Les méthodes de transformation proposée par Quanti: reposent sur un principe
   appelé la réconciliation.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # Le principe de réconciliation
@@ -23,10 +34,10 @@ Grâce aux méthodes de transformation Quanti:, il est par exemple possible d'av
 
 Nous ne sommes pas seuls sur le marché. De nombreuses suites de connecteurs vous permettent de récupérer automatiquement les données de vos plateformes publicitaires. Mais elles ne permettent pas de réconcilier directement les données de votre analytics.
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-09 à 16.28.01.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-09 à 16.28.01.png" alt=""><figcaption></figcaption></figure>
 
 ### 2. La méthode d'agrégation des données
 
 Quanti : propose l'automatisation de tout le processus de consolidation des données. En plus des connecteurs de données de plateforme (Ad Centric), nous réconcilions ces données avec votre solution d'analyse (site centric). Notre méthode exclusive rend possible la réconciliation des données d’acquisition de toutes les plateformes (horizontale) et des suites analytics (verticale).
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-09 à 16.46.37.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-09 à 16.46.37.png" alt=""><figcaption></figcaption></figure>

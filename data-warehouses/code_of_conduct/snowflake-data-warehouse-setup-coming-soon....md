@@ -12,5 +12,5 @@ layout:
     visible: false
 ---
 
-# ANALYTICS CONNECTORS
+# Snowflake Data Warehouse setup (Coming soon...)
 

@@ -11,48 +11,72 @@ menu:
 weight: 110
 toc: true
 description: 'Follow our setup guide to connect Awin to QUANTI:'
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
-# Awin connector
-
-_Last update : 2024-02-16_
-
-Follow our setup guide to connect Awin to QUANTI:
+# Awin - Marketing connector
 
 ***
 
-### Prerequisites
+## <mark style="background-color:blue;">Prerequisites</mark>
 
 To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account with API access.
 
 ***
 
-### Setup instructions
+## <mark style="background-color:blue;">Setup instructions</mark>
 
-#### Find API token
+### Find API token
 
 1. Log in to your [Awin account](https://ui.awin.com/idp/en/awin/login).
-2. In the top-right corner, click your profile name, then select API Credentials.\
-   ![](../../content/en/docs/prologue/awin/awin1.png)
+2.  In the top-right corner, click your profile name, then select API Credentials.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/awin/awin1.png" alt="" width="327"><figcaption><p>Access path to API key on Awin UI</p></figcaption></figure>
+
+
 3. In the Password field, enter your login password.
-4. Click Show my API token.\
-   ![](../../content/en/docs/prologue/awin/awin2.png)
+4.  Click Show my API token.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/awin/awin2.png" alt=""><figcaption></figcaption></figure>
+
+
 5. Make a note of the API token. You will need it to configure QUANTI:.
 
-#### Find Advertiser ID
+### Find Advertiser ID
 
 1. In the top-right corner, when you hover Dashboard tab, you can see the list of your accounts
-2. Numbers between brackets are your advertiser IDs needed.\
-   ![](../../content/en/docs/prologue/awin/awin3.png)
+2.  Numbers between brackets are your advertiser IDs needed.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/awin/awin3.png" alt=""><figcaption><p>Access path to find Advertiser ID</p></figcaption></figure>
+
+
 3. Make a note of the Advertiser ID. You will need it to configure QUANTI:.
 
-#### Finish Quanti: configuration
+### Finish Quanti: configuration
 
 1. In the connector setup form, enter the name of your choice.
 2. Enter the API token you found in Step 1.
 3. Enter your advertiser IDs you found in Step 2. You can add all of your ids seperated by commas.
 4. Click Save & Test. Quanti: will take it from here and sync your Awin data.
 
-#### Tables
+***
+
+## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
 To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/6511611dffbf5169f06f6e48/65ce1602ac844320ae38c247)

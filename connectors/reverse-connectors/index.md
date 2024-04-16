@@ -11,64 +11,99 @@ menu:
 weight: 110
 toc: true
 description: Follow our setup guide to interger the reverse-connector Adobe Analytics
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
-# Adobe Analytics Reverse connector
-
-_Last update : 2024-02-16_
-
-Please refer to our setup guide to integrate the Adobe Analytic reverse-connector.
+# Adobe Analytics - Reverse connector
 
 ***
 
-### Prerequisites
+## <mark style="background-color:red;">Prerequisites</mark>
 
 To establish a connection between the QUANTI platform and the Adobe Analytics reverse connector, it is essential to possess an Adobe Experience Cloud account. This account will provide the necessary permissions to access and interact with the Adobe Analytics product.
 
 ***
 
-### Setup Instructions
+## <mark style="background-color:red;">Setup Instructions</mark>
 
-#### Create Your Credentials
+### Create Your Credentials
 
 1. Access the [Adobe Developer Console](https://developer.adobe.com/console/home) using your Adobe Experience Cloud credentials.
 2. Navigate to the Console tab, specifically the APIs and services section, and review the available services.
-3. Locate the Adobe Analytics service and proceed to create a new project.\
-   ![](<../content/en/docs/prologue/Adobe Analytics Reverse/adobe1.png>)
+3.  Locate the Adobe Analytics service and proceed to create a new project.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe1.png" alt="" width="355"><figcaption><p>Create a new project</p></figcaption></figure>
+
+
 
 * Select OAuth server-to-server.
-* Assign a unique name to your project (For example: Quanti Reverse Connector API) and move to the next step.\
-  ![](<../content/en/docs/prologue/Adobe Analytics Reverse/adobe2.png>)
+*   Assign a unique name to your project (For example: Quanti Reverse Connector API) and move to the next step.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe2.png" alt=""><figcaption><p>Selection page of authentication type</p></figcaption></figure>
+
+
 * Select your organization's name and click on "Save configured API".
 
-4. Then on the new project page, you will see your API Key (Client ID). Note the API key. You will need it to configure QUANTI:\
-   ![](<../content/en/docs/prologue/Adobe Analytics Reverse/adobe3.png>)
-5. Click on OAuth Server-to-Server < 'Retrieve Client Secret'. Note the Client Secret. You will need it to configure QUANTI:\
-   ![](<../content/en/docs/prologue/Adobe Analytics Reverse/adobe4.png>)
+4.  Then on the new project page, you will see your API Key (Client ID). Note the API key. You will need it to configure QUANTI:\
+    \
 
-#### Declare your classification
+
+    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe3.png" alt="" width="375"><figcaption><p>Access path to the secret token</p></figcaption></figure>
+
+
+5.  Click on OAuth Server-to-Server < 'Retrieve Client Secret'. Note the Client Secret. You will need it to configure QUANTI:\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe4.png" alt="" width="494"><figcaption><p>Access path to the client secret</p></figcaption></figure>
+
+### Declare your classification
 
 1. Enter Adobe Analytics UI and go to your Adobe Analytics product.
 2. Click on the tab Admin > Report Suite > Select your Report Suite > Edit Settings > Conversion > Conversion Classification.
-3. Select Classification Type "Campaign" and add your classification field names.\
-   ![](<../content/en/docs/prologue/Adobe Analytics Reverse/adobe6.png>)
+3.  Select Classification Type "Campaign" and add your classification field names.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe6.png" alt="" width="361"><figcaption><p>Classification creation on Adobe Analytics UI</p></figcaption></figure>
+
+
 4. Note the classification field names. You will need them to configure QUANTI:
 
-#### Declare your custom metrics
+### Declare your custom metrics
 
 1. Click on the tab Admin > Report Suite > Select your Report Suite > Edit Settings > Conversion > Success Events.
-2. Select events of your choice and add your custom metrics names.\
-   ![](<../content/en/docs/prologue/Adobe Analytics Reverse/adobe7.png>)
+2.  Select events of your choice and add your custom metrics names.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe7.png" alt=""><figcaption><p>Custom metrics creation on Adobe Analytics UI</p></figcaption></figure>
+
+
 3. Write down events and meanings. You will need them to configure QUANTI:
 
-#### Quanti: Data Warehouse configuration
+### Quanti: Data Warehouse configuration
 
 These steps show how to configure data recovery:
 
 1. In the connector setup form, select your data warehouse.
 2. Click Next.
 
-**Create your data source**
+### **Create your data source**
 
 1. Click on the tab Admin > Data sources > Select your Report Suite in the top-right corner > Create
 2. Now, on the page for creating a new data source, in the first multi-select field, choose: Ad Campaigns, and in the second multi-select field, choose: Generic Pay-Per-Click Service. Click Next.
@@ -80,15 +115,20 @@ These steps show how to configure data recovery:
 8. In the selection field for Tracking codes, select "Tracking Code".
 9. Then click "Next", "Save" and "Close".
 
-#### 2 connectors types to set
+### 2 connectors types to set
 
 You will have to set 2 connectors type : Data source Adobe Reverse Connector and Classification Adobe Reverse Connector. They don’t use the same API point and don’t import the same data type. Therefore, we formally present you with the subject, separating it into two distinct connectors
 
 * Data source Adobe Reverse Connector is used to import metrics.
-* Classification Adobe Reverse Connector is used to import dimensions. In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.\
-  ![](<../content/en/docs/prologue/Adobe Analytics Reverse/adobe8.png>)
+*   Classification Adobe Reverse Connector is used to import dimensions. In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.\
+    \
 
-#### Create your Data Source Query
+
+    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe8.png" alt=""><figcaption><p>Tables diagram representation</p></figcaption></figure>
+
+
+
+### Create your Data Source Query
 
 These steps show how to create a SQL query which permits to import data into Adobe Analytics UI. The selected fields in your query must coincide with custom metrics that you created above. You can import all custom metrics you want, but you have to respect two mandatory fields: Date and tracking\_code.
 
@@ -100,7 +140,7 @@ These steps show how to create a SQL query which permits to import data into Ado
 * event2 (FLOAT)
 * event3 (FLOAT) All custom events must be of FLOAT type.
 
-#### Quanti: Data Source Connnector Configuration
+### Quanti: Data Source Connnector Configuration
 
 These steps show how to extract data from your table:
 
@@ -114,11 +154,11 @@ These steps show how to extract data from your table:
 
 5. Click View details.
 
-#### Create Your Classification Query
+### Create Your Classification Query
 
 These steps show how to create a SQL query which permits to import dimensions in Adobe Analytics UI. The selected fields in your query must coincide with classification names that you created above. You have to respect one mandatory field: tracking\_code. Make a coincidence between a string data type field from your query and the tracking\_code expected by the connector. Tracking\_code must be the unique key of your query and permit afterwards to match your classification dimensions with your data source.
 
-#### Quanti: Classification Connnector Configuration
+### Quanti: Classification Connnector Configuration
 
 These steps show how to extract a classification table from your Data Warehouse:
 

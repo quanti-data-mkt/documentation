@@ -12,5 +12,5 @@ layout:
     visible: false
 ---
 
-# ANALYTICS CONNECTORS
+# Google Ads - Marketing connector (Coming soon...)
 

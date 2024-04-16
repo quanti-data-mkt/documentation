@@ -44,7 +44,7 @@ To connect QUANTI: to BigQuery, you need an [Google Cloud Platform](https://clou
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery1.png" alt="" width="563"><figcaption><p>Screenshot of BigQuery UI</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery1.png" alt="" width="563"><figcaption><p>Screenshot of BigQuery UI</p></figcaption></figure>
 
 
 4. Select your Data Location. The physical place where QUANTI: will use to deposit your datas.
@@ -58,14 +58,14 @@ In this step, copy the service account email adresse provided by QUANTI: and fol
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery2.png" alt="" width="375"><figcaption><p>Screenshot of access to the BigQuery IAM UI</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery2.png" alt="" width="375"><figcaption><p>Screenshot of access to the BigQuery IAM UI</p></figcaption></figure>
 
 
 2.  Click GRANT ACCESS button.\
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery3.png" alt=""><figcaption><p>Screenshot of the "Grant Acess" button</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery3.png" alt=""><figcaption><p>Screenshot of the "Grant Acess" button</p></figcaption></figure>
 
 
 3. Copy/ paste the service account email adresse, assign roles bellow and click Save :
@@ -76,6 +76,6 @@ In this step, copy the service account email adresse provided by QUANTI: and fol
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery4.png" alt="" width="375"><figcaption><p>Screenshot of the needed roles for BigQuery</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery4.png" alt="" width="375"><figcaption><p>Screenshot of the needed roles for BigQuery</p></figcaption></figure>
 
 4. In QUANTI: UI, click Next Button to launch the connections tests.

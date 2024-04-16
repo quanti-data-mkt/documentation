@@ -24,11 +24,11 @@ layout:
     visible: false
 ---
 
-# Piano connector
+# Piano - Analytics connector
 
 ***
 
-## Prerequisites
+## <mark style="background-color:yellow;">Pre requisites</mark>
 
 To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
@@ -41,14 +41,14 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 1.  Go on your profile parameters to the top-right corner : See profile < API Key\
 
 
-    <figure><img src="../../content/en/docs/prologue/piano/piano1.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/piano/piano1.png" alt=""><figcaption><p>Access path to API keys on Piano UI<br></p></figcaption></figure>
 2. Create a new API Key clicking on the blue button "Create a new API Key".
 
-<figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption></figcaption></figure>
+<figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
 
 1. Give it a name and a description. Let the box ticked and save it.
 
-<figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="" width="375"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
 
 1. Make a note of the API credentials. You will need it to configure QUANTI:.
 
@@ -62,7 +62,9 @@ You can find your Website ID in the url when you are connected to your Piano acc
 2. Enter your credentials you find on step 1
 3. Enter you Website ID you find in step 2. You can add several IDs separating by commas and clicking on "+".
 
-### Create a Custom request
+***
+
+## <mark style="background-color:yellow;">Custom query</mark>
 
 This connector Piano don't offer standard reports. You have to create your own reports. To help you in this step, we recommand to use "Data Query" tool on Piano Analytics UI.
 
@@ -91,6 +93,14 @@ This connector Piano don't offer standard reports. You have to create your own r
 
 Click Save & Test. Quanti: will take it from here and sync your Piano datas.
 
-### Tables
+***
+
+## <mark style="background-color:yellow;">Pre-built Queries</mark>
+
+There is no pre-built queries for Piwik Pro at this moment
+
+***
+
+## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
 
 To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65d4c476ac844320ae967f23/65d4c4e2ac844320ae968975)

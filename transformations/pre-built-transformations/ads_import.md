@@ -21,11 +21,11 @@ layout:
 
 Without ads\_import :&#x20;
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-12 à 17.11.28 (1).png" alt=""><figcaption><p>Example without ads_import</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-12 à 17.11.28 (1).png" alt=""><figcaption><p>Example without ads_import</p></figcaption></figure>
 
 With ads\_import
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-12 à 16.40.33.png" alt=""><figcaption><p>Example with ads_import</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-12 à 16.40.33.png" alt=""><figcaption><p>Example with ads_import</p></figcaption></figure>
 
 ## Schema
 
@@ -62,13 +62,13 @@ The metrics of the table are:&#x20;
 
 ## Fields mapping
 
-| platform                                                                             | correspondence for ads\_import                           |
-| ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| <img src="../.gitbook/assets/google ads (1).png" alt="" data-size="line"> Google ads | = cost\_micros <mark style="color:red;">/ 1000000</mark> |
-| <img src="../.gitbook/assets/google ads (1).png" alt="" data-size="line"> Google ads | = clicks                                                 |
-| <img src="../.gitbook/assets/google ads (1).png" alt="" data-size="line"> Google ads | = impressions                                            |
-| <img src="../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  | =  spend                                                 |
-| <img src="../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  | = `IF(cpc <> 0,spend / cpc,0)`                           |
-| <img src="../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  | = impressions                                            |
-| <img src="../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  |                                                          |
+| platform                                                                                | correspondence for ads\_import                           |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| <img src="../../.gitbook/assets/google ads (1).png" alt="" data-size="line"> Google ads | = cost\_micros <mark style="color:red;">/ 1000000</mark> |
+| <img src="../../.gitbook/assets/google ads (1).png" alt="" data-size="line"> Google ads | = clicks                                                 |
+| <img src="../../.gitbook/assets/google ads (1).png" alt="" data-size="line"> Google ads | = impressions                                            |
+| <img src="../../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  | =  spend                                                 |
+| <img src="../../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  | = `IF(cpc <> 0,spend / cpc,0)`                           |
+| <img src="../../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  | = impressions                                            |
+| <img src="../../.gitbook/assets/meta.png" alt="" data-size="line">Meta                  |                                                          |
 

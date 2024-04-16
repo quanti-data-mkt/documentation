@@ -2,9 +2,20 @@
 description: >-
   Présentation de la table d'agrégation des conversions issues des plateformes
   publicitaires.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
-# Ads\_import\_conv
+# ads\_import\_conv
 
 ## Présentation
 
@@ -15,7 +26,7 @@ Afin de pouvoir respecter ce principe de centralisation, il est indispensable qu
 
 
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-10 à 14.54.52.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-10 à 14.54.52.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Les clés primaires
 

@@ -2,6 +2,17 @@
 description: >-
   Quanti: offers pre-built tables to simplify data exploitation. Let's jump into
   transformations.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # PRE-BUILT TRANSFORMATIONS
@@ -18,7 +29,7 @@ QUANTI: manage some transformations, always useful for 100% of our customers.
 
 
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-04-09 à 16.39.08.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-09 à 16.39.08.png" alt=""><figcaption></figcaption></figure>
 
 ## How
 
