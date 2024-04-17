@@ -12,5 +12,5 @@ layout:
     visible: false
 ---
 
-# TAG TRACKER
+# Client-side tag installation
 

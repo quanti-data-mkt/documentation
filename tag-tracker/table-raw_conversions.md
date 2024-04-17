@@ -12,5 +12,5 @@ layout:
     visible: false
 ---
 
-# GA4 - Analytics connector (Coming soon...)
+# Table raw\_conversions
 

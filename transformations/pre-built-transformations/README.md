@@ -43,15 +43,15 @@ L'idée générale de cette étape de transformation est de rendre les données 
 
 ## Pre-built tables
 
-{% content-ref url="ads_import.md" %}
-[ads\_import.md](ads\_import.md)
+{% content-ref url="table-ads_import.md" %}
+[table-ads\_import.md](table-ads\_import.md)
 {% endcontent-ref %}
 
-{% content-ref url="ads_import_conv.md" %}
-[ads\_import\_conv.md](ads\_import\_conv.md)
+{% content-ref url="table-ads_import_conv.md" %}
+[table-ads\_import\_conv.md](table-ads\_import\_conv.md)
 {% endcontent-ref %}
 
-{% content-ref url="quanti_ids.md" %}
-[quanti\_ids.md](quanti\_ids.md)
+{% content-ref url="table-quanti_ids.md" %}
+[table-quanti\_ids.md](table-quanti\_ids.md)
 {% endcontent-ref %}
 
