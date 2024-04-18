@@ -66,7 +66,7 @@ You can find your Website ID in the url when you are connected to your Piano acc
 
 ## <mark style="background-color:yellow;">Custom query</mark>
 
-This connector Piano don't offer standard reports. You have to create your own reports. To help you in this step, we recommand to use "Data Query" tool on Piano Analytics UI.
+We recommend utilizing the "Data Query" tool available on the Piano Analytics UI to assist you in this process.
 
 1.  To the top-right corner, click on the 4 squares button < Data Query\
     \
