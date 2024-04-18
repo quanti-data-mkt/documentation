@@ -62,7 +62,7 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
 You can find your Website ID in the url when you are connected to your Piano account. This is the value of the parameter site=. https://explorer.atinternet-solutions.com/core/#/overview/overview/020202?period.shortcut=yesterday\&period.granularity=3\&site=**612329**\&graph.options.defaultlist=minmax\&graph.options.comparisonlist=nocomparison\&graph.options.eventloglist=eventlog\&isIgnoreNullProperties=false
 
-### Quanti: configuration
+### Connector configuration
 
 1. In the connector setup form, enter the name of your choice.
 2. Enter your credentials you find on step 1
@@ -72,7 +72,7 @@ You can find your Website ID in the url when you are connected to your Piano acc
 
 ## <mark style="background-color:yellow;">Custom query</mark>
 
-We recommend utilizing the "Data Query" tool available on the Piano Analytics UI to assist you in this process.
+We recommend utilizing the "Data Query" tool available on the Piano Analytics interface to assist you in this process.
 
 1.  To the top-right corner, click on the 4 squares button < Data Query\
     \

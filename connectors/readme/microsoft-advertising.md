@@ -12,5 +12,5 @@ layout:
     visible: false
 ---
 
-# Snowflake Data Warehouse setup (Coming soon...)
+# Microsoft Advertising
 

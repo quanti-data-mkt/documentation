@@ -77,7 +77,7 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 ## <mark style="background-color:yellow;">Custom query</mark>
 
-This connector Piwikpro don't offer standard reports. You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwik Pro Analytics UI.
+You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwik Pro Analytics interface.
 
 <figure><img src="../../content/en/docs/prologue/piwikpro/piwik3.png" alt="" width="375"><figcaption><p>Piwik Pro > custom reports</p></figcaption></figure>
 
@@ -95,7 +95,7 @@ This connector Piwikpro don't offer standard reports. You have to create your ow
 
 <figure><img src="../../content/en/docs/prologue/piwikpro/piwik6.png" alt="" width="375"><figcaption><p>API call detailed</p></figcaption></figure>
 
-* On QUANTI: UI, click on the button "Create".
+* On QUANTI: interface, click on the button "Create".
 * Name your custom request : It will be use to name your table on your Warehouse.
 * Copy/ Paste your dimensions and metrics from your Piwikpro personalized report. You can add several fields separating by commas and clicking on "add +".
 * Repeat operation as many time it's necessary.

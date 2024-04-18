@@ -1,2 +1,0 @@
-# Microsoft Advertising (Coming soon...)
-

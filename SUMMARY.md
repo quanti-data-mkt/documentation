@@ -2,9 +2,7 @@
 
 ## DATA WAREHOUSES
 
-* [Data Warehouses setup](README.md)
-  * [Big Query Data Warehouse setup](data-warehouses/code\_of\_conduct/index.md)
-  * [Snowflake Data Warehouse setup (Coming soon...)](data-warehouses/code\_of\_conduct/snowflake-data-warehouse-setup-coming-soon....md)
+* [Big Query](README.md)
 
 ## CONNECTORS
 
@@ -22,10 +20,10 @@
   * [Wonderpush](connectors/readme/index-6.md)
   * [RTB House](connectors/readme/index-7.md)
   * [Rakuten](connectors/readme/index-8.md)
-  * [Meta (Coming soon...)](connectors/readme/meta-coming-soon....md)
-  * [Google Ads (Coming soon...)](connectors/readme/google-ads-coming-soon....md)
-  * [Stackadapt (Coming soon...)](connectors/readme/stackadapt-coming-soon....md)
-  * [Microsoft Advertising (Coming soon...)](connectors/readme/microsoft-advertising-coming-soon....md)
+  * [Meta](connectors/readme/meta.md)
+  * [Google Ads](connectors/readme/google-ads.md)
+  * [Stackadapt](connectors/readme/stackadapt.md)
+  * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/index.md)
   * [Google Ads (Coming soon...)](connectors/reverse-connectors/google-ads-coming-soon....md)
