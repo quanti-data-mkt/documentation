@@ -8,11 +8,11 @@
 
 ## CONNECTORS
 
-* [ANALYTICS CONNECTORS](connectors/analytics-connectors/README.md)
+* [Analytics connectors](connectors/analytics-connectors/README.md)
   * [Google Analytics 4](connectors/analytics-connectors/index.md)
   * [Piano Analytics](connectors/analytics-connectors/index-1.md)
   * [Piwik Pro](connectors/analytics-connectors/index-2.md)
-* [MARKETING CONNECTORS](connectors/readme/README.md)
+* [Marketing connectors](connectors/readme/README.md)
   * [Affilae](connectors/readme/index.md)
   * [Awin](connectors/readme/index-1.md)
   * [Effinity](connectors/readme/index-2.md)
@@ -26,7 +26,7 @@
   * [Google Ads (Coming soon...)](connectors/readme/google-ads-coming-soon....md)
   * [Stackadapt (Coming soon...)](connectors/readme/stackadapt-coming-soon....md)
   * [Microsoft Advertising (Coming soon...)](connectors/readme/microsoft-advertising-coming-soon....md)
-* [REVERSE CONNECTORS](connectors/reverse-connectors/README.md)
+* [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/index.md)
   * [Google Ads (Coming soon...)](connectors/reverse-connectors/google-ads-coming-soon....md)
 
