@@ -1,5 +1,5 @@
 ---
-title: Piwikpro connector
+title: Piano connector
 lead: ''
 date: 2020-11-16T12:59:39.000Z
 lastmod: 2020-11-16T12:59:39.000Z
@@ -10,9 +10,7 @@ menu:
     parent: prologue
 weight: 110
 toc: true
-description: >-
-  Follow our setup guide to connect your Piwik Pro Analytics connector with
-  QUANTI:
+description: 'Follow our setup guide to connect Piano to QUANTI:'
 layout:
   title:
     visible: true
@@ -26,79 +24,74 @@ layout:
     visible: false
 ---
 
-# Piwik Pro - Analytics connector
+# Piano Analytics
 
 ***
 
-## <mark style="background-color:yellow;">Pre requisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
+## <mark style="background-color:yellow;">Pre requisites</mark>
 
-To connect Piwikpro to QUANTI, you need an [Piwikpro](https://piwik.pro/?pk\_campaign=ecommerce-data-connector\&pk\_source=quanti.io\&pk\_medium=partnership) account.
+To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
 ***
 
 ## <mark style="background-color:yellow;">Setup instructions</mark>
 
-### Find your domain
+### Find your credentials
 
-The expected information in this field is the domain displayed on your search bar when you are connected to your Piwik Account.
+1.  Go on your profile parameters to the top-right corner : See profile < API Key\
 
-### Find your API credentials
 
-1. Go on your profile parameters : **Menu** > **Profile** > **API Keys**
+    <figure><img src="../../content/en/docs/prologue/piano/piano1.png" alt=""><figcaption><p>Access path to API keys on Piano UI<br></p></figcaption></figure>
+2. Create a new API Key clicking on the blue button "Create a new API Key".
 
-<div align="center" data-full-width="false">
+<figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik1.png" alt="piwik-pro-analytics-credentials" width="241"><figcaption><p>screenshot from our piwik account admin</p></figcaption></figure>
+1. Give it a name and a description. Let the box ticked and save it.
 
-</div>
+<figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="" width="375"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
 
-2. To generate a new API Key, please click on the "Create a Key" button, which is highlighted in blue.
-3. Name your instance and carefully record the API credentials. These are essential for the configuration of QUANTI.
-
-<div data-full-width="false">
-
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik2.png" alt="" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure>
-
-</div>
+1. Make a note of the API credentials. You will need it to configure QUANTI:.
 
 ### Find your Website ID
 
-1. To locate your Website ID while using Piwik Pro Analytics, navigate to your Piwikpro account. Your Website ID is displayed in the URL during your session.
-2. This is the information contained between term '/analytics/' and '/dashboard/' in the url.&#x20;
+You can find your Website ID in the url when you are connected to your Piano account. This is the value of the parameter site=. https://explorer.atinternet-solutions.com/core/#/overview/overview/020202?period.shortcut=yesterday\&period.granularity=3\&site=**612329**\&graph.options.defaultlist=minmax\&graph.options.comparisonlist=nocomparison\&graph.options.eventloglist=eventlog\&isIgnoreNullProperties=false
 
-Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
-
-### Connector configuration
+### Quanti: configuration
 
 1. In the connector setup form, enter the name of your choice.
-2. Enter the domain you found in Step 1.
-3. Enter the credentials you find in Step 2.
-4. Enter you Website ID you find in Step 3. You can add several IDs separating by commas and clicking on "+".
+2. Enter your credentials you find on step 1
+3. Enter you Website ID you find in step 2. You can add several IDs separating by commas and clicking on "+".
+
+***
 
 ## <mark style="background-color:yellow;">Custom query</mark>
 
-This connector Piwikpro don't offer standard reports. You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwik Pro Analytics UI.
+This connector Piano don't offer standard reports. You have to create your own reports. To help you in this step, we recommand to use "Data Query" tool on Piano Analytics UI.
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik3.png" alt="" width="375"><figcaption><p>Piwik Pro > custom reports</p></figcaption></figure>
+1.  To the top-right corner, click on the 4 squares button < Data Query\
+    \
+    \
 
-* Create a new report.
-* Select your fields (Dimensions and metrics).
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik4.png" alt="" width="375"><figcaption><p>Piwik Pro > custom reports > add a new report</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/piano/piano4.png" alt="" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
 
-* Save your report.
-* In the filters bar, click on the button '...' (3 dots) and click on "See API call"
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik5.png" alt="" width="375"><figcaption></figcaption></figure>
+2.  Now, you are in the Data Query tool. The main idea is to create a new reporting like your next custom query wanted using the good fields in ligns and columns. You will have to recover the API keys for each field. Start by show the API Key by clicking on the option : Follow steps on the screenshot bellow.\
+    \
 
-* A pop-in opens : make a note of the fields's name. You will need it to configure your custom request on QUANTI:
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik6.png" alt="" width="375"><figcaption><p>API call detailed</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/piano/piano5.png" alt=""><figcaption><p>Find a field's key</p></figcaption></figure>
 
-* On QUANTI: UI, click on the button "Create".
-* Name your custom request : It will be use to name your table on your Warehouse.
-* Copy/ Paste your dimensions and metrics from your Piwikpro personalized report. You can add several fields separating by commas and clicking on "add +".
-* Repeat operation as many time it's necessary.
+
+3. Make a note of all API Keys of your fields as you compose your reporting. You will need it to configure QUANTI:. you will need two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.
+4. On QUANTI: UI, click on the button "Create".
+5. Name your custom request : It will be use to name your table on your Warehouse.
+6. Copy/ Paste your dimensions and metrics Keys from your Piano Data Query tool. You can add several fields separating by commas without spaces and clicking on "add +".
+7. Repeat operation as many time it's necessary.
+
+### Quanti: configuration
+
+Click Save & Test. Quanti: will take it from here and sync your Piano datas.
 
 ***
 
@@ -110,4 +103,8 @@ There is no pre-built queries for Piwik Pro at this moment
 
 ## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
 
-There is no ERD for Piwik Pro at this moment
+To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65d4c476ac844320ae967f23/65d4c4e2ac844320ae968975)
+
+***
+
+## <mark style="background-color:yellow;">Quota Policy</mark>

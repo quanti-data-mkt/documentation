@@ -9,9 +9,9 @@
 ## CONNECTORS
 
 * [ANALYTICS CONNECTORS](connectors/analytics-connectors/README.md)
-  * [Piano](connectors/analytics-connectors/index.md)
-  * [Piwik Pro](connectors/analytics-connectors/index-1.md)
-  * [Google Analytics 4 (Coming soon ...)](connectors/analytics-connectors/index-2.md)
+  * [Google Analytics 4](connectors/analytics-connectors/index.md)
+  * [Piano Analytics](connectors/analytics-connectors/index-1.md)
+  * [Piwik Pro](connectors/analytics-connectors/index-2.md)
 * [MARKETING CONNECTORS](connectors/readme/README.md)
   * [Affilae](connectors/readme/index.md)
   * [Awin](connectors/readme/index-1.md)
