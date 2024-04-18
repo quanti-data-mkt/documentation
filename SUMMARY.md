@@ -2,7 +2,7 @@
 
 ## DATA WAREHOUSES
 
-* [DATA WAREHOUSES SETUP](README.md)
+* [Data Warehouses setup](README.md)
   * [Big Query Data Warehouse setup](data-warehouses/code\_of\_conduct/index.md)
   * [Snowflake Data Warehouse setup (Coming soon...)](data-warehouses/code\_of\_conduct/snowflake-data-warehouse-setup-coming-soon....md)
 

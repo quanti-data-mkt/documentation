@@ -42,15 +42,21 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
 
     <figure><img src="../../content/en/docs/prologue/piano/piano1.png" alt=""><figcaption><p>Access path to API keys on Piano UI<br></p></figcaption></figure>
-2. Create a new API Key clicking on the blue button "Create a new API Key".
+2.  Create a new API Key clicking on the blue button "Create a new API Key".\
+    \
 
-<figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
 
-1. Give it a name and a description. Let the box ticked and save it.
+    <figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
 
-<figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="" width="375"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
 
-1. Make a note of the API credentials. You will need it to configure QUANTI:.
+3.  Give it a name and a description. Let the box ticked and save it.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="" width="563"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
+
+
+4. Make a note of the API credentials. You will need it to configure QUANTI:.
 
 ### Find your Website ID
 
