@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# Adobe Analytics - Reverse connector
+# Adobe Analytics
 
 ***
 
@@ -172,18 +172,12 @@ These steps show how to extract a classification table from your Data Warehouse:
 
 5. Click View details.
 
-{% hint style="info" %}
-Important concept:
+## <mark style="background-color:red;">Use Case</mark>
 
-Example Use Case: I want to know the expenses made on my advertising platforms for each of my traffic sources to my site. Therefore, I will need to identify the traffic sent to my site and match it with the metrics imported from the data source to have a clear dispatch of my campaign performances between my sources and campaigns.
+I want to know the expenses made on my advertising platforms for each of my traffic sources to my site. Therefore, I will need to identify the traffic sent to my site and match it with the metrics imported from the data source to have a clear dispatch of my campaign performances between my sources and campaigns.
 
-To align the metrics you import from external sources into Adobe Analytics (such as impressions, clicks, or spend from your advertising platforms) with internal Adobe Analytics metrics (for example: visits, conversions, or revenue), it is crucial to match them using their join key. The join key is represented as follows:
+To align the metrics you import from external sources into Adobe Analytics (such as impressions, clicks, or spend from your advertising platforms) with internal Adobe Analytics metrics (for example: visits, conversions, or revenue), it is crucial to match them.
 
-* Data Source: The information pushed in the Tracking Code field. In this use case example, this would ideally be the advertisement ID, which would be linked to its broadcast performance for a given date.
-*   Classification: Information Pushed into the Key Field
+<figure><img src="../../.gitbook/assets/Untitled-dbdiagram-io.png" alt=""><figcaption><p>Final full join result of importing datas on Adobe User interface</p></figcaption></figure>
 
-    In this use case scenario, the ideal information to be pushed into the key field would be the advertisement ID, which would be linked to the campaign nomenclature, i.e., the organization of the advertising accounts (Name and ID), consisting of various campaigns (Name and ID), which in turn are made up of ad groups (Name and ID), each comprising advertisements (Name and ID).
-* Paid Traffic Inbound: Information pushed into a URL parameter. In this use case example, ideally, it would be the ID of the advertisement that generated the visit to the site. After configuring the URL parameter used on the Adobe Analytics interface beforehand and matching it with "Tracking Code", the idea is then to use it on all your campaign links generating inbound traffic to your site so you can ultimately reconcile your spending with your traffic sources and/or campaigns.\
-
-{% endhint %}
-
+Quanti supports you in these transformation procedures with [pre-built transformations](../../transformations/pre-built-transformations/) that allow you to merge your data from different sources (campaign data and navigation data) using the concept of  [reconciliation](../../transformations/pre-built-transformations/le-principe-de-reconciliation.md) and the use of [Tracking Template.](../../transformations/pre-built-transformations/tracking-templates.md)
