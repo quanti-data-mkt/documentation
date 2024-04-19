@@ -60,7 +60,9 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
 ### Find your Website ID
 
-You can find your Website ID in the url when you are connected to your Piano account. This is the value of the parameter site=. https://explorer.atinternet-solutions.com/core/#/overview/overview/020202?period.shortcut=yesterday\&period.granularity=3\&site=**612329**\&graph.options.defaultlist=minmax\&graph.options.comparisonlist=nocomparison\&graph.options.eventloglist=eventlog\&isIgnoreNullProperties=false
+You can find your Website ID in the url when you are connected to your Piano account. This is the value of the parameter site=.
+
+`https://explorer.atinternet-solutions.com/core/#/overview/overview/020202?period.shortcut=yesterday&period.granularity=3&site=`**`612329`**`&graph.options.defaultlist=minmax&graph.options.comparisonlist=nocomparison&graph.options.eventloglist=eventlog&isIgnoreNullProperties=false`
 
 ### Connector configuration
 
@@ -74,26 +76,23 @@ You can find your Website ID in the url when you are connected to your Piano acc
 
 We recommend utilizing the "Data Query" tool available on the Piano Analytics interface to assist you in this process.
 
-1.  To the top-right corner, click on the 4 squares button < Data Query\
-    \
+1.  To the top-right corner, click on button (the icon with 4 squares) < Data Query\
     \
 
 
     <figure><img src="../../content/en/docs/prologue/piano/piano4.png" alt="" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
 
 
-2.  Now, you are in the Data Query tool. The main idea is to create a new reporting like your next custom query wanted using the good fields in ligns and columns. You will have to recover the API keys for each field. Start by show the API Key by clicking on the option : Follow steps on the screenshot bellow.\
-    \
+2.  The idea now is to create a report that mirrors the custom query you want to create. You will need to select all the fields and retrieve their API key for each. To access the API keys for each of your fields, follow the steps shown in the screenshot below.\
 
 
     <figure><img src="../../content/en/docs/prologue/piano/piano5.png" alt=""><figcaption><p>Find a field's key</p></figcaption></figure>
 
 
-3. Make a note of all API Keys of your fields as you compose your reporting. You will need it to configure QUANTI:. you will need two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.
-4. On QUANTI: UI, click on the button "Create".
+3. Make a note of all API Keys of your fields as you compose your reporting. You will need it to configure QUANTI: with two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.
+4. On QUANTI: user interface, click on the button "Create".
 5. Name your custom request : It will be use to name your table on your Warehouse.
 6. Copy/ Paste your dimensions and metrics Keys from your Piano Data Query tool. You can add several fields separating by commas without spaces and clicking on "add +".
-7. Repeat operation as many time it's necessary.
 
 ### Quanti: configuration
 
@@ -103,7 +102,7 @@ Click Save & Test. Quanti: will take it from here and sync your Piano datas.
 
 ## <mark style="background-color:yellow;">Pre-built Queries</mark>
 
-There is no pre-built queries for Piwik Pro at this moment
+There is no pre-built queries for Piano Analytics at this moment
 
 ***
 
