@@ -83,16 +83,21 @@ We recommend utilizing the "Data Query" tool available on the Piano Analytics in
     <figure><img src="../../content/en/docs/prologue/piano/piano4.png" alt="" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
 
 
-2.  The idea now is to create a report that mirrors the custom query you want to create. You will need to select all the fields and retrieve their API key for each. To access the API keys for each of your fields, follow the steps shown in the screenshot below.\
+2. In piano, create a report with the custom query you want to create. Select all the fields and retrieve their API key.
+
+<figure><img src="../../content/en/docs/prologue/piano/piano5.png" alt=""><figcaption><p>Data QUERY in piano analytics</p></figcaption></figure>
 
 
-    <figure><img src="../../content/en/docs/prologue/piano/piano5.png" alt=""><figcaption><p>Find a field's key</p></figcaption></figure>
 
+1. Make a note of all API Keys of your fields as you compose your reporting. You will need it to configure QUANTI: with two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.
+2. In QUANTI:, click on the button "Create".
+3. Name your custom request.&#x20;
 
-3. Make a note of all API Keys of your fields as you compose your reporting. You will need it to configure QUANTI: with two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.
-4. On QUANTI: user interface, click on the button "Create".
-5. Name your custom request : It will be use to name your table on your Warehouse.
-6. Copy/ Paste your dimensions and metrics Keys from your Piano Data Query tool. You can add several fields separating by commas without spaces and clicking on "add +".
+{% hint style="danger" %}
+The name chosen for your custom query is the one that name your table
+{% endhint %}
+
+1. Copy / Paste your dimensions and metrics keys from your **Piano Data Query** builder. You can add multiple fields separating by commas without spaces and without clicking on "add +".
 
 ### Quanti: configuration
 
@@ -112,4 +117,7 @@ To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65d4c476ac8
 
 ***
 
-## <mark style="background-color:yellow;">Quota Policy</mark>
+## <mark style="background-color:yellow;">Limits</mark>
+
+* Max 50 dimensions and metrics per Custom Query
+* Max 500K rows per days
