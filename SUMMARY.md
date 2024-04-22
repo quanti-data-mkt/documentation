@@ -31,8 +31,6 @@
 ## TAG TRACKER
 
 * [Tag setup](tag-tracker/index.md)
-* [Client-side tag installation](tag-tracker/client-side-tag-installation.md)
-* [Server-side tag installation](tag-tracker/server-side-tag-installation.md)
 * [Table raw\_hits](tag-tracker/table-raw\_hits.md)
 * [Table raw\_sessions](tag-tracker/table-raw\_sessions.md)
 * [Table raw\_conversions](tag-tracker/table-raw\_conversions.md)

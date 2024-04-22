@@ -24,24 +24,24 @@ layout:
     visible: false
 ---
 
-# QUANTI: Tag
+# Tag setup
 
 ***
 
 ## <mark style="background-color:purple;">Prerequisites</mark>
 
-To connect QUANTI: Tag, it's recommanded to have a dataLayer (Javascript object which permit using website navigation informations) and a Tag Manager (tool which permit to handle tags integating and triggering).
+To connect QUANTI: Tag, it's recommended to have a Tag Manager.
 
 ***
 
 ## <mark style="background-color:purple;">Setup instructions</mark>
 
-### Fill the form
-
-1. **Page Choose destination** : You have to choose a destination (Data Warehouse) where QUANTI: Tag will deposit datas.
-2. **Tag name** : Give it a distinctive name allowing its scope to be easily understood. Example pattern: \{{site\}} - \{{country\}}
-3. **Allowed domains** : This field permit to inform domains name on which QUANTI: Tag will allowed to run. Domains non-informed in this field will be automatically dismiss from the recovering. This text field is waiting a 'Full match" Regexp type. That means an exactly pattern correspondance is waited to be accepted. Regex's example : ._quanti.io._ permit to count enterring hits from Quanti.io domain but also from all of his sub-domains like payment.quanti.io for example.
-4. **Excluded referrers** : This field permit to inform domains name that you want exclude from your referrers on your raw\_sessions and raw\_conversions tables. A blacklisted referrer at the beginning of a session start (or a conversion) lead to recalculate s\_source and s\_medium values.
+1. **Data Warehouse** : Choose a Data Warehouse where QUANTI: Tag will load datas.
+2. **Tag name** : Give a distinctive name allowing its scope to be easily understood.\
+   Example pattern: \{{site\}} - \{{country\}}
+3. **Allowed domains :** Fully matched regex of included domains names.\
+   Regex's example : `(payment|www)\.quanti\.io` include hits from `www.quanti.io` domain and from sub-domain `payment.quanti.io`
+4. **Excluded referrers** : Fully matched regex of the domains whose traffic you don’t want to identify as referrals. A blacklisted referrer lead to recalculate s\_source and s\_medium values on your raw\_sessions and raw\_conversions tables.&#x20;
 
 ```bash
 s_referrer = {{blacklisted domain}}
@@ -49,15 +49,88 @@ s_referrer = {{blacklisted domain}}
 → s_medium = (none)
 ```
 
-It is in this field that you can inform your payment platforms, your different domains names (to exclude internal trafic), ...
+{% hint style="info" %}
+In this field, you can add your different domains (including payment platforms) to exclude internal trafic.
+{% endhint %}
 
-5. Settings : Enter the dataset name where you want to deposit datas. At the saving, the dataset and tables are automatically created.
+5. **Dataset name** : Name of the dataset where load datas.
 
 ### After saving
 
 * A account ID is created.
-* Javascript code is available in which you will also find your account ID.
+* Datasets and tables are automatically created.
+* Javascript code is now available.
 
 ## <mark style="background-color:purple;">Tag install</mark>
 
-Tag can be integrated client-side server and also server-side server.
+Quanti: Tag is an Event-based Tag.\
+It can be integrated on a [client-side](index.md#client-side-installation) server or a [server-side](index.md#server-side-installation) server.
+
+### Client-side installation
+
+#### JS Library
+
+The JS library has to triggered first before events.
+
+```javascript
+<script type="text/javascript">
+  window._quantiDataLayer = window._quantiDataLayer || [];
+  function _quantiTag() {
+    _quantiDataLayer.push(arguments);
+  }
+  _quantiTag('trackerUrl', "https://api.tag.apiquanti.net/v1/ap/");
+  _quantiTag('domain', ".domain.com");
+  _quantiTag('accountId', {{Quanti Account ID}});
+</script>
+<script async src="https://cdn.jsdelivr.net/gh/whatsonio/quantijs@v1.7.3/dist/src.min.js"></script>
+```
+
+`Domain` and `accountId` has to personalize. Refer to your "Generated JS Code" on your "Tag Details" screen.
+
+#### page\_view
+
+```javascript
+_quantiTag('hit', 'page_view', {
+    {{custom_object}}
+});
+```
+
+#### event
+
+```javascript
+_quantiTag('hit', 'event', {
+    {{custom_object}}
+});
+```
+
+#### Custom object fields reference
+
+Example of `{{custom_object}}` for a page\_view hit (Also valid for event hit).
+
+```javascript
+_quantiTag('hit', 'page_view', {
+    user_id : "",
+    conversion_id : "",
+    conversion_value : "",
+    conversion_type : "",
+    consent : "",
+    event : "",
+    event_category : "",
+    event_action : "",
+    event_label : "",
+    event_value : "",
+    product_ids : ""
+});
+```
+
+### Server-side installation
+
+`Coming soon...`
+
+#### Fields configuration
+
+| Fields                                                                                                                                                                                                                                   |   |   |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - | - |
+| datetime hit\_id visitor\_id session\_id device\_type url user\_id conversion\_id conversion\_value conversion\_type consent event event\_category event\_action event\_label event\_value account\_id referrer user\_agent product\_ids |   |   |
+|                                                                                                                                                                                                                                          |   |   |
+|                                                                                                                                                                                                                                          |   |   |
