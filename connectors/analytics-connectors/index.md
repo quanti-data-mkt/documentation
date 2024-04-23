@@ -1,7 +1,16 @@
 ---
-description: >-
-  Follow our setup guide to connect your Google Analytics 4 connector with
-  QUANTI:
+title: Piano connector
+lead: ''
+date: 2020-11-16T12:59:39.000Z
+lastmod: 2020-11-16T12:59:39.000Z
+draft: false
+images: []
+menu:
+  docs:
+    parent: prologue
+weight: 110
+toc: true
+description: 'Follow our setup guide to connect Piano to QUANTI:'
 layout:
   title:
     visible: true
@@ -15,50 +24,100 @@ layout:
     visible: false
 ---
 
-# Google Analytics 4
+# Piano Analytics
 
 ***
 
-## <mark style="background-color:yellow;">Pre requisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
+## <mark style="background-color:yellow;">Pre requisites</mark>
 
-To connect Google Analytics 4 to QUANTI, you need an [Google](https://www.google.com/account/about/) account and access to a [Google Analytics 4 account](https://analytics.google.com/analytics/web/).
+To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
 ***
 
 ## <mark style="background-color:yellow;">Setup instructions</mark>
 
-1. Choose the google acccount you want lo log in with
-2. Choose the accounts you want to sync
-3. build your custom query
+### Find your credentials
 
-***
+1.  Go on your profile parameters to the top-right corner : See profile < API Key\
 
-## <mark style="background-color:yellow;">Pre-built Queries</mark>
 
-* ACCOUNTS
-* CUSTOM\_DIMENSIONS
-* CONVERSION\_EVENTS
-* PROPERTIES
-* GOOGLE\_ADS\_LINKS
+    <figure><img src="../../content/en/docs/prologue/piano/piano1.png" alt=""><figcaption><p>Access path to API keys on Piano UI<br></p></figcaption></figure>
+2.  Create a new API Key clicking on the blue button "Create a new API Key".\
+    \
 
-***
 
-## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
+    <figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
 
-{% embed url="https://docs.google.com/presentation/d/1a2dypcQnmRIcx9DcIlaDek_UVriEYjOSDir5EaeXDNY/edit?usp=sharing" %}
-Google Analytics 4 pre-built queries
-{% endembed %}
+
+3.  Give it a name and a description. Let the box ticked and save it.\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="" width="563"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
+
+
+4. Make a note of the API credentials. You will need it to configure QUANTI:.
+
+### Find your Website ID
+
+You can find your Website ID in the url when you are connected to your Piano account. This is the value of the parameter site=.
+
+`https://explorer.atinternet-solutions.com/core/#/overview/overview/020202?period.shortcut=yesterday&period.granularity=3&site=`**`612329`**`&graph.options.defaultlist=minmax&graph.options.comparisonlist=nocomparison&graph.options.eventloglist=eventlog&isIgnoreNullProperties=false`
+
+### Connector configuration
+
+1. In the connector setup form, enter the name of your choice.
+2. Enter your credentials you find on step 1
+3. Enter you Website ID you find in step 2. You can add several IDs separating by commas and clicking on "+".
 
 ***
 
 ## <mark style="background-color:yellow;">Custom query</mark>
 
-To create custom Query, you need `dimensions` and `metrics`. To help you in this step, we recommend to use the [GA4 Dimensions & Metrics Explorer tool](https://ga-dev-tools.google/ga4/dimensions-metrics-explorer/).
+We recommend utilizing the "Data Query" tool available on the Piano Analytics interface to assist you in this process.
 
-<figure><img src="../../.gitbook/assets/GA4-Dimensions-Metrics-Explorer.png" alt="GA4 Dimensions &#x26; Metrics Explorer tool"><figcaption><p>GA4 Dimensions &#x26; Metrics Explorer tool</p></figcaption></figure>
+1.  To the top-right corner, click on button (the icon with 4 squares) < Data Query\
+    \
+
+
+    <figure><img src="../../content/en/docs/prologue/piano/piano4.png" alt="" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
+
+
+2. In piano, create a report with the custom query you want to create. Select all the fields and retrieve their API key.
+
+<figure><img src="../../content/en/docs/prologue/piano/piano5.png" alt=""><figcaption><p>Data QUERY in piano analytics</p></figcaption></figure>
+
+
+
+1. Make a note of all API Keys of your fields as you compose your reporting. You will need it to configure QUANTI: with two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.
+2. In QUANTI:, click on the button "Create".
+3. Name your custom request.&#x20;
+
+{% hint style="danger" %}
+The name chosen for your custom query is the one that name your table
+{% endhint %}
+
+1. Copy / Paste your dimensions and metrics keys from your **Piano Data Query** builder. You can add multiple fields separating by commas without spaces and without clicking on "add +".
+
+### Quanti: configuration
+
+Click Save & Test. Quanti: will take it from here and sync your Piano datas.
+
+***
+
+## <mark style="background-color:yellow;">Pre-built Queries</mark>
+
+There is no pre-built queries for Piano Analytics at this moment
+
+***
+
+## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
+
+To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65d4c476ac844320ae967f23/65d4c4e2ac844320ae968975)
 
 ***
 
 ## <mark style="background-color:yellow;">Limits</mark>
 
-The Google Analytics 4 API limits custom queries to 9 dimensions, so choose them carefully.
+* Max 50 dimensions and metrics per Custom Query
+* Max 500K rows per days

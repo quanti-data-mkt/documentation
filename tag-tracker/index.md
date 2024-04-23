@@ -61,6 +61,8 @@ In this field, you can add your different domains (including payment platforms) 
 * Datasets and tables are automatically created.
 * Javascript code is now available.
 
+***
+
 ## <mark style="background-color:purple;">Client-side Tag install</mark>
 
 Quanti: Tag is an Event-based Tag.\
@@ -120,11 +122,15 @@ _quantiTag('hit', 'page_view', {
 });
 ```
 
+***
+
 ## <mark style="background-color:purple;">Server-side Tag install</mark>
 
 `Coming soon...`
 
-## Fields configuration
+***
 
-<table><thead><tr><th width="187">Name</th><th width="109">Type</th><th width="119">Required</th><th width="208">Exemple Value</th><th>Description</th></tr></thead><tbody><tr><td>user_id</td><td>STRING</td><td>No</td><td>example@yopmail.com</td><td>The IDD used to recognize a logged-in user</td></tr><tr><td>conversion_id</td><td>STRING</td><td>No</td><td>ABCD1234</td><td>The unique ID of a transaction</td></tr><tr><td>conversion_value</td><td>STRING</td><td>No</td><td>123.45</td><td>The monetary value of the transaction</td></tr><tr><td>conversion_type</td><td>STRING</td><td>No</td><td>purchase</td><td>The conversion type</td></tr><tr><td>consent</td><td>STRING</td><td>No</td><td>analytics:yes;marketing:yes;retargeting:no</td><td>User consent collected</td></tr><tr><td>event_category</td><td>STRING</td><td>No</td><td></td><td></td></tr><tr><td>event_action</td><td>STRING</td><td>No</td><td></td><td></td></tr><tr><td>event_label</td><td>STRING</td><td>No</td><td></td><td></td></tr><tr><td>event_value</td><td>STRING</td><td>No</td><td></td><td></td></tr><tr><td>product_ids</td><td>STRING</td><td>No</td><td></td><td></td></tr><tr><td>datetime</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>visitor_id</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>session_id</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>device_type</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>url</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>referrer</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>user_agent</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr></tbody></table>
+## <mark style="background-color:purple;">Fields configuration</mark>
+
+<table><thead><tr><th width="187">Name</th><th width="109">Type</th><th width="119">Required</th><th width="208">Exemple Value</th><th>Description</th></tr></thead><tbody><tr><td>user_id</td><td>STRING</td><td>No</td><td>example@yopmail.com</td><td>The IDD used to recognize a logged-in user</td></tr><tr><td>conversion_id</td><td>STRING</td><td>No</td><td>ABCD1234</td><td>The unique ID of a transaction</td></tr><tr><td>conversion_value</td><td>STRING</td><td>No</td><td>123.45</td><td>The monetary value of the transaction</td></tr><tr><td>conversion_type</td><td>STRING</td><td>No</td><td>purchase</td><td>The conversion type</td></tr><tr><td>consent</td><td>STRING</td><td>No</td><td>analytics:yes;marketing:yes;retargeting:no</td><td>User consent collected</td></tr><tr><td>event_category</td><td>STRING</td><td>No</td><td>video</td><td>Typically the object that was interacted with</td></tr><tr><td>event_action</td><td>STRING</td><td>No</td><td>play</td><td>The type of interaction</td></tr><tr><td>event_label</td><td>STRING</td><td>No</td><td></td><td>Usefull to categorize </td></tr><tr><td>event_value</td><td>STRING</td><td>No</td><td></td><td></td></tr><tr><td>product_ids</td><td>STRING</td><td>No</td><td></td><td></td></tr><tr><td>datetime</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>visitor_id</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>session_id</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>device_type</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>url</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>referrer</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr><tr><td>user_agent</td><td>STRING</td><td>Overridable</td><td></td><td></td></tr></tbody></table>
 
