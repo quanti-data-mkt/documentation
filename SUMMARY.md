@@ -2,7 +2,7 @@
 
 ## DATA WAREHOUSES
 
-* [Big Query](README.md)
+* [BigQuery](README.md)
 
 ## CONNECTORS
 
