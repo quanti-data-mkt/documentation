@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# Effinity - Marketing connector
+# Effinity
 
 ***
 
@@ -48,6 +48,12 @@ To connect Effinity to QUANTI, you need an [Effinity](https://www.effinity.fr/) 
 1. In the connector setup form, enter the name of your choice.
 2. Enter the API key you found in Step 1.
 3. Click Save & Test. Quanti: will take it from here and sync your Effinity data.
+
+***
+
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+* ads\_import
 
 ***
 

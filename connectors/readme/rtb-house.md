@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# RTB House - Marketing connector
+# RTB House
 
 ***
 
@@ -58,6 +58,13 @@ To connect RTB House to QUANTI, you need an [RTB House](https://www.rtbhouse.com
 2. Enter your Account credentials you found in Step 1.
 3. Enter your advertiser ID you found in Step 2.
 4. Click Save & Test. Quanti: will take it from here and sync your RTB House data.
+
+***
+
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+* rtb\_campaigns\_import
+* rtb\_stats\_import
 
 ***
 

@@ -43,7 +43,7 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account wit
     \
 
 
-    <figure><img src="../../content/en/docs/prologue/awin/awin1.png" alt="" width="327"><figcaption><p>Access path to API key on Awin UI</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/awin/awin1.png" alt="Access path to API key on Awin interface" width="327"><figcaption><p>Access path to API key on Awin interface</p></figcaption></figure>
 
 
 3. In the **Password** field, enter your login password.
@@ -63,7 +63,7 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account wit
     \
 
 
-    <figure><img src="../../content/en/docs/prologue/awin/awin3.png" alt=""><figcaption><p>Access path to find Advertiser ID</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/awin/awin3.png" alt="Access path to find Advertiser ID"><figcaption><p>Access path to find Advertiser ID</p></figcaption></figure>
 
 
 3. Make sure to keep the **Advertiser ID** safe, as it’s required to set up your connector in QUANTI:.
@@ -77,14 +77,17 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account wit
 
 ***
 
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+* awin\_stats\_by\_creative\_import
+* awin\_stats\_by\_publisher\_import
+* awin\_transaction\_import
+
+***
+
 ## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
 {% embed url="https://docs.google.com/presentation/d/1cQzDPSGAxXy6kYsxzaV1z61XGs800LtAvjPZJbo0Cxg/edit?usp=sharing" %}
 Awin tables diagram
 {% endembed %}
 
-## <mark style="background-color:blue;">Custom query</mark>
-
-
-
-## <mark style="background-color:blue;">Limits</mark>

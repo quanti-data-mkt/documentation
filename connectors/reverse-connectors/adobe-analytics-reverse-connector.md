@@ -10,7 +10,7 @@ menu:
     parent: prologue
 weight: 110
 toc: true
-description: Follow our setup guide to interger the reverse-connector Adobe Analytics
+description: Follow our setup guide to integer the reverse-connector Adobe Analytics
 layout:
   title:
     visible: true
@@ -171,6 +171,8 @@ These steps show how to extract a classification table from your Data Warehouse:
 * You also have to fill each text input using classification names created earlier in Adobe Analytics UI in step 2 above.
 
 5. Click View details.
+
+***
 
 ## <mark style="background-color:red;">Use Case</mark>
 

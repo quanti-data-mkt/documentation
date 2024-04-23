@@ -1,4 +1,5 @@
 ---
+description: 'Follow our setup guide to connect Google Ads to QUANTI:'
 layout:
   title:
     visible: true
@@ -12,5 +13,40 @@ layout:
     visible: false
 ---
 
-# Google Ads - Marketing connector (Coming soon...)
+# Google Ads
 
+***
+
+## <mark style="background-color:blue;">Prerequisites</mark>
+
+text
+
+***
+
+## <mark style="background-color:blue;">Setup instructions</mark>
+
+text
+
+***
+
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+text
+
+***
+
+## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
+
+Text
+
+***
+
+## <mark style="background-color:blue;">Custom query</mark> if needed
+
+Text (if needed)
+
+***
+
+## <mark style="background-color:blue;">Limits</mark> if needed
+
+Text (if needed)

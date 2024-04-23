@@ -19,7 +19,7 @@ layout:
 
 ***
 
-## <mark style="background-color:yellow;">Pre requisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
+## <mark style="background-color:yellow;">Prerequisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
 
 To connect Piwik Pro to QUANTI:, you need an [Piwik Pro](https://piwik.pro/?pk\_campaign=ecommerce-data-connector\&pk\_source=quanti.io\&pk\_medium=partnership) account.
 
@@ -37,7 +37,7 @@ The expected information in this field is the domain displayed on your search ba
 
 <div align="center" data-full-width="false">
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik1.png" alt="piwik-pro-analytics-credentials" width="241"><figcaption><p>screenshot from our piwik account admin</p></figcaption></figure>
+<figure><img src="../../content/en/docs/prologue/piwikpro/piwik1.png" alt="Piwik account admin access" width="241"><figcaption><p>Piwik account admin access</p></figcaption></figure>
 
 </div>
 
@@ -46,7 +46,7 @@ The expected information in this field is the domain displayed on your search ba
 
 <div data-full-width="false">
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik2.png" alt="" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure>
+<figure><img src="../../content/en/docs/prologue/piwikpro/piwik2.png" alt="API credentials from Piwik Pro analytics admin" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure>
 
 </div>
 
@@ -64,16 +64,30 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 3. Enter the credentials you find in Step 2.
 4. Enter you Website ID you find in Step 3. You can add several IDs separating by commas and clicking on "+".
 
+***
+
+## <mark style="background-color:yellow;">Pre-built Tables</mark>
+
+There is no pre-built queries for Piwik Pro at this moment.
+
+***
+
+## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
+
+To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65d4c476ac844320ae967f23/65d4c4e2ac844320ae968975)
+
+***
+
 ## <mark style="background-color:yellow;">Custom query</mark>
 
 You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwik Pro Analytics interface.
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik3.png" alt="" width="375"><figcaption><p>Piwik Pro > custom reports</p></figcaption></figure>
+<figure><img src="../../content/en/docs/prologue/piwikpro/piwik3.png" alt="Piwik Pro > custom reports" width="375"><figcaption><p>Piwik Pro > custom reports</p></figcaption></figure>
 
 * Create a new report.
 * Select your fields (Dimensions and metrics).
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik4.png" alt="" width="375"><figcaption><p>Piwik Pro > custom reports > add a new report</p></figcaption></figure>
+<figure><img src="../../content/en/docs/prologue/piwikpro/piwik4.png" alt="Piwik Pro > custom reports > add a new report" width="375"><figcaption><p>Piwik Pro > custom reports > add a new report</p></figcaption></figure>
 
 * Save your report.
 * In the filters bar, click on the button '...' (3 dots) and click on "See API call"
@@ -88,19 +102,3 @@ You have to create your own reports. To help you in this step, we recommand to u
 * Name your custom request : It will be use to name your table on your Warehouse.
 * Copy/ Paste your dimensions and metrics from your Piwikpro personalized report. You can add several fields separating by commas and clicking on "add +".
 * Repeat operation as many time it's necessary.
-
-***
-
-## <mark style="background-color:yellow;">Pre-built Queries</mark>
-
-There is no pre-built queries for Piwik Pro at this moment
-
-***
-
-## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
-
-There is no ERD for Piwik Pro at this moment
-
-***
-
-## <mark style="background-color:yellow;">Quota Policy</mark>

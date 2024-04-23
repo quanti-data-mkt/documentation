@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# Rakuten - Marketing connector
+# Rakuten
 
 ***
 
@@ -43,14 +43,14 @@ To connect Rakuten to QUANTI, you need an [Rakuten Advertising](https://rakutena
     \
 
 
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten1.png" alt=""><figcaption><p>Access path to custom report tool</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten1.png" alt="Access path to custom report tool"><figcaption><p>Access path to custom report tool</p></figcaption></figure>
 
 
 3.  Click on the button "+ Build a new report"\
     \
 
 
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten2.png" alt="" width="563"><figcaption><p>Build a new report</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten2.png" alt="Build a new report" width="563"><figcaption><p>Build a new report</p></figcaption></figure>
 
 
 4.  Click on button "Add and Remove columns" and add the only and entire list below :\
@@ -78,14 +78,14 @@ To connect Rakuten to QUANTI, you need an [Rakuten Advertising](https://rakutena
     * Link Name\
 
 
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten3.png" alt="" width="306"><figcaption><p>"Add and Remove Columns" pop-in</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten3.png" alt="&#x22;Add and Remove Columns&#x22; pop-in" width="306"><figcaption><p>"Add and Remove Columns" pop-in</p></figcaption></figure>
 
 
 5.  Near the blue button "View Report", click on the arrow and "Get API" and copy the url generated.\
     \
 
 
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten4.png" alt=""><figcaption><p>Access path to the generated link</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten4.png" alt="Access path to the generated link"><figcaption><p>Access path to the generated link</p></figcaption></figure>
 
 
 
@@ -110,6 +110,11 @@ date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API
 4. Click Save & Test. Quanti: will take it from here and sync your Rakuten data.
 
 ***
+
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+* ads\_import
+* editors\_import
 
 ## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 

@@ -30,7 +30,7 @@ layout:
 
 ***
 
-## <mark style="background-color:yellow;">Pre requisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
+## <mark style="background-color:yellow;">Prerequisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
 
 To connect Google Analytics 4 to QUANTI, you need an [Google](https://www.google.com/account/about/) account and access to a [Google Analytics 4 account](https://analytics.google.com/analytics/web/).
 

@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# Stylight - Marketing connector
+# Stylight
 
 ***
 
@@ -45,6 +45,12 @@ To connect Stylight to QUANTI, you need a [Stylight](https://partner.stylight.co
 1. In the connector setup form, enter the name of your choice.
 2. Enter your Account credentials you found in Step 1.
 3. Click Save & Test. Quanti: will take it from here and sync your Stylight data.
+
+***
+
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+* ads\_import
 
 ***
 

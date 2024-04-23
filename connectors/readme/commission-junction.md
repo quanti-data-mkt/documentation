@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# Commission Junction  - Marketing connector
+# Commission Junction&#x20;
 
 ***
 
@@ -43,7 +43,7 @@ To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/) account.
     \
 
 
-    <figure><img src="../../content/en/docs/prologue/cj/cj1.png" alt="" width="302"><figcaption><p>Access path to find advertiser ID</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/cj/cj1.png" alt="Access path to find advertiser ID" width="302"><figcaption><p>Access path to find advertiser ID</p></figcaption></figure>
 
 
 3. Make a note of the advertiser ID. You will need it to configure QUANTI:.
@@ -60,6 +60,12 @@ To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/) account.
 2. Enter the advertiser ID you found in Step 1.
 3. Enter the token you found in Step 2.
 4. Click Save & Test. Quanti: will take it from here and sync your CJ data.
+
+***
+
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+* ads\_import
 
 ***
 

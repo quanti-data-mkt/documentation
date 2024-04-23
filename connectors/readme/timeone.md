@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# TimeOne - Marketing connector
+# TimeOne
 
 ***
 
@@ -43,7 +43,7 @@ To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/) a
     \
 
 
-    <figure><img src="../../content/en/docs/prologue/timeone/timeone1.png" alt=""><figcaption><p>Find advertiser ID</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/timeone/timeone1.png" alt="Advertiser ID"><figcaption><p>Advertiser ID</p></figcaption></figure>
 
 
 3. Your uniqId is given by your Account Manager. please, referre to him.
@@ -53,6 +53,13 @@ To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/) a
 1. In the connector setup form, enter the name of your choice.
 2. Enter your credentials found in Step 1.
 3. Click Save & Test. Quanti: will take it from here and sync your TimeOne data.
+
+***
+
+## <mark style="background-color:blue;">Pre-built Tables</mark>
+
+* actions\_import
+* stats\_import
 
 ***
 
