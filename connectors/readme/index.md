@@ -10,7 +10,7 @@ menu:
     parent: prologue
 weight: 110
 toc: true
-description: 'Follow our setup guide to connect Affilae to QUANTI:'
+description: Follow our setup guide to connect your Affilae connector
 layout:
   title:
     visible: true
@@ -24,17 +24,13 @@ layout:
     visible: false
 ---
 
-# Affilae- Marketing connector
-
-_Last update : 2024-02-16_
-
-Follow our setup guide to connect Affilae to QUANTI:
+# Affilae
 
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Affilae to QUANTI, you need an [Affilae](https://affilae.com/fr/logiciel-affiliation/) account.
+To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logiciel-affiliation/?utm\_source=quanti.io\&utm\_medium=partnership) account.
 
 ***
 
@@ -43,24 +39,26 @@ To connect Affilae to QUANTI, you need an [Affilae](https://affilae.com/fr/logic
 ### Find API key
 
 1. Log in to your [Affilae account](https://app.affilae.com/fr/login).
-2.  In the bottom-left corner, click My account, then select API keys.\
+2.  In the bottom-left corner, click on "**My account**", then select "**API keys**".\
     \
 
 
     <figure><img src="../../content/en/docs/prologue/affilae/affilae1.png" alt="" width="325"><figcaption><p>Access path to API key on Affilae UI</p></figcaption></figure>
 
 
-3. You will can find your API key but it may you do not have the permission level good enough. In this case, you have to make a request to your account manager.
-4. Make a note of the API key. You will need it to configure QUANTI:.
+3. You'll find in this section your API key. If the permission level is not appropriated, please make a request to your account manager.
+4. keep your API key to finish your configuration in QUANTI:.
 
-### Finish Quanti: configuration
+### Connector configuration
 
-1. In the connector setup form, enter the name of your choice.
-2. Enter the API key you found in Step 1.
-3. Click Save & Test. Quanti: will take it from here and sync your Affilae data.
+1. In the connector setup form, enter the **name** of your choice.
+2. Enter the **API key** found in Step 1.
+3. Click on "**Save & Test**"
 
 ***
 
 ## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
-To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65115bb9ffbf5169f06f0c24/65cccf1aac844320ae230e2e)
+{% embed url="https://docs.google.com/presentation/d/1QtqL2SrIhkf9uObcG3SdIef76dAFWSxXiX-pm82lsgY/edit?usp=sharing" %}
+Affilae Tables ERD
+{% endembed %}

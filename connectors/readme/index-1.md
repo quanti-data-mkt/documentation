@@ -24,7 +24,7 @@ layout:
     visible: false
 ---
 
-# Awin - Marketing connector
+# Awin
 
 ***
 
@@ -38,7 +38,7 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account wit
 
 ### Find API token
 
-1. Log in to your [Awin account](https://ui.awin.com/idp/en/awin/login).
+1. Log in to your [Awin account](https://www.awin.com/fr?utm\_source=quanti.io\&utm\_medium=partnership\&utm\_campaign=awin\_connector).
 2.  In the top-right corner, click your profile name, then select API Credentials.\
     \
 
@@ -46,15 +46,15 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account wit
     <figure><img src="../../content/en/docs/prologue/awin/awin1.png" alt="" width="327"><figcaption><p>Access path to API key on Awin UI</p></figcaption></figure>
 
 
-3. In the Password field, enter your login password.
-4.  Click Show my API token.\
+3. In the **Password** field, enter your login password.
+4.  Click on  "**Show my API token**"\
     \
 
 
     <figure><img src="../../content/en/docs/prologue/awin/awin2.png" alt=""><figcaption></figcaption></figure>
 
 
-5. Make a note of the API token. You will need it to configure QUANTI:.
+5. Keep and save your API token. It'll be needed to configure your connector in QUANTI:
 
 ### Find Advertiser ID
 
@@ -66,7 +66,7 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account wit
     <figure><img src="../../content/en/docs/prologue/awin/awin3.png" alt=""><figcaption><p>Access path to find Advertiser ID</p></figcaption></figure>
 
 
-3. Make a note of the Advertiser ID. You will need it to configure QUANTI:.
+3. Make sure to keep the **Advertiser ID** safe, as it’s required to set up your connector in QUANTI:.
 
 ### Finish Quanti: configuration
 
@@ -79,4 +79,12 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account wit
 
 ## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
-To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/6511611dffbf5169f06f6e48/65ce1602ac844320ae38c247)
+{% embed url="https://docs.google.com/presentation/d/1cQzDPSGAxXy6kYsxzaV1z61XGs800LtAvjPZJbo0Cxg/edit?usp=sharing" %}
+Awin tables diagram
+{% endembed %}
+
+## <mark style="background-color:blue;">Custom query</mark>
+
+
+
+## <mark style="background-color:blue;">Limits</mark>
