@@ -31,12 +31,6 @@ To connect Google Analytics 4 to QUANTI, you need an [Google](https://www.google
 2. Choose the accounts you want to sync
 3. build your custom query
 
-## <mark style="background-color:yellow;">Custom query</mark>
-
-To create custom Query, you need `dimensions` and `metrics`. To help you in this step, we recommend to use the [GA4 Dimensions & Metrics Explorer tool](https://ga-dev-tools.google/ga4/dimensions-metrics-explorer/).
-
-<figure><img src="../../.gitbook/assets/GA4-Dimensions-Metrics-Explorer.png" alt=""><figcaption></figcaption></figure>
-
 ***
 
 ## <mark style="background-color:yellow;">Pre-built Queries</mark>
@@ -57,8 +51,14 @@ Google Analytics 4 pre-built queries
 
 ***
 
-## <mark style="background-color:yellow;">Quota Policy</mark>
+## <mark style="background-color:yellow;">Custom query</mark>
 
-{% hint style="info" %}
+To create custom Query, you need `dimensions` and `metrics`. To help you in this step, we recommend to use the [GA4 Dimensions & Metrics Explorer tool](https://ga-dev-tools.google/ga4/dimensions-metrics-explorer/).
+
+<figure><img src="../../.gitbook/assets/GA4-Dimensions-Metrics-Explorer.png" alt="GA4 Dimensions &#x26; Metrics Explorer tool"><figcaption><p>GA4 Dimensions &#x26; Metrics Explorer tool</p></figcaption></figure>
+
+***
+
+## <mark style="background-color:yellow;">Limits</mark>
+
 The Google Analytics 4 API limits custom queries to 9 dimensions, so choose them carefully.
-{% endhint %}
