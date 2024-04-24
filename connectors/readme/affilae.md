@@ -66,6 +66,6 @@ To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logi
 
 ## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
-{% embed url="https://docs.google.com/presentation/d/1QtqL2SrIhkf9uObcG3SdIef76dAFWSxXiX-pm82lsgY/edit?usp=sharing" %}
+{% embed url="https://docs.google.com/presentation/d/1QtqL2SrIhkf9uObcG3SdIef76dAFWSxXiX-pm82lsgY/edit?usp=sharing" fullWidth="false" %}
 Affilae Tables ERD
 {% endembed %}
