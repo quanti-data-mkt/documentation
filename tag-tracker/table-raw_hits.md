@@ -33,7 +33,7 @@ Tag Tracker Tables Diagram
 
 ***
 
-## <mark style="background-color:purple;">Fields presentation</mark>
+## <mark style="background-color:purple;">Fields definition</mark>
 
 ### datetime
 
@@ -56,7 +56,7 @@ Unique visitor identifier. Automatically created by Quanti: from the value of a 
 Unique user identifier which is an individual who has logged into their personal account. This identifier has to be specify in the tag and typically based on a hashed version of the user's email address (using SHA256, for example).
 
 {% hint style="info" %}
-A user (identified by a user\_id) can have several devices, and therefore several browsers (identified by several Visitors\_id). They can have multiple sessions (identified by multiple session\_ids) during which they navigate from page to page and record multiple events, event and page\_view (identified by multiple hit\_id).
+A user (identified by a user\_id) can have several devices, and therefore several browsers (identified by several visitors\_id). They can have multiple sessions (identified by multiple session\_id) during which they navigate from page to page and record multiple events, event and page\_view (identified by multiple hit\_id).
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/userr.jpg" alt="Explanation of the Different Types of Identifiers"><figcaption><p>Explanation of the Different Types of Identifiers</p></figcaption></figure>
