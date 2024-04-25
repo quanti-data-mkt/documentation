@@ -21,7 +21,7 @@ layout:
 
 ## <mark style="background-color:purple;">Syncing</mark>
 
-Hits appear in the raw\_hits table once the session to which they belong has expired, which occurs after a 30-minute period of inactivity following the last hit.
+Hits appear in the `raw_hits` table once the session to which they belong has expired, which occurs after a 30-minute period of inactivity following the last hit.
 
 ***
 
@@ -89,18 +89,34 @@ The value of consent expressed by the user upon arrival on the site and retained
 
 The type of event. This can be an 'event' or a 'pageView' depending on what was specified in the tag when the hit was recorded.
 
-event\_category
+### event\_category
 
-event\_action
+A parameter useful to categorize events. Typically the object that was interacted with. It has to be specify in the tag.
 
-event\_label
+### event\_action
 
-event\_value
+A parameter useful to categorize events. Typically the type of interaction. It has to be specify in the tag.
 
-account\_id
+### event\_label
 
-referrer
+A parameter useful to categorize events. Typically label given to the event. It has to be specify in the tag.
 
-user\_agent
+### event\_value
 
-product\_ids
+Numeric value associated with the event. It has to be specify in the tag.
+
+### account\_id
+
+Unique account identifier given by Quanti: during tag creation. It can't be editable.
+
+### referrer
+
+The referrer is the visitor's originating page. In other words, it is the page which precedes the tag call. Automatically recovered by the tag during the hit but overridable if is needed like in a server-side setup.
+
+### user\_agent
+
+Technical informations about your browser. Automatically recovered by the tag during the hit but overridable if is needed like in a server-side setup.
+
+### product\_ids
+
+A parameter useful to recover informations about products. This can take multiple forms : JSON table, a JSON object, a caracter string, ... It's up to you to decide, the most desirable form. It has to be specify in the tag.
