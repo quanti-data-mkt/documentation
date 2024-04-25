@@ -34,6 +34,7 @@
 * [Table raw\_hits](tag-tracker/table-raw\_hits.md)
 * [Table raw\_sessions](tag-tracker/table-raw\_sessions.md)
 * [Table raw\_conversions](tag-tracker/table-raw\_conversions.md)
+* [Attribution calculated rules](tag-tracker/attribution-calculated-rules.md)
 * [FAQ](tag-tracker/faq.md)
 
 ## TRANSFORMATIONS
