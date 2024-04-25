@@ -15,4 +15,4 @@ layout:
 
 # Attribution calculated rules
 
-<figure><img src="../.gitbook/assets/Attribution rules.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Attribution rules.jpg" alt="quanti attribution rules"><figcaption><p>Attribution rules</p></figcaption></figure>
