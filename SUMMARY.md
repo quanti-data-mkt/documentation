@@ -31,11 +31,11 @@
 ## TAG TRACKER
 
 * [Tag setup](tag-tracker/index.md)
-* [Table raw\_hits](tag-tracker/table-raw\_hits.md)
-* [Table raw\_sessions](tag-tracker/table-raw\_sessions.md)
-* [Table raw\_conversions](tag-tracker/table-raw\_conversions.md)
-* [Attribution calculated rules](tag-tracker/attribution-calculated-rules.md)
-* [FAQ](tag-tracker/faq.md)
+* [Tag data model](tag-tracker/tag-data-model/README.md)
+  * [raw\_hits](tag-tracker/tag-data-model/raw\_hits.md)
+  * [raw\_sessions](tag-tracker/tag-data-model/raw\_sessions.md)
+  * [advanced\_attribution](tag-tracker/tag-data-model/advanced\_attribution.md)
+* [Rules for calculated attribution](tag-tracker/rules-for-calculated-attribution.md)
 
 ## TRANSFORMATIONS
 

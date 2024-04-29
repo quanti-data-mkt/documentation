@@ -15,7 +15,7 @@ layout:
     visible: false
 ---
 
-# Table raw\_sessions
+# raw\_sessions
 
 ***
 
@@ -56,59 +56,59 @@ The **user\_id** of a session is calculated from `raw_hits` table. Quanti: takes
 A user (identified by a **user\_id**) can make sessions (identified by multiple **session\_id**) on multiple devices, and as a result, several browsers (identified by different **visitors\_id**). For each user, pages and events are recorded  (identified by different **hit\_id**).
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/userr.jpg" alt="Explanation of the Different Types of Identifiers"><figcaption><p>Explanation of the Different Types of Identifiers</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/userr.jpg" alt="Explanation of the Different Types of Identifiers"><figcaption><p>Explanation of the Different Types of Identifiers</p></figcaption></figure>
 
 ### device\_type
 
-The type of device automatically recovered by the tag. 3 possible choices: desktop, mobile, or tablet. The device\_type of a session is calculated from `raw_hits` table: Quanti: takes the [device\_type field](table-raw\_hits.md#device\_type)'s value from session's first hit.
+The type of the device used to navigate. 3 possible choices: **desktop**, **mobile**, or **tablet**. The device\_type of a session is calculated from `raw_hits` table. for each session, the value is kept from the **last** hit.
 
 ### landing\_url
 
-As its name suggest, it is the landing page of the session. The landing\_url of a session is calculated from `raw_hits` table: Quanti: takes the [url field](table-raw\_hits.md#url)'s value from session's first hit.
+**First** page of a session. The landing\_url of a session is calculated from `raw_hits` table.
 
 ### exit\_url
 
-As its name suggest, it is the exit page of the session. The exit\_url of a session is calculated from `raw_hits` table: Quanti: takes the [url field](table-raw\_hits.md#url)'s value from session's last hit.
+Last page of a session. The exit\_url of a session is calculated from `raw_hits` table.&#x20;
 
 ### s\_source
 
-The s\_source field is the traffic source of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](table-raw\_hits.md#url) and [referrer field](table-raw\_hits.md#referrer) of session's first hit.
+The s\_source field is the traffic source of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](raw\_hits.md#url) and the [referrer field](raw\_hits.md#referrer) of session's **first** hit.
 
 {% hint style="info" %}
-To learn more about **Campaign parameters calculated rules**, read this [article](attribution-calculated-rules.md).
+To learn more about **Campaign parameters calculated rules**, read this [attribution calculated rules](../rules-for-calculated-attribution.md).
 {% endhint %}
 
 ### s\_medium
 
-The s\_medium field is the traffic support of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](table-raw\_hits.md#url) and [referrer field](table-raw\_hits.md#referrer) of session's first hit.
+The s\_medium field is the traffic medium of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](raw\_hits.md#url) and [referrer field](raw\_hits.md#referrer) of session's first hit.
 
 {% hint style="info" %}
-To learn more about **Campaign parameters calculated rules**, read this [article](attribution-calculated-rules.md).
+To learn more about **Campaign parameters calculated rules**, read this [article](../rules-for-calculated-attribution.md).
 {% endhint %}
 
 ### s\_campaign
 
-The s\_campaign of a session is calculated from `raw_hits` table. Quanti: extract value of utm\_campaign parameter of session's first hit.
+The s\_campaign of a session is calculated from `raw_hits` table. Quanti: extract value of **utm\_campaign** parameter of session's first hit.
 
 ### s\_content
 
-The s\_content of a session is calculated from `raw_hits` table. Quanti: extract value of utm\_content parameter of session's first hit.
+The s\_content of a session is calculated from `raw_hits` table. Quanti: extract value of **utm\_content** parameter of session's first hit.
 
 ### s\_keyword
 
-The s\_keyword of a session is calculated from `raw_hits` table. Quanti: extract value of utm\_term parameter of session's first hit.
+The s\_keyword of a session is calculated from `raw_hits` table. Quanti: extract value of **utm\_term** parameter of session's first hit.
 
 ### s\_utm\_id
 
-The s\_keyword of a session is calculated from `raw_hits` table. Quanti: extract value of utm\_id parameter of session's first hit.
+The s\_keyword of a session is calculated from `raw_hits` table. Quanti: extract value of **utm\_id** parameter of session's first hit.
 
 ### s\_consent
 
-The value of consent expressed by the user upon arrival on the site and retained throughout their navigation. The s\_consent of a session is calculated from `raw_hits` table. Quanti: takes the last value known from session's hits.
+The value of consent given by the user upon arrival through your consent management platform. The s\_consent of a session is calculated from `raw_hits` table. Quanti: keeps the last value known from session's hits.
 
 ### s\_referrer
 
-The referrer is the visitor's originating page. In other words, it is the page which precedes the session opening. The s\_referrer of a session is calculated from `raw_hits` table: Quanti: takes the [referrer](table-raw\_hits.md#referrer)'s value from session's first hit.
+The referrer is the visitor's originating page, or in other words, the page that precedes the opening of the session. The s\_referrer of a session is calculated from `raw_hits` table: Quanti: takes the [referrer](raw\_hits.md#referrer)'s value from session's first hit.
 
 ### page\_views
 
@@ -128,4 +128,4 @@ The sum of conversions values counted during the session.
 
 ### account\_id
 
-Unique account identifier given by Quanti: during tag creation. It can't be editable.
+Unique account identifier given by Quanti: during tag creation. It can't be modified.

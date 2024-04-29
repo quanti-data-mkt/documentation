@@ -15,7 +15,7 @@ layout:
     visible: false
 ---
 
-# Table raw\_hits
+# raw\_hits
 
 ***
 
@@ -45,7 +45,7 @@ Unique hit identifier. Automatically created by Quanti:.
 
 ### session\_id
 
-Unique session (can be also called visit) identifier. A session is a set of events from the same visitor. It ends when the tag does not record any events for 30 minutes. `session_id` is automatically created by Quanti: from the value of a cookie placed on the user's browser by the tag. A visitor can make multiple sessions. `session_id` is editable. it means you can override by pushing your own value in the tag
+Unique session (can be also called visit) identifier. A session is a set of events from the same visitor. It ends when the tag does not record any events for 30 minutes. `session_id` is automatically created by Quanti: from the value of a cookie placed on the user's browser by the tag. A visitor can make multiple sessions. `session_id` can be modified. it means you can override by pushing your own value in the tag
 
 ### visitor\_id
 
@@ -59,7 +59,7 @@ Unique user identifier. This identifier has to be specify in the tag. Typically 
 A user (identified by a user\_id) can have several devices, and therefore several browsers (identified by several visitors\_id). They can have multiple sessions (identified by multiple session\_id) during which they navigate from page to page and record multiple events, event and page\_view (identified by multiple hit\_id).
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/userr.jpg" alt="Explanation of the Different Types of Identifiers"><figcaption><p>Explanation of the Different Types of Identifiers</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/userr.jpg" alt="Explanation of the Different Types of Identifiers"><figcaption><p>Explanation of the Different Types of Identifiers</p></figcaption></figure>
 
 ### device\_type
 
@@ -107,7 +107,7 @@ Numeric value associated with the event. It has to be specify in the tag.
 
 ### account\_id
 
-Unique account identifier given by Quanti: during tag creation. It can't be editable.
+Unique account identifier given by Quanti: during tag creation. It can't be modified.
 
 ### referrer
 
