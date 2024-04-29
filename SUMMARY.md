@@ -39,9 +39,9 @@
 
 ## TRANSFORMATIONS
 
-* [PRE-BUILT TRANSFORMATIONS](transformations/pre-built-transformations/README.md)
-  * [Le principe de réconciliation](transformations/pre-built-transformations/le-principe-de-reconciliation.md)
-  * [Table ads\_import](transformations/pre-built-transformations/table-ads\_import.md)
-  * [Table ads\_import\_conv](transformations/pre-built-transformations/table-ads\_import\_conv.md)
-  * [Table quanti\_ids](transformations/pre-built-transformations/table-quanti\_ids.md)
-  * [Tracking templates](transformations/pre-built-transformations/tracking-templates.md)
+* [Pre-built tables](transformations/pre-built-tables/README.md)
+  * [Le principe de réconciliation](transformations/pre-built-tables/le-principe-de-reconciliation.md)
+  * [ads\_import](transformations/pre-built-tables/ads\_import.md)
+  * [ads\_import\_conv](transformations/pre-built-tables/ads\_import\_conv.md)
+  * [quanti\_ids](transformations/pre-built-tables/quanti\_ids.md)
+* [Tracking templates](transformations/tracking-templates.md)

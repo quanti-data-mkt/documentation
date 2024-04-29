@@ -15,7 +15,7 @@ layout:
     visible: false
 ---
 
-# Table ads\_import\_conv
+# ads\_import\_conv
 
 ## Présentation
 
@@ -36,7 +36,7 @@ Les clés primaires de la table sont :
 * Quanti\_id : qui agrège les données à un niveau de granularité à la publicité.
 
 {% hint style="info" %}
-Pour en apprendre plus sur les quanti\_ids, se rendre dans [table-quanti\_ids.md](table-quanti\_ids.md "mention")
+Pour en apprendre plus sur les quanti\_ids, se rendre dans [quanti\_ids.md](quanti\_ids.md "mention")
 {% endhint %}
 
 ### Les métriques
