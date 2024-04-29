@@ -1,15 +1,4 @@
 ---
-title: RTB House connector
-lead: ''
-date: 2020-11-16T12:59:39.000Z
-lastmod: 2020-11-16T12:59:39.000Z
-draft: false
-images: []
-menu:
-  docs:
-    parent: prologue
-weight: 110
-toc: true
 description: 'Follow our setup guide to connect RTB House to QUANTI:'
 layout:
   title:
@@ -36,11 +25,11 @@ To connect RTB House to QUANTI, you need an [RTB House](https://www.rtbhouse.com
 
 ## <mark style="background-color:blue;">Setup instructions</mark>
 
-### Find Username and Password
+### User informations
 
-1. Username and Password needed are simply your account credentials used to connect to your RTB House platform.
+* **Username** and **Password** of your RTB account
 
-### Find Advertiser ID
+### Advertiser ID
 
 1. Log in to your [RTB House account](https://panel.rtbhouse.com/#/auth/login).
 2. When you are connected to your account, the advertiser Id is displayed in the url of your search bar after '/dashboard/' and before the '?'. https://panel.rtbhouse.com/#/dashboard/**\*\*\*\*\*\*\***?

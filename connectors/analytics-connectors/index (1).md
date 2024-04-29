@@ -1,15 +1,4 @@
 ---
-title: Piwikpro connector
-lead: ''
-date: 2020-11-16T12:59:39.000Z
-lastmod: 2020-11-16T12:59:39.000Z
-draft: false
-images: []
-menu:
-  docs:
-    parent: prologue
-weight: 110
-toc: true
 description: 'Follow our setup guide to connect Piano to QUANTI:'
 layout:
   title:
@@ -60,7 +49,7 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
 
 ### Find your Website ID
 
-Your **Website ID** is in the url when you are connected to your Piano account. This is the value of the parameter site=.
+Your **Website ID** is in the url when you are connected to your Piano account. This is the value of the parameter **site**.
 
 `https://explorer.atinternet-solutions.com/core/#/overview/overview/020202?period.shortcut=yesterday&period.granularity=3&site=`**`612329`**`&graph.options.defaultlist=minmax&graph.options.comparisonlist=nocomparison&graph.options.eventloglist=eventlog&isIgnoreNullProperties=false`
 

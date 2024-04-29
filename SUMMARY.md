@@ -8,7 +8,7 @@
 
 * [Analytics connectors](connectors/analytics-connectors/README.md)
   * [Google Analytics 4](connectors/analytics-connectors/index.md)
-  * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
+  * [Piano Analytics](<connectors/analytics-connectors/index (1).md>)
   * [Piwik Pro](connectors/analytics-connectors/piwik-pro-analytics.md)
 * [Marketing connectors](connectors/readme/README.md)
   * [Affilae](connectors/readme/affilae.md)
@@ -18,7 +18,7 @@
   * [TimeOne](connectors/readme/timeone.md)
   * [Stylight](connectors/readme/stylight.md)
   * [Wonderpush](connectors/readme/wonderpush.md)
-  * [RTB House](connectors/readme/rtb-house.md)
+  * [RTB House](connectors/readme/index.md)
   * [Rakuten](connectors/readme/rakuten.md)
   * [Meta](connectors/readme/meta.md)
   * [Google Ads](connectors/readme/google-ads.md)
@@ -30,7 +30,7 @@
 
 ## TAG TRACKER
 
-* [Tag setup](tag-tracker/quanti-tag-setup.md)
+* [Tag setup](tag-tracker/index.md)
 * [Table raw\_hits](tag-tracker/table-raw\_hits.md)
 * [Table raw\_sessions](tag-tracker/table-raw\_sessions.md)
 * [Table raw\_conversions](tag-tracker/table-raw\_conversions.md)

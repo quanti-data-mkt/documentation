@@ -1,15 +1,4 @@
 ---
-title: 'QUANTI: Tag'
-lead: ''
-date: 2020-11-16T12:59:39.000Z
-lastmod: 2020-11-16T12:59:39.000Z
-draft: false
-images: []
-menu:
-  docs:
-    parent: prologue
-weight: 110
-toc: true
 description: 'Follow our setup guide to interger the QUANTI: tag'
 layout:
   title:
@@ -66,12 +55,13 @@ In this field, you can add your different domains (including payment platforms) 
 ## <mark style="background-color:purple;">Client-side Tag install</mark>
 
 Quanti: Tag is an Event-based Tag.\
-It can be integrated on a [client-side](quanti-tag-setup.md#client-side-installation) server or a [server-side](quanti-tag-setup.md#server-side-installation) server.
+It can be integrated on a [client-side](index.md#client-side-installation) server or a [server-side](index.md#server-side-installation) server.
 
 ### JS Library
 
 The JS library has to triggered first before events.
 
+{% code overflow="wrap" %}
 ```javascript
 <script type="text/javascript">
   window._quantiDataLayer = window._quantiDataLayer || [];
@@ -84,6 +74,7 @@ The JS library has to triggered first before events.
 </script>
 <script async src="https://cdn.jsdelivr.net/gh/whatsonio/quantijs@v1.7.3/dist/src.min.js"></script>
 ```
+{% endcode %}
 
 `Domain` and `accountId` has to personalize. Refer to your "Generated JS Code" on your "Tag Details" screen.
 

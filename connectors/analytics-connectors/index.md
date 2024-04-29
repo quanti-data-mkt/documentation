@@ -66,7 +66,7 @@ Google Analytics 4 pre-built tables
 
 To create custom Query, you need `dimensions` and `metrics`. To help you in this step, we recommend to use the [GA4 Dimensions & Metrics Explorer tool](https://ga-dev-tools.google/ga4/dimensions-metrics-explorer/).
 
-<figure><img src="../../.gitbook/assets/GA4-Dimensions-Metrics-Explorer.png" alt="GA4 Dimensions &#x26; Metrics Explorer tool"><figcaption><p>GA4 Dimensions &#x26; Metrics Explorer tool</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/GA4-Dimensions-Metrics-Explorer.png" alt="google-analytics-4-doc-query-builder" width="563"><figcaption><p>GA4 Dimensions &#x26; Metrics Explorer Tool</p></figcaption></figure>
 
 ***
 
