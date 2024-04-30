@@ -57,7 +57,7 @@ We have 2 ways to catch up on sessions and assess their contribution to achievin
 
 The values `null`, `undefined`, or _empty_ for `visitor_id` and `user_id` are obviously excluded from the attribution calculation rules.
 
-### path\_index
+### The paths
 
 Now that you've understood that the table consists of a list of sessions that contributed to achieving conversion(s), it's crucial to know how you can distinguish them from a chronological perspective and especially how you are going to analyze the paths taken by your visitors and calculate the contribution of each session. There is evidently the "s\_datetime" field which gives the exact date and time of the session's start, but we have made the task easier for you by implementing two fields:
 
