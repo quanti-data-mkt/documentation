@@ -59,14 +59,13 @@ The values `null`, `undefined`, or _empty_ for `visitor_id` and `user_id` are ob
 
 ### path\_index
 
-Maintenant que vous avez compris que la table était composée d'une liste de sessions ayant participé à la réalisation de conversion(s), il est essentiel de comprendre la manière avec laquelle vous pouvez les distinguer d'un point de vue chronologique et notamment comment vous allez devoir faire pour analyser les chemins empruntés par vos internautes et calculer la contribution de chaque session.\
-Il y a évidemment le champs "s\_datetime" qui donne la date et l'heure précise du commencement de la session mais nous vous avons facilité l'exercice en mettant en place deux champs :&#x20;
+Now that you've understood that the table consists of a list of sessions that contributed to achieving conversion(s), it's crucial to know how you can distinguish them from a chronological perspective and especially how you are going to analyze the paths taken by your visitors and calculate the contribution of each session. There is evidently the "s\_datetime" field which gives the exact date and time of the session's start, but we have made the task easier for you by implementing two fields:
 
-* max\_index : qui donne le nombre total de sessions contributives sur la conversion. La valeur de ce champ est la même pour chaque session (ligne) d'une conversion.
-* path\_index : qui donne la position chronologique de la session parmi l'intégralité des sessions contributives sur la conversion.
+* `max_index`: Indicates the total number of contributive sessions related to a conversion. The value of this field is the same for each session (row) within a conversion.
+* `path_index`: indicates the chronological position of the session among all the contributory sessions leading to a conversion.
 
-Pour une conversion enregistrant une multitude de sessions contributives, vous aurez donc dans path\_index des chiffres allant de 1 jusqu'au chiffre représentant le nombre globale de sessions. Et puis vous aurez dans max\_index pour chacune de session, le chiffre max qui représente le nombre globale de sessions.
+For a conversion tracking multiple contributive sessions, you will therefore have in `path_index` numbers ranging from 1 to the number representing the total number of sessions. Then, on each line in `max_index`, you will find the maximum number that represents the total number of sessions.
 
-<figure><img src="../../.gitbook/assets/BigQuery-–-Quanti-–-Console-Google-Cloud.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/BigQuery-–-Quanti-–-Console-Google-Cloud.png" alt="Example of filling in the path_index and max_index fields"><figcaption><p>Example of filling in the <code>path_index</code> and <code>max_index</code> fields</p></figcaption></figure>
 
 ## <mark style="background-color:purple;">Fields definition</mark>
