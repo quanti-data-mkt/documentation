@@ -26,8 +26,6 @@ layout:
 
 # Effinity
 
-***
-
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
 To connect Effinity to QUANTI, you need an [Effinity](https://www.effinity.fr/?utm\_source=quanti.io\&utm\_medium=partnership\&utm\_campaign=effinity\_data\_connector) account.
@@ -60,7 +58,7 @@ To connect Effinity to QUANTI, you need an [Effinity](https://www.effinity.fr/?u
 
 ## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
-{% embed url="https://docs.google.com/presentation/d/13--xaQBcnDXNwCybc9jMmUud6HXwZmsAGk_Zv5-89vs/edit?usp=sharing" %}
+{% embed url="https://docs.google.com/presentation/d/13--xaQBcnDXNwCybc9jMmUud6HXwZmsAGk_Zv5-89vs" %}
 Effinity Connector schema
 {% endembed %}
 
