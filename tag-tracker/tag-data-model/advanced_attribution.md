@@ -50,9 +50,23 @@ In this table, a single `conversion_id` can be used across multiple rows because
 
 ### Attibution rules
 
-We have 2 ways to catch up on sessions and assess their contribution to achieving a conversion?
+We have 2 ways to catch up on sessions and assess their contribution to achieving a conversion :
 
-* visitor\_id
-* user\_id
+* By **visitor\_id** : We log all previous sessions that have the same `visitor_id` as the session during which the conversion occurred.
+* By **user\_id** : We log all previous sessions that have the same `user_id` as the session during which the conversion occurred.
+
+The values `null`, `undefined`, or _empty_ for `visitor_id` and `user_id` are obviously excluded from the attribution calculation rules.
+
+### path\_index
+
+Maintenant que vous avez compris que la table était composée d'une liste de sessions ayant participé à la réalisation de conversion(s), il est essentiel de comprendre la manière avec laquelle vous pouvez les distinguer d'un point de vue chronologique et notamment comment vous allez devoir faire pour analyser les chemins empruntés par vos internautes et calculer la contribution de chaque session.\
+Il y a évidemment le champs "s\_datetime" qui donne la date et l'heure précise du commencement de la session mais nous vous avons facilité l'exercice en mettant en place deux champs :&#x20;
+
+* max\_index : qui donne le nombre total de sessions contributives sur la conversion. La valeur de ce champ est la même pour chaque session (ligne) d'une conversion.
+* path\_index : qui donne la position chronologique de la session parmi l'intégralité des sessions contributives sur la conversion.
+
+Pour une conversion enregistrant une multitude de sessions contributives, vous aurez donc dans path\_index des chiffres allant de 1 jusqu'au chiffre représentant le nombre globale de sessions. Et puis vous aurez dans max\_index pour chacune de session, le chiffre max qui représente le nombre globale de sessions.
+
+<figure><img src="../../.gitbook/assets/BigQuery-–-Quanti-–-Console-Google-Cloud.png" alt=""><figcaption></figcaption></figure>
 
 ## <mark style="background-color:purple;">Fields definition</mark>
