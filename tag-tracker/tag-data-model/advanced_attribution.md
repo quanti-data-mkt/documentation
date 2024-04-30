@@ -21,7 +21,7 @@ layout:
 
 ## <mark style="background-color:purple;">Syncing</mark>
 
-The advanced attribution table is a view. Its data comes directly from the others tables and depends directly on their synchronization frequency. Thus, new conversions will appear on this table once the session has expired, i.e. after a period of inactivity of 30 minutes after the last hit.
+The advanced attribution table is a view. Its data comes directly from the others tables and depends directly on their synchronization frequency. Thus, new conversions will appear on this table once the session has expired, i.e. after a period of inactivity of **30 minutes** after the last hit.
 
 ***
 

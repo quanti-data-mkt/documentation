@@ -21,7 +21,7 @@ layout:
 
 ## <mark style="background-color:purple;">Syncing</mark>
 
-Hits appear in the `raw_hits` table once the session to which they belong has expired, which occurs after a 30-minute period of inactivity following the last hit.
+Hits appear in the `raw_hits` table once the session to which they belong has expired, which occurs after a **30-minute** period of inactivity following the last hit.
 
 ***
 
