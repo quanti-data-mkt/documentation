@@ -203,10 +203,42 @@ Boolean field indicating if the session (the row) is the session that led to the
 
 Boolean field indicating if the session (the row) is the session that led to the conversion after excluding all sessions with a s\_source value `(direct)` and a s\_medium value `(none)`. Technically, this is the session for which `path_index` is the highest (After excluding (Direct) sources).
 
-is\_post\_clic\_30
+### is\_post\_clic\_30
 
-is\_post\_clic\_60
+Boolean field indicating if the session (the row) occurred within the 30 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date`.
 
-is\_post\_clic\_90
+### is\_post\_clic\_60
 
-is\_post\_clic\_120 is\_post\_clic\_180 is\_first\_clic\_30 is\_first\_clic\_60 is\_first\_clic\_90 is\_first\_clic\_120 is\_first\_clic\_180
+Boolean field indicating if the session (the row) occurred within the 60 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date`.
+
+### is\_post\_clic\_90
+
+Boolean field indicating if the session (the row) occurred within the 90 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date`.
+
+### is\_post\_clic\_120
+
+Boolean field indicating if the session (the row) occurred within the 120 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date`.
+
+### is\_post\_clic\_180
+
+Boolean field indicating if the session (the row) occurred within the 180 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date`.
+
+### is\_first\_clic\_30
+
+Boolean field indicating if the earliest session of the path is occurred within the 30 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date` and it concern only session with a path\_index = 1.
+
+### is\_first\_clic\_60
+
+Boolean field indicating if the earliest session of the path is occurred within the 60 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date` and it concern only session with a path\_index = 1.
+
+### is\_first\_clic\_90
+
+Boolean field indicating if the earliest session of the path is occurred within the 90 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date` and it concern only session with a path\_index = 1.
+
+### is\_first\_clic\_120
+
+Boolean field indicating if the earliest session of the path is occurred within the 120 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date` and it concern only session with a path\_index = 1.
+
+### is\_first\_clic\_180
+
+Boolean field indicating if the earliest session of the path is occurred within the 180 days preceding the conversion. Technically, this is the difference between `s_date` and `c_date` and it concern only session with a path\_index = 1.
