@@ -19,7 +19,7 @@ layout:
 
 ## <mark style="background-color:yellow;">Prerequisites</mark>
 
-To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/) account.
+To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/?utm\_source=quanti.io\&utm\_medium=partnership\&utlm\_campaign=campaign=ecommerce-data-connector) account.
 
 ***
 

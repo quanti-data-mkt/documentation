@@ -41,7 +41,7 @@ Date and time of the start of the session. The datetime of a session is calculat
 
 ### session\_id
 
-**Unique session identifier** . A session (also called visit) is a set of events from the same visitor within a given amount of time. It ends when the tag does not record any events for 30 minutes. **session\_id** is automatically created by Quanti:. A visitor can make multiple sessions. **session\_id** can be overridable
+**Unique session identifier**. A session (also called visit) is a set of events from the same visitor within a given amount of time. It ends when the tag does not record any events for 30 minutes. **session\_id** is automatically created by Quanti:. A visitor can make multiple sessions. **session\_id** can be overridable
 
 ### visitor\_id
 

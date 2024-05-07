@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/) account.
+To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/?utm\_source=quanti.io\&utm\_medium=partnership) account.
 
 ***
 

@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/) account.
+To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/?utm\_source=quanti.io\&utm\_medium=partnership) account.
 
 ***
 

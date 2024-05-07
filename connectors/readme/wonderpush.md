@@ -24,13 +24,13 @@ layout:
     visible: false
 ---
 
-# Wonderpush - Marketing connector
+# Wonderpush
 
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Wonderpush to QUANTI, you need a [Wonderpush](https://www.wonderpush.com/fr/) account.
+To connect Wonderpush to QUANTI, you need a [Wonderpush](https://www.wonderpush.com/fr/?utm\_source=quanti.io\&utm\_medium=partnership) account.
 
 ***
 

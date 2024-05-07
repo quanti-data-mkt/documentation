@@ -19,7 +19,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect RTB House to QUANTI, you need an [RTB House](https://www.rtbhouse.com/) account with API access.
+To connect RTB House to QUANTI, you need an [RTB House](https://www.rtbhouse.com/?utm\_source=quanti.io\&utm\_medium=partnership) account with API access.
 
 ***
 

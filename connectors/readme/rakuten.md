@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Rakuten to QUANTI, you need an [Rakuten Advertising](https://rakutenadvertising.com/fr-fr/) account. In the last version of this connector, you cannot retrieve datas from any reports. You have to follow steps below including respect fields requested on the rakuten report.
+To connect Rakuten to QUANTI, you need an [Rakuten Advertising](https://rakutenadvertising.com/fr-fr/?utm\_source=quanti.io\&utm\_medium=partnership) account. In the last version of this connector, you cannot retrieve datas from any reports. You have to follow steps below including respect fields requested on the rakuten report.
 
 ***
 

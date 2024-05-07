@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Stylight to QUANTI, you need a [Stylight](https://partner.stylight.com/) account with API access.
+To connect Stylight to QUANTI, you need a [Stylight](https://partner.stylight.com/?utm\_source=quanti.io\&utm\_medium=partnership) account with API access.
 
 ***
 

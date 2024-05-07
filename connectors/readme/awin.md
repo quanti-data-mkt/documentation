@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/) account with API access.
+To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm\_source=quanti.io\&utm\_medium=partnership) account with API access.
 
 ***
 
