@@ -39,8 +39,8 @@
 
 ## TRANSFORMATIONS
 
+* [Le principe de réconciliation](transformations/le-principe-de-reconciliation.md)
 * [Pre-built tables](transformations/pre-built-tables/README.md)
-  * [Le principe de réconciliation](transformations/pre-built-tables/le-principe-de-reconciliation.md)
   * [ads\_import](transformations/pre-built-tables/ads\_import.md)
   * [ads\_import\_conv](transformations/pre-built-tables/ads\_import\_conv.md)
   * [quanti\_ids](transformations/pre-built-tables/quanti\_ids.md)
