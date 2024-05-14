@@ -33,7 +33,7 @@ QUANTI: manage some transformations, always useful for 100% of our customers.
 
 ## How
 
-Ce chapitre traite le sujet de la **transformation** et du travail d'agrégation mené par Quanti: appelé [**LA RÉCONCILIATION**](../le-principe-de-reconciliation.md) qui nécessite des connaissances métier acquises par d'importants investissements en R\&D qui ont permit de développer :&#x20;
+Ce chapitre traite le sujet de la **transformation** et du travail d'agrégation mené par Quanti: appelé [**LA RÉCONCILIATION**](../the-principle-of-reconciliation.md) qui nécessite des connaissances métier acquises par d'importants investissements en R\&D qui ont permit de développer :&#x20;
 
 * Une connaissance parfaite des particularités des API des partenaires publicitaires qui nous permet d'extraire les données correctement et de centraliser leur stockage sur des Data-Warehouses dédiés par client. Les API mettent à disposition des annonceurs de nombreuses données de campagne. Celles-ci peuvent être très variées d'un partenaire à l'autre. Les données rendues accessibles par un partenaire publicitaire, correspondent à chaque fois au contexte de diffusion et à leurs spécificités (levier utilisé, type de support, technologies, ...). La recherche et l'accès aux informations peut s'avérer complexe par la diversité et la quantité de données disponibles.&#x20;
 * Une méthode qui permet de standardiser et d'uniformiser les données initialement en provenance de plateformes publicitaires différentes.

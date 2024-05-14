@@ -182,4 +182,4 @@ To align the metrics you import from external sources into Adobe Analytics (such
 
 <figure><img src="../../.gitbook/assets/Untitled-dbdiagram-io.png" alt=""><figcaption><p>Final full join result of importing datas on Adobe User interface</p></figcaption></figure>
 
-Quanti supports you in these transformation procedures with [pre-built transformations](../../transformations/pre-built-tables/) that allow you to merge your data from different sources (campaign data and navigation data) using the concept of  [reconciliation](../../transformations/le-principe-de-reconciliation.md) and the use of [Tracking Template.](../../transformations/tracking-templates.md)
+Quanti supports you in these transformation procedures with [pre-built transformations](../../transformations/pre-built-tables/) that allow you to merge your data from different sources (campaign data and navigation data) using the concept of  [reconciliation](../../transformations/the-principle-of-reconciliation.md) and the use of [Tracking Template.](../../transformations/tracking-templates.md)
