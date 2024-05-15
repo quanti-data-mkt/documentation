@@ -43,7 +43,7 @@ Thanks to our suite of [marketing connectors](../connectors/readme/) and [analyt
 
 After data collection, the data consolidation process follows. This means we standardize the data across platforms using common metrics (horizontal reconciliation) and align them with your analytics data (vertical reconciliation) to ensure they correspond.
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-05-14 à 17.01.37.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2024-05-15 à 10.38.14.png" alt=""><figcaption><p>Horizontal and Vertical Reconciliation</p></figcaption></figure>
 
 ***
 
