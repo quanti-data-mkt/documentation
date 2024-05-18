@@ -27,7 +27,7 @@ Once your data is fed into the tables, it remains scattered across different dat
 
 QUANTI: manage some transformations, always useful for 100% of our customers.
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2024-05-17 à 17.27.14.png" alt=""><figcaption><p>Extraction - Refining - Operation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-05-18 à 09.40.21.png" alt=""><figcaption></figcaption></figure>
 
 ## How
 
