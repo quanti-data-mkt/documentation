@@ -21,11 +21,11 @@ layout:
 
 Without ads\_import :&#x20;
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-12 à 17.11.28 (1).png" alt=""><figcaption><p>Example without ads_import</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-05-22 à 16.47.31.png" alt=""><figcaption><p>Example without ads_import</p></figcaption></figure>
 
 With ads\_import
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2024-04-12 à 16.40.33.png" alt=""><figcaption><p>Example with ads_import</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-05-22 à 16.50.35.png" alt=""><figcaption><p>Example with ads_import</p></figcaption></figure>
 
 ## Schema
 
