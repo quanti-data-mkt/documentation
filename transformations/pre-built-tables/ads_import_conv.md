@@ -78,3 +78,15 @@ The metrics of the table are:&#x20;
 
 It is possible to have the pre-built table `ads_import_conv` with performance distinctions by events/conversions. Instead of having generic columns `platform_conversion` and `platform_conversion_value`, the idea is to have one column counting conversions and another column counting conversion values for each conversion.
 
+Metrics are all prefixed by `platform_conversion` followed by the ID assigned by the advertising platform. The conversion values are all suffixed by `_value.`
+
+#### Example
+
+On Google Ads, if you track a conversion `purchase` with the conversion ID 12345678 (automatically assigned by Google), you will find its conversion values in the metrics:
+
+* `platform_conversion_12345678` that counts the number of this conversion.
+* `platform_conversion_12345678_value` that counts value associated with this conversion.
+
+{% hint style="info" %}
+The technique that allows, from raw data, to have an `ads_import_conv` table integrating a multitude of distinct conversions, incorporates in its SQL transformation process, the concept of `PIVOT` which allows transforming rows into columns.
+{% endhint %}
