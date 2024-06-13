@@ -8,7 +8,7 @@
 
 * [Analytics connectors](connectors/analytics-connectors/README.md)
   * [Google Analytics 4](connectors/analytics-connectors/index.md)
-  * [Piano Analytics](<connectors/analytics-connectors/index (1).md>)
+  * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
   * [Piwik Pro](connectors/analytics-connectors/piwik-pro-analytics.md)
 * [Marketing connectors](connectors/readme/README.md)
   * [Affilae](connectors/readme/affilae.md)
