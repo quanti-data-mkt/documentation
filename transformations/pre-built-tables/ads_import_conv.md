@@ -25,11 +25,11 @@ layout:
 
 #### Without ads\_import\_conv :&#x20;
 
-img
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-06-13 à 15.22.56.png" alt=""><figcaption><p>Example without ads_import_conv</p></figcaption></figure>
 
 #### With ads\_import\_conv :
 
-img
+<figure><img src="../../.gitbook/assets/Capture d’écran 2024-06-13 à 15.24.14.png" alt=""><figcaption><p>Example with ads_import_conv</p></figcaption></figure>
 
 ***
 
@@ -73,6 +73,8 @@ The metrics of the table are:&#x20;
 * Some platforms can track all kinds of events, not just conversions. It is then necessary to define what event is a conversion to be able to aggregate it in the table. Example: Meta Ads, Google Ads.
 * If you want to aggregate multiple events from the same platform in the table, you will not have the distinction between them.
 {% endhint %}
+
+***
 
 ## ads\_import\_conv with all conversions
 
