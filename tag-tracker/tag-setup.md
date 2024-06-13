@@ -55,7 +55,7 @@ In this field, you can add your different domains (including payment platforms) 
 ## <mark style="background-color:purple;">Client-side Tag install</mark>
 
 Quanti: Tag is an Event-based Tag.\
-It can be integrated on a [client-side](index.md#client-side-installation) server or a [server-side](index.md#server-side-installation) server.
+It can be integrated on a [client-side](tag-setup.md#client-side-installation) server or a [server-side](tag-setup.md#server-side-installation) server.
 
 ### JS Library
 

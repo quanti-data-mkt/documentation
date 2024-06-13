@@ -18,7 +18,7 @@
   * [TimeOne](connectors/readme/timeone.md)
   * [Stylight](connectors/readme/stylight.md)
   * [Wonderpush](connectors/readme/wonderpush.md)
-  * [RTB House](connectors/readme/index.md)
+  * [RTB House](connectors/readme/rtb-house.md)
   * [Rakuten](connectors/readme/rakuten.md)
   * [Meta](connectors/readme/meta.md)
   * [Google Ads](connectors/readme/google-ads.md)
@@ -30,7 +30,7 @@
 
 ## TAG TRACKER
 
-* [Tag setup](tag-tracker/index.md)
+* [Tag setup](tag-tracker/tag-setup.md)
 * [Tag data model](tag-tracker/tag-data-model/README.md)
   * [raw\_hits](tag-tracker/tag-data-model/raw\_hits.md)
   * [raw\_sessions](tag-tracker/tag-data-model/raw\_sessions.md)
