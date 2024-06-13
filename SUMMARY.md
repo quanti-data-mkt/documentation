@@ -7,7 +7,7 @@
 ## CONNECTORS
 
 * [Analytics connectors](connectors/analytics-connectors/README.md)
-  * [Google Analytics 4](connectors/analytics-connectors/index.md)
+  * [Google Analytics 4](connectors/analytics-connectors/google-analytics4.md)
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
   * [Piwik Pro](connectors/analytics-connectors/piwik-pro-analytics.md)
 * [Marketing connectors](connectors/readme/README.md)
