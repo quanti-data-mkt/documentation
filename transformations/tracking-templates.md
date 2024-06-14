@@ -17,6 +17,14 @@ layout:
 
 ***
 
+## Affilae
+
+```
+qid_aff_c{affiliateTrackingId}_g_a 
+```
+
+***
+
 ## Amazon Ads
 
 ```
@@ -39,20 +47,164 @@ qid_awn_c{publisherId}_g_a
 qid_cmj_c{pubCid}_g{pid}_a
 ```
 
+***
+
+## Criteo
+
+```
+qid_crt_c{{campaign_id}}_g{{adset_id}}_a
+```
+
+***
+
+## DV360
+
+```
+qid_dv3_c${CAMPAIGN_ID}_g_a
+```
+
+***
+
+## Effinity
+
+```
+qid_efi_c{id_programme}_g{id_affilie}_a{id_link}
+```
+
+***
+
+## Google ads
+
+```
+qid_gad_c{campaignid}_g{adgroupid}_a{creative}
+```
+
+***
+
+***
+
+## Linkedin ads
+
 ```
 qid_lkd_c_CAMPAIGN_GROUP_ID_g_CAMPAIGN_ID_a_CREATIVE_ID
 ```
 
+***
+
+## Meta ads
+
 ```
-qid_wdp_c{{ campaign.id }}_g_a 
+qid_fbk_c{{campaign.id}}_g{{adset.id}}_a{{ad.id}}
 ```
+
+***
+
+## Microsoft ads
+
+```
+qid_bga_c{CampaignId}_g{AdGroupId}_a{AdId}
+```
+
+***
+
+## Outbrain
+
+```
+qid_otb_c{{campaign_id}}_g{{publisher_id}}_a
+```
+
+***
+
+## Pinterest ads
+
+```
+qid_pin_c{campaignid}_g{adgroupid}_a{adid}
+```
+
+***
+
+## Powerspace
+
+```
+qid_pwr_c_g_a
+```
+
+***
+
+## Rakuten advertising
+
+```
+qid_rak_c_g_a
+```
+
+***
+
+## RTB House
+
+```
+qid_rtb_c{{subcampaignhash}}_g{{user_segment_id}}_a{{creative_hash}}
+```
+
+***
+
+## Snapchat
+
+```
+qid_snp_c{{campaign.id}}_g{{adSet.id}}_a{{ad.id}}
+```
+
+***
+
+## Stylight
 
 ```
 qid_stl_c_g_a
 ```
 
-qid\_efi\_c{id\_programme}\_g{id\_affilie}\_a{id\_link} qid\_otb\_c\{{campaign\_id\}}\_g\{{publisher\_id\}}\_a qid\_aff\_c{affiliateTrackingId}\_g\_a A definir A definir a confirmer : qid\_dv3\_c${CAMPAIGN\_ID}\_g\_a qid\_pin\_c{campaignid}\_g{adgroupid}\_a{adid} qid\_crt\_c\{{campaign\_id\}}\_g\{{adset\_id\}}\_a qid\_rtb\_c\{{subcampaignhash\}}\_g\{{user\_segment\_id\}}\_a\{{creative\_hash\}} qid\_snp\_c\{{campaign.id\}}\_g\{{adSet.id\}}\_a\{{ad.id\}} qid\_fbk\_c\{{campaign.id\}}\_g\{{adset.id\}}\_a\{{ad.id\}} qid\_bga\_c{CampaignId}\_g{AdGroupId}_a{AdId} qid\_tik\_c\_\_CAMPAIGN\_ID\_\_g\_\_AID\_\_a\_\_CID_ qid\_gad\_c{campaignid}\_g{adgroupid}\_a{creative}
+***
 
-qid\_jko\_c\_g\_a qid\_rak\_c\_g\_a qid\_pwr\_c\_g\_a A confirmer : qid\_tbl\_c{campaign\_id}\_g\_a qid\_vrz\_c{campaignid}\_g{adgroupid}\_a{adid} qid\_dsp\_c\_g\_a
+## Taboola
 
-qid\_pin\_c{campaignid}\_g{adgroupid}\_a{adid} qid\_pin\_c{campaignid}\_g{adgroupid}\_a{adid} qid\_jko\_c\_g\_a qid\_twi\_c{campaign\_id}\_g{line\_item\_id}\_a{tweet\_id}
+```
+qid_tbl_c{campaign_id}_g_a
+```
+
+***
+
+## Tiktok ads
+
+```
+qid_tik_c__CAMPAIGN_ID__g__AID__a__CID
+```
+
+***
+
+## Twitter
+
+```
+qid_twi_c{campaign_id}_g{line_item_id}_a{tweet_id}
+```
+
+***
+
+## Verizon
+
+```
+qid_vrz_c{campaignid}_g{adgroupid}_a{adid}
+```
+
+***
+
+## Verizon dsp
+
+```
+qid_dsp_c_g_a
+```
+
+***
+
+## Wonderpush
+
+```
+qid_wdp_c{{ campaign.id }}_g_a 
+```
