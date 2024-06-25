@@ -201,7 +201,9 @@ Boolean field indicating if the session (the row) is the session that led to the
 
 ### is\_last\_clic\_non\_direct
 
-Boolean field indicating if the session (the row) is the session that led to the conversion after excluding all sessions with a s\_source value `(direct)` and a s\_medium value `(none)`. Technically, this is the session for which `path_index` is the highest (After excluding (Direct) sources).
+Boolean field indicating if the session (the row) is the session that led to the conversion after excluding all sessions with a s\_source value `(direct)` and a s\_medium value `(none)`. Technically, this is the session for which `path_index` is the highest (After excluding (Direct) sources).\
+If the conversion is carried out in a single session with s\_source value `(direct)` and a s\_medium value `(none)`, then this single session is considered as the LCND.\
+If the conversion is conducted through multiple sessions but all of them have the s\_source value `(direct)` and the s\_medium value `(none)`, then the most recent one of these is considered the LCND.
 
 ### is\_post\_clic\_30
 
