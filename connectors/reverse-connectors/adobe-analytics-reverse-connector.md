@@ -96,13 +96,6 @@ To establish a connection between the QUANTI platform and the Adobe Analytics re
 
 3. Write down events and meanings. You will need them to configure QUANTI:
 
-### Quanti: Data Warehouse configuration
-
-These steps show how to configure data recovery:
-
-1. In the connector setup form, select your data warehouse.
-2. Click Next.
-
 ### **Create your data source**
 
 1. Click on the tab Admin > Data sources > Select your Report Suite in the top-right corner > Create
@@ -117,10 +110,10 @@ These steps show how to configure data recovery:
 
 ### 2 connectors types to set
 
-You will have to set 2 connectors type : Data source Adobe Reverse Connector and Classification Adobe Reverse Connector. They don’t use the same API point and don’t import the same data type. Therefore, we formally present you with the subject, separating it into two distinct connectors
+You will have to set 2 connectors type : Adobe Analytics - Data Sources Connector and Adobe Analytics - Classifications Connector. They don’t use the same API point and don’t import the same data type. Therefore, we formally present you with the subject, separating it into two distinct connectors
 
-* Data source Adobe Reverse Connector is used to import metrics.
-*   Classification Adobe Reverse Connector is used to import dimensions. In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.\
+* Adobe Analytics - Data Sources Connector is used to import metrics.
+*   Adobe Analytics - Classifications Connector is used to import dimensions. In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.\
     \
 
 
