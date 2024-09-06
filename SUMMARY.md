@@ -18,7 +18,7 @@
   * [TimeOne](connectors/readme/timeone.md)
   * [Stylight](connectors/readme/stylight.md)
   * [Wonderpush](connectors/readme/wonderpush.md)
-  * [RTB House](connectors/readme/rtb-house.md)
+  * [RTB House](connectors/readme/index.md)
   * [Rakuten](connectors/readme/rakuten.md)
   * [Meta](connectors/readme/meta.md)
   * [Google Ads](connectors/readme/google-ads.md)

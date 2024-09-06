@@ -79,7 +79,9 @@ qid_efi_c{id_programme}_g{id_affilie}_a{id_link}
 qid_gad_c{campaignid}_g{adgroupid}_a{creative}
 ```
 
-***
+source doc : [https://developers.google.com/google-ads/api/docs/reporting/valuetrack-mapping](https://developers.google.com/google-ads/api/docs/reporting/valuetrack-mapping?hl=fr)
+
+
 
 ***
 
@@ -97,6 +99,8 @@ qid_lkd_c_CAMPAIGN_GROUP_ID_g_CAMPAIGN_ID_a_CREATIVE_ID
 qid_fbk_c{{campaign.id}}_g{{adset.id}}_a{{ad.id}}
 ```
 
+Source doc : [https://www.facebook.com/business/help/2360940870872492](https://www.facebook.com/business/help/2360940870872492)
+
 ***
 
 ## Microsoft ads
@@ -104,6 +108,8 @@ qid_fbk_c{{campaign.id}}_g{{adset.id}}_a{{ad.id}}
 ```
 qid_bga_c{CampaignId}_g{AdGroupId}_a{AdId}
 ```
+
+Source doc : [https://help.ads.microsoft.com/#apex/ads/en/56799/2](https://help.ads.microsoft.com/#apex/ads/en/56799/2)
 
 ***
 
@@ -120,6 +126,8 @@ qid_otb_c{{campaign_id}}_g{{publisher_id}}_a
 ```
 qid_pin_c{campaignid}_g{adgroupid}_a{adid}
 ```
+
+
 
 ***
 
