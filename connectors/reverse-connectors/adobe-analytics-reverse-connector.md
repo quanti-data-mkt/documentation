@@ -126,12 +126,14 @@ You will have to set 2 connectors type : Adobe Analytics - Data Sources Connecto
 These steps show how to create a SQL query which permits to import data into Adobe Analytics UI. The selected fields in your query must coincide with custom metrics that you created above. You can import all custom metrics you want, but you have to respect two mandatory fields: Date and tracking\_code.
 
 * Date field: Make a coincidence between a field with a date data type from your query and the date field expected by the connector.
-* Tracking\_code field: Make a coincidence between a string data type field from your query and the tracking\_code expected by the connector. Tracking\_code + date are the unique keys of your query which permit afterwards to match your data source with classification dimensions that we will configure together later in this tutorial. Data type expected :
-* date (DATE - YYYY-mm-dd)
-* tracking\_code (STRING - Matching with your Classification)
-* event1 (FLOAT)
-* event2 (FLOAT)
-* event3 (FLOAT) All custom events must be of FLOAT type.
+* Tracking Code field: Make a coincidence between a string data type field from your query and the tracking\_code expected by the connector. Tracking\_code + date are the unique keys of your query which permit afterwards to match your data source with classification dimensions that we will configure together later in this tutorial. Data type expected :
+* Date (DATE - YYYY-mm-dd)
+* Tracking Code (STRING - Matching with your Classification)
+* Event 1 (FLOAT)
+* Event 2 (FLOAT)
+* Event 3 (FLOAT)&#x20;
+
+All custom events must be of FLOAT type. Date, Tracking Code & Events are written with space and upper case as in the example above.&#x20;
 
 ### Quanti: Data Source Connnector Configuration
 
