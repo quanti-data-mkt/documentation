@@ -38,9 +38,12 @@ To connect Google Analytics 4 to QUANTI, you need an [Google](https://www.google
 
 ## <mark style="background-color:yellow;">Setup instructions</mark>
 
-1. Choose the google acccount you want lo log in with
-2. Choose the accounts you want to sync
-3. build your custom query
+1. Connect your Google account to permit Quanti: to access to your data
+2. Connector information
+   1. Connector Name : Name your connector. It must be unique.
+   2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
+3. Select accounts & properties to sync.
+4. "Create queries: You can either select pre-built queries or create your own custom queries. To help you, refer to the 'Custom Query' chapter below."
 
 ***
 
