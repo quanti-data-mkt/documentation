@@ -19,7 +19,7 @@ layout:
 
 ## <mark style="background-color:yellow;">Prerequisites</mark>
 
-To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/?utm\_source=quanti.io\&utm\_medium=partnership\&utlm\_campaign=campaign=ecommerce-data-connector) account.
+To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/?utm_source=quanti.io\&utm_medium=partnership\&utlm_campaign=campaign=ecommerce-data-connector) account.
 
 ***
 
@@ -55,9 +55,15 @@ Your **Website ID** is in the url when you are connected to your Piano account. 
 
 ### Connector configuration
 
-1. In the connector setup form, enter the name of your choice.
-2. Enter your credentials you find on step 1
-3. Enter you Website ID you find in step 2. You can add several IDs separating by commas and clicking on "+".
+1. Connector information
+   1. Name your connector
+      1. Connector Name : Name your connector. It must be unique.
+      2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
+   2. Connector information
+      1. Access Key and Secret Key retrieved following the steps above.
+   3. Site ID(s)
+      1. Site ID retrieved following the steps above.
+2. Create queries : Create your own custom queries. To help you, refer to the 'Custom Query' chapter below."
 
 ***
 
@@ -91,19 +97,16 @@ Use the "Data Query" tool available on the Piano Analytics interface to help you
 
 
 1. Make a note of all API Keys of your fields. You will need it to configure QUANTI: with two lists : a dimensions list with all keys separated by commas without spaces and a metrics list with all keys separated by commas without spaces.
-2. In QUANTI:, click on the button "Create".
-3. Name your custom request.&#x20;
-4. Copy / Paste your dimensions and metrics keys from your **Piano Data Query** builder. You can add multiple fields separating by commas without spaces and without clicking on "add +".
+2. At the step "Create queries", click on the button "Add custom query".
+3. Name your custom request : It will be the table name.
+4. Copy / Paste your dimensions and metrics keys from your **Piano Data Query** builder. You have to separate your fields with commas without spaces.
 
 {% hint style="danger" %}
 The name chosen for your custom query is the one that name your table
 {% endhint %}
-
-Click Save & Test. Quanti: will take it from here and sync your Piano datas.
 
 ***
 
 ## <mark style="background-color:yellow;">Limits</mark>
 
 * Max 50 dimensions and metrics per Custom Query
-* Max 500K rows per days
