@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/?utm\_source=quanti.io\&utm\_medium=partnership) account.
+To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/?utm_source=quanti.io\&utm_medium=partnership) account.
 
 ***
 
@@ -66,3 +66,7 @@ To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/?ut
 ## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
 
 To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b)
+
+[https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b](https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b)
+
+{% embed url="https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b" %}
