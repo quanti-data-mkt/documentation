@@ -21,34 +21,22 @@ layout:
 
 ## <mark style="background-color:yellow;">Prerequisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
 
-To connect Piwik Pro to QUANTI:, you need an [Piwik Pro](https://piwik.pro/?pk\_campaign=ecommerce-data-connector\&pk\_source=quanti.io\&pk\_medium=partnership) account.
+To connect Piwik Pro to QUANTI:, you need an [Piwik Pro](https://piwik.pro/?pk_campaign=ecommerce-data-connector\&pk_source=quanti.io\&pk_medium=partnership) account.
 
 ***
 
 ## <mark style="background-color:yellow;">Setup instructions</mark>
 
-### Find your domain
-
-The expected information in this field is the domain displayed on your search bar when you are connected to your Piwik Account.
-
 ### Find your API credentials
 
 1. Go on your profile parameters : **Menu** > **Profile** > **API Keys**
 
-<div align="center" data-full-width="false">
-
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik1.png" alt="Piwik account admin access" width="241"><figcaption><p>Piwik account admin access</p></figcaption></figure>
-
-</div>
+<div align="center" data-full-width="false"><figure><img src="../../content/en/docs/prologue/piwikpro/piwik1.png" alt="Piwik account admin access" width="241"><figcaption><p>Piwik account admin access</p></figcaption></figure></div>
 
 2. To generate a new API Key, please click on the "Create a Key" button, which is highlighted in blue.
 3. Name your instance and carefully record the API credentials. These are essential for the configuration of QUANTI.
 
-<div data-full-width="false">
-
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik2.png" alt="API credentials from Piwik Pro analytics admin" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure>
-
-</div>
+<div data-full-width="false"><figure><img src="../../content/en/docs/prologue/piwikpro/piwik2.png" alt="API credentials from Piwik Pro analytics admin" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure></div>
 
 ### Find your Website ID
 
@@ -59,10 +47,16 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 ### Connector configuration
 
-1. In the connector setup form, enter the name of your choice.
-2. Enter the domain you found in Step 1.
-3. Enter the credentials you find in Step 2.
-4. Enter you Website ID you find in Step 3. You can add several IDs separating by commas and clicking on "+".
+1. Connector information
+   1. Name your connector
+      1. Connector Name : Name your connector. It must be unique.
+      2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
+   2. Connector information
+      1. Access Key and Secret Key retrieved following the steps above.
+      2. Domain displayed on your search bar when you are connected to your Piwik Account.
+   3. Website ID(s)
+      1. Website ID retrieved following the steps above.
+2. Create queries : Create your own custom queries. To help you, refer to the 'Custom Query' chapter below."
 
 ***
 
@@ -98,7 +92,10 @@ You have to create your own reports. To help you in this step, we recommand to u
 
 <figure><img src="../../content/en/docs/prologue/piwikpro/piwik6.png" alt="" width="375"><figcaption><p>API call detailed</p></figcaption></figure>
 
-* On QUANTI: interface, click on the button "Create".
-* Name your custom request : It will be use to name your table on your Warehouse.
-* Copy/ Paste your dimensions and metrics from your Piwikpro personalized report. You can add several fields separating by commas and clicking on "add +".
-* Repeat operation as many time it's necessary.
+* &#x20;At the step "Create queries", click on the button "Add custom query".
+* Name your custom request : It will be the table name.
+* Copy / Paste your dimensions and metrics keys from your Piwikpro personalized report. You have to separate your fields with commas without spaces.
+
+{% hint style="danger" %}
+The name chosen for your custom query is the one that name your table
+{% endhint %}
