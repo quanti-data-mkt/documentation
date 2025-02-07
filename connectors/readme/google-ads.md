@@ -19,34 +19,52 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-text
+To connect Google Ads to Quanti:, you need to access a [Google Ads](https://ads.google.com/) account.
+
+#### Find customer ID <a href="#findcustomerid" id="findcustomerid"></a>
+
+1. Log in to your [Google Ads account](https://ads.google.com/nav/login).
+2.  Locate your Google Ads customer ID and make a note of it. You will need it to fill in your Google Ads setup form.
+
+    ![Customer ID](https://fivetran.com/static-assets-docs/_next/static/media/customer-id.9cc9a54c.png)
 
 ***
 
 ## <mark style="background-color:blue;">Setup instructions</mark>
 
-text
+1. Connect your Google account to permit Quanti: to access to your data
+2. Connector information
+   1. Connector Name : Name your connector. It must be unique.
+   2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
+   3. Enter the Google Ads customer ID you found.
+3. Select accounts : Choose accounts to sync.
+4. Create queries: You can either select pre-built queries or create your own custom queries.
 
 ***
 
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
-text
+* Ad Stats : Advertising performance at ad level (**Impressions, Clicks, Spend**)
+* Ad Conversions : Conversion performance at ad level (**All conversion Types and values**)
+* Campaign Stats : Advertising performance at campaign level (**Impressions, Clicks, Spend**)
+* Campaign Conversions : Conversion performance at campaign level (**All conversion Types and values**)
 
 ***
 
-## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
+[Pre-built tables and definition ](https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
 
-Text
+<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
 
-***
-
-## <mark style="background-color:blue;">Custom query</mark> if needed
-
-Text (if needed)
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135">https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135</a></p></figcaption></figure>
 
 ***
 
-## <mark style="background-color:blue;">Limits</mark> if needed
+## <mark style="background-color:blue;">Custom query</mark>
 
-Text (if needed)
+If you want to sync a Custom report:
+
+1. Click **Add custom query**
+2. Enter a **table name** for the custom report being added.&#x20;
+3. Select the **Report Name** of the report you'd like to sync.
+4. Select the **Fields** you'd like to sync for the report. See [Google's Ads API Report Types documentation](https://developers.google.com/google-ads/api/fields/v10/overview).
+5. Click **Save**.

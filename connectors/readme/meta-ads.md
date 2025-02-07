@@ -36,7 +36,7 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
    1. Connector Name : Name your connector. It must be unique.
    2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
 3. Select accounts to sync.
-4. "Create queries: You can either select pre-built queries or create your own custom queries.
+4. Create queries: You can either select pre-built queries or create your own custom queries.
 
 ***
 
