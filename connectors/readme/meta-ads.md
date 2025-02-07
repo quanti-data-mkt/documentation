@@ -15,9 +15,7 @@ layout:
 
 # Meta Ads
 
-***
-
-## <mark style="background-color:blue;">Prerequisites</mark>
+<mark style="background-color:blue;">Prerequisites</mark>
 
 To connect Facebook Ads to QUANTI:, you need:
 
@@ -42,7 +40,7 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Pre-built Queries</mark>
 
 * Ad Stats : Advertising performance at ad level (**Impressions, Clicks, Spend**)
 * Ad Conversions : Conversion performance at ad level (**All conversion Types and values**)
@@ -51,9 +49,13 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
 
 ***
 
-ERD (db diagramm) :
+Pre-built tables definition : [see all tables and relations](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption></figcaption></figure>
 
 ***
+
+{% embed url="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" fullWidth="true" %}
 
 {% embed url="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" %}
 
