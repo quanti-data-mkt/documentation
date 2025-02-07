@@ -13,13 +13,21 @@ layout:
     visible: false
 ---
 
-# Meta
+# Meta Ads
 
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Meta to QUANTI, you need an [Facebook](https://www.facebook.com/) account and an access to a [business manager](https://business.facebook.com/).
+To connect Facebook Ads to QUANTI:, you need:
+
+An active **Meta Ads Manager** account with the following permissions for the accounts you'd like to sync:
+
+* An `ads_read` permission to sync Ads report information for any Ad accounts that you own or have been granted access to through this permission.
+* An `ads_management` permission to sync Ads accounts' metadata. This permission also requests the `id` and `account_timezone` fields of Ad accounts. The `account_timezone` field is required to save the correct report date in the destination.
+* A `business_management` permission is mandatory to ensure a successful setup. Without this permission, setup tests will fail
+
+The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/breakdowns) and [fields](https://developers.facebook.com/docs/marketing-api/insights) you'd like to sync.
 
 ***
 
@@ -36,27 +44,21 @@ To connect Meta to QUANTI, you need an [Facebook](https://www.facebook.com/) acc
 
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
-* Ad Stats : Advertising performance at ad level
-* Ad Conversions : Conversion performance at ad level
-* Adset Stats : Advertising performance at adset level
-* Campaign Stats : Advertising performance at campaign level
+* Ad Stats : Advertising performance at ad level (**Impressions, Clicks, Spend**)
+* Ad Conversions : Conversion performance at ad level (**All conversion Types and values**)
+* Ad set Stats : Advertising performance at adset level (**Impressions, Clicks, Spend**)
+* Campaign Stats : Advertising performance at campaign level  (**Impressions, Clicks, Spend**)
 
 ***
 
-## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
-
-Text
+ERD (db diagramm) :
 
 ***
+
+{% embed url="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" %}
 
 ## <mark style="background-color:blue;">Custom query</mark>
 
 To help you to create your own custom queries and know the compatibility of fields between them, you can build the custom reports you require using the [Facebook Graph API Explorer](https://developers.facebook.com/docs/graph-api/guides/explorer/) and then replicate it on Quanti:. The explorer indicates fields compatibility, any potential errors, and if the data you require is available.
 
 The Meta connector works entirely on the Meta "[API insights](https://developers.facebook.com/docs/marketing-api/insights)" documentation.
-
-***
-
-## <mark style="background-color:blue;">Limits</mark> if needed
-
-Text (if needed)

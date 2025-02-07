@@ -20,7 +20,7 @@
   * [Wonderpush](connectors/readme/wonderpush.md)
   * [RTB House](connectors/readme/index.md)
   * [Rakuten](connectors/readme/rakuten.md)
-  * [Meta](connectors/readme/meta.md)
+  * [Meta Ads](connectors/readme/meta-ads.md)
   * [Google Ads](connectors/readme/google-ads.md)
   * [Stackadapt](connectors/readme/stackadapt.md)
   * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
@@ -32,16 +32,16 @@
 
 * [Tag setup](tag-tracker/tag-setup.md)
 * [Tag data model](tag-tracker/tag-data-model/README.md)
-  * [raw\_hits](tag-tracker/tag-data-model/raw\_hits.md)
-  * [raw\_sessions](tag-tracker/tag-data-model/raw\_sessions.md)
-  * [advanced\_attribution](tag-tracker/tag-data-model/advanced\_attribution.md)
+  * [raw\_hits](tag-tracker/tag-data-model/raw_hits.md)
+  * [raw\_sessions](tag-tracker/tag-data-model/raw_sessions.md)
+  * [advanced\_attribution](tag-tracker/tag-data-model/advanced_attribution.md)
 * [Rules for calculated attribution](tag-tracker/rules-for-calculated-attribution.md)
 
 ## TRANSFORMATIONS
 
 * [The principle of reconciliation](transformations/the-principle-of-reconciliation.md)
 * [Pre-built tables](transformations/pre-built-tables/README.md)
-  * [ads\_import](transformations/pre-built-tables/ads\_import.md)
-  * [ads\_import\_conv](transformations/pre-built-tables/ads\_import\_conv.md)
-  * [quanti\_ids](transformations/pre-built-tables/quanti\_ids.md)
+  * [ads\_import](transformations/pre-built-tables/ads_import.md)
+  * [ads\_import\_conv](transformations/pre-built-tables/ads_import_conv.md)
+  * [quanti\_ids](transformations/pre-built-tables/quanti_ids.md)
 * [Tracking templates](transformations/tracking-templates.md)
