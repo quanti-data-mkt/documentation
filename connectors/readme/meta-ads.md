@@ -59,6 +59,6 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
 
 ## <mark style="background-color:blue;">Custom query</mark>
 
-To help you to create your own custom queries and know the compatibility of fields between them, you can build the custom reports you require using the [Facebook Graph API Explorer](https://developers.facebook.com/docs/graph-api/guides/explorer/) and then replicate it on Quanti:. The explorer indicates fields compatibility, any potential errors, and if the data you require is available.
+To help you create your own custom queries and understand the compatibility of fields, you can build the custom reports you need using the [Facebook Graph API Explorer](https://developers.facebook.com/docs/graph-api/guides/explorer/) and then replicate them in Quanti:. The Explorer indicates field compatibility, highlights potential errors, and shows whether the data you need is available.&#x20;
 
-The Meta connector works entirely on the Meta "[API insights](https://developers.facebook.com/docs/marketing-api/insights)" documentation.
+The Meta connector relies entirely on Meta's "[API insights](https://developers.facebook.com/docs/marketing-api/insights)" documentation.
