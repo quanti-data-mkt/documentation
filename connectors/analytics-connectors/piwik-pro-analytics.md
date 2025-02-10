@@ -66,16 +66,6 @@ There is no pre-built queries for Piwik Pro at this moment.
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2">https://dbdiagram.io/e/65c4a93aac844320aeb8b15e/65ce1957ac844320ae390da2</a></p></figcaption></figure>
-
-***
-
-
-
 ## <mark style="background-color:yellow;">Custom query</mark>
 
 You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwik Pro Analytics interface.

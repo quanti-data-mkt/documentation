@@ -73,16 +73,6 @@ There is no pre-built queries for Piano Analytics at this moment
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/65d4c476ac844320ae967f23/65d4c4e2ac844320ae968975):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/65d4c476ac844320ae967f23/65d4c4e2ac844320ae968975">https://dbdiagram.io/e/65d4c476ac844320ae967f23/65d4c4e2ac844320ae968975</a></p></figcaption></figure>
-
-***
-
-
-
 ## <mark style="background-color:yellow;">Custom query</mark>
 
 Use the "Data Query" tool available on the Piano Analytics interface to help you in this process.
