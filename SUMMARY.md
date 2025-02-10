@@ -23,6 +23,7 @@
   * [Meta Ads](connectors/readme/meta-ads.md)
   * [Google Ads](connectors/readme/google-ads.md)
   * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
+  * [Hubspot](connectors/readme/hubspot.md)
   * [Criteo](connectors/readme/criteo.md)
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse-connector.md)
