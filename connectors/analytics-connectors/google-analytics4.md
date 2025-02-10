@@ -53,17 +53,23 @@ To connect Google Analytics 4 to QUANTI, you need an [Google](https://www.google
 * CUSTOM\_DIMENSIONS
 * CONVERSION\_EVENTS
 * PROPERTIES
-* GOOGLE\_ADS\_LINKS
+*   GOOGLE\_ADS\_LINKS
+
+
+
+    ***
+
+
+
+[Pre-built tables and definition ](https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+
+<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9">https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9</a></p></figcaption></figure>
 
 ***
 
-## <mark style="background-color:yellow;">Tables Diagram (ERD)</mark>
 
-{% embed url="https://docs.google.com/presentation/d/1a2dypcQnmRIcx9DcIlaDek_UVriEYjOSDir5EaeXDNY/edit?usp=sharing" %}
-Google Analytics 4 pre-built tables
-{% endembed %}
-
-***
 
 ## <mark style="background-color:yellow;">Custom query</mark>
 

@@ -22,7 +22,6 @@
   * [Rakuten](connectors/readme/rakuten.md)
   * [Meta Ads](connectors/readme/meta-ads.md)
   * [Google Ads](connectors/readme/google-ads.md)
-  * [Stackadapt](connectors/readme/stackadapt.md)
   * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse-connector.md)
