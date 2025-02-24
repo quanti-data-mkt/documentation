@@ -4,7 +4,7 @@
 
 ## DATA WAREHOUSES
 
-* [BigQuery](data-warehouses/bigquery.md)
+* [Manage rights on GCP](data-warehouses/bigquery.md)
 
 ## CONNECTORS
 
