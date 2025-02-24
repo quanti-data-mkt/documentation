@@ -44,7 +44,7 @@ To connect QUANTI: to BigQuery, you need an [Google Cloud Platform](https://clou
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery1.png" alt="Project ID from BigQuery Interface" width="563"><figcaption><p>Project ID from BigQuery Interface</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery1.png" alt="Project ID from BigQuery Interface" width="563"><figcaption><p>Project ID from BigQuery Interface</p></figcaption></figure>
 
 
 4. Select your Data Location. The physical place where QUANTI: will use to deposit your datas.
@@ -58,14 +58,14 @@ In this step, copy the service account email adresse provided by QUANTI: and fol
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery2.png" alt="Access to the BigQuery IAM interface" width="375"><figcaption><p>Access to the BigQuery IAM interface</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery2.png" alt="Access to the BigQuery IAM interface" width="375"><figcaption><p>Access to the BigQuery IAM interface</p></figcaption></figure>
 
 
 2.  Click GRANT ACCESS button.\
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery3.png" alt="&#x22;Grant Access&#x22; button from BigQuery interface"><figcaption><p>"Grant Access" button from BigQuery interface</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery3.png" alt="&#x22;Grant Access&#x22; button from BigQuery interface"><figcaption><p>"Grant Access" button from BigQuery interface</p></figcaption></figure>
 
 
 3. Copy/ paste the service account email adresse, assign roles bellow and click Save :
@@ -76,6 +76,6 @@ In this step, copy the service account email adresse provided by QUANTI: and fol
     \
 
 
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery4.png" alt="BigQuery needed roles for the system user" width="375"><figcaption><p>BigQuery needed roles for the system user</p></figcaption></figure>
+    <figure><img src="../../content/en/docs/prologue/bigquery/bigquery4.png" alt="BigQuery needed roles for the system user" width="375"><figcaption><p>BigQuery needed roles for the system user</p></figcaption></figure>
 
 4. In QUANTI: interface, click Next Button to launch the connections tests.
