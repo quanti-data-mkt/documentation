@@ -8,16 +8,16 @@ Here you will find everything you need to know.
 
 ***
 
-## [DATA WAREHOUSES](./#data-warehouses)
+## [DATA WAREHOUSES](broken-reference)
 
 ***
 
-## [CONNECTORS](./#connectors)
+## [CONNECTORS](broken-reference)
 
 ***
 
-## [TAG TRACKERS](./#tag-trackers)
+## [TAG TRACKERS](broken-reference)
 
 ***
 
-## [TRANSFORMATIONS](./#transformations)
+## [TRANSFORMATIONS](broken-reference)
