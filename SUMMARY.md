@@ -4,7 +4,7 @@
 
 ## DATA WAREHOUSES
 
-* [BigQuery](<README (1).md>)
+* [BigQuery](data-warehouses/bigquery.md)
 
 ## CONNECTORS
 
