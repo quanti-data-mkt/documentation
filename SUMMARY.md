@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome to Quanti: Documentions](README.md)
+* [Welcome to Quanti: Documention](README.md)
 
 ## DATA WAREHOUSES
 
