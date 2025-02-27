@@ -25,11 +25,11 @@ The advanced attribution table is a view. Its data comes directly from the other
 
 ***
 
-## <mark style="background-color:purple;">Tables Diagram (ERD)</mark>
+[Tables and definition](https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078) :link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
 
-{% embed url="https://docs.google.com/presentation/d/13HhIjItxg_pbIgJoKtM03njw2YpWU-J1guYn4bJeTT4" %}
-Tag Tracker Tables Diagram
-{% endembed %}
+<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078">https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078</a></p></figcaption></figure>
 
 ***
 
@@ -79,7 +79,7 @@ For a conversion tracking multiple contributive sessions, you will therefore hav
 **Unique session identifier** automatically created by Quanti: which linked the conversion.
 
 {% hint style="info" %}
-Learn more about [session\_id](raw\_sessions.md#session\_id).
+Learn more about [session\_id](raw_sessions.md#session_id).
 {% endhint %}
 
 ### s\_visitor\_id
@@ -87,7 +87,7 @@ Learn more about [session\_id](raw\_sessions.md#session\_id).
 **Unique visitor identifier** automatically created by Quanti: which linked the conversion.
 
 {% hint style="info" %}
-Learn more about [visitor\_id](raw\_sessions.md#visitor\_id).
+Learn more about [visitor\_id](raw_sessions.md#visitor_id).
 {% endhint %}
 
 ### c\_user\_id
@@ -123,7 +123,7 @@ DATE type field indicating the date of the session.
 The s\_source field is the value of **utm\_source** parameter of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_source](raw\_sessions.md#s\_source).
+Learn more about [s\_source](raw_sessions.md#s_source).
 {% endhint %}
 
 ### s\_medium
@@ -131,7 +131,7 @@ Learn more about [s\_source](raw\_sessions.md#s\_source).
 The s\_medium field is the value of **utm\_medium** parameter of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_medium](raw\_sessions.md#s\_medium).
+Learn more about [s\_medium](raw_sessions.md#s_medium).
 {% endhint %}
 
 ### s\_campaign
@@ -139,7 +139,7 @@ Learn more about [s\_medium](raw\_sessions.md#s\_medium).
 The s\_campaign field is the value of **utm\_campaign** parameter of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_campaign](raw\_sessions.md#s\_campaign).
+Learn more about [s\_campaign](raw_sessions.md#s_campaign).
 {% endhint %}
 
 ### s\_content
@@ -147,7 +147,7 @@ Learn more about [s\_campaign](raw\_sessions.md#s\_campaign).
 The s\_content field is the value of **utm\_content** parameter of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_content](raw\_sessions.md#s\_content).
+Learn more about [s\_content](raw_sessions.md#s_content).
 {% endhint %}
 
 ### s\_keyword
@@ -155,7 +155,7 @@ Learn more about [s\_content](raw\_sessions.md#s\_content).
 The s\_keyword field is the value of **utm\_term** parameter of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_keyword](raw\_sessions.md#s\_keyword).
+Learn more about [s\_keyword](raw_sessions.md#s_keyword).
 {% endhint %}
 
 ### s\_utm\_id
@@ -163,7 +163,7 @@ Learn more about [s\_keyword](raw\_sessions.md#s\_keyword).
 The s\_utm\_id field is the value of **utm\_id** parameter of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_utm\_id](raw\_sessions.md#s\_utm\_id).
+Learn more about [s\_utm\_id](raw_sessions.md#s_utm_id).
 {% endhint %}
 
 ### s\_consent
@@ -171,7 +171,7 @@ Learn more about [s\_utm\_id](raw\_sessions.md#s\_utm\_id).
 The s\_consent field is the value of **s\_consent** field of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_consent](raw\_sessions.md#s\_consent).
+Learn more about [s\_consent](raw_sessions.md#s_consent).
 {% endhint %}
 
 ### s\_referrer
@@ -179,7 +179,7 @@ Learn more about [s\_consent](raw\_sessions.md#s\_consent).
 The s\_referrer field is the value of **s\_referrer** field of the session arose from `raw_sessions` table.
 
 {% hint style="info" %}
-Learn more about [s\_referrer](raw\_sessions.md#s\_referrer).
+Learn more about [s\_referrer](raw_sessions.md#s_referrer).
 {% endhint %}
 
 ### path\_index

@@ -25,11 +25,11 @@ The new sessions appear in the `raw_sessions` table once the session has expired
 
 ***
 
-## <mark style="background-color:purple;">Tables Diagram (ERD)</mark>
+[Tables and definition](https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078) :link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
 
-{% embed url="https://docs.google.com/presentation/d/13HhIjItxg_pbIgJoKtM03njw2YpWU-J1guYn4bJeTT4" %}
-Tag Tracker Tables Diagram
-{% endembed %}
+<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078">https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078</a></p></figcaption></figure>
 
 ***
 
@@ -72,7 +72,7 @@ Last page of a session. The exit\_url of a session is calculated from `raw_hits`
 
 ### s\_source
 
-The s\_source field is the traffic source of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](raw\_hits.md#url) and the [referrer field](raw\_hits.md#referrer) of session's **first** hit.
+The s\_source field is the traffic source of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](raw_hits.md#url) and the [referrer field](raw_hits.md#referrer) of session's **first** hit.
 
 {% hint style="info" %}
 To learn more about **Campaign parameters calculated rules**, read this [attribution calculated rules](../rules-for-calculated-attribution.md).
@@ -80,7 +80,7 @@ To learn more about **Campaign parameters calculated rules**, read this [attribu
 
 ### s\_medium
 
-The s\_medium field is the traffic medium of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](raw\_hits.md#url) and [referrer field](raw\_hits.md#referrer) of session's first hit.
+The s\_medium field is the traffic medium of a session. It is calculated from `raw_hits` table. Quanti: applies rules to determine its value based on information contained in the [url field](raw_hits.md#url) and [referrer field](raw_hits.md#referrer) of session's first hit.
 
 {% hint style="info" %}
 To learn more about **Campaign parameters calculated rules**, read this [article](../rules-for-calculated-attribution.md).
@@ -108,7 +108,7 @@ The value of consent given by the user upon arrival through your consent managem
 
 ### s\_referrer
 
-The referrer is the visitor's originating page, or in other words, the page that precedes the opening of the session. The s\_referrer of a session is calculated from `raw_hits` table: Quanti: takes the [referrer](raw\_hits.md#referrer)'s value from session's first hit.
+The referrer is the visitor's originating page, or in other words, the page that precedes the opening of the session. The s\_referrer of a session is calculated from `raw_hits` table: Quanti: takes the [referrer](raw_hits.md#referrer)'s value from session's first hit.
 
 ### page\_views
 
