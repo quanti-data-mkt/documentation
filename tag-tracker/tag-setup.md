@@ -121,7 +121,9 @@ _quantiTag('hit', 'page_view', {
 
 ## <mark style="background-color:purple;">Server-side Tag install</mark>
 
-`Coming soon...`
+To install the server-side tag, simply use the GTM template available for download here :&#x20;
+
+{% file src="../.gitbook/assets/2025-02-04 QUANTI - Server-side Tag Template.tpl" %}
 
 ***
 
