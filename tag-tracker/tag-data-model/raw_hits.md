@@ -120,3 +120,19 @@ Technical informations about your browser. Automatically recovered by the tag du
 ### product\_ids
 
 A parameter useful to recover informations about products. usually a JSON is pushed in this field
+
+### ad\_user\_data
+
+Controls the sending of user-identifiable data for advertising purposes.
+
+### ad\_storage
+
+Controls the use of data for personalized advertising (e.g., remarketing, audience targeting).
+
+### ad\_personalization
+
+Controls the use of local storage for advertising purposes (e.g., marketing cookies).
+
+### analytics\_storage
+
+Controls the use of storage for analytics data.

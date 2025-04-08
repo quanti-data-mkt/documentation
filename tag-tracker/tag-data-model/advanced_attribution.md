@@ -182,6 +182,38 @@ The s\_referrer field is the value of **s\_referrer** field of the session arose
 Learn more about [s\_referrer](raw_sessions.md#s_referrer).
 {% endhint %}
 
+### s\_ad\_user\_data
+
+The s\_ad\_user\_data field is the value of **s\_ad\_user\_data** field of the session arose from `raw_sessions` table.
+
+{% hint style="info" %}
+Learn more about [s\_ad\_user\_data](advanced_attribution.md#s_ad_user_data).
+{% endhint %}
+
+### s\_ad\_personalization
+
+The s\_ad\_personalization field is the value of **s\_ad\_personalization** field of the session arose from `raw_sessions` table.
+
+{% hint style="info" %}
+Learn more about [s\_ad\_personalization](advanced_attribution.md#s_ad_personalization).
+{% endhint %}
+
+### s\_ad\_storage
+
+The s\_ad\_storage field is the value of **s\_ad\_storage** field of the session arose from `raw_sessions` table.
+
+{% hint style="info" %}
+Learn more about [s\_ad\_storage](advanced_attribution.md#s_ad_storage).
+{% endhint %}
+
+### s\_analytics\_storage
+
+The s\_analytics\_storage field is the value of **s\_analytics\_storage** field of the session arose from `raw_sessions` table.
+
+{% hint style="info" %}
+Learn more about [s\_analytics\_storage](advanced_attribution.md#s_analytics_storage).
+{% endhint %}
+
 ### path\_index
 
 Chronological position of the session among all the contributory sessions leading to a conversion.\

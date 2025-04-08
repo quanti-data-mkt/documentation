@@ -48,6 +48,7 @@ In this field, you can add your different domains (including payment platforms) 
 {% endhint %}
 
 3. **Session timeout** : A session is initiated when an app is opened in the foreground or when a webpage is loaded. It ends after a period of user inactivity. The default timeout is 30 minutes but can be adjusted here. The timeout duration can be expressed in seconds (s), minutes (m), or hours (h).
+4. **Session restart on new UTM** : If true, each time a new utm\_source is detected in the URL during a session, a new session is automatically created — meaning a new session\_id value is generated. The new UTM values are then used to characterize the source of this new session.
 
 ### After saving
 

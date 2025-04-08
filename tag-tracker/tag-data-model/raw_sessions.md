@@ -60,7 +60,7 @@ A user (identified by a **user\_id**) can make sessions (identified by multiple 
 
 ### device\_type
 
-The type of the device used to navigate. 3 possible choices: **desktop**, **mobile**, or **tablet**. The device\_type of a session is calculated from `raw_hits` table. for each session, the value is kept from the **last** hit.
+The type of the device used to navigate. 3 possible choices: **desktop**, **mobile**, or **tablet**. The device\_type of a session is calculated from the `raw_hits` table. For each session, the value is taken from the last hit.
 
 ### landing\_url
 
@@ -129,3 +129,20 @@ The sum of conversions values counted during the session.
 ### account\_id
 
 Unique account identifier given by Quanti: during tag creation. It can't be modified.
+
+### s\_ad\_user\_data
+
+Calculated from the `raw_hits` table. For each session, we keep the last known value.
+
+### s\_ad\_personalization
+
+Calculated from the `raw_hits` table. For each session, we keep the last known value.
+
+### s\_ad\_storage
+
+Calculated from the `raw_hits` table. For each session, we keep the last known value.
+
+### s\_analytics\_storage
+
+Calculated from the `raw_hits` table. For each session, we keep the last known value.
+
