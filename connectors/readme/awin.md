@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm\_source=quanti.io\&utm\_medium=partnership) account with API access.
+To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm_source=quanti.io\&utm_medium=partnership) account with API access.
 
 ***
 
@@ -38,7 +38,7 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm\_sourc
 
 ### Find API token
 
-1. Log in to your [Awin account](https://www.awin.com/fr?utm\_source=quanti.io\&utm\_medium=partnership\&utm\_campaign=awin\_connector).
+1. Log in to your [Awin account](https://www.awin.com/fr?utm_source=quanti.io\&utm_medium=partnership\&utm_campaign=awin_connector).
 2.  In the top-right corner, click your profile name, then select API Credentials.\
     \
 
@@ -79,15 +79,14 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm\_sourc
 
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
-* awin\_stats\_by\_creative\_import
-* awin\_stats\_by\_publisher\_import
-* awin\_transaction\_import
+* **transactions\_import :** Detailed transaction records with commission and sale data.
+* **stats\_by\_creative\_import :** Statistics summarized by creative assets.
+* **stats\_by\_publisher\_import :** Statistics summarized by publisher.
 
 ***
 
-## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
+[Pre-built tables and definition ](https://dbdiagram.io/e/682706f31227bdcb4e9d14aa/682707e41227bdcb4e9d3d4d):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
 
-{% embed url="https://docs.google.com/presentation/d/1cQzDPSGAxXy6kYsxzaV1z61XGs800LtAvjPZJbo0Cxg/edit?usp=sharing" %}
-Awin tables diagram
-{% endembed %}
+<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/682706f31227bdcb4e9d14aa/682707e41227bdcb4e9d3d4d">https://dbdiagram.io/e/682706f31227bdcb4e9d14aa/682707e41227bdcb4e9d3d4d</a></p></figcaption></figure>

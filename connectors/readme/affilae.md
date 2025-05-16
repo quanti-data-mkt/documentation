@@ -30,7 +30,7 @@ layout:
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
-To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logiciel-affiliation/?utm\_source=quanti.io\&utm\_medium=partnership) account.
+To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logiciel-affiliation/?utm_source=quanti.io\&utm_medium=partnership) account.
 
 ***
 
@@ -59,13 +59,13 @@ To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logi
 
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
-* affilae\_data\_import
-* affilae\_partnership\_import
+* **partnerships**: Contains details about advertiser-publisher partnerships, including affiliate profiles, programs, tracking, and status information.
+* **commissions**: Records performance metrics for partnerships such as clicks, conversions, commissions, impressions, and revenue by date and affiliate profile.
 
 ***
 
-## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
+[Pre-built tables and definition ](https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
 
-{% embed url="https://docs.google.com/presentation/d/1QtqL2SrIhkf9uObcG3SdIef76dAFWSxXiX-pm82lsgY/edit?usp=sharing" fullWidth="false" %}
-Affilae Tables ERD
-{% endembed %}
+<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579">https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579</a></p></figcaption></figure>
