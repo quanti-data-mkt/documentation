@@ -16,7 +16,7 @@
   * [Affilae](connectors/readme/affilae.md)
   * [Awin](connectors/readme/awin.md)
   * [Effinity](connectors/readme/effinity.md)
-  * [Commission Junction ](connectors/readme/commission-junction.md)
+  * [CJ](connectors/marketing-connectors/cj.md)
   * [TimeOne](connectors/readme/timeone.md)
   * [Stylight](connectors/readme/stylight.md)
   * [Wonderpush](connectors/readme/wonderpush.md)
