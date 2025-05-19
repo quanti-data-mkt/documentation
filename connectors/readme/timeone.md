@@ -58,15 +58,13 @@ To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/?ut
 
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
-* actions\_import
-* stats\_import
+* **Transactions**: Records individual affiliate events with detailed transaction information.
+* **Performances**: Aggregated daily statistics for affiliate programs.
 
 ***
 
-## <mark style="background-color:blue;">Tables Diagram (ERD)</mark>
+[Pre-built tables and definition ](https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
 
-To zoom, open the ERD in a new window : [ERD](https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b)
+<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
 
-[https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b](https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b)
-
-{% embed url="https://dbdiagram.io/e/65d486b2ac844320ae90b6d8/65d48921ac844320ae90f32b" %}
+<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e">https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e</a></p></figcaption></figure>
