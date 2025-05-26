@@ -15,4 +15,6 @@ layout:
 
 # Rules for calculated attribution
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2024-12-17 à 15.45.47.png" alt="quanti attribution rules"><figcaption><p>Attribution rules</p></figcaption></figure>
+
+
+<figure><img src="../.gitbook/assets/Attribution rules (1).jpg" alt=""><figcaption><p>Attribution rules</p></figcaption></figure>
