@@ -15,6 +15,4 @@ layout:
 
 # Rules for calculated attribution
 
-
-
-<figure><img src="../.gitbook/assets/Attribution rules (1).jpg" alt=""><figcaption><p>Attribution rules</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Attribution rules (2).jpg" alt=""><figcaption><p>Attribution rules</p></figcaption></figure>
