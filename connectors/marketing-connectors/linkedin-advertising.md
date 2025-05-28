@@ -29,7 +29,6 @@ To connect Linkedin Ads to Quanti:, you need to access a [Linkedin Ads](https://
 2. Connector information
    1. Connector Name : Name your connector. It must be unique.
    2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
-   3. Enter the Google Ads customer ID you found.
 3. Select accounts to sync.
 4. Select queries: You can select pre-built queries that you want to sync.
 
