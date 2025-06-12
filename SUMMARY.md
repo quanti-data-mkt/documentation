@@ -17,6 +17,7 @@
   * [Google Ads](connectors/readme/google-ads.md)
   * [Linkedin Ads](connectors/marketing-connectors/linkedin-advertising.md)
   * [Meta Ads](connectors/readme/meta-ads.md)
+  * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
   * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
   * [Rakuten Advertising](connectors/readme/rakuten.md)
   * [RTB House](connectors/marketing-connectors/rtbhouse.md)

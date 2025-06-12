@@ -59,7 +59,7 @@ To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logi
 
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
-* **partnerships**: Contains details about advertiser-publisher partnerships, including affiliate profiles, programs, tracking, and status information.
+* **partnerships\_history**: Contains details about advertiser-publisher partnerships, including affiliate profiles, programs, tracking, and status information.
 * **commissions**: Records performance metrics for partnerships such as clicks, conversions, commissions, impressions, and revenue by date and affiliate profile.
 
 ***

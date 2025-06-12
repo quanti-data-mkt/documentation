@@ -49,15 +49,13 @@ To connect Google Analytics 4 to QUANTI, you need an [Google](https://www.google
 
 ## <mark style="background-color:yellow;">Pre-built Tables</mark>
 
-* ACCOUNTS
-* CUSTOM\_DIMENSIONS
-* CONVERSION\_EVENTS
-* PROPERTIES
-*   GOOGLE\_ADS\_LINKS
+* accounts\_history
+* custom\_dimensions\_history
+* conversions\_history
+* properties\_history
+*   google\_ads\_links\_history
 
 
-
-    ***
 
 
 

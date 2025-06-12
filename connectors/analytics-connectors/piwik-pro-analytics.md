@@ -47,16 +47,14 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 ### Connector configuration
 
-1. Connector information
-   1. Name your connector
-      1. Connector Name : Name your connector. It must be unique.
-      2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
-   2. Connector information
-      1. Access Key and Secret Key retrieved following the steps above.
-      2. Domain displayed on your search bar when you are connected to your Piwik Account.
-   3. Website ID(s)
-      1. Website ID retrieved following the steps above.
-2. Create queries : Create your own custom queries. To help you, refer to the 'Custom Query' chapter below."
+1. Authorize your account
+   1. Access Key and Secret Key retrieved following the steps above.
+   2. Domain displayed on your search bar when you are connected to your Piwik Account.
+   3. Website ID retrieved following the steps above.
+2. Connector information
+   1. Connector Name : Name your connector. It must be unique.
+   2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
+3. Create queries : Create your own custom queries. To help you, refer to the 'Custom Query' chapter below."
 
 ***
 
