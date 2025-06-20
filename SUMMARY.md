@@ -15,6 +15,7 @@
   * [Criteo](connectors/readme/criteo.md)
   * [Effinity](connectors/readme/effinity.md)
   * [Google Ads](connectors/readme/google-ads.md)
+  * [Google Sheet](connectors/marketing-connectors/google-sheet.md)
   * [Linkedin Ads](connectors/marketing-connectors/linkedin-advertising.md)
   * [Meta Ads](connectors/readme/meta-ads.md)
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
