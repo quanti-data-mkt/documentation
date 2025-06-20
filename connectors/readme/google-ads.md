@@ -38,7 +38,8 @@ To connect Google Ads to Quanti:, you need to access a [Google Ads](https://ads.
    2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
    3. Enter the Google Ads customer ID you found.
 3. Select accounts : Choose accounts to sync.
-4. Create queries: You can either select pre-built queries or create your own custom queries.
+4. Select queries : Choose the pre-built queries you’d like to synchronize—or skip this step if none apply.
+5. Create queries: create your own custom queries queries you’d like to synchronize—or skip this step if none apply.
 
 ***
 
