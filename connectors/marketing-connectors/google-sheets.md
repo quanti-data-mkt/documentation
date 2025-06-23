@@ -13,7 +13,7 @@ layout:
     visible: false
 ---
 
-# Google Sheet
+# Google Sheets
 
 ***
 
@@ -59,7 +59,7 @@ You can have as many named ranges as you would like in a single Google Sheet wor
 
 ## <mark style="background-color:blue;">Sync method</mark>
 
-The insertion method used is INSERT mode, meaning the entire content of the table is overwritten and replaced, whether or not the data has changed.
+The insertion method used is `DELETE+INSERT` mode, meaning the entire content of the table is overwritten and replaced, whether or not the data has changed.
 
 ***
 

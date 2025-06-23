@@ -14,6 +14,7 @@
   * [CJ](connectors/marketing-connectors/cj.md)
   * [Criteo](connectors/readme/criteo.md)
   * [Effinity](connectors/readme/effinity.md)
+  * [Email](connectors/marketing-connectors/email.md)
   * [Google Ads](connectors/readme/google-ads.md)
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
   * [Google Sheets](connectors/marketing-connectors/google-sheets.md)
