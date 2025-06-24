@@ -22,6 +22,7 @@
   * [Meta Ads](connectors/readme/meta-ads.md)
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
   * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
+  * [Outbrain](connectors/marketing-connectors/outbrain.md)
   * [Rakuten Advertising](connectors/readme/rakuten.md)
   * [RTB House](connectors/marketing-connectors/rtbhouse.md)
   * [Stylight](connectors/readme/stylight.md)
