@@ -11,17 +11,6 @@ menu:
 weight: 110
 toc: true
 description: 'Follow our setup guide to connect Stylight to QUANTI:'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Stylight
@@ -55,7 +44,3 @@ To connect Stylight to QUANTI, you need a [Stylight](https://partner.stylight.co
 ***
 
 [Pre-built tables and definition ](https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803">https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803</a></p></figcaption></figure>

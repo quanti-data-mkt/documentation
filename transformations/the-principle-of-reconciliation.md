@@ -2,17 +2,6 @@
 description: >-
   The transformation methods proposed by Quanti: are based on a principle called
   reconciliation.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # The principle of reconciliation

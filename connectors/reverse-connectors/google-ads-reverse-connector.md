@@ -1,16 +1,6 @@
 ---
 description: Follow our setup guide to integer the reverse-connector Google Ads
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
+hidden: true
 ---
 
 # Google Ads

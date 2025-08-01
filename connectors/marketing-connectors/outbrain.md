@@ -1,16 +1,5 @@
 ---
 description: 'Follow our setup guide to connect Microsoft Advertising to QUANTI:'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Outbrain
@@ -48,7 +37,3 @@ To connect Microsoft Advertising to Quanti:, you need to access a [Outbrain](htt
 ***
 
 [Pre-built tables and definition ](https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a">https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a</a></p></figcaption></figure>

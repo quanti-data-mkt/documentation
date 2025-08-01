@@ -2,17 +2,6 @@
 description: >-
   Follow our setup guide to connect your Piwik Pro Analytics connector with
   QUANTI:
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Piwik Pro
@@ -67,12 +56,6 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 ***
 
 [Pre-built tables and definition ](https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b">https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b</a></p></figcaption></figure>
-
-***
 
 ***
 

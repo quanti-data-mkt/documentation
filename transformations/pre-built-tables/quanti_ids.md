@@ -2,17 +2,6 @@
 description: >-
   Presentation of the aggregation table of dimensions from advertising
   platforms.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # quanti\_ids

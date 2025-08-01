@@ -11,17 +11,6 @@ menu:
 weight: 110
 toc: true
 description: Follow our setup guide to integer the reverse-connector Adobe Analytics
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Adobe Analytics

@@ -1,16 +1,5 @@
 ---
 description: 'Follow our setup guide to connect Google Sheet to QUANTI:'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Google Sheets

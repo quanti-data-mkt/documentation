@@ -2,17 +2,6 @@
 description: >-
   The advanced attribution table is a “conversion” scope table. It records all
   conversions made and attributes them to the sessions that participated.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # advanced\_attribution

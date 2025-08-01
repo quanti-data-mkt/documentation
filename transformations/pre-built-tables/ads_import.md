@@ -1,16 +1,5 @@
 ---
 description: Introduction to the data aggregation table for advertising platforms.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # ads\_import
@@ -55,7 +44,7 @@ The primary keys of the table are:
 * `quanti_id` :  aggregates data at a "**ad**" level. The `quanti_id`  allows, via 'tracking templates,' to insert this information into campaign parameters (traditionally called UTM parameters) in order to link <mark style="background-color:purple;">ad-centric</mark> information with <mark style="background-color:yellow;">site-centric</mark> information.
 
 {% hint style="info" %}
-Get more information about how is built **quanti\_id** directly in [quanti\_ids.md](quanti\_ids.md "mention")
+Get more information about how is built **quanti\_id** directly in [quanti\_ids.md](quanti_ids.md "mention")
 {% endhint %}
 
 ***

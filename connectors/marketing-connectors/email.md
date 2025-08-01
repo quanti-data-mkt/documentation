@@ -1,16 +1,5 @@
 ---
 description: 'Follow this setup guide to connect your email attachments to QUANTI:'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Email

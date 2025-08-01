@@ -2,17 +2,6 @@
 description: >-
   The raw_sessions table is a "session" scope table. It records every sessions
   of all users, which are defined by a succession of events within a given time.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # raw\_sessions

@@ -1,16 +1,5 @@
 ---
 description: 'Follow our setup guide to connect Piano to QUANTI:'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Piano Analytics
@@ -74,10 +63,6 @@ Your **Website ID** is in the url when you are connected to your Piano account. 
 ***
 
 [Pre-built tables and definition ](https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source :<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f">https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f</a></p></figcaption></figure>
 
 ***
 

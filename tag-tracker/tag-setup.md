@@ -1,16 +1,5 @@
 ---
 description: 'Follow our setup guide to interger the QUANTI: tag'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Tag setup

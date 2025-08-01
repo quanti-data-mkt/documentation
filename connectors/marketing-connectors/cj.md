@@ -11,20 +11,9 @@ menu:
 weight: 110
 toc: true
 description: 'Follow our setup guide to connect CJ to QUANTI:'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
-# Commission Junction&#x20;
+# CJ
 
 ***
 
@@ -70,7 +59,3 @@ To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/?utm_source=quanti.
 ***
 
 [Pre-built tables and definition ](https://dbdiagram.io/e/68270cd31227bdcb4e9e10aa/68270d411227bdcb4e9e225d):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/68270cd31227bdcb4e9e10aa/68270d411227bdcb4e9e225d">https://dbdiagram.io/e/68270cd31227bdcb4e9e10aa/68270d411227bdcb4e9e225d</a></p></figcaption></figure>

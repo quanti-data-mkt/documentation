@@ -13,17 +13,6 @@ toc: true
 description: >-
   How to give rights to a Service Account in GCP. Follow our setup guide to
   connect QUANTI: to Google Cloud Platform.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Manage rights on GCP

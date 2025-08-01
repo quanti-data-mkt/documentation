@@ -1,16 +1,5 @@
 ---
 description: Pattern recommanded to use for reconciliation
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Tracking templates

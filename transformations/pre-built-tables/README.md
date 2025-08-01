@@ -2,17 +2,6 @@
 description: >-
   Quanti: syncs pre-built tables to simplify data analysis. Let's jump into
   transformations.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Pre-built tables
@@ -44,14 +33,14 @@ The general idea of this transformation step is to make the data more digestible
 ## Pre-built tables
 
 {% content-ref url="ads_import.md" %}
-[ads\_import.md](ads\_import.md)
+[ads\_import.md](ads_import.md)
 {% endcontent-ref %}
 
 {% content-ref url="ads_import_conv.md" %}
-[ads\_import\_conv.md](ads\_import\_conv.md)
+[ads\_import\_conv.md](ads_import_conv.md)
 {% endcontent-ref %}
 
 {% content-ref url="quanti_ids.md" %}
-[quanti\_ids.md](quanti\_ids.md)
+[quanti\_ids.md](quanti_ids.md)
 {% endcontent-ref %}
 

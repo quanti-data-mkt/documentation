@@ -11,17 +11,6 @@ menu:
 weight: 110
 toc: true
 description: 'Follow our setup guide to connect Rakuten to QUANTI:'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Rakuten Advertising
@@ -87,7 +76,7 @@ To connect Rakuten to QUANTI, you need an [Rakuten Advertising](https://rakutena
 
     <figure><img src="../../content/en/docs/prologue/rakuten/rakuten4.png" alt="Access path to the generated link"><figcaption><p>Access path to the generated link</p></figcaption></figure>
 
-
+<figure><img src="../../.gitbook/assets/LinkShare-08-01-2025_03_31_PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Importante information
 
@@ -100,17 +89,22 @@ If you have several Rakuten accounts and want to fill a unique table, you have t
 ### Finish Quanti: configuration
 
 ```bash
-//ran-reporting.rakutenmarketing.com/en/reports/[<REPORT-KEY>]/filters?
-date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API-TOKEN>]
+//ran-reporting.rakutenmarketing.com/en/reports/[<API-REPORT>]/filters?
+date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API-KEY>]
 ```
+
+
 
 1. In the connector setup form, enter the name of your choice.
 2. Paste the Report key from the URL generated.
 3. Paste the API token from the URL generated.
-4. Settings : In most cases, you will need use&#x20;
+
+<figure><img src="../../.gitbook/assets/Quanti-App-08-01-2025_03_29_PM.png" alt=""><figcaption></figcaption></figure>
+
+1. Settings : In most cases, you will need use&#x20;
    1. Date type : transaction
    2. Timezone : UTC
-5. Click Save & Test. Quanti: will take it from here and sync your Rakuten data.
+2. Click Save & Test. Quanti: will take it from here and sync your Rakuten data.
 
 ***
 
@@ -121,7 +115,3 @@ date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API
 ***
 
 [Pre-built tables and definition ](https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a">https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a</a></p></figcaption></figure>

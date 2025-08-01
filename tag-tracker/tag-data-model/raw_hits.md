@@ -2,17 +2,6 @@
 description: >-
   The raw_hits table is a "hit" scope table. This means it records all incoming
   tag calls (page_view or event).
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # raw\_hits

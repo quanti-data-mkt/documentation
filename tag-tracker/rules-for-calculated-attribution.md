@@ -1,16 +1,5 @@
 ---
 description: 'How Quanti: calculate traffic sources (cf. raw_sessions table)'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Rules for calculated attribution
