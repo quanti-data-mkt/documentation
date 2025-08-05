@@ -34,4 +34,4 @@ To connect Tiktok to Quanti:, you need to access a [Tiktok](https://ads.tiktok.c
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/682b4daf1227bdcb4eff888a/682b4fa51227bdcb4effdd6c):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+[Pre-built tables and definition ](https://dbdiagram.io/e/683722b0c07db17e778d3253/683722bdc07db17e778d3643):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
