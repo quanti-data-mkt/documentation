@@ -4,7 +4,9 @@ description: >-
   QUANTI:
 ---
 
-# Piwik Pro
+# Piwik PRO
+
+<a href="https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
 
 ***
 
@@ -55,7 +57,7 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
 
 ***
 

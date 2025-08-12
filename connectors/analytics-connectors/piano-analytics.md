@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect Piano to QUANTI:'
 
 # Piano Analytics
 
+<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:yellow;">Prerequisites</mark>
@@ -62,7 +64,7 @@ Your **Website ID** is in the url when you are connected to your Piano account. 
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
 
 ***
 

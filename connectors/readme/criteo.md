@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect Criteo to QUANTI:'
 
 # Criteo
 
+<a href="https://dbdiagram.io/e/67aa0d57263d6cf9a0a4115e/67aa17c7263d6cf9a0a58734" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -58,4 +60,4 @@ To connect Criteo to Quanti:, you need to access a [Criteo](https://marketing.cr
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/67aa0d57263d6cf9a0a4115e/67aa17c7263d6cf9a0a58734):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

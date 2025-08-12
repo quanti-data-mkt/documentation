@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect Microsoft Advertising to QUANTI:
 
 # Microsoft Advertising
 
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -26,10 +28,8 @@ To connect Microsoft Advertising to Quanti:, you need to access a [Microsoft Adv
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
 * Ad Performance Daily Report : Advertising performance at ad level (**Impressions, Clicks, Spend**)
-*   Campaign Performance Daily Report : Advertising performance at campaign level (**Impressions, Clicks, Spend**)
+* Campaign Performance Daily Report : Advertising performance at campaign level (**Impressions, Clicks, Spend**)
 
+***
 
-
-
-
-[Pre-built tables and definition ](https://dbdiagram.io/e/67a9d95b263d6cf9a09cfbbc/67a9e062263d6cf9a09de479):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/67a9d95b263d6cf9a09cfbbc/67a9e062263d6cf9a09de479" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

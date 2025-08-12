@@ -17,6 +17,8 @@ description: >-
 
 # Google Analytics 4
 
+<a href="https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:yellow;">Prerequisites</mark> <a href="#pre-requisites" id="pre-requisites"></a>
@@ -42,13 +44,11 @@ To connect Google Analytics 4 to QUANTI, you need an [Google](https://www.google
 * custom\_dimensions\_history
 * conversions\_history
 * properties\_history
-*   google\_ads\_links\_history
+* google\_ads\_links\_history
 
+***
 
-
-
-
-[Pre-built tables and definition ](https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
 
 ***
 

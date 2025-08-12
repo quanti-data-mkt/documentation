@@ -15,6 +15,10 @@ description: 'Follow our setup guide to connect Effinity to QUANTI:'
 
 # Effinity
 
+<a href="https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
+***
+
 ## <mark style="background-color:blue;">Prerequisites</mark>
 
 To connect Effinity to QUANTI, you need an [Effinity](https://www.effinity.fr/?utm_source=quanti.io\&utm_medium=partnership\&utm_campaign=effinity_data_connector) account.
@@ -45,4 +49,4 @@ To connect Effinity to QUANTI, you need an [Effinity](https://www.effinity.fr/?u
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

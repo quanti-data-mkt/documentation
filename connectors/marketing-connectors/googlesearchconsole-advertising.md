@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect Google Ads to QUANTI:'
 
 # Google Search Console
 
+<a href="https://dbdiagram.io/e/68555a41f039ec6d36273bf9/685562ddf039ec6d36286cbf" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -35,4 +37,4 @@ To connect Google Search Console to Quanti:, you need to access a [Google Seach 
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/68555a41f039ec6d36273bf9/685562ddf039ec6d36286cbf):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/68555a41f039ec6d36273bf9/685562ddf039ec6d36286cbf" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

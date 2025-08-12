@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect Microsoft Advertising to QUANTI:
 
 # Outbrain
 
+<a href="https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -36,4 +38,4 @@ To connect Microsoft Advertising to Quanti:, you need to access a [Outbrain](htt
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

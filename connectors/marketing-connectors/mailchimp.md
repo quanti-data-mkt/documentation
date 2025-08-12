@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect Mailchimp to QUANTI:'
 
 # Mailchimp
 
+<a href="https://dbdiagram.io/e/684ae5df1dff20a534caede9/684ae84a1dff20a534cb4a46" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -32,4 +34,4 @@ To connect Mailchimp to Quanti:, you need to access a [Mailchimp](https://login.
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/684ae5df1dff20a534caede9/684ae84a1dff20a534cb4a46):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

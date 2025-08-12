@@ -15,6 +15,8 @@ description: 'Follow our setup guide to connect CJ to QUANTI:'
 
 # CJ
 
+<a href="https://dbdiagram.io/e/68270cd31227bdcb4e9e10aa/68270d411227bdcb4e9e225d" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -58,4 +60,4 @@ To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/?utm_source=quanti.
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/68270cd31227bdcb4e9e10aa/68270d411227bdcb4e9e225d):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/68270cd31227bdcb4e9e10aa/68270d411227bdcb4e9e225d" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

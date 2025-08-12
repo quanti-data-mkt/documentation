@@ -34,7 +34,7 @@
 * [Analytics connectors](connectors/analytics-connectors/README.md)
   * [Google Analytics 4](connectors/analytics-connectors/google-analytics4.md)
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
-  * [Piwik Pro](connectors/analytics-connectors/piwik-pro-analytics.md)
+  * [Piwik PRO](connectors/analytics-connectors/piwik-pro-analytics.md)
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse-connector.md)
   * [Google Ads](connectors/reverse-connectors/google-ads-reverse-connector.md)

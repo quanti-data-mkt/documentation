@@ -15,6 +15,8 @@ description: Follow our setup guide to connect your Affilae connector
 
 # Affilae
 
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -53,9 +55,4 @@ To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logi
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-{% hint style="warning" %}
 <a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
-{% endhint %}
-

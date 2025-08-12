@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect Google Ads to QUANTI:'
 
 # Google Ads
 
+<a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -41,7 +43,7 @@ To connect Google Ads to Quanti:, you need to access a [Google Ads](https://ads.
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
 
 ***
 

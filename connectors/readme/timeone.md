@@ -15,6 +15,8 @@ description: 'Follow our setup guide to connect TimeOne to QUANTI:'
 
 # TimeOne
 
+<a href="https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -52,4 +54,4 @@ To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/?ut
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect RTB House to QUANTI:'
 
 # RTB House
 
+<a href="https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -32,4 +34,4 @@ To connect RTB House to QUANTI, you need an [RTB House](https://www.rtbhouse.com
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

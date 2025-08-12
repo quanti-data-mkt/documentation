@@ -15,6 +15,8 @@ description: 'Follow our setup guide to connect Wonderpush to QUANTI:'
 
 # Wonderpush
 
+<a href="https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -48,4 +50,4 @@ To connect Wonderpush to QUANTI, you need a [Wonderpush](https://www.wonderpush.
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

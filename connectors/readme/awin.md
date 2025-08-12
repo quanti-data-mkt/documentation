@@ -15,6 +15,8 @@ description: 'Follow our setup guide to connect Awin to QUANTI:'
 
 # Awin
 
+<a href="https://dbdiagram.io/e/682706f31227bdcb4e9d14aa/682707e41227bdcb4e9d3d4d" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -74,4 +76,4 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm_source
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/682706f31227bdcb4e9d14aa/682707e41227bdcb4e9d3d4d)[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/682706f31227bdcb4e9d14aa/682707e41227bdcb4e9d3d4d" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>

@@ -4,7 +4,11 @@ description: 'Follow our setup guide to connect Meta to QUANTI:'
 
 # Meta Ads
 
-<mark style="background-color:blue;">Prerequisites</mark>
+<a href="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
+***
+
+## <mark style="background-color:blue;">Prerequisites</mark>
 
 To connect Facebook Ads to QUANTI:, you need:
 
@@ -38,7 +42,7 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
 
 ***
 

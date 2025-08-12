@@ -15,6 +15,8 @@ description: 'Follow our setup guide to connect Rakuten to QUANTI:'
 
 # Rakuten Advertising
 
+<a href="https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:blue;">Prerequisites</mark>
@@ -114,4 +116,4 @@ date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API
 
 ***
 
-[Pre-built tables and definition ](https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a):link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
+<a href="https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
