@@ -27,6 +27,7 @@
   * [Outbrain](connectors/marketing-connectors/outbrain.md)
   * [Rakuten Advertising](connectors/readme/rakuten.md)
   * [RTB House](connectors/marketing-connectors/rtbhouse.md)
+  * [Snapchat](connectors/marketing-connectors/snapchat.md)
   * [Stylight](connectors/readme/stylight.md)
   * [Tiktok](connectors/marketing-connectors/tiktok-advertising.md)
   * [TimeOne](connectors/readme/timeone.md)
