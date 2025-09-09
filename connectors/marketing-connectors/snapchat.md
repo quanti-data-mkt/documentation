@@ -28,7 +28,32 @@ To connect Snapchat to Quanti:, you need to access a [Business account](https://
 
 ## <mark style="background-color:blue;">Pre-built Tables</mark>
 
-*
+* **ad\_account\_history**: Stores historical data about ad accounts and their configurations.
+* **ad\_daily\_report**: Daily performance metrics at the ad level.
+* **ad\_demographic\_daily\_report**: Ad performance metrics broken down by demographic segments.
+* **ad\_device\_make\_daily\_report**: Ad metrics segmented by device make (e.g. Apple, Samsung).
+* **ad\_device\_os\_daily\_report**: Ad metrics segmented by operating system (e.g. iOS, Android).
+* **ad\_geo\_country\_daily\_report**: Ad metrics grouped by country.
+* **ad\_geo\_dma\_daily\_report**: Ad metrics grouped by DMA (Designated Market Areas).
+* **ad\_geo\_region\_daily\_report**: Ad metrics grouped by geographic regions.
+* **ad\_history**: Contains historical records of individual ads and their statuses.
+* **ad\_squad\_daily\_report**: Daily performance data aggregated at the ad squad level.
+* **ad\_squad\_demographic\_daily\_report**: Ad squad performance data by demographic attributes.
+* **ad\_squad\_device\_make\_daily\_report**: Ad squad metrics by device make.
+* **ad\_squad\_device\_os\_daily\_report**: Ad squad metrics by operating system.
+* **ad\_squad\_geo\_country\_daily\_report**: Ad squad performance by country.
+* **ad\_squad\_geo\_dma\_daily\_report**: Ad squad performance by DMA region.
+* **ad\_squad\_geo\_region\_daily\_report**: Ad squad performance by broader geographic regions.
+* **ad\_squad\_history**: Historical configuration and status data for ad squads.
+* **campaign\_daily\_report**: Daily performance metrics at the campaign level.
+* **campaign\_demographic\_daily\_report**: Campaign metrics by age and gender.
+* **campaign\_device\_make\_daily\_report**: Campaign metrics segmented by device make.
+* **campaign\_device\_os\_daily\_report**: Campaign metrics segmented by OS.
+* **campaign\_geo\_country\_daily\_report**: Campaign metrics by country.
+* **campaign\_geo\_dma\_daily\_report**: Campaign metrics by DMA region.
+* **campaign\_geo\_region\_daily\_report**: Campaign metrics by larger regions.
+* **campaign\_history**: Historical data of campaign configurations and statuses.
+* **organization\_history**: Historical data about advertiser organizations.
 
 ***
 
