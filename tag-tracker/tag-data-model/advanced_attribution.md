@@ -6,19 +6,15 @@ description: >-
 
 # advanced\_attribution
 
+<a href="https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+
 ***
 
 ## <mark style="background-color:purple;">Syncing</mark>
 
-The advanced attribution table is a view. Its data comes directly from the others tables and depends directly on their synchronization frequency. Thus, new conversions will appear on this table once the session has expired, i.e. after a period of inactivity of **30 minutes** after the last hit.
+The advanced attribution table is a view.&#x20;
 
-***
-
-[Tables and definition](https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078) :link:[ ](https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8)
-
-<figure><img src="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-02-07 à 11.45.23.png" alt="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8"><figcaption><p>Source : <a href="https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078">https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078</a></p></figcaption></figure>
+{% file src="../../.gitbook/assets/raw_conversions.sql" %}
 
 ***
 
