@@ -6,6 +6,14 @@ description: 'Follow our setup guide to connect Piano to QUANTI:'
 
 <a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
 
+{% hint style="warning" %}
+**Piano Analytics limits the number of rows returned per query to 1,500,000.**\
+We split our queries by day and by account, but it’s important to understand that if a single query for one account exceeds 1,500,000 rows, the API returns an error.\
+As a result, the query fails, and the data is not inserted into our system.
+
+To avoid this, make sure to use the filtering feature to reduce the number of returned rows and stay within the API limits.
+{% endhint %}
+
 ***
 
 ## <mark style="background-color:yellow;">Prerequisites</mark>
@@ -70,6 +78,14 @@ Your **Website ID** is in the url when you are connected to your Piano account. 
 
 ## <mark style="background-color:yellow;">Custom query</mark>
 
+{% hint style="warning" %}
+**Piano Analytics limits the number of rows returned per query to 1,500,000.**\
+We split our queries by day and by account, but it’s important to understand that if a single query for one account exceeds 1,500,000 rows, the API returns an error.\
+As a result, the query fails, and the data is not inserted into our system.
+
+To avoid this, make sure to use the filtering feature to reduce the number of returned rows and stay within the API limits.
+{% endhint %}
+
 Use the "Data Query" tool available on the Piano Analytics interface to help you in this process.
 
 1.  To the top-right corner, click on button (the icon with 4 squares) < Data Query\
@@ -99,3 +115,9 @@ The name chosen for your custom query is the one that name your table
 ## <mark style="background-color:yellow;">Limits</mark>
 
 * Max 50 dimensions and metrics per Custom Query
+*   Piano Analytics limits the number of rows returned per query to 1,500,000.\
+    We split our queries by day and by account, but it’s important to understand that if a single query for one account exceeds 1,500,000 rows, the API returns an error.\
+    As a result, the query fails, and the data is not inserted into our system.
+
+    To avoid this, make sure to use the filtering feature to reduce the number of returned rows and stay within the API limits.
+

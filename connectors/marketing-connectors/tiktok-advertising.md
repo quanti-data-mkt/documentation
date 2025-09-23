@@ -16,7 +16,7 @@ To connect Tiktok to Quanti:, you need to access a [Tiktok](https://ads.tiktok.c
 
 ## <mark style="background-color:blue;">Setup instructions</mark>
 
-1. Connect your Linkedin Ads account to permit Quanti: to access to your data
+1. Connect your Tiktok account to permit Quanti: to access to your data
 2. Connector information
    1. Connector Name : Name your connector. It must be unique.
    2. Dataset ID : Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.

@@ -29,6 +29,7 @@
   * [RTB House](connectors/marketing-connectors/rtbhouse.md)
   * [Snapchat](connectors/marketing-connectors/snapchat.md)
   * [Stylight](connectors/readme/stylight.md)
+  * [Taboola](connectors/marketing-connectors/taboola.md)
   * [Tiktok](connectors/marketing-connectors/tiktok-advertising.md)
   * [TimeOne](connectors/readme/timeone.md)
   * [Wonderpush](connectors/readme/wonderpush.md)
