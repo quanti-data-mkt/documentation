@@ -15,6 +15,13 @@ description: Follow our setup guide to integer the reverse-connector Adobe Analy
 
 # Adobe Analytics
 
+{% hint style="warning" %}
+Adobe Analytics takes some time to process the data imports we send, but unfortunately, it does not communicate how long this processing takes.\
+It’s important to understand that imported data is not immediately available in the interface.
+
+We recommend syncing your Adobe Analytics connector no more than once per day, to give Adobe sufficient time to process the data properly.
+{% endhint %}
+
 ***
 
 ## <mark style="background-color:red;">Prerequisites</mark>
@@ -167,3 +174,10 @@ To align the metrics you import from external sources into Adobe Analytics (such
 <figure><img src="../../.gitbook/assets/Untitled-dbdiagram-io.png" alt=""><figcaption><p>Final full join result of importing datas on Adobe User interface</p></figcaption></figure>
 
 Quanti supports you in these transformation procedures with [pre-built transformations](../../transformations/pre-built-tables/) that allow you to merge your data from different sources (campaign data and navigation data) using the concept of  [reconciliation](../../transformations/the-principle-of-reconciliation.md) and the use of [Tracking Template.](../../transformations/tracking-templates.md)
+
+{% hint style="warning" %}
+Adobe Analytics takes some time to process the data imports we send, but unfortunately, it does not communicate how long this processing takes.\
+It’s important to understand that imported data is not immediately available in the interface.
+
+We recommend syncing your Adobe Analytics connector no more than once per day, to give Adobe sufficient time to process the data properly.
+{% endhint %}
