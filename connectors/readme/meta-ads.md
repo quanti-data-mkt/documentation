@@ -35,10 +35,35 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
 
 ## <mark style="background-color:blue;">Pre-built Queries</mark>
 
-* Ad Stats : Advertising performance at ad level (**Impressions, Clicks, Spend**)
-* Ad Conversions : Conversion performance at ad level (**All conversion Types and values**)
-* Ad set Stats : Advertising performance at adset level (**Impressions, Clicks, Spend**)
-* Campaign Stats : Advertising performance at campaign level  (**Impressions, Clicks, Spend**)
+* **ad\_stats:** Advertising performance at ad level.
+* **ad\_conv:** Conversion performance at ad level.
+* **adset\_stats:** Advertising performance at ad set level.
+* **campaign\_stats:** Advertising performance at campaign level.
+* **account\_history:** Account-level metadata history.
+* **creative\_history**: Creative-level metadata history.
+* **campaign\_history:** Campaign-level metadata history.
+* **ad\_set\_history:** Ad set-level metadata history.
+* **ad\_history:** Ad-level metadata history.
+* **ad\_stats\_age\_gender:** Ad performance broken down by age and gender.
+* **ad\_conv\_age\_gender:** Conversion data broken down by age and gender.
+* **ad\_stats\_country\_region:** Ad performance broken down by country and region.
+
+{% hint style="warning" %}
+When performing a historical data load, the account\_history and campaign\_history tables ignore the selected start date — they retrieve all available data since the ad account was created.
+
+In contrast, the creative\_history, ad\_history, and adset\_history tables only load items that have been modified after the specified start date.
+
+This behavior is designed to optimize performance and reduce load times.
+
+As a result, any item that hasn’t changed during the selected period will not appear in these \_history tables.
+
+We recommend running two separate historical loads:
+
+* One for campaign performance statistics
+* Another for dimension tables (the \_history tables)
+
+Be sure to choose a start date far enough in the past to ensure that all relevant items are properly captured.
+{% endhint %}
 
 ***
 
