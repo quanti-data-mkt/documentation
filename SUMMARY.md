@@ -25,6 +25,7 @@
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
   * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
   * [Outbrain](connectors/marketing-connectors/outbrain.md)
+  * [Pinterest](connectors/marketing-connectors/pinterest.md)
   * [Rakuten Advertising](connectors/readme/rakuten.md)
   * [RTB House](connectors/marketing-connectors/rtbhouse.md)
   * [Snapchat](connectors/marketing-connectors/snapchat.md)
