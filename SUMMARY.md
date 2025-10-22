@@ -36,6 +36,7 @@
   * [Wonderpush](connectors/readme/wonderpush.md)
 * [Sales analytics connectors](connectors/sales-analytics-connectors/README.md)
   * [Hubspot](connectors/sales-analytics-connectors/hubspot.md)
+  * [Shopify](connectors/sales-analytics-connectors/shopify.md)
 * [Analytics connectors](connectors/analytics-connectors/README.md)
   * [Google Analytics 4](connectors/analytics-connectors/google-analytics4.md)
   * [Matomo](connectors/analytics-connectors/matomo.md)
