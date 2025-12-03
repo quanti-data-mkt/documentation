@@ -37,45 +37,40 @@ To establish a connection between the QUANTI platform and the Adobe Analytics re
 1. Access the [Adobe Developer Console](https://developer.adobe.com/console/home) using your Adobe Experience Cloud credentials.
 2. Navigate to the Console tab, specifically the APIs and services section, and review the available services.
 3.  Locate the Adobe Analytics service and proceed to create a new project.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe1.png" alt="" width="355"><figcaption><p>Create a new project</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/adobe1.png" alt="" width="355"><figcaption><p>Create a new project</p></figcaption></figure>
 
 
 
 * Select OAuth server-to-server.
 *   Assign a unique name to your project (For example: Quanti Reverse Connector API) and move to the next step.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe2.png" alt=""><figcaption><p>Selection page of authentication type</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/adobe2.png" alt=""><figcaption><p>Selection page of authentication type</p></figcaption></figure>
 
 
 * Select your organization's name and click on "Save configured API".
 
 4.  Then on the new project page, you will see your API Key (Client ID). Note the API key. You will need it to configure QUANTI:\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe3.png" alt="" width="375"><figcaption><p>Access path to the secret token</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/adobe3.png" alt="" width="375"><figcaption><p>Access path to the secret token</p></figcaption></figure>
 
 
 5.  Click on OAuth Server-to-Server < 'Retrieve Client Secret'. Note the Client Secret. You will need it to configure QUANTI:\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe4.png" alt="" width="494"><figcaption><p>Access path to the client secret</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/adobe4.png" alt="" width="494"><figcaption><p>Access path to the client secret</p></figcaption></figure>
 
 ### Declare your classification
 
 1. Enter Adobe Analytics UI and go to your Adobe Analytics product.
 2. Click on the tab Admin > Report Suite > Select your Report Suite > Edit Settings > Conversion > Conversion Classification.
 3.  Select Classification Type "Campaign" and add your classification field names.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe6.png" alt="" width="361"><figcaption><p>Classification creation on Adobe Analytics UI</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/adobe6.png" alt="" width="361"><figcaption><p>Classification creation on Adobe Analytics UI</p></figcaption></figure>
 
 
 4. Note the classification field names. You will need them to configure QUANTI:
@@ -84,10 +79,9 @@ To establish a connection between the QUANTI platform and the Adobe Analytics re
 
 1. Click on the tab Admin > Report Suite > Select your Report Suite > Edit Settings > Conversion > Success Events.
 2.  Select events of your choice and add your custom metrics names.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe7.png" alt=""><figcaption><p>Custom metrics creation on Adobe Analytics UI</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/adobe7.png" alt=""><figcaption><p>Custom metrics creation on Adobe Analytics UI</p></figcaption></figure>
 
 
 3. Write down events and meanings. You will need them to configure QUANTI:
@@ -110,10 +104,9 @@ You will have to set 2 connectors type : Adobe Analytics - Data Sources Connecto
 
 * Adobe Analytics - Data Sources Connector is used to import metrics.
 *   Adobe Analytics - Classifications Connector is used to import dimensions. In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/Adobe Analytics Reverse/adobe8.png" alt=""><figcaption><p>Tables diagram representation</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/adobe8.png" alt=""><figcaption><p>Tables diagram representation</p></figcaption></figure>
 
 
 

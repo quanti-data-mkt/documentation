@@ -31,10 +31,9 @@ To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logi
 
 1. Log in to your [Affilae account](https://app.affilae.com/fr/login).
 2.  In the bottom-left corner, click on "**My account**", then select "**API keys**".\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/affilae/affilae1.png" alt="Access path to API key on Affilae interface" width="325"><figcaption><p>Access path to API key on Affilae interface</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/affilae1.png" alt="Access path to API key on Affilae interface" width="325"><figcaption><p>Access path to API key on Affilae interface</p></figcaption></figure>
 
 
 3. You'll find in this section your API key. If the permission level is not appropriated, please make a request to your account manager.

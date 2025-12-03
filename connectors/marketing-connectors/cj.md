@@ -31,10 +31,9 @@ To connect CJ to QUANTI, you need an [CJ](https://www.cj.com/?utm_source=quanti.
 
 1. Log in to your [CJ account](https://signin.cj.com/login).
 2.  In the top-right corner, you can click on a multi-selection field which permit you to pick your different accounts. The advertiser IDs are the CID near each account name.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/cj/cj1.png" alt="Access path to find advertiser ID" width="302"><figcaption><p>Access path to find advertiser ID</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/cj1.png" alt="Access path to find advertiser ID" width="302"><figcaption><p>Access path to find advertiser ID</p></figcaption></figure>
 
 
 3. Make a note of the advertiser ID. You will need it to configure QUANTI:.

@@ -20,8 +20,7 @@ To connect Kwanko to QUANTI, you need an [Kwanko](https://advertiser.kwanko.com/
 
 1. Log in to your [Kwanko account](https://advertiser.kwanko.com/#/dashboard).
 2. In the top-right corner, click on Tools < API\
-   ![](<../../.gitbook/assets/image (3).png>)\
-
+   ![](<../../.gitbook/assets/image (3).png>)<br>
 3. Retrieve the API token displayed on this screen.
 
 ### Finish Quanti: configuration

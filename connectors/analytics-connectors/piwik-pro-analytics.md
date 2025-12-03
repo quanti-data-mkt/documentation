@@ -22,12 +22,12 @@ To connect Piwik Pro to QUANTI:, you need an [Piwik Pro](https://piwik.pro/?pk_c
 
 1. Go on your profile parameters : **Menu** > **Profile** > **API Keys**
 
-<div align="center" data-full-width="false"><figure><img src="../../content/en/docs/prologue/piwikpro/piwik1.png" alt="Piwik account admin access" width="241"><figcaption><p>Piwik account admin access</p></figcaption></figure></div>
+<div align="center" data-full-width="false"><figure><img src="../../.gitbook/assets/piwik1.png" alt="Piwik account admin access" width="241"><figcaption><p>Piwik account admin access</p></figcaption></figure></div>
 
 2. To generate a new API Key, please click on the "Create a Key" button, which is highlighted in blue.
 3. Name your instance and carefully record the API credentials. These are essential for the configuration of QUANTI.
 
-<div data-full-width="false"><figure><img src="../../content/en/docs/prologue/piwikpro/piwik2.png" alt="API credentials from Piwik Pro analytics admin" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../../.gitbook/assets/piwik2.png" alt="API credentials from Piwik Pro analytics admin" width="563"><figcaption><p>API credentials from Piwik Pro analytics admin</p></figcaption></figure></div>
 
 ### Find your Website ID
 
@@ -65,21 +65,21 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 You have to create your own reports. To help you in this step, we recommand to use "Personalized report" tool on Piwik Pro Analytics interface.
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik3.png" alt="Piwik Pro > custom reports" width="375"><figcaption><p>Piwik Pro > custom reports</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/piwik3.png" alt="Piwik Pro > custom reports" width="375"><figcaption><p>Piwik Pro > custom reports</p></figcaption></figure>
 
 * Create a new report.
 * Select your fields (Dimensions and metrics).
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik4.png" alt="Piwik Pro > custom reports > add a new report" width="375"><figcaption><p>Piwik Pro > custom reports > add a new report</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/piwik4.png" alt="Piwik Pro > custom reports > add a new report" width="375"><figcaption><p>Piwik Pro > custom reports > add a new report</p></figcaption></figure>
 
 * Save your report.
 * In the filters bar, click on the button '...' (3 dots) and click on "See API call"
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik5.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/piwik5.png" alt="" width="375"><figcaption></figcaption></figure>
 
 * A pop-in opens : make a note of the fields's name. You will need it to configure your custom request on QUANTI:
 
-<figure><img src="../../content/en/docs/prologue/piwikpro/piwik6.png" alt="" width="375"><figcaption><p>API call detailed</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/piwik6.png" alt="" width="375"><figcaption><p>API call detailed</p></figcaption></figure>
 
 * &#x20;At the step "Create queries", click on the button "Add custom query".
 * Name your custom request : It will be the table name.

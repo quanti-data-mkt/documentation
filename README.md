@@ -8,16 +8,16 @@ Here you will find everything you need to know.
 
 ***
 
-## [DATA WAREHOUSES](broken-reference)
+## [DATA WAREHOUSES](/broken/pages/74NE85gEavPnPel0RqbL)
 
 ***
 
-## [CONNECTORS](broken-reference)
+## [CONNECTORS](/broken/pages/HWbTsOY4HMmabrQInhLE)
 
 ***
 
-## [TAG TRACKERS](broken-reference)
+## [TAG TRACKERS](/broken/pages/ciuyEkVF2FVvYZ2HGxXl)
 
 ***
 
-## [TRANSFORMATIONS](broken-reference)
+## [TRANSFORMATIONS](/broken/pages/VZ0i4y1Yezb9VESKp5yX)

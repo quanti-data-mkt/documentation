@@ -37,24 +37,22 @@ To connect QUANTI: to Google Cloud Plaform (GCP), you need an [GCP](https://clou
 
 When creating a new unmanaged project, you are asked to specify the Google Cloud Platform project ID. You can find it by clicking in the selection field on the header of your Google Cloud Platform interface. Enter your projet ID in the designated field on Quanti: UI.
 
-<figure><img src="../content/en/docs/prologue/bigquery/bigquery1.png" alt="Project ID from BigQuery Interface" width="563"><figcaption><p>Project ID from BigQuery Interface</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/bigquery1.png" alt="Project ID from BigQuery Interface" width="563"><figcaption><p>Project ID from BigQuery Interface</p></figcaption></figure>
 
 ### 2. Service Account configuration
 
 When the creation is done, you will redirect on the dashboard projet. In your arrival, a pop-in will opens and give instructions to continue : "Add the Service Account to your IAM Project".
 
 1.  Go on IAM & Admin product on GCP interface. Click on icon Menu < IAM & Admin < IAM\
-    \
+    <br>
 
-
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery2.png" alt="Access to the BigQuery IAM interface" width="375"><figcaption><p>Access to the BigQuery IAM interface</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/bigquery2.png" alt="Access to the BigQuery IAM interface" width="375"><figcaption><p>Access to the BigQuery IAM interface</p></figcaption></figure>
 
 
 2.  Click GRANT ACCESS button.\
-    \
+    <br>
 
-
-    <figure><img src="../content/en/docs/prologue/bigquery/bigquery3.png" alt="&#x22;Grant Access&#x22; button from BigQuery interface"><figcaption><p>"Grant Access" button from BigQuery interface</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/bigquery3.png" alt="&#x22;Grant Access&#x22; button from BigQuery interface"><figcaption><p>"Grant Access" button from BigQuery interface</p></figcaption></figure>
 
 
 3. Copy/ paste the service account email adresse, assign roles requested and click Save :

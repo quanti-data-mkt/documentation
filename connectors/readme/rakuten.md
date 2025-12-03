@@ -31,21 +31,18 @@ To connect Rakuten to QUANTI, you need an [Rakuten Advertising](https://rakutena
 
 1. Log in to your [Rakuten account](https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/auth?client_id=security-admin-console\&redirect_uri=https%3A%2F%2Fauth.rakutenmarketing.com%2Fauth%2Fadmin%2Frakuten-advertising%2Fconsole%2F\&state=0bfc7308-d6d6-411a-a3a2-c858f86852ac\&response_mode=fragment\&response_type=code\&scope=openid\&nonce=37498c3d-5f4c-4dbd-826f-da13d0cb7827\&code_challenge=isEfEnMMx8QHWhWZptlAkdHIxfB3UrcJcjFMuWFf07o\&code_challenge_method=S256).
 2.  Click on tab Reporting < Statistics\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten1.png" alt="Access path to custom report tool"><figcaption><p>Access path to custom report tool</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/rakuten1.png" alt="Access path to custom report tool"><figcaption><p>Access path to custom report tool</p></figcaption></figure>
 
 
 3.  Click on the button "+ Build a new report"\
-    \
+    <br>
+
+    <figure><img src="../../.gitbook/assets/rakuten2.png" alt="Build a new report" width="563"><figcaption><p>Build a new report</p></figcaption></figure>
 
 
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten2.png" alt="Build a new report" width="563"><figcaption><p>Build a new report</p></figcaption></figure>
-
-
-4.  Click on button "Add and Remove columns" and add the only and entire list below :\
-
+4.  Click on button "Add and Remove columns" and add the only and entire list below :<br>
 
     * Transaction Date
     * \# of impressions
@@ -66,27 +63,24 @@ To connect Rakuten to QUANTI, you need an [Rakuten Advertising](https://rakutena
     * Offer ID
     * Offer Name
     * Link Id
-    * Link Name\
+    * Link Name<br>
 
-
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten3.png" alt="&#x22;Add and Remove Columns&#x22; pop-in" width="306"><figcaption><p>"Add and Remove Columns" pop-in</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/rakuten3.png" alt="&#x22;Add and Remove Columns&#x22; pop-in" width="306"><figcaption><p>"Add and Remove Columns" pop-in</p></figcaption></figure>
 
 
 5.  Near the blue button "View Report", click on the arrow and "Get API" and copy the url generated.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/rakuten/rakuten4.png" alt="Access path to the generated link"><figcaption><p>Access path to the generated link</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/rakuten4.png" alt="Access path to the generated link"><figcaption><p>Access path to the generated link</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/LinkShare-08-01-2025_03_31_PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Importante information
 
 If you have several Rakuten accounts and want to fill a unique table, you have to create several Rakuten connectors of course and especially respect the list's order and metrics's names. You can change the list order by moving column headings.\
-\
+<br>
 
-
-<figure><img src="../../content/en/docs/prologue/rakuten/rakuten5.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/rakuten5.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Finish Quanti: configuration
 

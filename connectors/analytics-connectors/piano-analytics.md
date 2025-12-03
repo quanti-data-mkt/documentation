@@ -26,22 +26,19 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/?utm_source=
 
 ### Find your credentials
 
-1.  Go on your profile parameters to the top-right corner : See profile < API Key\
+1.  Go on your profile parameters to the top-right corner : See profile < API Key<br>
 
-
-    <figure><img src="../../content/en/docs/prologue/piano/piano1.png" alt="Access path to API keys on Piano interface"><figcaption><p>Access path to API keys on Piano interface<br></p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/piano1.png" alt="Access path to API keys on Piano interface"><figcaption><p>Access path to API keys on Piano interface<br></p></figcaption></figure>
 2.  Create a new API Key clicking on the blue button "Create a new API Key".\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/piano/piano2.png" alt="Button to generate a new API key on Piano interface" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/piano2.png" alt="Button to generate a new API key on Piano interface" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
 
 
 3.  Give it a name and a description. Let the box ticked and save it.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/piano/piano3.png" alt="Description pop-in of API key in Piano interface" width="563"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/piano3.png" alt="Description pop-in of API key in Piano interface" width="563"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
 
 
 4. Make a note of the API credentials. You will need it to configure QUANTI:.
@@ -89,15 +86,14 @@ To avoid this, make sure to use the filtering feature to reduce the number of re
 Use the "Data Query" tool available on the Piano Analytics interface to help you in this process.
 
 1.  To the top-right corner, click on button (the icon with 4 squares) < Data Query\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/piano/piano4.png" alt="&#x22;Data Query&#x22; access" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/piano4.png" alt="&#x22;Data Query&#x22; access" width="375"><figcaption><p>"Data Query" access</p></figcaption></figure>
 
 
 2. Create a report with the fields you want on your custom query. Retrieve their API key.
 
-<figure><img src="../../content/en/docs/prologue/piano/piano5.png" alt="Data Query tool in piano analytics interface"><figcaption><p>Data Query tool in piano analytics interface</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/piano5.png" alt="Data Query tool in piano analytics interface"><figcaption><p>Data Query tool in piano analytics interface</p></figcaption></figure>
 
 
 

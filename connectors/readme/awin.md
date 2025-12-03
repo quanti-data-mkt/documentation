@@ -31,18 +31,16 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm_source
 
 1. Log in to your [Awin account](https://www.awin.com/fr?utm_source=quanti.io\&utm_medium=partnership\&utm_campaign=awin_connector).
 2.  In the top-right corner, click your profile name, then select API Credentials.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/awin/awin1.png" alt="Access path to API key on Awin interface" width="327"><figcaption><p>Access path to API key on Awin interface</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/awin1.png" alt="Access path to API key on Awin interface" width="327"><figcaption><p>Access path to API key on Awin interface</p></figcaption></figure>
 
 
 3. In the **Password** field, enter your login password.
 4.  Click on  "**Show my API token**"\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/awin/awin2.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/awin2.png" alt=""><figcaption></figcaption></figure>
 
 
 5. Keep and save your API token. It'll be needed to configure your connector in QUANTI:
@@ -51,10 +49,9 @@ To connect Awin to QUANTI, you need an [Awin](https://www.awin.com/fr?utm_source
 
 1. In the top-right corner, when you hover Dashboard tab, you can see the list of your accounts
 2.  Numbers between brackets are your advertiser IDs needed.\
-    \
+    <br>
 
-
-    <figure><img src="../../content/en/docs/prologue/awin/awin3.png" alt="Access path to find Advertiser ID"><figcaption><p>Access path to find Advertiser ID</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/awin3.png" alt="Access path to find Advertiser ID"><figcaption><p>Access path to find Advertiser ID</p></figcaption></figure>
 
 
 3. Make sure to keep the **Advertiser ID** safe, as it’s required to set up your connector in QUANTI:.
