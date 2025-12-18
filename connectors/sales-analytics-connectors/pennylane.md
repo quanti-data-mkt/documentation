@@ -1,3 +1,7 @@
+---
+description: To connect Hubspot to Quanti:, you need to access a Pennylane account.
+---
+
 # Pennylane
 
 <a href="https://dbdiagram.io/e/69443722e4bb1dd3a996db63/69443737e4bb1dd3a996dd95" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
