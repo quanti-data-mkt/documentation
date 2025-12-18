@@ -129,26 +129,9 @@ Example: If your URL is `mystore.myshopify.com`, your shop name is `mystore`.
 
 ## Pre-built Tables
 
-* **Orders**: Complete order information including order numbers, dates, customer details, financial status, fulfillment status, totals, taxes, and shipping information.
-* **Order\_line\_items**: Individual line items for each order with product details, quantities, prices, discounts, taxes, and fulfillment information.
-* **Products**: Product catalog including titles, descriptions, product types, vendors, tags, variants, and inventory tracking settings.
-* **Product\_variants**: Product variants with SKUs, prices, inventory quantities, weights, barcodes, and variant-specific attributes.
-* **Customers**: Customer information including names, email addresses, phone numbers, addresses, order history, total spent, and customer tags.
-* **Customer\_addresses**: Customer shipping and billing addresses with address details and default address flags.
-* **Collections**: Product collections (manual and smart) with collection rules, published status, and display settings.
-* **Inventory\_items**: Inventory tracking information including SKUs, costs, countries of origin, and inventory management settings.
-* **Inventory\_levels**: Current inventory quantities by location with available and incoming quantities.
-* **Locations**: Store locations and warehouses with addresses and active status.
-* **Fulfillments**: Order fulfillment records with tracking numbers, carriers, shipment status, and fulfillment dates.
-* **Refunds**: Order refunds with refund amounts, reasons, refunded line items, and refund dates.
-* **Transactions**: Payment transactions including transaction types, amounts, gateways, statuses, and authorization codes.
-* **Discounts**: Discount codes and automatic discounts with usage limits, value types, amounts, and validity periods.
-* **Gift\_cards**: Gift card information with codes, balances, initial values, and expiration dates (Shopify Plus only).
-* **Price\_rules**: Price rule configurations for promotions including discount types, allocation methods, and eligibility criteria.
-* **Draft\_orders**: Draft orders created by staff with order details and completion status.
-* **Abandoned\_checkouts**: Abandoned cart data with checkout details, cart contents, and recovery information.
-* **Payouts**: Shopify Payments payout information with payout dates, amounts, and banking details (Shopify Payments required).
-* **Disputes**: Payment disputes and chargebacks with dispute status, amounts, and resolution information (Shopify Payments required).
+* **Shop**: Table de configuration contenant les informations générales de la boutique Shopify : identité, localisation géographique, devises, paramètres fiscaux et fonctionnalités activées. Toutes les données sont en lecture seule et représentent l'état actuel de la boutique.
+* **Order**: Table transactionnelle centrale capturant l'ensemble du cycle de vie d'une commande : création, paiement, expédition, annulation et remboursement. Contient les données client, les montants financiers (prix, taxes, remises), les statuts de paiement et fulfillment, les informations d'attribution marketing (landing\_site, referring\_site) et les codes promo utilisés.
+* **Order\_line**: Table transactionnelle détaillant chaque produit/variante acheté dans une commande. Contient les informations produit (SKU, titre, variante), les données financières (prix, remises ventilées, taxes) et le statut logistique (fulfillment, quantités expédiées).
 
 ***
 

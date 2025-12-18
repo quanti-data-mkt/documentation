@@ -1,5 +1,5 @@
 ---
-description: To connect Hubspot to Quanti:, you need to access a Pennylane account.
+description: Follow our setup guide to connect Pennylane to QUANTI.
 ---
 
 # Pennylane
@@ -23,7 +23,7 @@ Before connecting Pennylane to QUANTI, ensure you have:
 
 {% stepper %}
 {% step %}
-#### Generate API Token
+**Generate API Token**
 
 * Log in to your Pennylane account
 * Navigate to **Settings** > **Integrations** > **API**
@@ -33,7 +33,7 @@ Before connecting Pennylane to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Connect to QUANTI
+**Connect to QUANTI**
 
 * In QUANTI, click on **Connect to Pennylane**
 * Paste your API token in the authentication field
@@ -43,7 +43,7 @@ Before connecting Pennylane to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+**Select Pre-built Tables**
 
 * Review the available pre-built tables (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
@@ -52,7 +52,7 @@ Before connecting Pennylane to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Finish setup
+**Finish setup**
 
 * Define a sync period and a lookback window - Click save
 * For the first sync, you have the following options:
@@ -68,21 +68,22 @@ Before connecting Pennylane to QUANTI, ensure you have:
 
 ## Pre-built Tables
 
-* **Customers**: Customer information including company details, contact information, billing addresses, and customer identifiers.
-* **Suppliers**: Supplier information including company details, contact information, payment terms, and supplier identifiers.
-* **Customer\_invoices**: Sales invoices issued to customers with invoice details, amounts, tax information, payment status, and due dates.
-* **Supplier\_invoices**: Purchase invoices received from suppliers with invoice details, amounts, tax information, payment status, and due dates.
-* **Customer\_invoice\_lines**: Detailed line items for customer invoices including products, quantities, unit prices, VAT rates, and amounts.
-* **Supplier\_invoice\_lines**: Detailed line items for supplier invoices including products, quantities, unit prices, VAT rates, and amounts.
-* **Products**: Product catalog with descriptions, pricing, VAT rates, and accounting classifications.
-* **Transactions**: Bank transactions synchronized from connected bank accounts including transaction dates, amounts, labels, and categories.
-* **Chart\_of\_accounts**: Complete chart of accounts with account numbers, names, types, and hierarchical structure.
-* **Journal\_entries**: Accounting journal entries with posting dates, descriptions, and reference documents.
-* **Journal\_entry\_lines**: Detailed line items for journal entries including accounts, debits, credits, and analytical allocations.
+* **analytical\_ledger**: All accounting entries with analytical tags at the most granular level. Includes company information, dates, labels, debit/credit amounts, account details, journal codes, document references, invoice links, third party information, analytical tags, and synchronization timestamps.
+* **bank\_accounts**: Bank accounts linked to Pennylane. Contains account details including establishment information, connection type, associated accounting plan items, currency, synchronization status, balance, and timestamps.
+* **bank\_transactions**: Bank transactions with execution dates and payment status. Includes transaction details, company and third party information, amounts in EUR and original currency, source, duplicate detection flags, SFTP/EBICS file information, and status indicators.
+* **general\_ledger**: All journal entries at the most granular level for comprehensive accounting records. Contains company information, dates, labels, debit/credit amounts, account details, journal codes, document and invoice references, third party information, and creation metadata.
+* **companies**: Legal entities with registration details and platform configuration. Includes company name, trade name, registration numbers, VAT details, address information, SaaS plan, accounting settings (cash-based, VAT frequency), fiscal information, activity codes, legal form, and timestamps.
+* **company\_users**: Users associated with companies. Contains user identification (email, first name, last name), company association, role, last activity date, accounting firm information, invitation timestamps, and synchronization data.
+* **customer\_invoices**: Invoices issued to customers. Includes creation and issue dates, payment deadline, company and customer information, amounts (including and excluding taxes), currency, invoice number, source, payment status, outstanding balance, and timestamps.
+* **customers**: Client data with identification and location. Contains customer name, company association, VAT rate, accounting plan items, address details, registration numbers, VAT numbers, activity codes, legal information, and synchronization timestamps.
+* **fiscal\_years**: Fiscal year periods. Includes company information, fiscal year dates (start and end), descriptor, closure timestamp, and synchronization data.
+* **supplier\_invoices**: Supplier invoices received through various channels. Contains creation and issue dates, payment deadline, company and supplier information, amounts (including and excluding taxes), currency, invoice number, source, payment status, and timestamps.
+* **suppliers**: Vendor legal entities. Includes supplier name, company association, VAT rate, accounting plan items, address details, registration numbers, VAT numbers, activity codes, legal information, and synchronization timestamps.
+* **tax\_declarations**: Tax declarations submitted to tax authorities. Contains company information, declaration type and form, declaration period dates, status indicators (declaration and payment validation), payment amount, rejection reasons if applicable, and timestamps.
 
 ***
 
-<a href="https://dbdiagram.io/e/69443722e4bb1dd3a996db63/69443737e4bb1dd3a996dd95" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="pennylane.md" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
 
 ***
 
