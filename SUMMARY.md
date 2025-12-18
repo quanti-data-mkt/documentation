@@ -22,6 +22,7 @@
   * [Google Ads](connectors/readme/google-ads.md)
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
   * [Google Sheets](connectors/marketing-connectors/google-sheets.md)
+  * [Instagram Business](connectors/marketing-connectors/instagramorganic.md)
   * [Linkedin Ads](connectors/marketing-connectors/linkedin-advertising.md)
   * [Meta Ads](connectors/readme/meta-ads.md)
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
