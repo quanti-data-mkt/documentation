@@ -10,6 +10,7 @@
 
 * [Marketing connectors](connectors/readme/README.md)
   * [Affilae](connectors/readme/affilae.md)
+  * [Page](connectors/marketing-connectors/page.md)
   * [Awin](connectors/readme/awin.md)
   * [Kwanko](connectors/marketing-connectors/awin-1.md)
   * [CJ](connectors/marketing-connectors/cj.md)
@@ -17,6 +18,7 @@
   * [Google Display & Video 360](connectors/marketing-connectors/dv360-advertising.md)
   * [Effinity](connectors/readme/effinity.md)
   * [Email](connectors/marketing-connectors/email.md)
+  * [Facebook Organic](connectors/marketing-connectors/facebookorganic.md)
   * [Google Ads](connectors/readme/google-ads.md)
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
   * [Google Sheets](connectors/marketing-connectors/google-sheets.md)
