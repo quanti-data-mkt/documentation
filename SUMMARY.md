@@ -10,9 +10,8 @@
 
 * [Marketing connectors](connectors/readme/README.md)
   * [Affilae](connectors/readme/affilae.md)
-  * [Page](connectors/marketing-connectors/page.md)
   * [Awin](connectors/readme/awin.md)
-  * [Kwanko](connectors/marketing-connectors/awin-1.md)
+  * [Brevo](connectors/marketing-connectors/brevo.md)
   * [CJ](connectors/marketing-connectors/cj.md)
   * [Criteo](connectors/readme/criteo.md)
   * [Google Display & Video 360](connectors/marketing-connectors/dv360-advertising.md)
@@ -23,6 +22,7 @@
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
   * [Google Sheets](connectors/marketing-connectors/google-sheets.md)
   * [Instagram Business](connectors/marketing-connectors/instagramorganic.md)
+  * [Kwanko](connectors/marketing-connectors/awin-1.md)
   * [Linkedin Ads](connectors/marketing-connectors/linkedin-advertising.md)
   * [Meta Ads](connectors/readme/meta-ads.md)
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
