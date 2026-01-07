@@ -26,7 +26,7 @@ Before connecting Pennylane to QUANTI, ensure you have:
 **Generate API Token**
 
 * Log in to your Pennylane account
-* Navigate to **Settings** > **Integrations** > **API**
+* Navigate to **Settings** > **Connectivity** > **data sharing**
 * Click on **Generate new API token**
 * Copy the generated token immediately (it will only be shown once)
 * Store it securely
