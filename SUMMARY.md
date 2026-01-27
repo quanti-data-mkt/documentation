@@ -57,7 +57,13 @@
   * [raw\_hits](tag-tracker/tag-data-model/raw_hits.md)
   * [raw\_sessions](tag-tracker/tag-data-model/raw_sessions.md)
   * [advanced\_attribution](tag-tracker/tag-data-model/advanced_attribution.md)
-* [Rules for calculated attribution](tag-tracker/rules-for-calculated-attribution.md)
+  * [Rules for calculated attribution](tag-tracker/tag-data-model/rules-for-calculated-attribution.md)
+
+## MCP Server
+
+* [MCP overview](mcp-server/mcp-overview.md)
+* [MCP Set-up](mcp-server/mcp-set-up.md)
+* [Semantic Layer](mcp-server/semantic-layer.md)
 
 ## TRANSFORMATIONS
 
@@ -67,9 +73,3 @@
   * [ads\_import\_conv](transformations/pre-built-tables/ads_import_conv.md)
   * [quanti\_ids](transformations/pre-built-tables/quanti_ids.md)
 * [Tracking templates](transformations/tracking-templates.md)
-
-## MCP Server
-
-* [MCP overview](mcp-server/mcp-overview.md)
-* [MCP Set-up](mcp-server/mcp-set-up.md)
-* [Semantic Layer](mcp-server/semantic-layer.md)

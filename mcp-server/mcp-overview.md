@@ -83,11 +83,10 @@ Here are some example questions you can ask:
 
 Quanti connects over 50 marketing sources, including:
 
-* Advertising: Google Ads, Meta Ads, LinkedIn Ads, TikTok Ads, Microsoft Ads, Pinterest Ads, Snapchat Ads
+* Marketing: Google Ads, Meta Ads, LinkedIn Ads, TikTok Ads, Microsoft Ads, Pinterest Ads, Snapchat Ads, Brevo, Mailchimp, Klaviyo.
 * Analytics: Google Analytics 4, Adobe Analytics, Matomo
-* CRM: Salesforce, HubSpot, Pipedrive
-* E-commerce: Shopify, WooCommerce, PrestaShop, Magento
-* Email & Automation: Brevo, Mailchimp, Klaviyo, ActiveCampaign
+* Sales & Business connectors : Shopify, PrestaShop, Magento
+* Tag tracker :&#x20;
 
 ## Security
 

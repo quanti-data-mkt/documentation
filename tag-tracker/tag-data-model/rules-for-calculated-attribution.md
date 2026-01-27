@@ -4,7 +4,7 @@ description: 'How Quanti: calculate traffic sources (cf. raw_sessions table)'
 
 # Rules for calculated attribution
 
-<figure><img src="../.gitbook/assets/Attribution rules (3).jpg" alt=""><figcaption><p>Attribution rules</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Attribution rules (3).jpg" alt=""><figcaption><p>Attribution rules</p></figcaption></figure>
 
 ## Search engine list
 
