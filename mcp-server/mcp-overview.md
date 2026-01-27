@@ -6,7 +6,7 @@ description: >-
 
 # MCP overview
 
-## What is Quanti MCP?
+## What is a MCP?
 
 Quanti MCP Server implements the MCP (Model Context Protocol) protocol, allowing your favorite AI assistants to directly query your marketing data warehouse.
 
