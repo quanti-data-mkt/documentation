@@ -67,3 +67,9 @@
   * [ads\_import\_conv](transformations/pre-built-tables/ads_import_conv.md)
   * [quanti\_ids](transformations/pre-built-tables/quanti_ids.md)
 * [Tracking templates](transformations/tracking-templates.md)
+
+## MCP Server
+
+* [MCP overview](mcp-server/mcp-overview.md)
+* [MCP Set-up](mcp-server/mcp-set-up.md)
+* [Semantic Layer](mcp-server/semantic-layer.md)
