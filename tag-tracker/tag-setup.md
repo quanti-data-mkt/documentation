@@ -118,7 +118,7 @@ _quantiTag('hit', 'page_view', {
 
 To install the server-side tag, simply use the GTM template available for download here :&#x20;
 
-{% file src="../.gitbook/assets/2025-02-04 QUANTI - Server-side Tag Template.tpl" %}
+{% file src="../.gitbook/assets/2025-02-04 QUANTI - Server-side Tag Template (1).tpl" %}
 
 ***
 

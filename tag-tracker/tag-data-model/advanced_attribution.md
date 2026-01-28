@@ -14,7 +14,7 @@ description: >-
 
 The advanced attribution table is a view.&#x20;
 
-{% file src="../../.gitbook/assets/raw_conversions.sql" %}
+{% file src="../../.gitbook/assets/raw_conversions (1).sql" %}
 
 ***
 
