@@ -15,9 +15,9 @@ To connect Google Ads to Quanti:, you need to access a [Google Ads](https://ads.
 #### Find customer ID <a href="#findcustomerid" id="findcustomerid"></a>
 
 1. Log in to your [Google Ads account](https://ads.google.com/nav/login).
-2.  Locate your Google Ads customer ID and make a note of it. You will need it to fill in your Google Ads setup form.
+2. Locate your Google Ads customer ID and make a note of it. You will need it to fill in your Google Ads setup form.
 
-    ![Customer ID](https://fivetran.com/static-assets-docs/_next/static/media/customer-id.9cc9a54c.png)
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
