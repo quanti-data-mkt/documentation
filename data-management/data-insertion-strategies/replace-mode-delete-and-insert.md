@@ -71,20 +71,6 @@ Final result:
 | 2025-01-16 | camp_123    | 1100        | 55     | ← preserved
 ```
 
-SQL implementation:
-
-{% code title="Fact table SQL" %}
-```sql
--- Step 1: Delete the reference date
-DELETE FROM campaign_stats 
-WHERE _quanti_date = '2025-01-15';
-
--- Step 2: Insert new data
-INSERT INTO campaign_stats (date, campaign_id, impressions, clicks, _quanti_date)
-VALUES (...);
-```
-{% endcode %}
-
 ### Dimension tables (attributes)
 
 Scope: The entire table
@@ -116,21 +102,8 @@ Final result:
 | camp_456    | Winter Campaign   | PAUSED | 3000   |
 | camp_890    | Fall Campaign     | ACTIVE | 6000   |
 
-Note: camp_789 is gone (deleted from source platform)
+Note: camp_789 is gone (deleted from source)
 ```
-
-SQL implementation:
-
-{% code title="Dimension table SQL" %}
-```sql
--- Step 1: Delete entire table
-DELETE FROM campaigns;
-
--- Step 2: Insert current state
-INSERT INTO campaigns (campaign_id, name, status, budget)
-VALUES (...);
-```
-{% endcode %}
 
 ***
 
