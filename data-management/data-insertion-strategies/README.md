@@ -44,6 +44,22 @@ Limitations: requires a defined primary key and support from the target system; 
 Quanti automatically selects the most appropriate insertion method for each table in its connectors. The preferred method is **UPSERT Mode**, which offers the best balance between data preservation and updates. However, depending on the nature of the data and business requirements, **INSERT** or **REPLACE** methods may be more suitable.
 {% endhint %}
 
+{% hint style="danger" %}
+#### ⚠️ Critical consideration: Performance impact on dimension tables
+
+Dimension tables are typically NOT partitioned (unlike fact tables). This means historized dimension tables require scanning the ENTIRE table to find the latest version of each entity, causing large increases in query cost, storage, and degraded performance.
+
+Example consequences:
+
+* Table size growth: 10,000 rows → 500,000 rows (50 changes/campaign/year)
+* Query scans: 10,000 rows → 500,000 rows (50x more expensive)
+* Monthly cost example: \~$5 → \~$250 (50x increase)
+
+Why this doesn't affect fact tables:
+
+* Fact tables are partitioned by date (`_quanti_date`) and queries typically include date filters so partition pruning reduces scanned data.
+{% endhint %}
+
 ## Why this matters
 
 Understanding insertion strategies is crucial to:

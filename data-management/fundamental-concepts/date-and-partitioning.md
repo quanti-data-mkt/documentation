@@ -38,7 +38,7 @@ During a synchronization for `2025-01-15`, only the corresponding partition is t
 {% hint style="success" %}
 Partitioning by date via `_quanti_date` allows you to:
 
-* **Optimize performance**: SQL queries scan only strictly necessary data
+* **Optimize performance**: SQL queries scan only strictly necessary data + _with where quanti_\_date \[>= <=, <, > =} is used
 * **Reduce costs**: less data scanned = reduced billing on your data warehouse
 * **Speed up synchronizations**: operations are faster because targeted to a data subset
 * **Facilitate maintenance**: ability to reprocess a specific day without impacting other dates

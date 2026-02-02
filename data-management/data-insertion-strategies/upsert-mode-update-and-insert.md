@@ -344,23 +344,27 @@ Why this doesn't affect fact tables:
 
 ***
 
-## UPSERT Advantages
+{% hint style="success" %}
+## Advantages
 
 * ✅ No data loss — Existing rows that don't appear in new data are preserved
 * ✅ Handles updates gracefully — Changes to existing entities are reflected immediately, no duplicates
 * ✅ Supports historization — Can track attribute changes over time (with performance considerations)
 * ✅ Flexible and robust — Works for both fact and dimension tables; resilient to partial source data
 * ✅ Optimized with hash comparison — Skips unchanged rows entirely (\_quanti\_hash comparison)
+{% endhint %}
 
 ***
 
-## UPSERT Disadvantages
+{% hint style="warning" %}
+## Disadvantages
 
 * ❌ Moderate processing costs — `MERGE` operations require PK matching and scanning
 * ❌ Table growth with historization — Storage costs increase with each change
 * ❌ Complex queries with historization — Need to filter latest version using `_quanti_loaded_at`
 * ❌ Primary Key dependency — Requires accurate PK definition (`_quanti_id`)
 * ❌ Cannot remove deleted entities — Orphaned records remain unless manually cleaned
+{% endhint %}
 
 ***
 

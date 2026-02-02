@@ -107,6 +107,7 @@ Note: camp_789 is gone (deleted from source)
 
 ***
 
+{% hint style="success" %}
 ## Advantages
 
 ✅ Clean data guaranteed
@@ -138,10 +139,16 @@ Note: camp_789 is gone (deleted from source)
 * No need for deduplication logic
 * Direct access to the most recent data
 * Straightforward aggregations
+{% endhint %}
 
 ***
 
+##
+
+{% hint style="warning" %}
 ## Disadvantages
+
+
 
 ❌ Complete loss of historical data on dimensions
 
@@ -173,8 +180,7 @@ Note: camp_789 is gone (deleted from source)
 * Cannot perform time-based analysis on attribute changes
 * Cannot reconstruct past states
 * Limited analytical capabilities for business intelligence
-
-***
+{% endhint %}
 
 ## Use cases
 
