@@ -46,21 +46,18 @@ Click **Next**
 {% endstep %}
 
 {% step %}
-#### Mapping Configuration
+#### **Mapping Configuration**
 
 **Upload Sample File**
 
-* **Select a sample CSV** that matches the structure of your incoming files
-* **Delimiter flexibility**: The connector automatically detects delimiters (comma, semicolon, tab, pipe, etc.)
+* Select a sample CSV file that matches the structure of your incoming files
+* **Delimiter detection**: The connector automatically proposes a delimiter based on your file (comma, semicolon, tab, pipe, etc.)
 * **Important**: The uploaded file is used **only for mapping configuration** - no data is inserted at this stage
 
 **Table Configuration**
 
 * **Destination table name**: Define your BigQuery table name (lowercase, underscores only)
-* **Date column** (required): Select the date field for table partitioning
-  * This field is **mandatory** for all methods.
-  * Used for optimizing query performance and data organization
-  * Must be a valid date/timestamp field in your data
+* **Delimiter**: Automatically proposed based on your uploaded file, but it is recommended to verify the selection
 
 **Field Mapping**
 
@@ -75,6 +72,13 @@ For each column detected in your sample file:
   * `DATE` - Date only (format: YYYY-MM-DD)
   * `TIMESTAMP` - Date and time with timezone
   * `DATETIME` - Date and time without timezone
+
+**Date Column** (mandatory for Fact tables)
+
+* Select the date field for table partitioning
+* This field is **mandatory** for all methods when **Fact table** was selected in Step 2
+* Used for optimizing query performance and data organization
+* Must be a valid date/timestamp field in your data
 
 **Historize Changes**
 
