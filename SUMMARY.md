@@ -20,6 +20,9 @@
 
 ## CONNECTORS
 
+* [Custom connectors](connectors/custom-connectors/README.md)
+  * [Email](connectors/custom-connectors/email.md)
+  * [Google Sheets](connectors/custom-connectors/google-sheets.md)
 * [Marketing connectors](connectors/readme/README.md)
   * [Affilae](connectors/readme/affilae.md)
   * [Awin](connectors/readme/awin.md)
@@ -28,11 +31,9 @@
   * [Criteo](connectors/readme/criteo.md)
   * [Google Display & Video 360](connectors/marketing-connectors/dv360-advertising.md)
   * [Effinity](connectors/readme/effinity.md)
-  * [Email](connectors/marketing-connectors/email.md)
   * [Facebook Organic](connectors/marketing-connectors/facebookorganic.md)
   * [Google Ads](connectors/readme/google-ads.md)
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
-  * [Google Sheets](connectors/marketing-connectors/google-sheets.md)
   * [Instagram Business](connectors/marketing-connectors/instagramorganic.md)
   * [Kwanko](connectors/marketing-connectors/awin-1.md)
   * [Linkedin Ads](connectors/marketing-connectors/linkedin-advertising.md)

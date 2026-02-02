@@ -17,20 +17,14 @@ Open your Google Sheet and select the range that you want added to your destinat
 To select a range, you can do either of the following:
 
 * manually select the range as shown below, or
-* select just the columns (for example, `Sheet1!A:D`). If you select just the columns, Fivetran only creates rows for up to the final row that has values in your sheet (for example, `Sheet1!A1:D6`).
-
-![Select a range](https://fivetran.com/static-assets-docs/_next/static/media/select-a-range.e983f919.png)
+* select just the columns (for example, `Sheet1!A:D`). If you select just the columns, Quanti only creates rows for up to the final row that has values in your sheet (for example, `Sheet1!A1:D6`).
 
 You can have as many named ranges as you would like in a single Google Sheet workbook. The first row of the named range will become the column headers in the destination table in your destination.
 
 #### Create named range <a href="#createnamedrange" id="createnamedrange"></a>
 
-1.  In your Google Sheet, go to **Data** > **Named ranges**.
-
-    ![Go to Data > Named ranges...](https://fivetran.com/static-assets-docs/_next/static/media/go-to-data-named-ranges.5fe334ad.png)
-2.  In the **Named ranges** menu, enter a name for your new range and click **Done**.
-
-    ![Name the range](https://fivetran.com/static-assets-docs/_next/static/media/name-the-range.0cf5b7ba.png)
+1. In your Google Sheet, go to **Data** > **Named ranges**.
+2. In the **Named ranges** menu, enter a name for your new range and click **Done**.
 
 ***
 
