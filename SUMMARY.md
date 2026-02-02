@@ -23,6 +23,7 @@
 * [Custom connectors](connectors/custom-connectors/README.md)
   * [Email](connectors/custom-connectors/email.md)
   * [Google Sheets](connectors/custom-connectors/google-sheets.md)
+  * [(S)FTP](connectors/custom-connectors/ftp.md)
 * [Marketing connectors](connectors/readme/README.md)
   * [Affilae](connectors/readme/affilae.md)
   * [Awin](connectors/readme/awin.md)
