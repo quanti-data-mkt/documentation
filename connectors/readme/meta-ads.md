@@ -31,6 +31,12 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
 3. Select accounts to sync.
 4. Create queries: You can either select pre-built queries or create your own custom queries.
 
+{% hint style="warning" %}
+**Token Expiration**
+
+For various reasons, authentication tokens may expire. QUANTI automatically attempts to renew your token 5 days before expiration. If automatic renewal fails, project members will receive an email notification requesting re-authentication through the connector dashboard.
+{% endhint %}
+
 ***
 
 ## <mark style="background-color:blue;">Pre-built Queries</mark>
