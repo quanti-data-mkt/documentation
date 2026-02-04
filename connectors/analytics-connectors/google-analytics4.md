@@ -34,6 +34,15 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
+#### **Connector Information**
+
+* **Connector Name**: Define a unique name for your connector
+* **Dataset ID**: Specify the BigQuery dataset ID where tables will be created
+  * The dataset will be created automatically if it doesn't exist
+* Click **Next**
+{% endstep %}
+
+{% step %}
 #### Configure Connector
 
 * **Connector Name**: Enter a unique name for this connector

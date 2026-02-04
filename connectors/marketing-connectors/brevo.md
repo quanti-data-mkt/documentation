@@ -44,6 +44,17 @@ Before connecting Brevo to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
+#### **Connector Information**
+
+* **Connector Name**: Define a unique name for your connector
+* **Dataset ID**: Specify the BigQuery dataset ID where tables will be created
+  * The dataset will be created automatically if it doesn't exist
+* Click **Next**
+
+
+{% endstep %}
+
+{% step %}
 #### Select Pre-built Tables
 
 * Review the available pre-built tables (see section below for details)
