@@ -21,7 +21,7 @@ To connect Matomo to QUANTI:, you need a [Matomo](https://fr.matomo.org/login/) 
 1. Go to Matomo settings Settings Cog Icon > Personal > Security.
 2.  At the bottom of the page, click on Create new token.<br>
 
-    <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 3. Confirm your account password.
 4. Enter the purpose for this token.
 5. Choose if the token should only be valid for secure requests (Matomo 5 and newer).
