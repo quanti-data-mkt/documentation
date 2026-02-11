@@ -123,41 +123,6 @@ These tables capture time-stamped events and user activities within HubSpot.
 
 <details>
 
-<summary>Missing Custom Properties</summary>
-
-* Custom properties must exist in HubSpot before they appear in synced data
-* Newly created properties will appear in the next sync after creation
-* Verify property visibility settings in HubSpot (some properties may be hidden)
-* Check that properties are applied to the correct object type (Contact vs Deal vs Lead)
-* Historical records may not have values for newly created properties
-
-</details>
-
-<details>
-
-<summary>Missing or Incomplete Data</summary>
-
-* Verify the sync period and lookback window cover the desired date range
-* Check that records have been modified within the sync period (based on lastmodifieddate)
-* Form submission data requires Marketing Hub subscription
-* Some data may be restricted based on user permissions in HubSpot
-* Large initial syncs may take multiple sync cycles to complete
-
-</details>
-
-<details>
-
-<summary>Schema Changes</summary>
-
-* When custom properties are added/removed in HubSpot, the BigQuery schema updates automatically
-* Deleted properties may remain in BigQuery with NULL values for new records
-* Property type changes in HubSpot may cause sync issues (contact support if this occurs)
-* Use BigQuery schema evolution features to handle property additions gracefully
-
-</details>
-
-<details>
-
 <summary>Need Help?</summary>
 
 Contact QUANTI support at [support@quanti.io](mailto:support@quanti.io) or consult our comprehensive documentation at [https://docs.quanti.io](https://docs.quanti.io/)
