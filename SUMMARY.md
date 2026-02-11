@@ -33,7 +33,7 @@
   * [Google Display & Video 360](connectors/marketing-connectors/dv360-advertising.md)
   * [Effinity](connectors/readme/effinity.md)
   * [Facebook Organic](connectors/marketing-connectors/facebookorganic.md)
-  * [Google Ads](connectors/readme/google-ads.md)
+  * [Google Ads](connectors/marketing-connectors/google-ads.md)
   * [Google Merchant Center](connectors/marketing-connectors/google-merchant-center.md)
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
   * [Instagram Business](connectors/marketing-connectors/instagramorganic.md)
