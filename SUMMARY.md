@@ -38,7 +38,7 @@
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
   * [Instagram Business](connectors/marketing-connectors/instagramorganic.md)
   * [Kwanko](connectors/marketing-connectors/awin-1.md)
-  * [Linkedin Ads](connectors/marketing-connectors/linkedin-advertising.md)
+  * [Linkedin Ads](connectors/marketing-connectors/linkedin-ads.md)
   * [Meta Ads](connectors/readme/meta-ads.md)
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
   * [Microsoft Advertising](connectors/readme/microsoft-advertising.md)
