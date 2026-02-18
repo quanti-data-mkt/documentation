@@ -63,15 +63,15 @@ The JS library has to triggered first before events.
   function _quantiTag() {
     _quantiDataLayer.push(arguments);
   }
-  _quantiTag('trackerUrl', "https://api.tag.apiquanti.net/v1/ap/");
-  _quantiTag('domain', ".domain.com");
-  _quantiTag('accountId', {{Quanti Account ID}});
+  _quantiTag('trackerUrl', "{{trackerUrl}}"); // Provided by Quanti
+  _quantiTag('domain', "{{.domain.com}}"); // To customize
+  _quantiTag('accountId', {{Account ID}}); // Provided by Quanti
 </script>
-<script async src="https://cdn.jsdelivr.net/gh/whatsonio/quantijs@v1.7.3/dist/src.min.js"></script>
+<script async src="https://cdn.jsdelivr.net/gh/quantiio/quanti-tag-js@v1.0.1/dist/src.min.js"></script>
 ```
 {% endcode %}
 
-`Domain` and `accountId` has to personalize. Refer to your "Generated JS Code" on your "Tag Details" screen.
+`TrackerUrl`, `Domain` , `accountId` has to personalize. Refer to your "Generated JS Code" on your "Tag Details" screen.
 
 ### page\_view
 

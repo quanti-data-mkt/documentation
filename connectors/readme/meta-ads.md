@@ -32,9 +32,11 @@ The [breakdowns](https://developers.facebook.com/docs/marketing-api/insights/bre
 4. Create queries: You can either select pre-built queries or create your own custom queries.
 
 {% hint style="warning" %}
-**Token Expiration**
+### Token Expiration
 
-For various reasons, authentication tokens may expire. QUANTI automatically attempts to renew your token 5 days before expiration. If automatic renewal fails, project members will receive an email notification requesting re-authentication through the connector dashboard.
+Authentication tokens from third-party platforms may expire for various reasons. According to Meta's documentation, long-lived tokens are valid for 60 days. However, in practice, token behavior can be inconsistent: some tokens renew automatically while others expire as scheduled. Regular API usage generally reduces the chances of expiration, though this is not guaranteed.
+
+If automatic renewal fails, project members will receive an email notification requesting re-authentication through the connector dashboard.
 {% endhint %}
 
 ***
