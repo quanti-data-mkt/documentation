@@ -57,6 +57,7 @@
   * [Pennylane](connectors/sales-analytics-connectors/pennylane.md)
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
   * [Stripe](connectors/sales-analytics-connectors/stripe.md)
+  * [Prestashop par API](connectors/sales-analytics-connectors/prestashop-api.md)
 * [Analytics connectors](connectors/analytics-connectors/README.md)
   * [Google Analytics 4](connectors/analytics-connectors/google-analytics4.md)
   * [Matomo](connectors/analytics-connectors/matomo.md)
