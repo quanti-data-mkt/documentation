@@ -64,15 +64,60 @@ To connect Google Search Console to QUANTI, you need access to a [Google Search 
 
 ***
 
-## Pre-built Tables
+### Pre-built Tables
 
-* **keyword\_page\_report** : Keyword-level performance per page. The most granular table — each row represents a unique combination of date, search type, site, country, device, page URL, and search query. Ideal for detailed SEO analysis at the keyword × page level.
-* **keyword\_site\_report\_by\_page** : Keywords aggregated across the site using a `byPage` aggregation method. Each row represents a unique combination of date, search type, site, country, device, and query — without the page dimension. Useful for site-wide keyword performance analysis.
-* **keyword\_site\_report\_by\_site** : Keywords aggregated at the site level using a `byProperty` aggregation method. Same structure as `keyword_site_report_by_page` but metrics are computed differently by Google. The two tables may show slightly different totals for the same query.
-* **page\_report** : Performance data per page. Each row represents a unique combination of date, search type, site, country, device, and page URL. Useful for analyzing which pages generate the most clicks and impressions.
-* **site\_report\_by\_page** : Site-level aggregated data using a `byPage` aggregation. Each row represents a unique combination of date, search type, site, country, and device — without a page or query dimension.
-* **site\_report\_by\_site** : Overall site performance using a `byProperty` aggregation. Same structure as `site_report_by_page` but aggregated differently by Google. Use this table for the most accurate site-level totals.
-* **sitemap** : Dimension table containing sitemap file metadata. Each row represents a sitemap submitted in Google Search Console, with its path, type, submission and download dates, and the number of submitted vs. indexed URLs.
+**site\_report\_by\_page** : Search traffic data for the site. Each record shows how the site appeared in search results on a given day, with metrics aggregated by Page. Dimensions include:
+
+* Date
+* Country
+* Device
+* Search Type (web / image / video / news / discover / googleNews)
+
+**site\_report\_by\_site** : Search traffic data for the site. Each record shows how the site appeared in search results on a given day, with metrics aggregated by Property. Dimensions include:
+
+* Date
+* Country
+* Device
+* Search Type (web / image / video / news / discover / googleNews)
+
+> `site_report_by_page` and `site_report_by_site` share the same dimensions but use different aggregation methods (`byPage` vs `byProperty`). Google computes metrics differently between the two — totals may vary slightly for the same date and filters.
+
+**page\_report** : Search traffic data for individual pages. Each record shows how a specific page appeared in search results on a given day. Dimensions include:
+
+* Date
+* Country
+* Device
+* Page
+* Search Type (web / image / video / news / discover / googleNews)
+
+**keyword\_site\_report\_by\_page** : Search traffic data for the site based on the queries users searched for on Google. Each record shows how the site appeared for a specific search query, with metrics aggregated by Page. Dimensions include:
+
+* Date
+* Country
+* Device
+* Query
+* Search Type (web / image / video / news / discover / googleNews)
+
+**keyword\_site\_report\_by\_site** : Search traffic data for the site based on the queries users searched for on Google. Each record shows how the site appeared for a specific search query, with metrics aggregated by Property. Dimensions include:
+
+* Date
+* Country
+* Device
+* Query
+* Search Type (web / image / video / news / discover / googleNews)
+
+> `keyword_site_report_by_page` and `keyword_site_report_by_site` share the same dimensions but use different aggregation methods. The same note on metric discrepancies applies as for the site reports above.
+
+**keyword\_page\_report** : The most granular table — search traffic data for individual pages based on the queries users searched for on Google. Each record shows how a specific page appeared for a specific search query on a given day. Dimensions include:
+
+* Date
+* Country
+* Device
+* Page
+* Query
+* Search Type (web / image / video / news / discover / googleNews)
+
+**sitemap** : Dimension table containing sitemap file metadata. Each record represents a sitemap submitted in Google Search Console, including its path, type, last submission and download dates, and the number of submitted vs. indexed URLs.
 
 ***
 
