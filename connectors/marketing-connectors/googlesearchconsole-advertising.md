@@ -1,5 +1,5 @@
 ---
-description: 'Follow our setup guide to connect Google Ads to QUANTI:'
+description: 'Follow our setup guide to connect Google Search Console to QUANTI:'
 ---
 
 # Google Search Console

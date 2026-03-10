@@ -53,6 +53,7 @@
   * [Tiktok](connectors/marketing-connectors/tiktok-advertising.md)
   * [TimeOne](connectors/readme/timeone.md)
   * [Wonderpush](connectors/readme/wonderpush.md)
+  * [Google Search Console](connectors/marketing-connectors/google-search-console.md)
 * [Sales analytics connectors](connectors/sales-analytics-connectors/README.md)
   * [Hubspot](connectors/sales-analytics-connectors/hubspot.md)
   * [Pennylane](connectors/sales-analytics-connectors/pennylane.md)
