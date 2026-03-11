@@ -41,20 +41,34 @@ If automatic renewal fails, project members will receive an email notification r
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Queries</mark>
+## Pre-built Queries
 
-* **ad\_stats:** Advertising performance at ad level.
-* **ad\_conv:** Conversion performance at ad level.
-* **adset\_stats:** Advertising performance at ad set level.
-* **campaign\_stats:** Advertising performance at campaign level.
-* **account\_history:** Account-level metadata history.
+#### Stats & Conversions
+
+* **ad\_stats**: Advertising performance at ad level.
+* **ad\_conv**: Conversion performance at ad level.
+* **adset\_stats**: Advertising performance at ad set level.
+* **adset\_conv**: Conversion performance at ad set level.
+* **campaign\_stats**: Advertising performance at campaign level.
+* **campaign\_conv**: Conversion performance at campaign level.
+
+#### Dimension Tables (History)
+
+* **account\_history**: Account-level metadata history.
 * **creative\_history**: Creative-level metadata history.
-* **campaign\_history:** Campaign-level metadata history.
-* **ad\_set\_history:** Ad set-level metadata history.
-* **ad\_history:** Ad-level metadata history.
-* **ad\_stats\_age\_gender:** Ad performance broken down by age and gender.
-* **ad\_conv\_age\_gender:** Conversion data broken down by age and gender.
-* **ad\_stats\_country\_region:** Ad performance broken down by country and region.
+* **ad\_image\_history**: Ad image metadata history (URLs, dimensions, status).
+* **campaign\_history**: Campaign-level metadata history.
+* **ad\_set\_history**: Ad set-level metadata history.
+* **ad\_history**: Ad-level metadata history.
+
+#### Breakdowns
+
+* **ad\_stats\_age\_gender**: Ad performance broken down by age and gender.
+* **ad\_conv\_age\_gender**: Conversion data broken down by age and gender.
+* **ad\_stats\_country\_region**: Ad performance broken down by country and region.
+* **ad\_conv\_country\_region**: Conversion data broken down by country and region.
+* **ad\_stats\_device\_platform\_placement**: Ad performance broken down by device, platform, and placement.
+* **ad\_conv\_device\_platform\_placement**: Conversion data broken down by device, platform, and placement.
 
 {% hint style="warning" %}
 When performing a historical data load, the account\_history and campaign\_history tables ignore the selected start date — they retrieve all available data since the ad account was created.

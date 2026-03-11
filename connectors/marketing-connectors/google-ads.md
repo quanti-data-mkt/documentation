@@ -106,7 +106,7 @@ If you need additional data beyond pre-built tables:
 
 ## Pre-built Tables
 
-### Dimension tables
+#### Dimension Tables
 
 These tables track the historical evolution of your Google Ads account structure and configuration. They enable audit trails and analysis of how settings changes impact performance over time.
 
@@ -115,8 +115,9 @@ These tables track the historical evolution of your Google Ads account structure
 * **Ad Group History**: Ad group configuration including status, type (search standard, display standard, etc.), ad rotation mode, optimized targeting settings, display custom bid dimensions, targeting restrictions, URL tracking templates, and experiment base ad group relationships. Tracks how ad group settings change over time for optimization analysis.
 * **Ad History**: Individual ad creative history including ad type (text ad, responsive search ad, etc.), status, policy approval and review status, action items for compliance, system-managed ad indicators, device preferences, display URLs, final URLs (desktop, mobile, app), URL suffixes, tracking templates, and URL collections. Critical for creative performance analysis and policy compliance monitoring.
 * **Criterion**: Targeting criteria at ad group level including keywords, audiences, placements, topics, and other targeting methods. Contains detailed criterion configuration including type, text, match type (for keywords), bid adjustments, status, quality scores, final URLs, tracking templates, and user list information. Essential for understanding what triggers ad delivery and for optimizing targeting strategies.
+* **Shopping Product**: Shopping product catalog with eligibility status and issues tracking. Includes item ID, Merchant Center account, channel (online/local), language, status (eligible, not eligible), title, brand, Google taxonomy categories (up to 5 levels), merchant-defined product types, condition, and custom attributes (0–4). Useful for identifying product issues and optimization opportunities. ⚠️ Large dimension table — use date-filtered queries and avoid MERGE on the full table.
 
-### Metric Tables
+#### Metric Tables
 
 These are the essential performance tables providing daily metrics at different aggregation levels. They form the foundation for standard campaign performance analysis.
 
@@ -127,6 +128,12 @@ These are the essential performance tables providing daily metrics at different 
 * **Search Term Stats**: Actual user search queries that triggered your ads. Contains the exact search terms (not just matched keywords), match type that was used, search term status (added as keyword, excluded, or none), impressions, clicks, cost, conversions, CTR, average CPC, conversion rates, position metrics (absolute top and top impression percentages), and view-through conversions. Critical for search query mining, negative keyword discovery, and understanding user intent vs keyword targeting.
 * **Audience Stats**: Performance metrics segmented by audience targeting. Includes audience resource names, user list details, criterion IDs, combined audience information, custom affinity/intent audiences, demographic segments (age, gender, income, parental status), and standard performance metrics. Enables analysis of which audience segments drive the best results and ROI by demographic or behavior-based targeting.
 * **Keyword Stats**: Comprehensive keyword-level performance including the keyword text, match type (broad, phrase, exact), approval status, quality score components (quality score, ad relevance, landing page experience, expected CTR), first page CPC estimates, top of page CPC estimates, historical quality scores, search impression share metrics, budget lost impression shares, rank lost impression shares, absolute top impression percentage, top impression percentage, and all standard performance metrics. Essential for keyword optimization, bid management, and quality score improvement.
+* **Age Range Stats**: Daily performance metrics broken down by age range targeting (18–24, 25–34, 35–44, 45–54, 55–64, 65+, undetermined) at ad group level. Includes impressions, clicks, cost (micros), conversions, and conversion value. Useful for optimizing bid adjustments and budget allocation across age demographics.
+* **Gender Stats**: Daily performance metrics broken down by gender targeting (male, female, undetermined) at ad group level. Includes impressions, clicks, cost (micros), conversions, and conversion value. Enables analysis of gender-based performance differences to refine targeting strategies.
+* **Landing Page View**: Daily landing page performance metrics segmented by URL, device, and ad network type. Includes standard traffic metrics (impressions, clicks, cost, conversions) alongside page quality indicators: mobile speed score (1–100), percentage of clicks on mobile-friendly pages, and percentage of clicks on valid AMP pages. Useful for identifying underperforming landing pages and prioritizing UX improvements.
+* **Product Group View**: Daily performance metrics for product listing groups in Shopping campaigns. Segmented by campaign, ad group, criterion, and listing group type (subdivision or unit). Includes impressions, clicks, cost (micros), conversions, conversion value, all conversions, CTR, and average CPC. Useful for optimizing product group bids and Shopping campaign structure.
+* **Asset Group Product Group View**: Daily performance metrics for product targeting within Performance Max campaigns, at the asset group and listing group filter level. Includes impressions, clicks, cost (micros), conversions, conversion value, and all conversions. Enables granular analysis of which product groups perform best within PMax asset groups.
+* **Shopping Performance View**: Shopping campaign performance metrics aggregated at product level. Includes product attributes (item ID, title, brand, category, custom labels, condition, channel, language, country) alongside standard performance metrics (impressions, clicks, cost, conversions, conversion value, all conversions). Essential for identifying top-performing products and optimizing product feed and bidding strategies.
 
 ***
 

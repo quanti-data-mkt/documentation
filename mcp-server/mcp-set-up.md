@@ -6,16 +6,18 @@ description: This page explains how to set-up QUANTI MCP in your favorite LLM
 
 ***
 
-## Set-up by AI LLM
+### Set-up by AI LLM
 
+{% stepper %}
+{% step %}
 #### Claude (Anthropic)
 
 **Claude.ai (browser)**
 
-1. Log in to claude.ai
-2. Go to **Settings > Integrations > Add Integration**
-3. Paste the Quanti MCP server URL
-4. Authenticate with your Quanti account
+* Log in to [claude.ai](https://claude.ai)
+* Go to **Settings > Integrations > Add Integration**
+* Paste the Quanti MCP server URL
+* Authenticate with your Quanti account
 
 **Claude Desktop (application)**
 
@@ -26,49 +28,57 @@ Edit the Claude configuration file:
 
 Add the following configuration:
 
-json
-
 ```json
 {
   "mcpServers": {
     "quanti": {
-      "url": "https://mcp-public.app.quanti.io/mcp"
+      "url": "YOUR_QUANTI_MCP_SERVER_URL"
     }
   }
 }
 ```
 
 Restart Claude Desktop. The MCP icon will appear in the input area.
+{% endstep %}
 
+{% step %}
 #### ChatGPT (OpenAI)
 
-1. Log in to chatgpt.com
+* Log in to [chatgpt.com](https://chatgpt.com)
+* Go to **Settings > Apps**
+* Activate the **Developer mode**
+* Click **Create App**
+* Set the Quanti MCP server URL
+{% endstep %}
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
-1. Go to **Settings > Apps**
-2. Activate the developper mode
-3. Create APP
-
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
-
-4. Set the MCP URL in&#x20;
-
-```
-https://mcp-public.app.quanti.io/mcp
-```
-
+{% step %}
 #### Microsoft Copilot
 
-1. Open copilot.microsoft.com
-2. Go to **Settings > Plugins > Add plugin**
-3. Enter the Quanti MCP server URL
-4. Connect your Quanti account via OAuth
+* Open [copilot.microsoft.com](https://copilot.microsoft.com)
+* Go to **Settings > Plugins > Add plugin**
+* Enter the Quanti MCP server URL
+* Connect your Quanti account via OAuth
+{% endstep %}
 
+{% step %}
 #### Le Chat (Mistral)
 
-1. Log in to chat.mistral.ai
-2. Go to **Settings > Connectors > Add connector**
-3. Add the Quanti server URL
-4. Validate OAuth authentication
+* Log in to [chat.mistral.ai](https://chat.mistral.ai)
+* Go to **Settings > Connectors > Add connector**
+* Add the Quanti server URL
+* Validate OAuth authentication
+{% endstep %}
+{% endstepper %}
+
+***
+
+### Troubleshooting
+
+<details>
+
+<summary>Need Help?</summary>
+
+Contact QUANTI support at [support@quanti.io](mailto:support@quanti.io) or consult our comprehensive documentation at [https://docs.quanti.io](https://docs.quanti.io)
+
+</details>
 

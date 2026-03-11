@@ -89,45 +89,46 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 
 ## Pre-built Tables
 
-### Dimension Tables (Configuration & History)
+#### Dimension Tables (Configuration & History)
 
-* **accounts**: List of accessible Google Analytics 4 accounts with basic information and settings
-* **conversion\_events**: List of conversion events configured in GA4 with counting methods
-* **custom\_dimensions**: List of custom dimensions configured in GA4 with their scope and parameter names
-* **google\_ads\_links**: List of Google Ads links configured in GA4 properties
-* **properties**: List of GA4 properties with their configuration settings
+* **accounts**: List of accessible Google Analytics 4 accounts with basic information and settings.
+* **conversion\_events**: List of conversion events configured in GA4 with counting methods.
+* **custom\_dimensions**: List of custom dimensions configured in GA4 with their scope and parameter names.
+* **google\_ads\_links**: List of Google Ads links configured in GA4 properties.
+* **properties**: List of GA4 properties with their configuration settings.
 
-### Metric Tables (Reports & Analytics)
+#### Metric Tables (Reports & Analytics)
 
-#### Attribution & Campaign Performance
+**Attribution & Campaign Performance**
 
-* **data\_driven\_key\_events\_report**: Key events attributed to marketing campaigns with data-driven attribution model
-* **data\_driven\_transaction\_ids**: Transaction-level data with data-driven attribution to campaigns
-* **session\_acquisition\_report**: Session metrics by acquisition source, medium, and campaign
-* **first\_user\_acquisition\_report**: New user metrics by first acquisition source and campaign
+* **data\_driven\_key\_events\_report**: Key events attributed to marketing campaigns with data-driven attribution model.
+* **data\_driven\_transaction\_ids**: Transaction-level data with data-driven attribution to campaigns.
+* **session\_acquisition\_report**: Session metrics by acquisition source, medium, and campaign.
+* **first\_user\_acquisition\_report**: New user metrics by first acquisition source and campaign.
 
-#### Traffic & Source Analysis
+**Traffic & Source Analysis**
 
-* **daily\_global\_report**: Daily aggregated statistics across all traffic sources (overview)
-* **daily\_source\_medium\_report**: Daily statistics by source/medium combination
-* **daily\_source\_medium\_campaign\_report**: Daily statistics by source/medium/campaign combination
+* **daily\_global\_report**: Daily aggregated statistics across all traffic sources (overview).
+* **daily\_source\_medium\_report**: Daily statistics by source/medium combination.
+* **daily\_source\_medium\_campaign\_report**: Daily statistics by source/medium/campaign combination.
 
-#### Content & Engagement
+**Content & Engagement**
 
-* **events\_report**: Event-level metrics showing user interactions and key events
-* **pages\_path\_report**: Page-level metrics by URL path
-* **pages\_screen\_name\_report**: Page/screen metrics by title and name
-* **unified\_screen\_class\_report**: Screen class metrics for mobile apps and web pages
+* **events\_report**: Event-level metrics showing user interactions and key events.
+* **pages\_path\_report**: Page-level metrics by URL path.
+* **pages\_screen\_name\_report**: Page/screen metrics by title and name.
+* **unified\_screen\_class\_report**: Screen class metrics for mobile apps and web pages.
+* **landing\_page\_device\_report**: Daily performance metrics by landing page path and device category (desktop, mobile, tablet). Includes sessions, engaged sessions, total users, screen/page views, event count, key events, total revenue, and session source/medium and campaign ID. Useful for analyzing how entry pages perform across different devices and traffic sources.
 
-#### E-commerce
+**E-commerce**
 
-* **ecommerce\_item\_report**: Product-level metrics including views, cart additions, and purchases
-* **ecommerce\_purchase\_item\_report**: Purchase transaction details by item and transaction ID
+* **ecommerce\_item\_report**: Product-level metrics including views, cart additions, and purchases.
+* **ecommerce\_purchase\_item\_report**: Purchase transaction details by item and transaction ID.
 
-#### Technology & Devices
+**Technology & Devices**
 
-* **tech\_device\_report**: User metrics by device category, model, and operating system
-* **tech\_browser\_report**: User metrics by browser type
+* **tech\_device\_report**: User metrics by device category, model, and operating system.
+* **tech\_browser\_report**: User metrics by browser type.
 
 ***
 
