@@ -12,12 +12,27 @@ description: This page explains how to set-up QUANTI MCP in your favorite LLM
 {% step %}
 #### Claude (Anthropic)
 
-**Claude.ai (browser)**
+**Claude.ai — Team / Enterprise (organisation)**
+
+> ⚠️ Only **Owners** of the organisation can add a custom connector. Once added, members can activate it individually.
 
 * Log in to [claude.ai](https://claude.ai)
-* Go to **Settings > Integrations > Add Integration**
-* Paste the Quanti MCP server URL
+* Go to **Organisation Settings > Connectors**
+* Click **Add custom connector**
+* Enter a name and the Quanti MCP server URL
+* Click **Add** to confirm
+* Members can then go to **Settings > Connectors**, find the connector in the list and click **Connect** to authenticate with their Quanti account
+
+**Claude.ai — Free / Pro / Max (personal account)**
+
+* Log in to [claude.ai](https://claude.ai)
+* Go to **Settings > Connectors**
+* Click **Add custom connector**
+* Enter a name and the Quanti MCP server URL
+* Click **Add** to confirm
 * Authenticate with your Quanti account
+
+> ℹ️ Free accounts are limited to **one custom connector**.
 
 **Claude Desktop (application)**
 
@@ -27,6 +42,8 @@ Edit the Claude configuration file:
 * **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 Add the following configuration:
+
+json
 
 ```json
 {
