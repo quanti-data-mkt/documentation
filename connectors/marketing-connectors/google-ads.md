@@ -32,7 +32,7 @@ This is your Google Ads Customer ID - note it down for the setup process
 {% endstep %}
 {% endstepper %}
 
-<figure><img src="../../.gitbook/assets/image.png" alt="Google Ads Customer ID location"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt="Google Ads Customer ID location"><figcaption></figcaption></figure>
 
 ***
 

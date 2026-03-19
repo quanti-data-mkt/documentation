@@ -64,6 +64,7 @@
   * [Matomo](connectors/analytics-connectors/matomo.md)
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
   * [Piwik PRO](connectors/analytics-connectors/piwik-pro-analytics.md)
+  * [Piano Analytics](connectors/analytics-connectors/piano-analytics-1.md)
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse-connector.md)
   * [Google Ads](connectors/reverse-connectors/google-ads-reverse-connector.md)
