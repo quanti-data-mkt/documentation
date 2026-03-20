@@ -51,6 +51,7 @@
   * [Stylight](connectors/readme/stylight.md)
   * [Taboola](connectors/marketing-connectors/taboola.md)
   * [Tiktok](connectors/marketing-connectors/tiktok-advertising.md)
+  * [TikTok Organic](connectors/marketing-connectors/tiktok-organic.md)
   * [TimeOne](connectors/readme/timeone.md)
   * [Wonderpush](connectors/readme/wonderpush.md)
   * [X Ads](connectors/marketing-connectors/x-ads.md)
