@@ -73,10 +73,10 @@ Before connecting TikTok Organic to QUANTI, ensure you have:
 
 ## Pre-built Tables
 
-* **Account\_info**: Basic information about TikTok accounts including username, display name, profile description, avatar URL, follower count, following count, total likes received, and total video count.
-* **Videos**: All videos published on the TikTok account with title, creation timestamp, video duration, cover image URL, embed link, and share URL.
-* **Daily\_account\_insights**: Daily aggregated account-level metrics including profile views, video views, follower count, net follower change, and reach.
-* **Lifetime\_video\_insights**: Lifetime engagement metrics for individual videos including total views, likes, comments, shares, reach, impressions, average watch time, and total watch time (cumulative data, not daily).
+* **profile**: Account profile attributes and information — username, display name, bio description, profile image URL, deep link, verification status, and business account flag.
+* **profile\_snapshot\_metric**: Cumulative account metrics captured at each sync — total followers, following count, total likes, video count, and audience demographics by country, city, age range, and gender (stored as JSON).
+* **profile\_daily\_metric**: Daily engagement metrics at account level — video views, unique video views, profile views, likes, comments, shares, new/lost/total followers, engaged audience, bio link clicks, and additional business-only metrics (phone number clicks, lead submissions, app download clicks, email clicks, address clicks). Also includes hourly audience activity as JSON.
+* **video**: Video-level performance analytics captured at each sync — video ID, publication date, caption, thumbnail URL, embed URL, share URL, and lifetime cumulative metrics: likes, comments, shares, video views, reach, video duration, total watch time, average watch time, completion rate, impression sources, and audience countries (stored as JSON).
 
 ***
 
