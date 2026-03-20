@@ -4,6 +4,8 @@ description: 'Follow our setup guide to connect TikTok Organic to QUANTI:'
 
 # TikTok Organic
 
+<a href="https://dbdiagram.io/e/69bd5d7d78c6c4bc7a302be3/69bd5ddefb2db18e3bcabd49" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+
 ***
 
 ## Prerequisites
@@ -76,7 +78,7 @@ Only one TikTok Business account can be connected per connector. To sync a diffe
 
 ***
 
-## Pre-built Tables
+## Pre-built reports
 
 * **profile**: Account profile attributes — username, display name, bio description, profile image URL, deep link, verification status, and business account flag. One row per account, updated at each sync (upsert).
 
@@ -85,6 +87,8 @@ Only one TikTok Business account can be connected per connector. To sync a diffe
 * **profile\_daily\_metric**: Daily engagement metrics at account level — video views, unique video views, profile views, likes, comments, shares, new followers gained, followers lost, total net followers, engaged audience, and bio link clicks. Also includes business-only metrics (phone number clicks, lead submissions, app download clicks, email clicks, address clicks) and hourly audience activity as a JSON array. Partitioned by date.
 
 * **video**: Video-level analytics captured at each sync — video ID, publication date, caption, thumbnail URL, embed URL, share URL, and lifetime cumulative metrics: likes, comments, shares, total video views, unique reach, video duration, total watch time, average watch time per view, completion rate, impression sources by channel, and audience countries (stored as JSON arrays).
+
+<a href="https://dbdiagram.io/e/69bd5d7d78c6c4bc7a302be3/69bd5ddefb2db18e3bcabd49" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
