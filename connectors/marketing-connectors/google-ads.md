@@ -67,26 +67,18 @@ This is your Google Ads Customer ID - note it down for the setup process
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Pre-built reports
 
-* Review the available pre-built tables (see section below for details)
-* All tables are selected by default - you can deselect tables you don't need
-* Recommended: Keep all tables enabled for comprehensive campaign analysis
+* Review the available pre-built reports (see section below for details)
+* All reports are selected by default - you can deselect any you don't need
+* Recommended: Keep all reports enabled for comprehensive campaign analysis
 * Click **Next**
 {% endstep %}
 
 {% step %}
-#### Custom Queries (Optional)
+#### Create reports
 
-If you need additional data beyond pre-built tables:
-
-* Click **Add Custom Query**
-* Enter a **Table Name** for your custom report
-* Select the **Report Type** from Google Ads API
-* Choose **Fields** to include (refer to [Google Ads API Fields documentation](https://developers.google.com/google-ads/api/fields/v15/overview))
-* Configure any **Filters** or **Segments** needed
-* Click **Save**
-* Repeat for additional custom queries as needed
+Select the pre-built reports you want to activate, and/or create your own custom reports. To help you configure custom reports, refer to the **Custom reports** chapter below.
 {% endstep %}
 
 {% step %}
@@ -104,7 +96,7 @@ If you need additional data beyond pre-built tables:
 
 ***
 
-## Pre-built Tables
+## Pre-built reports
 
 #### Dimension Tables
 
@@ -138,6 +130,91 @@ These are the essential performance tables providing daily metrics at different 
 ***
 
 <a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+
+***
+
+## Custom reports
+
+{% stepper %}
+{% step %}
+#### Retrieve your field names from the Google Ads Query Language Explorer
+
+The easiest way to identify the field names and report types expected by the Google Ads API is to use the **[Google Ads Query Language (GAQL) interactive field explorer](https://developers.google.com/google-ads/api/fields/v19/query_builder)**.
+
+This tool is the official Google reference for building API queries. It lets you:
+
+* Browse all available **report types** (called _resources_ in the Google Ads API), such as `campaign`, `ad_group`, `search_term_view`, `keyword_view`, `shopping_performance_view`, etc.
+* Explore the **fields**, **metrics**, and **segments** available for each resource, along with their exact API names
+* Check **field compatibility** — the explorer highlights which fields can be combined in the same query
+* Generate a complete **GAQL query** that you can use as a reference to fill in your QUANTI JSON configuration
+
+**How to use it:**
+
+1. Go to [developers.google.com/google-ads/api/fields/v19/query_builder](https://developers.google.com/google-ads/api/fields/v19/query_builder)
+2. Select a **resource** from the left panel (e.g., `campaign` for campaign-level data, `ad_group_ad` for ad-level data)
+3. Browse the available fields and tick those you want to retrieve — the explorer will warn you if two fields are incompatible
+4. Note down:
+   * The **resource name** → this will populate the `report` field in your JSON
+   * The **selected field names** (in `resource.field_name` format) → these will populate the `fields` value in your JSON
+   * Any **filter or sort** conditions you wish to apply
+
+{% hint style="info" %}
+Field names follow the `resource.attribute` format. For example, for the `campaign` resource: `campaign.name`, `campaign.status`, `metrics.impressions`, `metrics.clicks`, `metrics.cost_micros`, `segments.date`.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+#### Configure the custom report query
+
+In QUANTI, at the **Create reports** step, click **Add custom report**. A pop-in opens with two steps: **Query** and **Schema**.
+
+In the **Query** step:
+
+* Give your report a name in the **Query name** field — this name will become the table name in your data warehouse
+
+{% hint style="danger" %}
+The name chosen for your custom report is the one that names your table in the data warehouse.
+{% endhint %}
+
+* Fill in the **Query configuration (JSON)** with the following structure:
+
+```json
+{
+  "report": "",
+  "fields": "",
+  "filters": [],
+  "sorts": []
+}
+```
+
+* **`report`** _(required)_: The Google Ads API resource name as identified in the GAQL explorer (e.g., `"campaign"`, `"ad_group_ad"`, `"search_term_view"`).
+* **`fields`** _(required)_: A comma-separated string of field names copied from the GAQL explorer.\
+  Example: `"fields": "campaign.id, campaign.name, metrics.impressions, metrics.clicks, metrics.cost_micros, segments.date"`
+* **`filters`** _(optional)_: An array of filter conditions to restrict the data returned. Each filter is an object with `field`, `operator`, and `value`.\
+  Example: `"filters": [{"field": "campaign.status", "operator": "EQUALS", "value": "ENABLED"}]`\
+  Can be left as an empty array `[]` if no filter is needed.
+* **`sorts`** _(optional)_: An array of sort conditions. Each sort is an object with `field` and `order` (`ASC` or `DESC`).\
+  Example: `"sorts": [{"field": "metrics.impressions", "order": "DESC"}]`\
+  Can be left as an empty array `[]`.
+
+Once your JSON is filled in, click **Next**.
+{% endstep %}
+
+{% step %}
+#### Map your fields (Schema)
+
+The second step of the pop-in is the **Schema** mapping. QUANTI infers the type of each field and displays them in a table.
+
+For each field, you can:
+
+* Adjust the **Type** (STRING, INTEGER, FLOAT, etc.)
+* Check **Quanti ID** to mark the field as a primary key identifier — this should include all dimension fields of your report (e.g., `campaign.id`, `ad_group.id`, `segments.date`), as they collectively form the unique identifier of each row
+* Check **Quanti Date** to mark the field used as the partition date (typically `segments.date`)
+* Check **Metric** to flag a field as a numeric metric
+
+Once all fields are correctly mapped, click **Save** to create the custom report table.
+{% endstep %}
+{% endstepper %}
 
 ***
 
