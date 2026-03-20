@@ -208,8 +208,7 @@ The second step of the pop-in is the **Schema** mapping. QUANTI infers the type 
 For each field, you can:
 
 * Adjust the **Type** (STRING, INTEGER, FLOAT, etc.)
-* Check **Quanti ID** to mark the field as a primary key identifier — this should include all dimension fields of your report (e.g., `campaign.id`, `ad_group.id`, `segments.date`), as they collectively form the unique identifier of each row
-* Check **Quanti Date** to mark the field used as the partition date (typically `segments.date`)
+* Check **Unique identifiers** to mark the field as part of the primary key — this should include all dimension fields of your report (e.g., `campaign.id`, `ad_group.id`, `segments.date`), as they collectively form the unique identifier of each row
 * Check **Metric** to flag a field as a numeric metric
 
 Once all fields are correctly mapped, click **Save** to create the custom report table.
