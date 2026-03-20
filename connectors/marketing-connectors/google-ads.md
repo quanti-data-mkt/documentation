@@ -139,7 +139,7 @@ These are the essential performance tables providing daily metrics at different 
 {% step %}
 #### Retrieve your field names from the Google Ads Query Language Explorer
 
-The easiest way to identify the field names and report types expected by the Google Ads API is to use the **[Google Ads Query Language (GAQL) interactive field explorer](https://developers.google.com/google-ads/api/fields/v19/query_builder)**.
+The easiest way to identify the field names and report types expected by the Google Ads API is to use the **[Google Ads Query Builder](https://developers.google.com/google-ads/api/docs/developer-toolkit/gaa-query-builder)**.
 
 This tool is the official Google reference for building API queries. It lets you:
 
@@ -150,7 +150,7 @@ This tool is the official Google reference for building API queries. It lets you
 
 **How to use it:**
 
-1. Go to [developers.google.com/google-ads/api/fields/v19/query_builder](https://developers.google.com/google-ads/api/fields/v19/query_builder)
+1. Go to [developers.google.com/google-ads/api/docs/developer-toolkit/gaa-query-builder](https://developers.google.com/google-ads/api/docs/developer-toolkit/gaa-query-builder)
 2. Select a **resource** from the left panel (e.g., `campaign` for campaign-level data, `ad_group_ad` for ad-level data)
 3. Browse the available fields and tick those you want to retrieve — the explorer will warn you if two fields are incompatible
 4. Note down:
