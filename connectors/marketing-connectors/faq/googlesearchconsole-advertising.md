@@ -6,30 +6,30 @@ description: Frequently asked questions about Google Search Console
 
 ***
 
-### Les clics/impressions dans Quanti ne correspondent pas à l'interface GSC
+### Clicks/impressions in Quanti don't match the GSC interface
 
-**Symptôme**\
-Les totaux de clics et impressions dans les tables Quanti diffèrent de ceux affichés dans l'interface Google Search Console, à filtres identiques.
+**Symptom**\
+Clicks and impressions totals in Quanti tables differ from what is displayed in the Google Search Console interface, even with identical filters.
 
-**Comprendre les méthodes d'agrégation**
+**Understanding aggregation methods**
 
-L'API GSC expose deux méthodes d'agrégation — la correspondance avec les tables Quanti est la suivante :
+The GSC API exposes two aggregation methods — here is how they map to Quanti tables:
 
-| Méthode | Tables Quanti | Comportement |
+| Method | Quanti tables | Behavior |
 |---|---|---|
-| `byProperty` | `*_by_site` | 1 impression/clic max par requête, même si plusieurs URLs s'affichent → chiffres plus bas |
-| `byPage` | `*_by_page` | 1 impression/clic par URL affichée → chiffres plus élevés |
+| `byProperty` | `*_by_site` | Max 1 impression/click per query, even if multiple URLs appear → lower numbers |
+| `byPage` | `*_by_page` | 1 impression/click per URL shown in results → higher numbers |
 
-**L'interface GSC utilise `byProperty` par défaut** pour le graphique de performance global. La table en dessous bascule en `byPage` si la dimension *Pages* est sélectionnée.
+**The GSC interface uses `byProperty` by default** for the global performance graph. The table below the graph switches to `byPage` when the *Pages* dimension is selected.
 
-> ℹ️ Pour reproduire les chiffres du graphique de l'interface GSC, utiliser les tables `*_by_site`.
+> ℹ️ To replicate the numbers shown in the GSC interface graph, use the `*_by_site` tables.
 
-**Si la discrepancy persiste malgré la même méthode d'agrégation**
+**If the discrepancy persists despite using the same aggregation method**
 
-Même méthode d'agrégation mais résultats différents ? Vérifier en priorité :
+Same aggregation method but still different numbers? Check the following:
 
-* La plage de dates est-elle strictement identique des deux côtés ?
-* Les filtres (pays, device, type de recherche) sont-ils les mêmes ?
-* Le type de propriété GSC : une propriété **domaine** agrège les sous-domaines, une propriété **préfixe d'URL** non.
+* Is the date range strictly identical on both sides?
+* Are the filters (country, device, search type) the same?
+* Check the GSC property type: a **domain property** aggregates subdomains, a **URL prefix property** does not.
 
-**Référence** : [How Search Console data is calculated](https://support.google.com/webmasters/answer/6155685)
+**Reference**: [How Search Console data is calculated](https://support.google.com/webmasters/answer/6155685)
