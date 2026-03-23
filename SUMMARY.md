@@ -42,6 +42,7 @@
   * [Google Display & Video 360](connectors/marketing-connectors/dv360-advertising.md)
   * [Google Merchant Center](connectors/marketing-connectors/google-merchant-center.md)
   * [Google Search Console](connectors/marketing-connectors/googlesearchconsole-advertising.md)
+    * [FAQ](connectors/marketing-connectors/faq/googlesearchconsole-advertising.md)
   * [Instagram Business](connectors/marketing-connectors/instagramorganic.md)
   * [Klaviyo](connectors/marketing-connectors/klaviyo.md)
   * [Kwanko](connectors/marketing-connectors/awin-1.md)
