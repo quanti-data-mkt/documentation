@@ -41,7 +41,7 @@ Before getting started, make sure you have:
 The URL to connect your AI assistant is:
 
 ```
-https://mcp-public.app.quanti.io/mcp
+https://ai.quanti.io/mcp
 ```
 {% endhint %}
 

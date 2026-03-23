@@ -6,6 +6,18 @@ description: This page explains how to set-up QUANTI MCP in your favorite LLM
 
 ***
 
+{% hint style="info" %}
+**Quanti MCP Server URL**
+
+Use the following URL when configuring any AI assistant:
+
+```
+https://ai.quanti.io/mcp
+```
+{% endhint %}
+
+***
+
 ### Set-up by AI LLM
 
 {% stepper %}
@@ -43,13 +55,11 @@ Edit the Claude configuration file:
 
 Add the following configuration:
 
-json
-
 ```json
 {
   "mcpServers": {
     "quanti": {
-      "url": "YOUR_QUANTI_MCP_SERVER_URL"
+      "url": "https://ai.quanti.io/mcp"
     }
   }
 }
