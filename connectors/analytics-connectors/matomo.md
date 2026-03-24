@@ -64,17 +64,15 @@ Matomo custom reports let you query any endpoint of the [Matomo Reporting API](h
 
 Each custom report is built around a **Matomo API method** (e.g. `VisitsSummary.get`, `Events.getCategory`). The method determines which fields are returned.
 
-Two ways to explore what's available:
-
-* **Matomo official reference**: [developer.matomo.org/api-reference/reporting-api](https://developer.matomo.org/api-reference/reporting-api) — full list of methods and their returned fields
-* **Your own Matomo instance**: call the following endpoint to get metadata for all reports available on your site:
-
-```
-https://<your-matomo-instance>/index.php?module=API&method=API.getReportMetadata&idSite=<id>&period=day&date=today&format=JSON&token_auth=<token>
-```
+The reference for all available methods and their fields is the official Matomo Reporting API documentation:
+👉 [developer.matomo.org/api-reference/reporting-api](https://developer.matomo.org/api-reference/reporting-api)
 
 {% hint style="info" %}
-**Not sure which fields to pick?** Describe the report you see in the Matomo interface to an AI assistant (Claude, ChatGPT…) — it will identify the corresponding API method and the right `fields` string for you.
+**Use an AI assistant to speed up the configuration.** Rather than browsing the full API reference manually, describe the report you want to reproduce — as you see it in the Matomo interface — to an AI assistant (Claude, ChatGPT…). For example:
+
+> *"I want to build a custom Matomo report showing event categories with the number of events and their total value. What API method and fields should I use in the QUANTI JSON format `{ "report": "", "flat": "1", "fields": "" }` ?"*
+
+The AI will identify the correct `report` value and the exact `fields` string for you.
 {% endhint %}
 
 #### Configure the custom report
@@ -93,7 +91,6 @@ In QUANTI, at the **Select pre-built reports** step, click **Add custom report**
 * **`flat`**: Set to `"1"` to flatten nested JSON structures — recommended for most reports
 * **`fields`** *(optional)*: Comma-separated list of field names to retrieve. If omitted, all fields returned by the method are ingested — useful for a first run to discover what arrives in BigQuery
 
-> ℹ️ Regardless of the method used, the following fields are always added by QUANTI: `date`, `website_id`, `website_name`.
 
 #### Common report examples
 
