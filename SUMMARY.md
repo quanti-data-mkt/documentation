@@ -22,6 +22,7 @@
 
 * [Analytics connectors](connectors/analytics-connectors/README.md)
   * [Google Analytics 4](connectors/analytics-connectors/google-analytics4.md)
+    * [FAQ](connectors/analytics-connectors/faq/google-analytics4.md)
   * [Matomo](connectors/analytics-connectors/matomo.md)
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics-1.md)
