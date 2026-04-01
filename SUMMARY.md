@@ -21,6 +21,7 @@
 ## CONNECTORS
 
 * [Analytics connectors](connectors/analytics-connectors/README.md)
+  * [Adobe Analytics](connectors/analytics-connectors/adobe-analytics.md)
   * [Google Analytics 4](connectors/analytics-connectors/google-analytics4.md)
     * [FAQ](connectors/analytics-connectors/faq/google-analytics4.md)
   * [Matomo](connectors/analytics-connectors/matomo.md)
