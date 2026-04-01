@@ -1,6 +1,6 @@
 # Klaviyo
 
-<a href="https://dbdiagram.io/e/69a05c95a3f0aa31e132e756/69a05df0a3f0aa31e13313b7" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/69a05c95a3f0aa31e132e756/69a05df0a3f0aa31e13313b7" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -26,9 +26,9 @@ Before connecting Klaviyo to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default — you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete email marketing analytics
 * Click **Next**
@@ -49,7 +49,7 @@ Before connecting Klaviyo to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 ### Dimensions
 
@@ -64,4 +64,4 @@ Before connecting Klaviyo to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/69a05c95a3f0aa31e132e756/69a05df0a3f0aa31e13313b7" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/69a05c95a3f0aa31e132e756/69a05df0a3f0aa31e13313b7" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>

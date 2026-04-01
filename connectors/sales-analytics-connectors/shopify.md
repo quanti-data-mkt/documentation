@@ -4,7 +4,7 @@ description: Follow our setup guide to connect Shopify to QUANTI.
 
 # Shopify
 
-<a href="https://dbdiagram.io/e/694439cfe4bb1dd3a9971e40/69443a24e4bb1dd3a99726ad" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/694439cfe4bb1dd3a9971e40/69443a24e4bb1dd3a99726ad" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -113,9 +113,9 @@ Example: If your URL is `mystore.myshopify.com`, your shop name is `mystore`.
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete e-commerce data tracking
 * Click **Next**
@@ -136,7 +136,7 @@ Example: If your URL is `mystore.myshopify.com`, your shop name is `mystore`.
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 #### Configuration & Reference Tables
 
@@ -159,7 +159,7 @@ Example: If your URL is `mystore.myshopify.com`, your shop name is `mystore`.
 
 ***
 
-<a href="https://dbdiagram.io/e/694439cfe4bb1dd3a9971e40/69443a24e4bb1dd3a99726ad" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/694439cfe4bb1dd3a9971e40/69443a24e4bb1dd3a99726ad" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Google Merchant Center to QUANTI
 
 # Google Merchant Center
 
-<a href="https://dbdiagram.io/e/698b4b39bd82f5fce2470793/698b4dddbd82f5fce2476a9a" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/698b4b39bd82f5fce2470793/698b4dddbd82f5fce2476a9a" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -44,9 +44,9 @@ Before connecting Google Merchant Center to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete product tracking and performance analysis
 * Click **Next**
@@ -67,7 +67,7 @@ Before connecting Google Merchant Center to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 ### Dimension Tables
 
@@ -86,7 +86,7 @@ Before connecting Google Merchant Center to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/698b4b39bd82f5fce2470793/698b4dddbd82f5fce2476a9a" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/698b4b39bd82f5fce2470793/698b4dddbd82f5fce2476a9a" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Snapchat to QUANTI:'
 
 # Snapchat
 
-<a href="https://dbdiagram.io/e/68c0383661a46d388e362747/68c03a9361a46d388e36b65a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/68c0383661a46d388e362747/68c03a9361a46d388e36b65a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -26,7 +26,7 @@ To connect Snapchat to Quanti:, you need to access a [Business account](https://
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **ad\_account\_history**: Stores historical data about ad accounts and their configurations.
 * **ad\_daily\_report**: Daily performance metrics at the ad level.
@@ -57,4 +57,4 @@ To connect Snapchat to Quanti:, you need to access a [Business account](https://
 
 ***
 
-<a href="https://dbdiagram.io/e/68c0383661a46d388e362747/68c03a9361a46d388e36b65a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/68c0383661a46d388e362747/68c03a9361a46d388e36b65a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

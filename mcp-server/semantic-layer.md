@@ -1,6 +1,6 @@
 ---
 description: >-
-  Quanti: syncs pre-built tables to simplify data analysis. Let's jump into
+  Quanti: syncs Prebuilt reports to simplify data analysis. Let's jump into
   transformations.
 hidden: true
 ---
@@ -29,7 +29,7 @@ This chapter deals with the topic of **transformation** and the aggregation work
 
 The general idea of this transformation step is to make the data more digestible and more usable for visualization, analysis, and decision-making purposes.
 
-## Pre-built tables
+## Prebuilt reports
 
 {% content-ref url="../transformations/pre-built-tables/ads_import.md" %}
 [ads\_import.md](../transformations/pre-built-tables/ads_import.md)

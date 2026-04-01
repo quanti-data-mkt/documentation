@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Criteo to QUANTI:'
 
 # Criteo
 
-<a href="https://dbdiagram.io/e/67aa0d57263d6cf9a0a4115e/67aa17c7263d6cf9a0a58734" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/67aa0d57263d6cf9a0a4115e/67aa17c7263d6cf9a0a58734" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -53,11 +53,11 @@ To connect Criteo to Quanti:, you need to access a [Criteo](https://marketing.cr
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * AdSet Stats Report : Advertising performance at adset level (**Impressions, Clicks, Spend**)
 * AdSet Transactions Report : Conversion performance at adset level (**Transaction ID, amount**)
 
 ***
 
-<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

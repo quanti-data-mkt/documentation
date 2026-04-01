@@ -40,7 +40,7 @@ Choose the Amazon DSP profiles you want to sync.
 {% step %}
 #### Select pre-built reports
 
-Review the available pre-built tables and select the ones you want to activate.
+Review the available Prebuilt reports and select the ones you want to activate.
 {% endstep %}
 
 {% step %}

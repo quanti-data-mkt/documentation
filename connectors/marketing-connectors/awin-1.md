@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Kwanko to QUANTI:'
 
 # Kwanko
 
-<a href="https://dbdiagram.io/e/689b4f0c1d75ee360a4021c3/689b50301d75ee360a40615a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/689b4f0c1d75ee360a4021c3/689b50301d75ee360a40615a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -34,11 +34,11 @@ To connect Kwanko to QUANTI, you need an [Kwanko](https://advertiser.kwanko.com/
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **campaign\_stats**: Contains overall performance metrics for campaigns, including impressions, clicks, leads, sales, downloads, bonus activities, and associated spend.
 * **transactions**: Stores detailed records of individual transactions or conversions, including IDs, campaign details, device type, tracking source, website information, achievement status, and spend values.
 
 ***
 
-<a href="https://dbdiagram.io/e/689b4f0c1d75ee360a4021c3/689b50301d75ee360a40615a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/689b4f0c1d75ee360a4021c3/689b50301d75ee360a40615a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

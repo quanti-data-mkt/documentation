@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Hubspot to QUANTI:'
 
 # Hubspot
 
-<a href="https://dbdiagram.io/e/67aa29e6263d6cf9a0a7bd09/67aa2dd5263d6cf9a0a82d44" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/67aa29e6263d6cf9a0a7bd09/67aa2dd5263d6cf9a0a82d44" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -41,9 +41,9 @@ Before connecting HubSpot to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * Select the tables you want to synchronize:
   * **Core CRM**: Deals, Contacts, Leads (essential)
   * **Associations**: Deal-Contact, Lead-Contact relationships (recommended for relationship analysis)
@@ -67,7 +67,7 @@ Before connecting HubSpot to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 {% hint style="warning" %}
 **Dynamic Schema Notice**: Some tables (Deals, Contacts, Leads) have dynamic schemas that depend on the native and custom properties configured in your HubSpot account. The actual fields in these tables will vary based on your HubSpot configuration. All standard HubSpot properties are included, plus any custom properties you've created.
@@ -103,7 +103,7 @@ These tables capture time-stamped events and user activities within HubSpot.
 
 ***
 
-<a href="https://dbdiagram.io/e/67aa29e6263d6cf9a0a7bd09/67aa2dd5263d6cf9a0a82d44" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/67aa29e6263d6cf9a0a7bd09/67aa2dd5263d6cf9a0a82d44" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

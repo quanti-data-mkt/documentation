@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Brevo to QUANTI:'
 
 # Brevo
 
-<a href="https://dbdiagram.io/e/694c1666b8f7d8688612560d/694c1685b8f7d86886125905" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/694c1666b8f7d8688612560d/694c1685b8f7d86886125905" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -55,9 +55,9 @@ Before connecting Brevo to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * Select the tables you want to synchronize:
   * **Campaigns**: Campaign dimensions and configuration
   * **Campaign Stats**: Global campaign metrics
@@ -84,7 +84,7 @@ Before connecting Brevo to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 * **Campaigns**: Email campaign dimensions including configuration, sender details, A/B testing setup, and UTM parameters
 * **Campaign Stats**: Global aggregated performance metrics for campaigns (all lists combined)
@@ -94,7 +94,7 @@ Before connecting Brevo to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/694c1666b8f7d8688612560d/694c1685b8f7d86886125905" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/694c1666b8f7d8688612560d/694c1685b8f7d86886125905" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -142,7 +142,7 @@ Before connecting Brevo to QUANTI, ensure you have:
 
 * QUANTI automatically handles rate limiting with exponential backoff
 * If you encounter persistent rate limit issues, consider:
-  * Reducing the number of pre-built tables selected
+  * Reducing the number of Prebuilt reports selected
   * Increasing the sync interval
   * Contacting Brevo support to verify your account's rate limits
 

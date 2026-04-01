@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Taboola to QUANTI:'
 
 # Taboola
 
-<a href="https://dbdiagram.io/e/68d2990c7c85fb9961f96134/68d299e47c85fb9961f98ba6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/68d2990c7c85fb9961f96134/68d299e47c85fb9961f98ba6" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -25,7 +25,7 @@ To connect Taboola to Quanti:, you need to access a [Taboola](https://authentica
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **account\_history**: Contains historical records of advertising accounts, including their configurations and activity status.
 * **campaign\_history**: Tracks the lifecycle and setup of advertising campaigns over time.
@@ -33,4 +33,4 @@ To connect Taboola to Quanti:, you need to access a [Taboola](https://authentica
 
 ***
 
-<a href="https://dbdiagram.io/e/68d2990c7c85fb9961f96134/68d299e47c85fb9961f98ba6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/68d2990c7c85fb9961f96134/68d299e47c85fb9961f98ba6" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

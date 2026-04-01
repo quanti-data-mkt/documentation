@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Google Display & Video 360 to QU
 
 # Google Display & Video 360
 
-<a href="https://dbdiagram.io/e/689b4a341d75ee360a3f3158/689b4a4c1d75ee360a3f363f" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/689b4a341d75ee360a3f3158/689b4a4c1d75ee360a3f363f" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -25,7 +25,7 @@ To connect Google DV360 to Quanti:, you need to access a Google account and an a
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **campaign\_age\_gender**: Stores campaign performance metrics broken down by country, age group, and gender.
 * **campaign\_geo\_device**: Tracks campaign metrics by geographic location (country, region) and device type, including viewability and video engagement stats.
@@ -35,4 +35,4 @@ To connect Google DV360 to Quanti:, you need to access a Google account and an a
 
 ***
 
-<a href="https://dbdiagram.io/e/689b4a341d75ee360a3f3158/689b4a4c1d75ee360a3f363f" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/689b4a341d75ee360a3f3158/689b4a4c1d75ee360a3f363f" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Google Search Console to QUANTI:
 
 # Google Search Console
 
-<a href="https://dbdiagram.io/e/68555a41f039ec6d36273bf9/685562ddf039ec6d36286cbf" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/68555a41f039ec6d36273bf9/685562ddf039ec6d36286cbf" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -42,9 +42,9 @@ To connect Google Search Console to QUANTI, you need access to a [Google Search 
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default — you can deselect tables you don't need
 * Click **Next**
 {% endstep %}
@@ -128,7 +128,7 @@ To connect Google Search Console to QUANTI, you need access to a [Google Search 
 
 ***
 
-<a href="https://dbdiagram.io/e/68555a41f039ec6d36273bf9/685562ddf039ec6d36286cbf" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/68555a41f039ec6d36273bf9/685562ddf039ec6d36286cbf" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

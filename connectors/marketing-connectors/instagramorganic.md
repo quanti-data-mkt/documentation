@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Instragram Business to QUANTI:'
 
 # Instagram Business
 
-<a href="https://dbdiagram.io/e/69443544e4bb1dd3a996a990/69443574e4bb1dd3a996ae40" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/69443544e4bb1dd3a996a990/69443574e4bb1dd3a996ae40" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -51,9 +51,9 @@ Before connecting Instagram Business to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete Instagram performance tracking
 * Click **Next**
@@ -74,7 +74,7 @@ Before connecting Instagram Business to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 * **Account\_info**: Basic information about Instagram Business accounts including username, profile data, followers, and media counts.
 * **Media\_posts**: All media posts (photos, videos, carousels, reels) published on Instagram with captions, timestamps, and media details.
@@ -86,7 +86,7 @@ Before connecting Instagram Business to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/69443544e4bb1dd3a996a990/69443574e4bb1dd3a996ae40" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/69443544e4bb1dd3a996a990/69443574e4bb1dd3a996ae40" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

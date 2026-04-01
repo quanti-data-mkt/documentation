@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Facebook Organic to QUANTI:'
 
 # Facebook Organic
 
-<a href="https://dbdiagram.io/e/6943dbc1e4bb1dd3a98c5af8/6944301ee4bb1dd3a9961b6b" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/6943dbc1e4bb1dd3a98c5af8/6944301ee4bb1dd3a9961b6b" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -50,9 +50,9 @@ Before connecting Facebook Organic to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-### Select Pre-built Tables
+### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete organic performance tracking
 * Click **Next**
@@ -73,7 +73,7 @@ Before connecting Facebook Organic to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 * **Lifetime\_page\_info** : Basic information about Facebook Pages including page ID, name, category, and follower metrics.
 * **Page\_posts** : Posts published on Facebook Pages with message content, creation time, and permalink.
@@ -84,7 +84,7 @@ Before connecting Facebook Organic to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/6943dbc1e4bb1dd3a98c5af8/6944301ee4bb1dd3a9961b6b" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/6943dbc1e4bb1dd3a98c5af8/6944301ee4bb1dd3a9961b6b" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 

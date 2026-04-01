@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Linkedin Ads to QUANTI:'
 
 # Linkedin Ads
 
-<a href="https://dbdiagram.io/e/682b4daf1227bdcb4eff888a/682b4fa51227bdcb4effdd6c" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/682b4daf1227bdcb4eff888a/682b4fa51227bdcb4effdd6c" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -48,9 +48,9 @@ Before connecting LinkedIn Ads to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended configurations:
   * **Basic setup**: Account, Campaign, Creative history + Core performance tables
@@ -73,7 +73,7 @@ Before connecting LinkedIn Ads to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 ### Dimension Tables
 
@@ -116,7 +116,7 @@ These tables segment performance by LinkedIn's professional demographic dimensio
 
 ***
 
-<a href="https://dbdiagram.io/e/682b4daf1227bdcb4eff888a/682b4fa51227bdcb4effdd6c" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/682b4daf1227bdcb4eff888a/682b4fa51227bdcb4effdd6c" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

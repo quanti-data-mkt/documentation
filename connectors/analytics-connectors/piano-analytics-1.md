@@ -5,7 +5,7 @@ hidden: true
 
 # Piano Analytics
 
-<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 {% hint style="warning" %}
 **Piano Analytics limits the number of rows returned per query to 1,500,000.**\
@@ -70,7 +70,7 @@ Your **Website ID** is in the url when you are connected to your Piano account. 
 
 ***
 
-<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 

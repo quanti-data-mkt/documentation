@@ -6,7 +6,7 @@ description: >-
 
 # Google Analytics 4
 
-<a href="https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -130,7 +130,7 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/67a9ceb2263d6cf9a09b868e/67a9d214263d6cf9a09c02c9" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

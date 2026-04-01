@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect X Ads to QUANTI:'
 
 # X Ads
 
-<a href="https://dbdiagram.io/e/x-ads-placeholder" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/x-ads-placeholder" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -47,9 +47,9 @@ To connect X Ads to QUANTI:, you need:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default — deselect any you don't need
 * Click **Next**
 {% endstep %}
@@ -74,7 +74,7 @@ X Ads API tokens may expire or be revoked if your X account password is changed 
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 ### Dimension Tables
 
@@ -99,7 +99,7 @@ X Ads API tokens may expire or be revoked if your X account password is changed 
 
 ***
 
-<a href="https://dbdiagram.io/e/x-ads-placeholder" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/x-ads-placeholder" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 

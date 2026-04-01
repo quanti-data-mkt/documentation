@@ -6,7 +6,7 @@ description: >-
 
 # Piwik PRO
 
-<a href="https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -49,7 +49,7 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 ***
 
-## <mark style="background-color:yellow;">Pre-built Tables</mark>
+## <mark style="background-color:yellow;">Prebuilt reports</mark>
 
 * **acquisition\_stats**: Detailed statistics on the performance of acquisition campaigns, covering traffic sources, keywords, and user behavior (sessions, conversions, revenue, etc.).
 * **audience\_browser\_device\_stats**: Statistics on audience behavior segmented by browser, device type, and language, including sessions, bounces, conversions, and revenue.
@@ -57,7 +57,7 @@ Example :  "`5678h0td6-f434-4ggt-932j-b8767cd8d5d2`".
 
 ***
 
-<a href="https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/6827015c1227bdcb4e9c1c36/6827026b1227bdcb4e9c4b5b" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 

@@ -15,7 +15,7 @@ description: 'Follow our setup guide to connect Wonderpush to QUANTI:'
 
 # Wonderpush
 
-<a href="https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -42,7 +42,7 @@ To connect Wonderpush to QUANTI, you need a [Wonderpush](https://www.wonderpush.
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * Campaign list : Stores unique campaign identifiers and their names.
 * Notifications : Aggregates daily event counts by campaign, type, and subtype.
@@ -50,4 +50,4 @@ To connect Wonderpush to QUANTI, you need a [Wonderpush](https://www.wonderpush.
 
 ***
 
-<a href="https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65c356a8ac844320aea34431/65ce2477ac844320ae3a1b28" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

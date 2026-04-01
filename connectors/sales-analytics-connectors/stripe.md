@@ -4,7 +4,7 @@ description: Follow our setup guide to connect Stripe to QUANTI.
 
 # Stripe
 
-<a href="https://dbdiagram.io/e/698c5794bd82f5fce25fed7f/698c5875bd82f5fce26009fe" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/698c5794bd82f5fce25fed7f/698c5875bd82f5fce26009fe" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -56,9 +56,9 @@ Before connecting Stripe to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended tables for most use cases:
   * **Customers**: Customer master data
@@ -84,7 +84,7 @@ Before connecting Stripe to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 ### Dimension Tables
 
@@ -107,7 +107,7 @@ Before connecting Stripe to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/698c5794bd82f5fce25fed7f/698c5875bd82f5fce26009fe" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/698c5794bd82f5fce25fed7f/698c5875bd82f5fce26009fe" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

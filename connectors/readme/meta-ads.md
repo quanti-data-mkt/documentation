@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Meta to QUANTI:'
 
 # Meta Ads
 
-<a href="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -89,7 +89,7 @@ Be sure to choose a start date far enough in the past to ensure that all relevan
 
 ***
 
-<a href="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65c0ca08ac844320ae7740d3/67a5e256263d6cf9a06049b8" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 

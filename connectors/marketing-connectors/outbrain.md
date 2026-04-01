@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Microsoft Advertising to QUANTI:
 
 # Outbrain
 
-<a href="https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -25,7 +25,7 @@ To connect Microsoft Advertising to Quanti:, you need to access a [Outbrain](htt
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **`campaign_conversion_report`**: Contains daily conversion performance data for marketing campaigns, aggregating direct and view-based metrics.
 * **`campaign_report`**: Provides daily overall performance of advertising campaigns, including engagement and cost-related indicators.
@@ -38,4 +38,4 @@ To connect Microsoft Advertising to Quanti:, you need to access a [Outbrain](htt
 
 ***
 
-<a href="https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/685aa0a9f413ba35089e41de/685aa60ff413ba35089f894a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

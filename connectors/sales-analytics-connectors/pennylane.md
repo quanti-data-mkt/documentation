@@ -4,7 +4,7 @@ description: Follow our setup guide to connect Pennylane to QUANTI.
 
 # Pennylane
 
-<a href="https://dbdiagram.io/e/69443722e4bb1dd3a996db63/69443737e4bb1dd3a996dd95" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/69443722e4bb1dd3a996db63/69443737e4bb1dd3a996dd95" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -52,9 +52,9 @@ Before connecting Pennylane to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-**Select Pre-built Tables**
+**Select Prebuilt reports**
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete financial data tracking
 * Click **Next**
@@ -75,7 +75,7 @@ Before connecting Pennylane to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 * **analytical\_ledger**: All accounting entries with analytical tags at the most granular level. Includes company information, dates, labels, debit/credit amounts, account details, journal codes, document references, invoice links, third party information, analytical tags, and synchronization timestamps.
 * **bank\_accounts**: Bank accounts linked to Pennylane. Contains account details including establishment information, connection type, associated accounting plan items, currency, synchronization status, balance, and timestamps.
@@ -92,7 +92,7 @@ Before connecting Pennylane to QUANTI, ensure you have:
 
 ***
 
-<a href="pennylane.md" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="pennylane.md" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 

@@ -15,7 +15,7 @@ description: 'Follow our setup guide to connect TimeOne to QUANTI:'
 
 # TimeOne
 
-<a href="https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -46,11 +46,11 @@ To connect TimeOne to QUANTI, you need a [TimeOne](https://www.timeone.io/en/?ut
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **Transactions**: Records individual affiliate events with detailed transaction information.
 * **Performances**: Aggregated daily statistics for affiliate programs.
 
 ***
 
-<a href="https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/682b50671227bdcb4efffd62/682b50e91227bdcb4e00141e" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Tiktok to QUANTI:'
 
 # Tiktok
 
-<a href="https://dbdiagram.io/e/683722b0c07db17e778d3253/683722bdc07db17e778d3643" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/683722b0c07db17e778d3253/683722bdc07db17e778d3643" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -25,7 +25,7 @@ To connect Tiktok to Quanti:, you need to access a [Tiktok](https://ads.tiktok.c
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **Advertiser:** Attributes information at advertiser level
 * **Campaign history:** Attributes information at campaign level
@@ -36,4 +36,4 @@ To connect Tiktok to Quanti:, you need to access a [Tiktok](https://ads.tiktok.c
 
 ***
 
-<a href="https://dbdiagram.io/e/683722b0c07db17e778d3253/683722bdc07db17e778d3643" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/683722b0c07db17e778d3253/683722bdc07db17e778d3643" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

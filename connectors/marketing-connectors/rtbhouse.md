@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect RTB House to QUANTI:'
 
 # RTB House
 
-<a href="https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -27,11 +27,11 @@ To connect RTB House to QUANTI, you need an [RTB House](https://www.rtbhouse.com
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * Campaigns : Campaign metadata.
 * Performances : Aggregated daily campaign performance metrics.
 
 ***
 
-<a href="https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65bcd2efac844320ae4e9293/65ce242eac844320ae3a13b6" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

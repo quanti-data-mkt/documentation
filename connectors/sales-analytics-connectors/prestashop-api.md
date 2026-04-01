@@ -1,6 +1,6 @@
 # Prestashop par API
 
-<a href="https://dbdiagram.io/e/69a05484a3f0aa31e131c8fc/69a054e9a3f0aa31e131d5fd" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/69a05484a3f0aa31e131c8fc/69a054e9a3f0aa31e131d5fd" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -28,9 +28,9 @@ Before connecting PrestaShop to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables
+#### Select Prebuilt reports
 
-* Review the available pre-built tables (see section below for details)
+* Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default — you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete e-commerce analytics
 * Click **Next**
@@ -51,7 +51,7 @@ Before connecting PrestaShop to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 ### Dimensions
 
@@ -71,4 +71,4 @@ Before connecting PrestaShop to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/69a05484a3f0aa31e131c8fc/69a054e9a3f0aa31e131d5fd" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/69a05484a3f0aa31e131c8fc/69a054e9a3f0aa31e131d5fd" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>

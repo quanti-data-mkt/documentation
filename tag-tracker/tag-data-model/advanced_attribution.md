@@ -6,7 +6,7 @@ description: >-
 
 # advanced\_attribution
 
-<a href="https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/67bf2e04263d6cf9a08d27a6/67c08ae8263d6cf9a0b33078" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 

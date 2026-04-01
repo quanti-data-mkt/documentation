@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Pinterest to QUANTI:'
 
 # Pinterest
 
-<a href="https://dbdiagram.io/e/68e7ba6bd2b621e42211ab2b/68e7be77d2b621e422129949" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/68e7ba6bd2b621e42211ab2b/68e7be77d2b621e422129949" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -54,7 +54,7 @@ Before connecting Pinterest Ads to QUANTI, ensure you have:
 {% step %}
 **Select Queries**
 
-* Review the available pre-built tables
+* Review the available Prebuilt reports
 * All tables are selected by default - you can deselect tables you don't need
 * Click **Next**
 {% endstep %}
@@ -76,7 +76,7 @@ Before connecting Pinterest Ads to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Prebuilt reports
 
 * **Advertiser History**: Advertiser account attributes including name, country, currency, permissions, and timestamps
 * **Campaign History**: Campaign configuration and attributes at campaign level including status, budget caps, objectives, and scheduling
@@ -89,6 +89,6 @@ Before connecting Pinterest Ads to QUANTI, ensure you have:
 
 ***
 
-<a href="https://dbdiagram.io/e/68e7ba6bd2b621e42211ab2b/68e7be77d2b621e422129949" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/68e7ba6bd2b621e42211ab2b/68e7be77d2b621e422129949" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***

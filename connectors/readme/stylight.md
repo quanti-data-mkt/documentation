@@ -15,7 +15,7 @@ description: 'Follow our setup guide to connect Stylight to QUANTI:'
 
 # Stylight
 
-<a href="https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -39,10 +39,10 @@ To connect Stylight to QUANTI, you need a [Stylight](https://partner.stylight.co
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * Statistics : Aggregates statistics per vertical and device.
 
 ***
 
-<a href="https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65c0b938ac844320ae75cb9c/65ce2459ac844320ae3a1803" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

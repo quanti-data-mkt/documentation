@@ -15,7 +15,7 @@ description: 'Follow our setup guide to connect Effinity to QUANTI:'
 
 # Effinity
 
-<a href="https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -43,10 +43,10 @@ To connect Effinity to QUANTI, you need an [Effinity](https://www.effinity.fr/?u
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * Performances : Aggregated daily performance metrics.
 
 ***
 
-<a href="https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/65577c543be149578735ccf9/65cf2b18ac844320ae4a3ed6" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

@@ -15,7 +15,7 @@ description: Follow our setup guide to connect your Affilae connector
 
 # Affilae
 
-<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -47,11 +47,11 @@ To connect Affilae to QUANTI:, you need an [Affilae](https://affilae.com/fr/logi
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **partnerships\_history**: Contains details about advertiser-publisher partnerships, including affiliate profiles, programs, tracking, and status information.
 * **commissions**: Records performance metrics for partnerships such as clicks, conversions, commissions, impressions, and revenue by date and affiliate profile.
 
 ***
 
-<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

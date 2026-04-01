@@ -15,7 +15,7 @@ description: 'Follow our setup guide to connect Rakuten to QUANTI:'
 
 # Rakuten Advertising
 
-<a href="https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -104,10 +104,10 @@ date_range=this-month&include_summary=Y&tz=GMT&date_type=transaction&token=[<API
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * Affiliate report : Ad performance tracking with campaign metrics and attribution details
 
 ***
 
-<a href="https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/68371607c07db17e778a23a0/68371711c07db17e778a5f0a" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

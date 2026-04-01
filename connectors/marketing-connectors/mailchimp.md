@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Mailchimp to QUANTI:'
 
 # Mailchimp
 
-<a href="https://dbdiagram.io/e/684ae5df1dff20a534caede9/684ae84a1dff20a534cb4a46" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/684ae5df1dff20a534caede9/684ae84a1dff20a534cb4a46" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
 
 ***
 
@@ -24,7 +24,7 @@ To connect Mailchimp to Quanti:, you need to access a [Mailchimp](https://login.
 
 ***
 
-## <mark style="background-color:blue;">Pre-built Tables</mark>
+## <mark style="background-color:blue;">Prebuilt reports</mark>
 
 * **campaigns\_history**: Stores the setup and metadata of email campaigns, including delivery configuration, design options, and scheduling.
 * **campaign\_recipient\_history**: Maps each campaign to its recipients, recording which members received which campaigns and their delivery status.
@@ -34,4 +34,4 @@ To connect Mailchimp to Quanti:, you need to access a [Mailchimp](https://login.
 
 ***
 
-<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Pre-built tables and definition  </a>
+<a href="https://dbdiagram.io/e/682704361227bdcb4e9c9d5b/6827045e1227bdcb4e9ca579" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>

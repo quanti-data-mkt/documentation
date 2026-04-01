@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Google Ads to QUANTI:'
 
 # Google Ads
 
-<a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -129,7 +129,7 @@ These are the essential performance tables providing daily metrics at different 
 
 ***
 
-<a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135" class="button primary" data-icon="table-tree">Pre-built tables and definition</a>
+<a href="https://dbdiagram.io/e/67a6375d263d6cf9a069bf46/67a63980263d6cf9a069f135" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
