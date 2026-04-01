@@ -33,6 +33,7 @@
   * [Google Sheets](connectors/custom-connectors/google-sheets.md)
   * [(S)FTP](connectors/custom-connectors/ftp.md)
 * [Marketing connectors](connectors/readme/README.md)
+  * [Amazon DSP](connectors/marketing-connectors/amazon-dsp.md)
   * [Affilae](connectors/readme/affilae.md)
   * [Awin](connectors/readme/awin.md)
   * [Brevo](connectors/marketing-connectors/brevo.md)
