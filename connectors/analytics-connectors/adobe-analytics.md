@@ -4,7 +4,7 @@ description: 'Follow our setup guide to connect Adobe Analytics to QUANTI:'
 
 # Adobe Analytics
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/69cd3699fb2db18e3b5a416b/69cd36b5fb2db18e3b5a42d9" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -72,7 +72,7 @@ Select the pre-built reports you want to activate, and/or create your own custom
 
 ***
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/69cd3699fb2db18e3b5a416b/69cd36b5fb2db18e3b5a42d9" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
