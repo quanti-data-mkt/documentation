@@ -60,13 +60,11 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
-#### Select Pre-built Tables or Create Custom Queries
+#### Select pre-built reports
 
-* Review the available pre-built tables (see section below for details)
-* All tables are selected by default - you can deselect tables you don't need
-* **Pre-built tables** provide standard GA4 reports ready to use
-* **Custom queries**: You can also create your own queries by selecting specific dimensions and metrics (refer to the "Custom Query" section below)
-* Recommended: Keep all pre-built tables enabled for complete analytics coverage
+* Review the available pre-built reports (see section below for details)
+* All reports are selected by default — you can deselect reports you don't need
+* You can also create your own custom reports by clicking **Add custom report** (refer to the **Custom reports** chapter below)
 * Click **Next**
 {% endstep %}
 
@@ -87,7 +85,7 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 
 ***
 
-## Pre-built Tables
+## Pre-built reports
 
 #### Dimension Tables (Configuration & History)
 
@@ -136,39 +134,49 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 
 ***
 
-## Custom Query
+## Custom reports
 
-To create custom queries, you need to select **dimensions** and **metrics**. To help you in this step, we recommend using the [GA4 Dimensions & Metrics Explorer tool](https://ga-dev-tools.google/ga4/dimensions-metrics-explorer/).
+GA4 custom reports let you query any combination of dimensions and metrics from your GA4 property via the [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1).
 
-<figure><img src="../../.gitbook/assets/GA4 Dimensions Metrics Explorer.png" alt="google-analytics-4-doc-query-builder" width="563"><figcaption><p>GA4 Dimensions &#x26; Metrics Explorer Tool</p></figcaption></figure>
+#### Find available dimensions and metrics
 
-### How to Build Custom Queries
+The reference for all available dimensions and metrics is the official GA4 explorer:
+👉 [ga-dev-tools.google/ga4/dimensions-metrics-explorer/](https://ga-dev-tools.google/ga4/dimensions-metrics-explorer/)
 
-{% stepper %}
-{% step %}
-### Select Dimensions
+The explorer also shows **field compatibility** — not all dimensions and metrics can be combined in the same query.
 
-Choose up to 9 dimensions that define how your data will be grouped (e.g., `source`, `medium`, `campaign`, `deviceCategory`).
-{% endstep %}
+{% hint style="info" %}
+**Use an AI assistant to speed up the configuration.** Rather than browsing the explorer manually, describe the report you want to reproduce — as you see it in the GA4 interface — to an AI assistant (Claude, ChatGPT…). For example:
 
-{% step %}
-### Select Metrics
+> *"I want a custom GA4 report showing sessions, engaged sessions and total revenue by source, medium and device category. What dimensions and metrics should I use in the QUANTI JSON format `{ "dimensions": "", "metrics": "" }` ?"*
 
-Choose the metrics you want to measure (e.g., `sessions`, `totalUsers`, `conversions`, `totalRevenue`).
-{% endstep %}
+The AI will identify the correct API names and fill in the JSON for you.
+{% endhint %}
 
-{% step %}
-### Name Your Query
+#### Configure the custom report
 
-Give your custom query a descriptive name.
-{% endstep %}
+In QUANTI, at the **Select pre-built reports** step, click **Add custom report**. Fill in the following JSON:
 
-{% step %}
-### Validate
+```json
+{
+  "dimensions": "",
+  "metrics": ""
+}
+```
 
-QUANTI will validate your query against GA4 API limits and compatibility rules.
-{% endstep %}
-{% endstepper %}
+* **`dimensions`** *(required)*: Comma-separated list of GA4 dimension API names (e.g. `"sessionSource,sessionMedium,deviceCategory"`)
+* **`metrics`** *(required)*: Comma-separated list of GA4 metric API names (e.g. `"sessions,engagedSessions,totalRevenue"`)
+
+> ⚠️ The GA4 API limits custom reports to **9 dimensions maximum**. Not all dimension/metric combinations are compatible — refer to the explorer to verify compatibility before configuring.
+
+#### Map your fields (Schema)
+
+After configuring the query, the **Schema** step lets you define how fields are stored in your data warehouse:
+
+* Adjust the **Type** (STRING, INTEGER, FLOAT…) for each field
+* Check **Unique identifiers** to mark dimension fields as part of the primary key — they collectively form the unique identifier of each row
+
+Once all fields are mapped, click **Save** to create the custom report table.
 
 ***
 
