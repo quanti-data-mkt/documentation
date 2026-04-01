@@ -64,7 +64,7 @@ To connect Google Search Console to QUANTI, you need access to a [Google Search 
 
 ***
 
-### Pre-built Tables
+### Pre-built reports
 
 **site\_report\_by\_page** : Search traffic data for the site. Each record shows how the site appeared in search results on a given day, with metrics aggregated by Page. Dimensions include:
 
@@ -118,6 +118,13 @@ To connect Google Search Console to QUANTI, you need access to a [Google Search 
 * Search Type (web / image / video / news / discover / googleNews)
 
 **sitemap** : Dimension table containing sitemap file metadata. Each record represents a sitemap submitted in Google Search Console, including its path, type, last submission and download dates, and the number of submitted vs. indexed URLs.
+
+**discover\_report** : Daily Google Discover performance metrics per page and country. Discover is Google's content recommendation feed (distinct from search results) — this table tracks how pages appear and perform in that surface. Dimensions include:
+
+* Date
+* Site
+* Page
+* Country
 
 ***
 
