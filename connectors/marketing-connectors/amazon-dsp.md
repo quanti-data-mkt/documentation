@@ -8,7 +8,7 @@ description: 'Follow our setup guide to connect Amazon DSP to QUANTI:'
 This connector is currently in **beta**.
 {% endhint %}
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/69cd3ad0fb2db18e3b5a76bf/69cd3b0578c6c4bc7abfda08" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -68,7 +68,7 @@ Review the available pre-built tables and select the ones you want to activate.
 
 ***
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/69cd3ad0fb2db18e3b5a76bf/69cd3b0578c6c4bc7abfda08" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
