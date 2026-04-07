@@ -65,3 +65,20 @@ The sync will be retried automatically by Quanti on the next scheduled run. If t
 * If you have multiple GSC connectors on the same GCP project, stagger their sync schedules
 
 **Reference**: [Google Search Console API usage limits](https://developers.google.com/webmaster-tools/limits?hl=fr#qps-quota)
+
+***
+
+### Data for yesterday or the day before is missing or incomplete
+
+**Symptom**\
+The most recent 1 to 3 days of data are absent or show lower numbers than expected in the GSC tables.
+
+**Explanation**\
+This is expected behavior documented by Google — it applies equally to the GSC interface and the API, which draw from the same data pipeline. Google typically takes 2 to 3 days to finalize Search Analytics data. During that window, data for the most recent days may be missing or preliminary (still being collected and subject to change).
+
+This is not a Quanti connector issue. The connector retrieves exactly what the API exposes at the time of the sync.
+
+**What to do**\
+Ensure the connector's lookback window is set to at least **3 days** so that preliminary data from recent days is re-synced and updated once finalized by Google.
+
+**Reference**: [Google Search Console — Performance report data delays](https://support.google.com/webmasters/answer/7576553)
