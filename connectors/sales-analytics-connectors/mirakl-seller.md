@@ -10,7 +10,97 @@ This connector is currently in **beta**.
 
 <a href="https://dbdiagram.io/e/69d8d8550f7c9ef2c0c6d4ad/69d8d890808962968466e347" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
-<iframe width="560" height="315" src='https://dbdiagram.io/e/69d8d8550f7c9ef2c0c6d4ad/69d8d890808962968466e347'> </iframe>
+```mermaid
+erDiagram
+    shop_history {
+        TIMESTAMP _quanti_loaded_at PK
+        INTEGER   shop_id PK
+        TIMESTAMP last_updated_date PK
+        VARCHAR   shop_name
+        TIMESTAMP date_created
+        VARCHAR   currency_iso_code
+        BOOLEAN   is_professional
+        VARCHAR   suspension_reason
+        VARCHAR   contact_email
+        VARCHAR   contact_country
+        VARCHAR   channels
+        VARCHAR   vat_number
+    }
+    shop_stats {
+        TIMESTAMP _quanti_loaded_at PK
+        DATE      collected_date PK
+        INTEGER   shop_id PK
+        VARCHAR   channel_code PK
+        FLOAT     approval_rate
+        FLOAT     cancelation_rate
+        FLOAT     incident_rate
+        FLOAT     refund_rate
+        FLOAT     total_revenue
+        FLOAT     grade
+        INTEGER   evaluations_count
+    }
+    order {
+        TIMESTAMP _quanti_loaded_at PK
+        VARCHAR   order_id PK
+        TIMESTAMP last_updated_date PK
+        VARCHAR   commercial_id
+        TIMESTAMP created_date
+        VARCHAR   order_state
+        VARCHAR   channel_code
+        VARCHAR   currency_iso_code
+        FLOAT     total_price
+        FLOAT     total_price_incl_tax
+    }
+    order_line {
+        TIMESTAMP _quanti_loaded_at PK
+        VARCHAR   order_line_id PK
+        VARCHAR   order_id PK
+        TIMESTAMP last_updated_date PK
+        INTEGER   offer_id
+        VARCHAR   offer_sku
+        VARCHAR   product_title
+        VARCHAR   order_line_state
+        INTEGER   quantity
+        FLOAT     price
+        FLOAT     commission_fee
+    }
+    category {
+        TIMESTAMP _quanti_loaded_at PK
+        VARCHAR   code PK
+        VARCHAR   label
+        INTEGER   level
+        VARCHAR   parent_code
+    }
+    offer_history {
+        TIMESTAMP _quanti_loaded_at PK
+        INTEGER   offer_id PK
+        TIMESTAMP last_updated_date PK
+        VARCHAR   category_code
+        VARCHAR   shop_sku
+        VARCHAR   product_title
+        VARCHAR   state_code
+        BOOLEAN   active
+        FLOAT     price
+        INTEGER   quantity
+    }
+    product_import {
+        TIMESTAMP _quanti_loaded_at PK
+        INTEGER   import_id PK
+        VARCHAR   import_status PK
+        INTEGER   shop_id
+        TIMESTAMP date_created
+        INTEGER   transform_lines_read
+        INTEGER   transform_lines_in_success
+        INTEGER   transform_lines_in_error
+        BOOLEAN   has_error_report
+    }
+
+    shop_history   ||--o{ shop_stats      : "shop_id"
+    shop_history   ||--o{ product_import  : "shop_id"
+    order          ||--o{ order_line      : "order_id"
+    offer_history  ||--o{ order_line      : "offer_id"
+    category       ||--o{ offer_history   : "category_code"
+```
 
 ***
 
