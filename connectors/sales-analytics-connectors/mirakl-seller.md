@@ -10,7 +10,7 @@ This connector is currently in **beta**.
 
 <a href="https://dbdiagram.io/e/69d8d8550f7c9ef2c0c6d4ad/69d8d890808962968466e347" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
-{% embed url="https://dbdiagram.io/embed/69d8d8550f7c9ef2c0c6d4ad" %}
+<iframe width="560" height="315" src='https://dbdiagram.io/e/69d8d8550f7c9ef2c0c6d4ad/69d8d890808962968466e347'> </iframe>
 
 ***
 
