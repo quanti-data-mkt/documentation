@@ -64,67 +64,207 @@ To connect Google Search Console to QUANTI, you need access to a [Google Search 
 
 ***
 
-### Pre-built reports
+## Prebuilt reports
 
-**site\_report\_by\_page** : Search traffic data for the site. Each record shows how the site appeared in search results on a given day, with metrics aggregated by Page. Dimensions include:
+### Search performance
 
-* Date
-* Country
-* Device
-* Search Type (web / image / video / news / discover / googleNews)
+**site\_report\_by\_page** : Site-level search traffic, with metrics aggregated using the `byPage` method. Each record represents one day for a given country, device and search type. Metrics: clicks, impressions, CTR, position.
 
-**site\_report\_by\_site** : Search traffic data for the site. Each record shows how the site appeared in search results on a given day, with metrics aggregated by Property. Dimensions include:
+**site\_report\_by\_site** : Site-level search traffic, with metrics aggregated using the `byProperty` method. Same dimensions as `site_report_by_page`. Metrics: clicks, impressions, CTR, position.
 
-* Date
-* Country
-* Device
-* Search Type (web / image / video / news / discover / googleNews)
+{% hint style="info" %}
+`site_report_by_page` and `site_report_by_site` share the same dimensions but use different aggregation methods (`byPage` vs `byProperty`). Google computes metrics differently between the two — totals may vary slightly for the same date and filters.
+{% endhint %}
 
-> `site_report_by_page` and `site_report_by_site` share the same dimensions but use different aggregation methods (`byPage` vs `byProperty`). Google computes metrics differently between the two — totals may vary slightly for the same date and filters.
+**page\_report** : Search traffic per individual page. Each record shows how a specific page appeared in search results on a given day. Dimensions: date, search type, site, country, device, page. Metrics: clicks, impressions, CTR, position.
 
-**page\_report** : Search traffic data for individual pages. Each record shows how a specific page appeared in search results on a given day. Dimensions include:
+**keyword\_site\_report\_by\_page** : Keyword-level search traffic at site scope, aggregated by the `byPage` method. Each record shows how the site appeared for a specific search query on a given day. Dimensions: date, search type, site, country, device, query. Metrics: clicks, impressions, CTR, position.
 
-* Date
-* Country
-* Device
-* Page
-* Search Type (web / image / video / news / discover / googleNews)
+**keyword\_site\_report\_by\_site** : Keyword-level search traffic at site scope, aggregated by the `byProperty` method. Same dimensions as `keyword_site_report_by_page`.
 
-**keyword\_site\_report\_by\_page** : Search traffic data for the site based on the queries users searched for on Google. Each record shows how the site appeared for a specific search query, with metrics aggregated by Page. Dimensions include:
+{% hint style="info" %}
+`keyword_site_report_by_page` and `keyword_site_report_by_site` share the same dimensions but use different aggregation methods. The same note on metric discrepancies applies as for the site reports above.
+{% endhint %}
 
-* Date
-* Country
-* Device
-* Query
-* Search Type (web / image / video / news / discover / googleNews)
+**keyword\_page\_report** : The most granular search table — keyword-level traffic per individual page. Each record shows how a specific page appeared for a specific query on a given day. Dimensions: date, search type, site, country, device, page, query. Metrics: clicks, impressions, CTR, position.
 
-**keyword\_site\_report\_by\_site** : Search traffic data for the site based on the queries users searched for on Google. Each record shows how the site appeared for a specific search query, with metrics aggregated by Property. Dimensions include:
+***
 
-* Date
-* Country
-* Device
-* Query
-* Search Type (web / image / video / news / discover / googleNews)
+### Discover
 
-> `keyword_site_report_by_page` and `keyword_site_report_by_site` share the same dimensions but use different aggregation methods. The same note on metric discrepancies applies as for the site reports above.
+**discover\_report** : Daily Google Discover performance at site level. Discover is Google's content recommendation feed — this table tracks global engagement on that surface. Dimensions: date, site. Metrics: clicks, impressions, CTR.
 
-**keyword\_page\_report** : The most granular table — search traffic data for individual pages based on the queries users searched for on Google. Each record shows how a specific page appeared for a specific search query on a given day. Dimensions include:
+**discover\_report\_by\_country** : Google Discover performance broken down by country. Dimensions: date, site, country. Metrics: clicks, impressions, CTR.
 
-* Date
-* Country
-* Device
-* Page
-* Query
-* Search Type (web / image / video / news / discover / googleNews)
+**discover\_report\_by\_page** : Google Discover performance broken down by page. Dimensions: date, site, page. Metrics: clicks, impressions, CTR.
 
-**sitemap** : Dimension table containing sitemap file metadata. Each record represents a sitemap submitted in Google Search Console, including its path, type, last submission and download dates, and the number of submitted vs. indexed URLs.
+***
 
-**discover\_report** : Daily Google Discover performance metrics per page and country. Discover is Google's content recommendation feed (distinct from search results) — this table tracks how pages appear and perform in that surface. Dimensions include:
+### News
 
-* Date
-* Site
-* Page
-* Country
+**news\_report** : Daily Google News performance at site level. Tracks how content appears in the Google News surface. Dimensions: date, site. Metrics: clicks, impressions, CTR.
+
+**news\_report\_by\_country** : Google News performance broken down by country. Dimensions: date, site, country. Metrics: clicks, impressions, CTR.
+
+**news\_report\_by\_device** : Google News performance broken down by device. Dimensions: date, site, device. Metrics: clicks, impressions, CTR.
+
+**news\_report\_by\_page** : Google News performance broken down by page. Dimensions: date, site, page. Metrics: clicks, impressions, CTR.
+
+***
+
+### Sitemap
+
+**sitemap** : Dimension table with sitemap file metadata. Each record represents a sitemap submitted in Google Search Console — path, type, last submission date, last download date, number of submitted URLs and indexed URLs.
+
+***
+
+```mermaid
+erDiagram
+    site_report_by_page {
+        DATE   _quanti_date PK
+        STRING search_type PK
+        STRING site PK
+        STRING country PK
+        STRING device PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+        FLOAT  position
+    }
+    site_report_by_site {
+        DATE   _quanti_date PK
+        STRING search_type PK
+        STRING site PK
+        STRING country PK
+        STRING device PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+        FLOAT  position
+    }
+    page_report {
+        DATE   _quanti_date PK
+        STRING search_type PK
+        STRING site PK
+        STRING country PK
+        STRING device PK
+        STRING page PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+        FLOAT  position
+    }
+    keyword_site_report_by_page {
+        DATE   _quanti_date PK
+        STRING search_type PK
+        STRING site PK
+        STRING country PK
+        STRING device PK
+        STRING query PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+        FLOAT  position
+    }
+    keyword_site_report_by_site {
+        DATE   _quanti_date PK
+        STRING search_type PK
+        STRING site PK
+        STRING country PK
+        STRING device PK
+        STRING query PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+        FLOAT  position
+    }
+    keyword_page_report {
+        DATE   _quanti_date PK
+        STRING search_type PK
+        STRING site PK
+        STRING country PK
+        STRING device PK
+        STRING page PK
+        STRING query PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+        FLOAT  position
+    }
+    discover_report {
+        DATE   _quanti_date PK
+        STRING site PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+    }
+    discover_report_by_country {
+        DATE   _quanti_date PK
+        STRING site PK
+        STRING country PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+    }
+    discover_report_by_page {
+        DATE   _quanti_date PK
+        STRING site PK
+        STRING page PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+    }
+    news_report {
+        DATE   _quanti_date PK
+        STRING site PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+    }
+    news_report_by_country {
+        DATE   _quanti_date PK
+        STRING site PK
+        STRING country PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+    }
+    news_report_by_device {
+        DATE   _quanti_date PK
+        STRING site PK
+        STRING device PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+    }
+    news_report_by_page {
+        DATE   _quanti_date PK
+        STRING site PK
+        STRING page PK
+        FLOAT  clicks
+        FLOAT  impressions
+        FLOAT  ctr
+    }
+    sitemap {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    path PK
+        STRING    site PK
+        STRING    type
+        TIMESTAMP last_submitted
+        TIMESTAMP last_downloaded
+        INTEGER   submitted
+        INTEGER   indexed
+    }
+
+    site_report_by_page    ||--o{ page_report              : "site"
+    site_report_by_page    ||--o{ keyword_site_report_by_page : "site"
+    keyword_site_report_by_page ||--o{ keyword_page_report : "site"
+    discover_report        ||--o{ discover_report_by_country : "site"
+    discover_report        ||--o{ discover_report_by_page   : "site"
+    news_report            ||--o{ news_report_by_country   : "site"
+    news_report            ||--o{ news_report_by_device    : "site"
+    news_report            ||--o{ news_report_by_page      : "site"
+```
 
 ***
 
