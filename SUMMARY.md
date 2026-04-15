@@ -31,6 +31,7 @@
 * [Custom connectors](connectors/custom-connectors/README.md)
   * [Email](connectors/custom-connectors/email.md)
   * [Google Sheets](connectors/custom-connectors/google-sheets.md)
+  * [Lengow Catalog](connectors/custom-connectors/lengow-catalog.md)
   * [(S)FTP](connectors/custom-connectors/ftp.md)
 * [Marketing connectors](connectors/readme/README.md)
   * [Amazon DSP](connectors/marketing-connectors/amazon-dsp.md)
