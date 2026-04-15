@@ -8,7 +8,7 @@ description: 'Follow our setup guide to connect Lengow to QUANTI:'
 This connector is currently in **beta**.
 {% endhint %}
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/69df52558089629684a0502f/69df52710f7c9ef2c0005210" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -131,7 +131,7 @@ erDiagram
 
 ***
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/69df52558089629684a0502f/69df52710f7c9ef2c0005210" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
