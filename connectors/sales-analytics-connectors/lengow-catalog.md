@@ -14,6 +14,8 @@ This connector is currently in **beta**.
 
 The Lengow Catalog connector imports your product catalog feeds directly from public [Lengow](https://www.lengow.com) feed URLs. Each custom request maps to one marketplace feed — the schema is automatically detected from the feed headers.
 
+At each sync, a full snapshot of the catalog is inserted, allowing you to track changes over time and analyze the impact of catalog updates (price changes, stock variations, listing modifications, etc.).
+
 ***
 
 ## Prerequisites
@@ -58,6 +60,6 @@ Add one custom request per marketplace feed you want to sync.
 ## Notes
 
 * **Schema auto-detection**: The table schema is built automatically from the feed column headers on the first sync. No manual field mapping is required.
-* **Full replace sync**: Each sync fully replaces the catalog data for the feed — the connector runs in dimension mode (full reload).
+* **Insert mode**: Each sync inserts a full snapshot of the catalog — rows are never deleted or updated. This lets you query the history of your catalog and measure the impact of changes over time.
 * **One feed per request**: Each custom request corresponds to one marketplace feed URL. To sync multiple marketplaces, add one request per feed.
 * **Beta status**: This connector is in beta — some features may evolve.
