@@ -40,15 +40,126 @@ To connect Matomo to QUANTI:, you need a [Matomo](https://fr.matomo.org/login/) 
 
 ***
 
-## Pre-built reports
+## Prebuilt reports
 
-* **visitor\_country**: Tracks website visits, user actions, and conversions segmented by the visitor's country.
-* **visitor\_language**: Records website engagement metrics based on the visitor's preferred language.
-* **visitor\_device\_type**: Measures website activity by the type of device used (e.g., desktop, mobile, tablet).
-* **behaviour\_page**: Monitors page-level behavior, including entrances, exits, pageviews, and time spent.
-* **acquisition\_campaign**: Captures visitor metrics grouped by marketing campaign name.
-* **acquisition\_referrer**: Logs visits and conversions by referring source, type, and URL.
-* **acquisition\_channel\_type**: Aggregates website performance by high-level marketing channel type.
+### Visitor
+
+**visitor\_country**: Website visits, user actions and conversions segmented by the visitor's country. Dimensions: date, country. Metrics: visits, users, actions, bounces, conversions, converted\_visits, total\_visit\_length, revenue.
+
+**visitor\_device\_type**: Website activity broken down by device type (desktop, mobile, tablet). Dimensions: date, device\_type. Metrics: visits, users, actions, bounces, conversions, converted\_visits, total\_visit\_length, revenue.
+
+**visitor\_language**: Engagement metrics segmented by the visitor's browser language. Dimensions: date, language. Metrics: visits, users, actions, bounces, converted\_visits, total\_visit\_length, revenue.
+
+***
+
+### Behaviour
+
+**behaviour\_page**: Page-level engagement — entrances, exits, pageviews and time spent per URL. Dimensions: date, page\_title, page\_url. Metrics: pageviews, entrances, entry\_actions, entry\_bounces, exits, total\_time\_spent, visits\_following\_search.
+
+**behaviour\_event**: Event tracking by category — event counts, unique events and total/average event value. Dimensions: date, event\_category. Metrics: events, unique\_events, event\_value\_sum, event\_value\_avg.
+
+***
+
+### Acquisition
+
+**acquisition\_campaign**: Visitor metrics grouped by marketing campaign name. Dimensions: date, campaign\_name. Metrics: visits, users, actions, bounces, conversions, converted\_visits, total\_visit\_length, revenue.
+
+**acquisition\_channel\_type**: Website performance aggregated by high-level marketing channel (organic, paid, social, direct…). Dimensions: date, channel\_type. Metrics: visits, users, actions, bounces, conversions, converted\_visits, total\_visit\_length, revenue.
+
+**acquisition\_referrer**: Visits and conversions by referring source, type and URL. Dimensions: date, referrer, referrer\_type. Metrics: visits, users, actions, bounces, conversions, converted\_visits, total\_visit\_length, revenue.
+
+***
+
+```mermaid
+erDiagram
+    visitor_country {
+        DATE    _quanti_date PK
+        STRING  country PK
+        DATE    date
+        INTEGER visits
+        INTEGER users
+        INTEGER actions
+        INTEGER bounces
+        INTEGER conversions
+        FLOAT   revenue
+        STRING  website_id
+    }
+    visitor_device_type {
+        DATE    _quanti_date PK
+        STRING  device_type PK
+        DATE    date
+        INTEGER visits
+        INTEGER users
+        INTEGER actions
+        INTEGER bounces
+        INTEGER conversions
+        FLOAT   revenue
+        STRING  website_id
+    }
+    visitor_language {
+        DATE    _quanti_date PK
+        STRING  language PK
+        DATE    date
+        INTEGER visits
+        INTEGER users
+        INTEGER actions
+        INTEGER bounces
+        FLOAT   revenue
+        STRING  website_id
+    }
+    behaviour_page {
+        DATE    _quanti_date PK
+        STRING  page_title PK
+        STRING  page_url PK
+        DATE    date
+        INTEGER pageviews
+        INTEGER entrances
+        INTEGER exits
+        INTEGER total_time_spent
+        STRING  website_id
+    }
+    behaviour_event {
+        DATE    _quanti_date PK
+        STRING  event_category PK
+        DATE    date
+        INTEGER events
+        INTEGER unique_events
+        FLOAT   event_value_sum
+        FLOAT   event_value_avg
+        STRING  website_id
+    }
+    acquisition_campaign {
+        DATE    _quanti_date PK
+        STRING  campaign_name PK
+        DATE    date
+        INTEGER visits
+        INTEGER users
+        INTEGER conversions
+        FLOAT   revenue
+        STRING  website_id
+    }
+    acquisition_channel_type {
+        DATE    _quanti_date PK
+        STRING  channel_type PK
+        DATE    date
+        INTEGER visits
+        INTEGER users
+        INTEGER conversions
+        FLOAT   revenue
+        STRING  website_id
+    }
+    acquisition_referrer {
+        DATE    _quanti_date PK
+        STRING  referrer PK
+        STRING  referrer_type PK
+        DATE    date
+        INTEGER visits
+        INTEGER users
+        INTEGER conversions
+        FLOAT   revenue
+        STRING  website_id
+    }
+```
 
 ***
 
