@@ -70,7 +70,7 @@
   * [Google Ads](connectors/reverse-connectors/google-ads-reverse-connector.md)
 * [Sales analytics connectors](connectors/sales-analytics-connectors/README.md)
   * [Hubspot](connectors/sales-analytics-connectors/hubspot.md)
-  * [Mirakl](connectors/sales-analytics-connectors/mirakl-seller.md)
+  * [Mirakl Marketplace Platform - Seller](connectors/sales-analytics-connectors/mirakl-seller.md)
   * [Pennylane](connectors/sales-analytics-connectors/pennylane.md)
   * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
