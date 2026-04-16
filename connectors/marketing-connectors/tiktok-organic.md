@@ -78,15 +78,89 @@ Only one TikTok Business account can be connected per connector. To sync a diffe
 
 ***
 
-## Pre-built reports
+## Prebuilt reports
 
-* **profile**: Account profile attributes — username, display name, bio description, profile image URL, deep link, verification status, and business account flag. One row per account, updated at each sync (upsert).
+### Profile
 
-* **profile\_snapshot\_metric**: Cumulative account metrics captured at each sync — total followers, following count, total likes received, video count, and audience demographics broken down by country, city, age range, and gender (stored as JSON arrays).
+**profile**: Account profile attributes — static descriptive data about the TikTok Business account. One row per account, updated at each sync. Dimensions: username. Fields: display\_name, bio\_description, profile\_image, profile\_deep\_link, is\_verified, is\_business\_account.
 
-* **profile\_daily\_metric**: Daily engagement metrics at account level — video views, unique video views, profile views, likes, comments, shares, new followers gained, followers lost, total net followers, engaged audience, and bio link clicks. Also includes business-only metrics (phone number clicks, lead submissions, app download clicks, email clicks, address clicks) and hourly audience activity as a JSON array. Partitioned by date.
+**profile\_snapshot\_metric**: Cumulative account metrics captured at each sync time — a new row is inserted at every sync to historize the evolution of account KPIs. Dimensions: username, \_quanti\_sync\_date. Metrics: followers\_count, following\_count, total\_likes, videos\_count. Also includes audience demographics as JSON arrays: audience\_countries, audience\_cities, audience\_ages, audience\_genders.
 
-* **video**: Video-level analytics captured at each sync — video ID, publication date, caption, thumbnail URL, embed URL, share URL, and lifetime cumulative metrics: likes, comments, shares, total video views, unique reach, video duration, total watch time, average watch time per view, completion rate, impression sources by channel, and audience countries (stored as JSON arrays).
+**profile\_daily\_metric**: Daily engagement metrics at account level. Each row represents one day for one account. Dimensions: username, date. Metrics: video\_views, unique\_video\_views, profile\_views, likes, comments, shares, daily\_new\_followers, daily\_lost\_followers, daily\_total\_followers, engaged\_audience, bio\_link\_clicks. Business-only metrics (populated only for accounts with a configured business profile): phone\_number\_clicks, lead\_submissions, app\_download\_clicks, email\_clicks, address\_clicks. Also includes audience\_activity (hourly follower activity, stored as JSON array).
+
+***
+
+### Video
+
+**video\_snapshot\_metric**: Video-level metrics captured at each sync time — a new row is inserted per video at every sync to track the evolution of engagement over time. Dimensions: item\_id, \_quanti\_sync\_date. Fields: create\_time, caption, thumbnail\_url, embed\_url, share\_url. Lifetime cumulative metrics: likes, comments, shares, video\_views, reach, video\_duration, total\_time\_watched, average\_time\_watched, full\_video\_watched\_rate. Also includes impression\_sources and audience\_countries (stored as JSON arrays).
+
+***
+
+```mermaid
+erDiagram
+    profile {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    username PK
+        STRING    display_name
+        STRING    bio_description
+        BOOLEAN   is_verified
+        BOOLEAN   is_business_account
+    }
+    profile_snapshot_metric {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    username PK
+        TIMESTAMP _quanti_sync_date PK
+        INTEGER   followers_count
+        INTEGER   following_count
+        INTEGER   total_likes
+        INTEGER   videos_count
+        STRING    audience_countries
+        STRING    audience_ages
+        STRING    audience_genders
+    }
+    profile_daily_metric {
+        STRING  _quanti_ad_account
+        DATE    _quanti_date PK
+        STRING  _quanti_id
+        STRING  username PK
+        DATE    date PK
+        INTEGER video_views
+        INTEGER unique_video_views
+        INTEGER profile_views
+        INTEGER likes
+        INTEGER comments
+        INTEGER shares
+        INTEGER daily_new_followers
+        INTEGER daily_lost_followers
+        INTEGER daily_total_followers
+        INTEGER engaged_audience
+        INTEGER bio_link_clicks
+        STRING  audience_activity
+    }
+    video_snapshot_metric {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    item_id PK
+        TIMESTAMP _quanti_sync_date PK
+        TIMESTAMP create_time
+        STRING    caption
+        INTEGER   likes
+        INTEGER   comments
+        INTEGER   shares
+        INTEGER   video_views
+        INTEGER   reach
+        FLOAT     video_duration
+        FLOAT     total_time_watched
+        FLOAT     average_time_watched
+        FLOAT     full_video_watched_rate
+        STRING    impression_sources
+        STRING    audience_countries
+    }
+
+    profile ||--o{ profile_snapshot_metric : "username"
+    profile ||--o{ profile_daily_metric    : "username"
+```
+
+***
 
 <a href="https://dbdiagram.io/e/69bd5d7d78c6c4bc7a302be3/69bd5ddefb2db18e3bcabd49" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
@@ -123,7 +197,7 @@ Only one TikTok Business account can be connected per connector. To sync a diffe
 * Historical data is limited to the last 60 days — data older than that cannot be recovered
 * Some metrics may not be available immediately after publication (24–48 hour delay)
 * Business-only metrics (phone clicks, leads, etc.) will be empty if your account does not have a configured business profile
-* The `video` table only contains videos that were public at the time of the sync
+* The `video_snapshot_metric` table only contains videos that were public at the time of the sync
 
 </details>
 
