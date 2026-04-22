@@ -1,8 +1,8 @@
 ---
-description: 'Follow our setup guide to connect Lengow to QUANTI:'
+description: 'Follow our setup guide to connect Lengow Orders to QUANTI:'
 ---
 
-# Lengow
+# Lengow Orders
 
 {% hint style="warning" %}
 This connector is currently in **beta**.
