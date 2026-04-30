@@ -1,8 +1,8 @@
 ---
-description: 'Follow our setup guide to connect Mirakl Marketplace Platform to QUANTI:'
+description: 'Follow our setup guide to connect Mirakl Seller to QUANTI:'
 ---
 
-# Mirakl Marketplace Platform — Seller
+# Mirakl Seller
 
 {% hint style="warning" %}
 This connector is currently in **beta**.
@@ -61,6 +61,7 @@ Review the available pre-built reports and select the ones you want to activate.
 * **offer\_history**: History of offer status, price, stock and inactivity reasons per product, including refused, pending and inactive offers.
 * **category**: Marketplace catalog category hierarchy with codes, labels and parent relationships.
 * **product\_import**: Product import history with integration statistics — lines read, successes, errors, warnings, and rejected or invalid products.
+* **catalog\_status**: Publication status of products from Mirakl Catalog Manager (MCM) — LIVE or NOT\_LIVE for each product (identified by its shop SKU), with the list of blocking errors and warnings as JSON arrays. Requires the MCM module to be enabled on the marketplace instance.
 
 ```mermaid
 erDiagram
@@ -146,12 +147,20 @@ erDiagram
         INTEGER   transform_lines_in_error
         BOOLEAN   has_error_report
     }
+    catalog_status {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    provider_unique_identifier PK
+        STRING    status
+        STRING    errors
+        STRING    warnings
+    }
 
     shop_history   ||--o{ shop_stats      : "shop_id"
     shop_history   ||--o{ product_import  : "shop_id"
     order          ||--o{ order_line      : "order_id"
     offer_history  ||--o{ order_line      : "offer_id"
     category       ||--o{ offer_history   : "category_code"
+    offer_history  ||--o{ catalog_status  : "shop_sku"
 ```
 
 ***
@@ -164,4 +173,5 @@ erDiagram
 
 * **Lookback window**: Default lookback is **7 days**. Orders and offers are re-synced over the lookback window to capture status updates (e.g. an order accepted or shipped after the initial sync).
 * **Differential sync for offers**: The `offer_history` table uses a differential sync mode — only offers modified since the last sync are fetched.
+* **catalog\_status requires MCM**: The `catalog_status` table is only available if the Mirakl Catalog Manager (MCM) module is enabled on your marketplace instance.
 * **Beta status**: This connector is in beta — some features or report fields may evolve.

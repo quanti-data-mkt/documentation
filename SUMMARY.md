@@ -72,7 +72,7 @@
   * [Hubspot](connectors/sales-analytics-connectors/hubspot.md)
   * [Lengow Orders](connectors/sales-analytics-connectors/lengow.md)
   * [Lengow Catalog](connectors/sales-analytics-connectors/lengow-catalog.md)
-  * [Mirakl Marketplace Platform - Seller](connectors/sales-analytics-connectors/mirakl-seller.md)
+  * [Mirakl Seller](connectors/sales-analytics-connectors/mirakl-seller.md)
   * [Pennylane](connectors/sales-analytics-connectors/pennylane.md)
   * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
