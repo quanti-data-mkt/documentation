@@ -157,6 +157,134 @@ Example: If your URL is `mystore.myshopify.com`, your shop name is `mystore`.
 * **Return**: Return requests with status and financial outcome details. Tracks customer return requests including return status (open, in\_transit, received, declined), decline reason if applicable, total return amount, and timestamps. Essential for return rate analysis and operational efficiency tracking.
 * **Daily Inventory Snapshot**: Historical fact table tracking daily inventory levels across multiple states for stock evolution analysis. Captures daily snapshots with snapshot\_date as partition key, inventory quantities across all states (available, on\_hand, committed, reserved, incoming, damaged, quality\_control, safety\_stock), and last update timestamp. Enables stockout detection, stock evolution trends, replenishment planning, and inventory health monitoring across locations.
 
+```mermaid
+erDiagram
+    shop {
+        TIMESTAMP _quanti_loaded_at PK
+        BIGINT    id PK
+        STRING    name
+        STRING    domain
+        STRING    currency
+        STRING    country_code
+    }
+    product {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    id PK
+        STRING    title
+        STRING    vendor
+        STRING    product_type
+        STRING    status
+        STRING    tags
+        STRING    metafields
+    }
+    product_variant {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    id PK
+        STRING    product_id PK
+        STRING    inventory_item_id PK
+        STRING    sku
+        DECIMAL   price
+        INTEGER   inventory_quantity
+    }
+    inventory_items {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    id PK
+        STRING    sku
+        DECIMAL   cost
+        BOOLEAN   tracked
+    }
+    locations {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    id PK
+        STRING    name
+        STRING    city
+        STRING    country
+        BOOLEAN   active
+    }
+    return_line_item {
+        TIMESTAMP _quanti_loaded_at PK
+        STRING    id PK
+        INTEGER   quantity
+        STRING    return_reason
+    }
+    order {
+        DATE    _quanti_date PK
+        BIGINT  id PK
+        STRING  financial_status
+        STRING  fulfillment_status
+        DECIMAL total_price
+        DECIMAL total_discounts
+        STRING  currency
+        BIGINT  customer_id
+        STRING  customer_email
+        STRING  source_name
+    }
+    order_line {
+        DATE    _quanti_date PK
+        BIGINT  order_id PK
+        BIGINT  product_id PK
+        STRING  sku
+        INTEGER quantity
+        DECIMAL price
+        DECIMAL total_discount
+    }
+    transaction {
+        DATE    _quanti_date PK
+        BIGINT  id PK
+        BIGINT  order_id PK
+        DECIMAL amount
+        STRING  currency
+        STRING  gateway
+        STRING  kind
+        STRING  status
+    }
+    refund {
+        DATE    _quanti_date PK
+        BIGINT  id PK
+        BIGINT  order_id PK
+        STRING  note
+        BOOLEAN restock
+    }
+    refund_line {
+        DATE    _quanti_date PK
+        BIGINT  id PK
+        BIGINT  refund_id PK
+        BIGINT  line_item_id PK
+        INTEGER quantity
+        DECIMAL subtotal
+    }
+    return {
+        DATE    _quanti_date PK
+        STRING  id PK
+        STRING  order_id PK
+        STRING  status
+        INTEGER total_quantity
+    }
+    daily_snapshot {
+        DATE    _quanti_date PK
+        DATE    snapshot_date PK
+        STRING  inventory_item_id PK
+        STRING  location_id PK
+        INTEGER available
+        INTEGER on_hand
+        INTEGER committed
+        INTEGER reserved
+    }
+
+    product         ||--o{ product_variant    : "product_id"
+    product         ||--o{ order_line         : "product_id"
+    inventory_items ||--o{ product_variant    : "inventory_item_id"
+    inventory_items ||--o{ daily_snapshot     : "inventory_item_id"
+    locations       ||--o{ daily_snapshot     : "location_id"
+    order           ||--o{ order_line         : "order_id"
+    order           ||--o{ transaction        : "order_id"
+    order           ||--o{ refund             : "order_id"
+    order           ||--o{ return             : "order_id"
+    refund          ||--o{ refund_line        : "refund_id"
+    order_line      ||--o{ refund_line        : "line_item_id"
+    return          ||--o{ return_line_item   : "id"
+```
+
 ***
 
 <a href="https://dbdiagram.io/e/694439cfe4bb1dd3a9971e40/69443a24e4bb1dd3a99726ad" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
