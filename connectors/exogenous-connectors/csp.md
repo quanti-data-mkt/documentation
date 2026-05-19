@@ -8,7 +8,7 @@ description: 'Follow our setup guide to connect CSP to QUANTI:'
 This connector is currently in **beta**.
 {% endhint %}
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a0c7eb1697f99c167b3b678/6a0c7ec5697f99c167b3b7ba" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -93,7 +93,7 @@ erDiagram
 
 ***
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a0c7eb1697f99c167b3b678/6a0c7ec5697f99c167b3b7ba" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
