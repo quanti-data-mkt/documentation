@@ -8,7 +8,7 @@ description: 'Follow our setup guide to connect Weather to QUANTI:'
 This connector is currently in **beta**.
 {% endhint %}
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a0c7f169f1f8ec47b538ce9/6a0c7f22697f99c167b3bdab" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -69,7 +69,7 @@ erDiagram
 
 ***
 
-<a href="#" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a0c7f169f1f8ec47b538ce9/6a0c7f22697f99c167b3bdab" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
