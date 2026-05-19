@@ -104,20 +104,20 @@ Example: If your URL is `mystore.myshopify.com`, your shop name is `mystore`.
 {% endstep %}
 
 {% step %}
-#### **Connector Information**
-
-* **Connector Name**: Define a unique name for your connector
-* **Dataset ID**: Specify the BigQuery dataset ID where tables will be created
-  * The dataset will be created automatically if it doesn't exist
-* Click **Next**
-{% endstep %}
-
-{% step %}
 #### Select Prebuilt reports
 
 * Review the available Prebuilt reports (see section below for details)
 * All tables are selected by default - you can deselect tables you don't need
 * Recommended: Keep all tables enabled for complete e-commerce data tracking
+* Click **Next**
+{% endstep %}
+
+{% step %}
+#### **Connector Information**
+
+* **Connector Name**: Define a unique name for your connector
+* **Dataset ID**: Specify the BigQuery dataset ID where tables will be created
+  * The dataset will be created automatically if it doesn't exist
 * Click **Next**
 {% endstep %}
 
