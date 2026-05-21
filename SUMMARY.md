@@ -32,9 +32,6 @@
   * [BYOD BigQuery](primary-destination/byod-bigquery.md)
   * [BYOD Snowflake](primary-destination/byod-snowflake.md)
   * [BYOD ClickHouse](primary-destination/byod-clickhouse.md)
-
-## DATA WAREHOUSES
-
 * [GCP / Big Query](data-warehouses/bigquery.md)
 
 ## CONNECTORS
