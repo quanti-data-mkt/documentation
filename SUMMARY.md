@@ -16,6 +16,14 @@
   * [Semantic Layer](concepts/semantic-layer.md)
   * [Marketing Mix Modeling (MMM)](concepts/mmm.md)
 
+## PRIMARY DESTINATION
+
+* [Primary Destination](primary-destination/README.md)
+  * [Managed BigQuery](primary-destination/managed-bigquery.md)
+  * [BYOD BigQuery](primary-destination/byod-bigquery.md)
+  * [BYOD Snowflake](primary-destination/byod-snowflake.md)
+  * [BYOD ClickHouse](primary-destination/byod-clickhouse.md)
+
 ## DATA WAREHOUSES
 
 * [GCP / Big Query](data-warehouses/bigquery.md)
