@@ -4,4 +4,6 @@
 
 This option is ideal if your organization relies on ClickHouse for its speed and efficiency on large volumes of data.
 
+{% hint style="warning" %}
 BYOD ClickHouse is available on the **Enterprise** plan only.
+{% endhint %}
