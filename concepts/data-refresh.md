@@ -1,12 +1,12 @@
 # Data Refresh
 
-**Data Refresh** is QUANTI:'s scheduling feature — it lets you programmatically plan and automate the launch of your data sync processes on a recurring basis, without manual intervention.
+**Data Refresh** is QUANTI:'s scheduling feature — it lets you programmatically plan and automate the launch of your data sync processes on a recurring basis.
 
-The available scheduling frequency depends on your plan:
+On the Free plan, syncs must be triggered manually. From the Pro plan onwards, Data Refresh automates this with a daily schedule. The Enterprise plan extends this to hourly scheduling.
 
 | Plan | Data Refresh |
 |---|---|
-| Free | Not available |
+| Free | Manual only |
 | Pro | Daily |
 | Growth | Daily |
 | Expert | Daily |
