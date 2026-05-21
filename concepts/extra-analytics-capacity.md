@@ -1,5 +1,5 @@
 # Extra Analytics Capacity
 
-**Extra Analytics Capacity** is an add-on that allows you to run additional resource-intensive SQL queries on top of your standard plan quota.
+**Extra Analytics Capacity** is an add-on that extends the compute quota included in your plan, allowing you to run additional resource-intensive SQL queries.
 
-When your analyses require heavy computation — large aggregations, complex joins, or high-frequency queries — Extra Analytics Capacity gives you the flexibility to scale without upgrading your plan.
+It is designed for use cases that require heavy computation — large aggregations, complex joins, or high-frequency queries — without requiring a plan upgrade.
