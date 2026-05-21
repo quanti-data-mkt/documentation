@@ -4,4 +4,6 @@
 
 This option is ideal if your organization is already running on Snowflake and wants to centralize all your marketing data within your existing environment.
 
+{% hint style="warning" %}
 BYOD Snowflake is available on the **Enterprise** plan only.
+{% endhint %}
