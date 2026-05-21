@@ -1,6 +1,6 @@
 # Managed BigQuery
 
-With **Managed BigQuery**, QUANTI: provisions and manages a Google BigQuery data warehouse on your behalf — no GCP account or infrastructure setup required on your end.
+With **Managed BigQuery**, QUANTI: provisions and manages a Google BigQuery data warehouse on your behalf. No GCP account or infrastructure setup is required on your end.
 
 Your data is loaded, stored, and made available for analysis directly within this managed environment. QUANTI: handles availability, maintenance, and configuration so you can focus on your data.
 
