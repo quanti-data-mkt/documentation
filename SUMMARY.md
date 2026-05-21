@@ -119,12 +119,3 @@
 * [MCP overview](mcp-server/mcp-overview.md)
 * [MCP Set-up](mcp-server/mcp-set-up.md)
 * [Semantic Layer](mcp-server/semantic-layer.md)
-
-## TRANSFORMATIONS
-
-* [Pre-built tables](transformations/pre-built-tables/README.md)
-  * [ads\_import](transformations/pre-built-tables/ads_import.md)
-  * [ads\_import\_conv](transformations/pre-built-tables/ads_import_conv.md)
-  * [quanti\_ids](transformations/pre-built-tables/quanti_ids.md)
-* [The principle of reconciliation](transformations/the-principle-of-reconciliation.md)
-* [Tracking templates](transformations/tracking-templates.md)
