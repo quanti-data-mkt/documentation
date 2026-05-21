@@ -50,6 +50,13 @@
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics-1.md)
   * [Piwik PRO](connectors/analytics-connectors/piwik-pro-analytics.md)
+  * [Real-Time Analytics](tag-tracker/README.md)
+    * [Tag setup](tag-tracker/tag-setup.md)
+    * [Tag data model](tag-tracker/tag-data-model/README.md)
+      * [advanced\_attribution](tag-tracker/tag-data-model/advanced_attribution.md)
+      * [raw\_hits](tag-tracker/tag-data-model/raw_hits.md)
+      * [raw\_sessions](tag-tracker/tag-data-model/raw_sessions.md)
+      * [Rules for calculated attribution](tag-tracker/tag-data-model/rules-for-calculated-attribution.md)
 * [Exogenous connectors](connectors/exogenous-connectors/README.md)
   * [Calendar](connectors/exogenous-connectors/calendar.md)
   * [CSP](connectors/exogenous-connectors/csp.md)
@@ -104,15 +111,6 @@
   * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
   * [Stripe](connectors/sales-analytics-connectors/stripe.md)
-
-## TAG TRACKER
-
-* [Tag data model](tag-tracker/tag-data-model/README.md)
-  * [advanced\_attribution](tag-tracker/tag-data-model/advanced_attribution.md)
-  * [raw\_hits](tag-tracker/tag-data-model/raw_hits.md)
-  * [raw\_sessions](tag-tracker/tag-data-model/raw_sessions.md)
-  * [Rules for calculated attribution](tag-tracker/tag-data-model/rules-for-calculated-attribution.md)
-* [Tag setup](tag-tracker/tag-setup.md)
 
 ## MCP Server
 
