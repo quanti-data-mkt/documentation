@@ -1,8 +1,8 @@
 # BYOD Snowflake
 
-**BYOD Snowflake** lets you connect QUANTI: to your own Snowflake data warehouse. Your data is loaded directly into your Snowflake instance, giving you full ownership and control over your data infrastructure.
+**BYOD Snowflake** (Bring Your Own Data Warehouse) lets you connect QUANTI: to your own Snowflake instance. Your data is loaded directly into your Snowflake environment — you retain full ownership of your data and infrastructure.
 
-This option is ideal if your organization is already running on Snowflake and wants to centralize all your marketing data within your existing environment.
+BYOD Snowflake is suited for organizations already running on Snowflake that want to centralize their marketing data within their existing environment.
 
 {% hint style="warning" %}
 BYOD Snowflake is available on the **Enterprise** plan only.
