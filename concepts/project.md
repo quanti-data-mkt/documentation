@@ -1,6 +1,6 @@
 # Project
 
-A **Project** is your top-level working environment in QUANTI: — it represents a single data warehouse destination where all your data is loaded and made available for analysis.
+A **Project** is your top-level working environment in QUANTI:. It represents a single data warehouse destination where all your data is loaded and made available for analysis.
 
 Projects follow a nested structure: a Project contains [Data Sources](data-source.md), each Data Source contains [Connected Accounts](connected-account.md), and each Connected Account generates [Pre-built Reports](pre-built-report.md).
 
