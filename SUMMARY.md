@@ -15,6 +15,15 @@
   * [Extra Analytics Capacity](concepts/extra-analytics-capacity.md)
   * [Semantic Layer](concepts/semantic-layer.md)
   * [Marketing Mix Modeling (MMM)](concepts/mmm.md)
+* [Data insertion strategies](data-management/data-insertion-strategies/README.md)
+  * [Insert mode : Insert without deleting](data-management/data-insertion-strategies/insert-mode.md)
+  * [Insertion method selection guide](data-management/data-insertion-strategies/insertion-method-selection-guide.md)
+  * [Replace mode : Delete and insert](data-management/data-insertion-strategies/replace-mode-delete-and-insert.md)
+  * [Upsert mode : Update and insert](data-management/data-insertion-strategies/upsert-mode-update-and-insert.md)
+* [Data Concepts](data-management/fundamental-concepts/README.md)
+  * [Date & Partitioning](data-management/fundamental-concepts/date-and-partitioning.md)
+  * [Lookback window](data-management/fundamental-concepts/lookback-window.md)
+  * [Primary key](data-management/fundamental-concepts/primary-key.md)
 
 ## PRIMARY DESTINATION
 
@@ -27,18 +36,6 @@
 ## DATA WAREHOUSES
 
 * [GCP / Big Query](data-warehouses/bigquery.md)
-
-## DATA MANAGEMENT
-
-* [Data insertion strategies](data-management/data-insertion-strategies/README.md)
-  * [Insert mode : Insert without deleting](data-management/data-insertion-strategies/insert-mode.md)
-  * [Insertion method selection guide](data-management/data-insertion-strategies/insertion-method-selection-guide.md)
-  * [Replace mode : Delete and insert](data-management/data-insertion-strategies/replace-mode-delete-and-insert.md)
-  * [Upsert mode : Update and insert](data-management/data-insertion-strategies/upsert-mode-update-and-insert.md)
-* [Data Concepts](data-management/fundamental-concepts/README.md)
-  * [Date & Partitioning](data-management/fundamental-concepts/date-and-partitioning.md)
-  * [Lookback window](data-management/fundamental-concepts/lookback-window.md)
-  * [Primary key](data-management/fundamental-concepts/primary-key.md)
 
 ## CONNECTORS
 
