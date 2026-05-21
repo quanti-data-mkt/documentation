@@ -2,6 +2,20 @@
 
 * [Welcome to Quanti: Documention](README.md)
 
+## KEY CONCEPTS
+
+* [Key Concepts](concepts/README.md)
+  * [Connected Account](concepts/connected-account.md)
+  * [Data Source](concepts/data-source.md)
+  * [Project](concepts/project.md)
+  * [Data Refresh](concepts/data-refresh.md)
+  * [Real-time Analytics](concepts/real-time-analytics.md)
+  * [Pre-built Report](concepts/pre-built-report.md)
+  * [Use Case](concepts/use-case.md)
+  * [Extra Analytics Capacity](concepts/extra-analytics-capacity.md)
+  * [Semantic Layer](concepts/semantic-layer.md)
+  * [Marketing Mix Modeling (MMM)](concepts/mmm.md)
+
 ## DATA WAREHOUSES
 
 * [GCP / Big Query](data-warehouses/bigquery.md)
@@ -13,7 +27,7 @@
   * [Insertion method selection guide](data-management/data-insertion-strategies/insertion-method-selection-guide.md)
   * [Replace mode : Delete and insert](data-management/data-insertion-strategies/replace-mode-delete-and-insert.md)
   * [Upsert mode : Update and insert](data-management/data-insertion-strategies/upsert-mode-update-and-insert.md)
-* [Fundamental concepts](data-management/fundamental-concepts/README.md)
+* [Data Concepts](data-management/fundamental-concepts/README.md)
   * [Date & Partitioning](data-management/fundamental-concepts/date-and-partitioning.md)
   * [Lookback window](data-management/fundamental-concepts/lookback-window.md)
   * [Primary key](data-management/fundamental-concepts/primary-key.md)
