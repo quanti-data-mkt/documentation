@@ -73,9 +73,8 @@ Restart Claude Desktop. The MCP icon will appear in the input area.
 
 * Log in to [chatgpt.com](https://chatgpt.com)
 * Go to **Settings > Apps**
-* Activate the **Developer mode**
-* Click **Create App**
-* Set the Quanti MCP server URL
+* Search for **QUANTI** in the app catalog
+* Click **Connect** and authenticate with your QUANTI account via OAuth
 {% endstep %}
 
 {% step %}
@@ -108,4 +107,3 @@ Restart Claude Desktop. The MCP icon will appear in the input area.
 Contact QUANTI support at [support@quanti.io](mailto:support@quanti.io) or consult our comprehensive documentation at [https://docs.quanti.io](https://docs.quanti.io)
 
 </details>
-
