@@ -4,10 +4,6 @@ description: 'Follow our setup guide to connect Google Business Profile to QUANT
 
 # Google Business Profile
 
-{% hint style="warning" %}
-This connector is currently in **beta**.
-{% endhint %}
-
 <a href="https://dbdiagram.io/e/6a0c63899f1f8ec47b5182ca/6a0c63e99f1f8ec47b518a1d" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
@@ -139,4 +135,3 @@ erDiagram
 * **Lookback window**: Default lookback is **7 days**. Metrics and reviews are re-synced over the lookback window to capture retroactive updates.
 * **Historical data**: Up to **18 months** (540 days) of history can be loaded on initial setup.
 * **`location_insight` granularity**: Metrics are stored in a narrow (unpivoted) format — one row per metric per day per location. Use a pivot in your BI tool or a SQL `CASE WHEN` to reshape the data by metric type.
-* **Beta status**: This connector is in beta — some features or report fields may evolve.
