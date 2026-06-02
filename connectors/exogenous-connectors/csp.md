@@ -4,10 +4,6 @@ description: 'Follow our setup guide to connect CSP to QUANTI:'
 
 # CSP
 
-{% hint style="warning" %}
-This connector is currently in **beta**.
-{% endhint %}
-
 <a href="https://dbdiagram.io/e/6a0c7eb1697f99c167b3b678/6a0c7ec5697f99c167b3b7ba" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
