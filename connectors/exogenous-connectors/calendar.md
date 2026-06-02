@@ -4,10 +4,6 @@ description: 'Follow our setup guide to connect Calendar to QUANTI:'
 
 # Calendar
 
-{% hint style="warning" %}
-This connector is currently in **beta**.
-{% endhint %}
-
 <a href="https://dbdiagram.io/e/6a0c7e16697f99c167b3ae47/6a0c7e2e697f99c167b3afaa" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
