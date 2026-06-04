@@ -10,75 +10,49 @@ description: 'Follow our setup guide to connect Brevo to QUANTI:'
 
 ## Prerequisites
 
-Before connecting Brevo to QUANTI, ensure you have:
+To connect Brevo to QUANTI, you need:
 
-* **Brevo Account**: An active Brevo (formerly Sendinblue) account
-* **API Access**: Access to the API Keys section in your Brevo account settings
-* **Email Campaigns**: At least some email campaigns created to retrieve insights
-* **Proper Permissions**: Email Campaigns and Contacts read permissions
+* An active [Brevo](https://app.brevo.com) account
+* At least one email campaign created
 
 ***
 
-## Setup Instructions
+## Setup instructions
 
 {% stepper %}
 {% step %}
-#### Create API Key
+#### Generate an API key
 
-* Log in to your Brevo account at https://app.brevo.com/
-* Navigate to **Settings** → **API Keys**
-* Click on **Create a new API key**
-* Give your key a descriptive name (e.g., "QUANTI Integration")
-* Copy the API key immediately (it will only be shown once)
-* Store it securely
+* In Brevo, go to **Settings** > **SMTP & API** > **API Keys & MCP**
+* Click **Generate API Key**
+* Enter a distinctive name (e.g. "QUANTI Integration") and select **No expiration**
+* Click **Generate**
+* Copy the value shown in the **API key** field — this is the only time it will be displayed
+
+{% hint style="warning" %}
+Do not enable the **Create MCP server API key** toggle. QUANTI requires a standard API key, not an MCP key.
+{% endhint %}
 {% endstep %}
 
 {% step %}
-#### Configure Authentication
+#### Connect to QUANTI
 
-* Return to QUANTI
-* Click on **Connect to Brevo**
-* Enter your API key in the authentication field
-* Click **Validate** to test the connection
-* QUANTI will verify your credentials and permissions
+* In QUANTI, click **Connect to Brevo**
+* Paste your API key in the authentication field
+* Click **Validate** to confirm the connection
 {% endstep %}
 
 {% step %}
-#### **Connector Information**
+#### Connector information
 
-* **Connector Name**: Define a unique name for your connector
-* **Dataset ID**: Specify the BigQuery dataset ID where tables will be created
-  * The dataset will be created automatically if it doesn't exist
-* Click **Next**
-
-
+* **Connector Name**: Name your connector. It must be unique.
+* **Dataset ID**: Define the ID of the dataset. It must not exist yet, as it will be created and data will be sent there.
 {% endstep %}
 
 {% step %}
-#### Select Prebuilt reports
+#### Select prebuilt reports
 
-* Review the available Prebuilt reports (see section below for details)
-* Select the tables you want to synchronize:
-  * **Campaigns**: Campaign dimensions and configuration
-  * **Campaign Stats**: Global campaign metrics
-  * **Campaign Lists Stats**: Campaign metrics by contact list
-  * **Contact Lists**: Lists metadata
-  * **Contacts**: Individual contacts and attributes
-* Click **Next**
-{% endstep %}
-
-{% step %}
-#### Finish Setup
-
-* Define a sync period and a lookback window
-* Click **Save**
-* For the first sync, you have the following options:
-  * Activate auto-sync for recurring syncs based on your sync settings by clicking the switch button
-  * Launch a historical data recovery by choosing your desired dates in the historical data tab
-  * Launch a manual sync immediately by clicking the **Sync now** button
-* Wait for the sync to complete
-* Navigate to your data warehouse to verify that tables are populated
-* Check the connector dashboard for sync status and any potential errors
+Review the available prebuilt reports and select the ones you want to activate.
 {% endstep %}
 {% endstepper %}
 
@@ -86,11 +60,11 @@ Before connecting Brevo to QUANTI, ensure you have:
 
 ## Prebuilt reports
 
-* **Campaigns**: Email campaign dimensions including configuration, sender details, A/B testing setup, and UTM parameters
-* **Campaign Stats**: Global aggregated performance metrics for campaigns (all lists combined)
-* **Campaign Lists Stats**: Campaign performance metrics decomposed by recipient list with detailed list-level analysis
-* **Contact Lists**: Metadata about contact lists including names, folder organization, and list type
-* **Contacts**: Individual contacts with email addresses, subscription status, list memberships, and custom attributes
+* **campaigns**: Email campaign dimensions — configuration, sender details, A/B testing setup, and UTM parameters.
+* **campaign\_stats**: Global aggregated performance metrics per campaign (all lists combined).
+* **campaign\_lists\_stats**: Campaign performance broken down by recipient list.
+* **contact\_lists**: Metadata about contact lists — names, folder organization, and list type.
+* **contacts**: Individual contacts with email addresses, subscription status, list memberships, and custom attributes.
 
 ***
 
@@ -100,69 +74,9 @@ Before connecting Brevo to QUANTI, ensure you have:
 
 ## Notes
 
-* **Data Refresh**: Brevo data can be synced multiple times per day. Configure your sync frequency based on your campaign sending schedule
-* **Rate Limits**: Brevo enforces a rate limit of 600 requests per 10 minutes. QUANTI automatically manages these limits to ensure reliable data extraction
-* **Historical Data**: All historical campaign data is accessible via the API. Use the historical data recovery feature for initial backload
-* **Incremental Sync**: The Contacts table supports incremental synchronization using the `modifiedSince` parameter to fetch only updated contacts
-* **A/B Testing**: Campaign dimensions include complete A/B testing configuration (subjects, split rule, winner criteria)
-* **Custom Attributes**: Contact attributes vary by account configuration and are stored as JSON for flexibility
-* **Deferred Emails**: The `deferred` metric is only available in Campaign Lists Stats, not in Campaign Stats
-* **List Relationships**: Contact list memberships are stored within the Contacts table as JSON arrays, making separate junction tables unnecessary
-* **Deprecated Fields**: Some API fields (totalBlacklisted, totalSubscribers, uniqueSubscribers) are deprecated by Brevo and not collected
-
-***
-
-## Troubleshooting
-
-<details>
-
-<summary>Authentication Issues</summary>
-
-* Verify that your API key is correct and hasn't been revoked
-* Ensure your API key has the required permissions (Email Campaigns and Contacts read access)
-* Check that your Brevo account is active and not suspended
-* Generate a new API key if the current one doesn't work
-
-</details>
-
-<details>
-
-<summary>Missing Campaign Data</summary>
-
-* Only sent campaigns appear in the statistics tables
-* Draft, archived, or deleted campaigns may not have complete metrics
-* Ensure campaigns were sent after your configured lookback window
-* Check campaign status in the Campaigns dimension table
-
-</details>
-
-<details>
-
-<summary>Rate Limit Errors</summary>
-
-* QUANTI automatically handles rate limiting with exponential backoff
-* If you encounter persistent rate limit issues, consider:
-  * Reducing the number of Prebuilt reports selected
-  * Increasing the sync interval
-  * Contacting Brevo support to verify your account's rate limits
-
-</details>
-
-<details>
-
-<summary>Missing Contacts</summary>
-
-* Verify that contacts exist in your Brevo account
-* Check if contacts are in lists that were included in your sync configuration
-* For incremental syncs, only modified contacts are retrieved
-* Blacklisted contacts are included but marked with appropriate flags
-
-</details>
-
-<details>
-
-<summary>Need Help?</summary>
-
-Contact QUANTI support at [support@quanti.io](mailto:support@quanti.io) or consult our comprehensive documentation at [https://docs.quanti.io](https://docs.quanti.io/)
-
-</details>
+* **Rate limits**: Brevo enforces a limit of 600 requests per 10 minutes. QUANTI manages this automatically.
+* **Incremental sync**: The `contacts` table uses incremental sync — only contacts modified since the last sync are fetched.
+* **A/B testing**: Campaign dimensions include full A/B test configuration (subjects, split rule, winner criteria).
+* **Custom attributes**: Contact attributes vary by account and are stored as JSON.
+* **`deferred` metric**: Only available in `campaign_lists_stats`, not in `campaign_stats`.
+* **Deprecated fields**: `totalBlacklisted`, `totalSubscribers`, and `uniqueSubscribers` are deprecated by Brevo and not collected.
