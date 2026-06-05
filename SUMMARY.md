@@ -77,7 +77,7 @@
     * [FAQ](connectors/marketing-connectors/faq/googlesearchconsole-advertising.md)
   * [Instagram Business](connectors/marketing-connectors/instagramorganic.md)
   * [Klaviyo](connectors/marketing-connectors/klaviyo.md)
-  * [Kwanko](connectors/marketing-connectors/awin-1.md)
+  * [Kwanko](connectors/marketing-connectors/kwanko.md)
   * [Linkedin Ads](connectors/marketing-connectors/linkedin-ads.md)
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
   * [Meta Ads](connectors/marketing-connectors/meta-ads.md)
