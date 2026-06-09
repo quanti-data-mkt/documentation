@@ -94,6 +94,7 @@ Before connecting Instagram Business to QUANTI, ensure you have:
 
 * **Data Refresh**: Instagram Business data is typically updated once per day
 * **Historical Limitations**: Instagram's API has limitations on historical data retrieval. Account insights are limited to the last 30 days, while media insights are available for the lifetime of the post
+* **`follower_count` limitation**: The Instagram API only serves the `follower_count` metric for the last 30 days, excluding the current day. For historical data recovery beyond this window, `follower_count` will be absent — all other metrics (reach, profile views, website clicks, interactions) are collected normally.
 * **Stories Limitations**: Stories data is only available for 24 hours after publication. Historical stories data cannot be retrieved after this period
 * **Lifetime vs Daily Metrics**: Media and story insights are lifetime/cumulative metrics, while account insights and reel insights are aggregated daily
 * **Media Types**: The connector supports all Instagram media types: photos, videos, carousels (albums), reels, and IGTV
