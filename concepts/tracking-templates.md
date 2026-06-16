@@ -14,15 +14,20 @@ For example, a click on a Google Ads campaign might produce a URL like:
 https://www.example.com/page?qid=qid_gad_c12345678_g987654_a11223344
 ```
 
-This `qid` parameter is then captured by the QUANTI: Real-Time Analytics tag when the user lands on your site.
+This `qid` parameter is then read by any analytics tool collecting data on that page load.
 
 ***
 
 ## Why does QUANTI: use tracking templates?
 
-QUANTI: connects your ad platform data (spend, impressions, clicks) with your on-site conversion data (sessions, transactions) collected by the Real-Time Analytics tag. To join these two data sources, QUANTI: needs a common key — the `qid` value carried in the URL.
+QUANTI: connects your ad platform data (spend, impressions, clicks) with your on-site session and conversion data. To join these two data sources, QUANTI: needs a common key — the `qid` value carried in the URL.
 
-When the tag captures a hit, it reads the `qid` parameter from the URL and stores it alongside the session. QUANTI: can then match each conversion back to its exact campaign, ad group, and creative — across all platforms, in a single data model.
+The `qid` parameter is designed to work with any analytics data collection tool connected to QUANTI:. It is captured in two ways depending on your setup:
+
+* **QUANTI: Real-Time Analytics tag** — the tag reads the `qid` directly from the URL and stores it alongside the session in the `raw_hits` and `raw_sessions` tables.
+* **Third-party analytics tools** (GA4, Piano Analytics, Piwik PRO, and others) — when `qid` is included in the landing page URL, these tools capture it as a URL parameter within their own data. QUANTI: can then read it from your analytics connector data and use it as the reconciliation key.
+
+In both cases, QUANTI: can match each session or conversion back to its exact campaign, ad group, and creative — across all ad platforms, in a single data model.
 
 Without a tracking template, cross-platform attribution relies on UTM parameters alone, which do not carry granular ad IDs and cannot link a session to a specific creative or ad group.
 
