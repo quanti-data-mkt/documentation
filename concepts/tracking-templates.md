@@ -4,17 +4,45 @@ description: Recommended URL patterns for ad click reconciliation across platfor
 
 # Tracking Templates
 
-Tracking templates are URL parameters appended to your ad click URLs. QUANTI: uses them to reconcile ad performance data (impressions, clicks, spend) with conversion data collected by the Real-Time Analytics tag.
+## What is a tracking template?
 
-Each template follows the same structure:
+A **tracking template** is a URL parameter added to the destination URL of your ads. When a user clicks on an ad, the ad platform automatically replaces dynamic placeholders in the template with the actual values for that click — campaign ID, ad group ID, creative ID, etc. — and appends the result to the landing page URL.
+
+For example, a click on a Google Ads campaign might produce a URL like:
 
 ```
-qid_{platform}_{c{campaign_id}}_g{ad_group_id}_a{ad_id}
+https://www.example.com/page?qid=qid_gad_c12345678_g987654_a11223344
+```
+
+This `qid` parameter is then captured by the QUANTI: Real-Time Analytics tag when the user lands on your site.
+
+***
+
+## Why does QUANTI: use tracking templates?
+
+QUANTI: connects your ad platform data (spend, impressions, clicks) with your on-site conversion data (sessions, transactions) collected by the Real-Time Analytics tag. To join these two data sources, QUANTI: needs a common key — the `qid` value carried in the URL.
+
+When the tag captures a hit, it reads the `qid` parameter from the URL and stores it alongside the session. QUANTI: can then match each conversion back to its exact campaign, ad group, and creative — across all platforms, in a single data model.
+
+Without a tracking template, cross-platform attribution relies on UTM parameters alone, which do not carry granular ad IDs and cannot link a session to a specific creative or ad group.
+
+***
+
+## Template structure
+
+All QUANTI: templates follow the same naming convention:
+
+```
+qid_{platform}_c{campaign_id}_g{ad_group_id}_a{ad_id}
 ```
 
 Where `c`, `g`, and `a` stand for **campaign**, **group**, and **ad** respectively. When a field is not available for a given platform, the placeholder is left empty.
 
+The `{platform}` prefix is a 3-letter code that identifies the ad source — for example `gad` for Google Ads, `fbk` for Meta, `lkd` for LinkedIn.
+
 ***
+
+## Templates by platform
 
 ## Affilae
 
