@@ -15,6 +15,7 @@
   * [Extra Analytics Capacity](concepts/extra-analytics-capacity.md)
   * [Semantic Layer](concepts/semantic-layer.md)
   * [Marketing Mix Modeling (MMM)](concepts/mmm.md)
+  * [Tracking Templates](concepts/tracking-templates.md)
 * [Data insertion strategies](data-management/data-insertion-strategies/README.md)
   * [Insert mode : Insert without deleting](data-management/data-insertion-strategies/insert-mode.md)
   * [Insertion method selection guide](data-management/data-insertion-strategies/insertion-method-selection-guide.md)
