@@ -1,14 +1,14 @@
-# Semantic Connector
+# Semantic View
 
-The **Semantic Connector** is a custom connector that lets you expose external tables already present in your BigQuery project to QUANTI:'s Semantic Layer — without moving or syncing any data.
+The **Semantic View** is a custom connector that lets you expose external tables already present in your BigQuery project to QUANTI:'s Semantic Layer — without moving or syncing any data.
 
 ***
 
 ## How it fits in the architecture
 
-QUANTI: connectors (File Connectors, App Connectors) feed into the Semantic Layer automatically. The Semantic Connector fills the gap for data that already lives in your BigQuery project but was not loaded by QUANTI: — for example an e-commerce order export, a CRM dataset, a custom analytics table, or any third-party feed loaded outside of QUANTI:.
+QUANTI: connectors (File Connectors, App Connectors) feed into the Semantic Layer automatically. The Semantic View fills the gap for data that already lives in your BigQuery project but was not loaded by QUANTI: — for example an e-commerce order export, a CRM dataset, a custom analytics table, or any third-party feed loaded outside of QUANTI:.
 
-Once exposed via the Semantic Connector, these external tables become part of the Semantic Layer alongside your QUANTI: data. The Semantic Layer is then made available to the **QUANTI: MCP**, which allows AI tools (Claude, ChatGPT, Copilot and others) to intelligently query and cross-reference your data.
+Once exposed via the Semantic View, these external tables become part of the Semantic Layer alongside your QUANTI: data. The Semantic Layer is then made available to the **QUANTI: MCP**, which allows AI tools (Claude, ChatGPT, Copilot and others) to intelligently query and cross-reference your data.
 
 ```mermaid
 flowchart LR
@@ -21,8 +21,8 @@ flowchart LR
         app["App Connector\nGoogle Ads · GA4 · ..."]
     end
 
-    subgraph semantic["Quanti Semantic Connector"]
-        sc["Semantic Connector"]
+    subgraph semantic["Quanti Semantic View"]
+        sc["Semantic View"]
         sl["Semantic Layer"]
         pq["Pre-built queries"]
     end
@@ -60,7 +60,7 @@ flowchart LR
 
 ## Setup
 
-In the QUANTI: app, go to **Custom Connectors**, click **Add custom connector** and select **Semantic Connector** from the list.
+In the QUANTI: app, go to **Custom Connectors**, click **Add custom connector** and select **Semantic View** from the list.
 
 * **Connector Name**: Name your connector. It must be unique.
 * **Dataset**: Select the BigQuery dataset that contains the external tables you want to expose.
@@ -77,7 +77,7 @@ Once the connector is created, go to the **Reports** tab.
 * Select the table you want to expose from the dataset
 * Choose the fields to include
 
-You can add multiple tables to the same Semantic Connector, and expose as many fields as needed per table.
+You can add multiple tables to the same Semantic View, and expose as many fields as needed per table.
 
 ***
 
