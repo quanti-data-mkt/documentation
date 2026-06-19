@@ -60,7 +60,7 @@
   * [Email](connectors/custom-connectors/email.md)
   * [Google Sheets](connectors/custom-connectors/google-sheets.md)
   * [(S)FTP](connectors/custom-connectors/ftp.md)
-  * [Semantic Connector](connectors/custom-connectors/semantic-connector.md)
+  * [Semantic View](connectors/custom-connectors/semantic-connector.md)
 * [Marketing connectors](connectors/marketing-connectors/README.md)
   * [Amazon DSP](connectors/marketing-connectors/amazon-dsp.md)
   * [Affilae](connectors/marketing-connectors/affilae.md)
