@@ -108,6 +108,8 @@
   * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
   * [Stripe](connectors/sales-analytics-connectors/stripe.md)
+* [Webhook connectors](connectors/webhook/README.md)
+  * [Custom Webhook](connectors/webhook/webhook-custom.md)
 
 ## MCP Server
 
