@@ -52,6 +52,7 @@
       * [raw\_hits](tag-tracker/tag-data-model/raw_hits.md)
       * [raw\_sessions](tag-tracker/tag-data-model/raw_sessions.md)
       * [Rules for calculated attribution](tag-tracker/tag-data-model/rules-for-calculated-attribution.md)
+  * [Custom Webhook](connectors/analytics-connectors/webhook-custom.md)
 * [Exogenous connectors](connectors/exogenous-connectors/README.md)
   * [Calendar](connectors/exogenous-connectors/calendar.md)
   * [CSP](connectors/exogenous-connectors/csp.md)
@@ -108,8 +109,6 @@
   * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
   * [Stripe](connectors/sales-analytics-connectors/stripe.md)
-* [Webhook connectors](connectors/webhook/README.md)
-  * [Custom Webhook](connectors/webhook/webhook-custom.md)
 
 ## MCP Server
 
