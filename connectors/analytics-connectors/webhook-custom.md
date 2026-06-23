@@ -132,9 +132,7 @@ Columns are never automatically removed from the warehouse table, even if a fiel
 
 ### Minimum field presence threshold
 
-QUANTI: applies a **minimum field presence threshold** to filter out incomplete or malformed payloads. By default, a payload must contain at least **30% of the fields defined in the schema** to be accepted and written to the warehouse. Payloads below this threshold are silently dropped.
-
-This threshold can be adjusted in the connector settings (value between `0` and `1`). Setting it to `0` disables filtering entirely.
+QUANTI: applies a **minimum field presence threshold** to filter out incomplete or malformed payloads. A payload must contain at least **30% of the fields defined in the schema** to be accepted and written to the warehouse. Payloads below this threshold are silently dropped.
 
 ***
 
