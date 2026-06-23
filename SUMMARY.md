@@ -98,6 +98,7 @@
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse-connector.md)
   * [Google Ads](connectors/reverse-connectors/google-ads-reverse-connector.md)
+  * [Meta Custom Audiences](connectors/reverse-connectors/meta-custom-audiences.md)
 * [Sales analytics connectors](connectors/sales-analytics-connectors/README.md)
   * [Hubspot](connectors/sales-analytics-connectors/hubspot.md)
   * [Lengow Orders](connectors/sales-analytics-connectors/lengow.md)
