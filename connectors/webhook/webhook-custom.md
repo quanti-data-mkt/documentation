@@ -1,88 +1,88 @@
 # Custom Webhook
 
-Le connecteur **Custom Webhook** permet d'ingérer des événements provenant de n'importe quel système tiers via un endpoint HTTPS dédié. QUANTI: génère automatiquement l'URL de réception, infère le schéma à partir de votre premier payload de test, puis route les données directement dans votre data warehouse.
+The **Custom Webhook** connector lets you ingest events from any third-party system via a dedicated HTTPS endpoint. QUANTI: automatically generates the receiving URL, infers the schema from your first test payload, and routes the data directly into your data warehouse.
 
-Cas d'usage typiques : événements CRM, alertes applicatives, formulaires web, notifications e-commerce, exports de plateformes tierces qui ne disposent pas de connecteur natif QUANTI:.
+Typical use cases: CRM events, application alerts, web forms, e-commerce notifications, exports from third-party platforms that don't have a native QUANTI: connector.
 
 {% hint style="info" %}
-Pour l'ingestion du tag de tracking web QUANTI:, utilisez le connecteur dédié **Real-Time Analytics** — il gère la session, l'attribution et le consentement de façon native.
+To ingest data from the QUANTI: web tracking tag, use the dedicated **Real-Time Analytics** connector — it natively handles sessions, attribution, and consent.
 {% endhint %}
 
 ***
 
-## Comment ça fonctionne
+## How it works
 
-1. QUANTI: génère un **endpoint HTTPS unique** pour votre tenant
-2. Vous pointez le webhook de votre source vers cet endpoint
-3. À la réception du premier payload, QUANTI: **infère automatiquement le schéma** (noms et types des champs)
-4. Vous validez le schéma et le connecteur commence à ingérer
+1. QUANTI: generates a **unique HTTPS endpoint** for your tenant
+2. You point your source's webhook to that endpoint
+3. On receipt of the first payload, QUANTI: **automatically infers the schema** (field names and types)
+4. You validate the schema and the connector starts ingesting
 
-Chaque payload reçu est inséré tel quel dans votre data warehouse, sans transformation. Les champs sont mappés directement depuis la structure JSON du payload.
+Each received payload is inserted as-is into your data warehouse, without transformation. Fields are mapped directly from the JSON structure of the payload.
 
 ***
 
-## Configuration
+## Setup
 
 {% stepper %}
 {% step %}
-### Nommez votre tenant
+### Name your tenant
 
-Donnez un nom à votre connecteur webhook (ex. `crm-events`, `shop-notifications`). Ce nom déterminera le nom de la table dans votre warehouse.
+Give your webhook connector a name (e.g. `crm-events`, `shop-notifications`). This name will determine the table name in your warehouse.
 {% endstep %}
 
 {% step %}
-### Récupérez l'URL d'endpoint
+### Retrieve the endpoint URL
 
-Une fois le connecteur créé, QUANTI: vous fournit l'URL HTTPS à configurer dans votre source tierce. Elle est unique par tenant.
+Once the connector is created, QUANTI: provides the HTTPS URL to configure in your third-party source. It is unique per tenant.
 {% endstep %}
 
 {% step %}
-### Envoyez un payload de test
+### Send a test payload
 
-Déclenchez un événement depuis votre source ou envoyez manuellement un payload JSON représentatif via cURL ou Postman :
+Trigger an event from your source or manually send a representative JSON payload via cURL or Postman:
 
 ```bash
-curl -X POST https://webhook.quanti.io/<votre-endpoint> \
+curl -X POST https://webhook.quanti.io/<your-endpoint> \
   -H "Content-Type: application/json" \
   -d '{"event": "order.created", "order_id": "12345", "amount": 99.90}'
 ```
 {% endstep %}
 
 {% step %}
-### Validez le schéma inféré
+### Validate the inferred schema
 
-QUANTI: affiche le schéma détecté à partir de votre payload. Vérifiez que les types sont corrects (STRING, NUMERIC, TIMESTAMP…) et confirmez pour activer l'ingestion.
+QUANTI: displays the schema detected from your payload. Check that the types are correct (STRING, NUMERIC, TIMESTAMP…) and confirm to activate ingestion.
 {% endstep %}
 {% endstepper %}
 
 ***
 
-## Format de payload
+## Payload format
 
-* Le payload doit être au format **JSON**
-* Méthode HTTP : **POST**
-* Content-Type : `application/json`
-* Taille maximale par payload : **1 MB**
-* Les tableaux (arrays) et objets imbriqués sont acceptés — QUANTI: les aplatit ou les stocke en JSON selon la configuration du schéma
+* Payload must be in **JSON** format
+* HTTP method: **POST**
+* Content-Type: `application/json`
+* Maximum payload size: **1 MB**
+* Nested arrays and objects are accepted — QUANTI: flattens them or stores them as JSON depending on the schema configuration
 
 ***
 
-## Données dans le warehouse
+## Data in the warehouse
 
-Chaque événement reçu génère une ligne dans votre table BigQuery. QUANTI: ajoute automatiquement les colonnes système suivantes :
+Each received event generates one row in your BigQuery table. QUANTI: automatically adds the following system columns:
 
-| Colonne | Type | Description |
+| Column | Type | Description |
 |---|---|---|
-| `_quanti_received_at` | TIMESTAMP | Horodatage de réception par QUANTI: |
-| `_quanti_id` | STRING | Identifiant unique de l'événement |
+| `_quanti_received_at` | TIMESTAMP | Timestamp of receipt by QUANTI: |
+| `_quanti_id` | STRING | Unique event identifier |
 
-Les autres colonnes correspondent aux champs de votre payload JSON.
+All other columns correspond to the fields in your JSON payload.
 
 ***
 
 ## Notes
 
-* L'endpoint est **public** — il n'y a pas d'authentification par défaut sur l'URL. Si votre source le permet, ajoutez un secret partagé dans un header custom et vérifiez-le côté QUANTI: via les filtres de payload
-* Le schéma est inféré sur le **premier payload** — si votre payload évolue (nouveaux champs), des colonnes supplémentaires seront ajoutées automatiquement lors des prochains envois
-* Il n'y a pas de lookback ni d'historique : seuls les événements reçus après la création du connecteur sont stockés
-* Le connecteur ne gère pas la déduplication — si votre source peut renvoyer le même événement plusieurs fois, gérez l'idempotence dans votre pipeline aval
+* The endpoint is **public** — there is no authentication on the URL by default. If your source supports it, add a shared secret in a custom header and validate it on the QUANTI: side via payload filters
+* The schema is inferred from the **first payload** — if your payload evolves (new fields), additional columns will be added automatically on subsequent payloads
+* There is no lookback or history: only events received after the connector is created are stored
+* The connector does not handle deduplication — if your source can send the same event multiple times, manage idempotency in your downstream pipeline
