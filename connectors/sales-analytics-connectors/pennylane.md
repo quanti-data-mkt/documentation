@@ -30,6 +30,12 @@ Before connecting Pennylane to QUANTI, ensure you have:
 * Click on **Generate new API token**
 * Copy the generated token immediately (it will only be shown once)
 * Store it securely
+
+You will also need your **Company ID** to complete the QUANTI connector setup. You can find it directly in the URL when navigating in the Pennylane app:
+
+```
+https://app.pennylane.com/companies/{company-id}/...
+```
 {% endstep %}
 
 {% step %}
