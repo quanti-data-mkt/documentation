@@ -1,96 +1,96 @@
 # Meta Custom Audiences
 
-Le connecteur **Meta Custom Audiences** est un connecteur reverse : il pousse des segments d'audience depuis votre data warehouse vers Meta (Facebook & Instagram Ads) sous forme de Custom Audiences. Il permet d'activer du retargeting, de l'exclusion ou des Lookalike Audiences directement à partir de vos données first-party.
+The **Meta Custom Audiences** connector is a reverse connector: it pushes audience segments from your data warehouse to Meta (Facebook & Instagram Ads) as Custom Audiences. Use it to activate retargeting, exclusion, or Lookalike Audiences directly from your first-party data.
 
 {% hint style="info" %}
-Ce connecteur gère uniquement les **Custom Audiences** (correspondance CRM). Pour l'envoi d'événements de conversion côté serveur (Conversions API / CAPI), utilisez le connecteur **Meta Pixel (Reverse)**.
+This connector handles **Custom Audiences** (CRM matching) only. To send server-side conversion events (Conversions API / CAPI), use the **Meta Pixel (Reverse)** connector.
 {% endhint %}
 
 ***
 
-## Prérequis
+## Prerequisites
 
-* Un compte **Meta Business Manager** avec accès à au moins un compte publicitaire
-* Le compte publicitaire doit disposer de la permission `ads_management`
-* Les données à pousser doivent être disponibles dans une table de votre data warehouse QUANTI: (typiquement via une **Semantic View** ou un connecteur source)
-* Les champs PII (email, téléphone, etc.) doivent être présents dans la table source — ils seront hachés automatiquement en SHA-256 avant l'envoi
-
-***
-
-## Authentification
-
-La connexion se fait via **OAuth2 Facebook**. Lors de la configuration, vous serez redirigé vers Meta pour autoriser QUANTI: à gérer vos Custom Audiences.
-
-Les permissions demandées sont : `ads_management`, `ads_read`, `business_management`, `leads_retrieval`.
+* A **Meta Business Manager** account with access to at least one ad account
+* The ad account must have the `ads_management` permission
+* The data to push must be available in a table in your QUANTI: data warehouse (typically via a **Semantic View** or a source connector)
+* PII fields (email, phone, etc.) must be present in the source table — they will be automatically hashed in SHA-256 before being sent
 
 ***
 
-## Configuration
+## Authentication
+
+The connection is made via **Facebook OAuth2**. During setup, you will be redirected to Meta to authorize QUANTI: to manage your Custom Audiences.
+
+Requested permissions: `ads_management`, `ads_read`, `business_management`, `leads_retrieval`.
+
+***
+
+## Setup
 
 {% stepper %}
 {% step %}
-### Connexion Meta
+### Connect to Meta
 
-Cliquez sur **Continue with Facebook** et autorisez QUANTI: sur votre compte Meta Business.
+Click **Continue with Facebook** and authorize QUANTI: on your Meta Business account.
 {% endstep %}
 
 {% step %}
-### Sélection du compte publicitaire
+### Select ad account(s)
 
-Renseignez le ou les **Ad Account IDs** au format `act_XXXXXXXXXX` (visible dans le Business Manager ou dans l'URL de votre compte publicitaire).
+Enter one or more **Ad Account IDs** in the format `act_XXXXXXXXXX` (visible in Business Manager or in your ad account URL).
 {% endstep %}
 
 {% step %}
-### Type de push
+### Choose push type
 
-Sélectionnez le template **Custom Audience** et choisissez le mode de synchronisation adapté à votre cas d'usage.
+Select the **Custom Audience** template and choose the sync mode that fits your use case.
 {% endstep %}
 
 {% step %}
-### Mapping
+### Field mapping
 
-Depuis l'onglet **Mapping**, associez les colonnes de votre table source aux champs attendus par Meta. Nommez votre connecteur et créez-le.
+From the **Mapping** tab, map the columns of your source table to the fields expected by Meta. Name your connector and create it.
 {% endstep %}
 {% endstepper %}
 
 ***
 
-## Modes de synchronisation
+## Sync modes
 
-| Mode | Comportement |
-|------|-------------|
-| `mirror` | Synchronisation complète — les membres ajoutés dans la source sont ajoutés à l'audience, ceux supprimés en sont retirés |
-| `add_only` | Ajout uniquement — les nouveaux membres sont ajoutés, aucune suppression n'est effectuée |
-| `remove_only` | Suppression uniquement — les membres présents dans la source sont retirés de l'audience |
+| Mode | Behavior |
+|------|----------|
+| `mirror` | Full sync — members added in the source are added to the audience; members removed from the source are removed from the audience |
+| `add_only` | Additive only — new members are added, no removals are performed |
+| `remove_only` | Removal only — members present in the source are removed from the audience |
 
 ***
 
-## Champs de matching disponibles
+## Available matching fields
 
-Meta accepte les identifiants suivants pour la correspondance. QUANTI: applique un hachage **SHA-256** automatiquement avant l'envoi pour tout champ PII.
+Meta accepts the following identifiers for matching. QUANTI: automatically applies **SHA-256** hashing before sending for all PII fields.
 
-| Champ QUANTI: | Type Meta | Format attendu |
+| QUANTI: field | Meta type | Expected format |
 |---|---|---|
-| `email` | `EMAIL` | Adresse email en minuscules |
-| `phone` | `PHONE` | Numéro au format E.164 (ex. `+33612345678`) |
-| `first_name` | `FN` | Prénom en minuscules, sans accents |
-| `last_name` | `LN` | Nom en minuscules, sans accents |
-| `date_of_birth` | `DOBY` / `DOBM` / `DOBD` | Année, mois, jour séparés |
-| `gender` | `GEN` | `m` ou `f` |
-| `city` | `CT` | Ville en minuscules, sans espaces |
-| `state` | `ST` | Code d'état/région (2 lettres) |
-| `zip` | `ZIP` | Code postal sans espaces |
-| `country` | `COUNTRY` | Code ISO 3166-1 alpha-2 (ex. `fr`) |
+| `email` | `EMAIL` | Lowercase email address |
+| `phone` | `PHONE` | E.164 format (e.g. `+33612345678`) |
+| `first_name` | `FN` | Lowercase, no accents |
+| `last_name` | `LN` | Lowercase, no accents |
+| `date_of_birth` | `DOBY` / `DOBM` / `DOBD` | Year, month, day as separate fields |
+| `gender` | `GEN` | `m` or `f` |
+| `city` | `CT` | Lowercase, no spaces |
+| `state` | `ST` | 2-letter state/region code |
+| `zip` | `ZIP` | Postal code without spaces |
+| `country` | `COUNTRY` | ISO 3166-1 alpha-2 code (e.g. `fr`) |
 
 {% hint style="warning" %}
-Pour maximiser le taux de correspondance, fournissez au minimum **email** ou **téléphone**, idéalement combinés avec prénom et nom.
+To maximize match rate, provide at least **email** or **phone**, ideally combined with first and last name.
 {% endhint %}
 
 ***
 
 ## Notes
 
-* Les Custom Audiences créées par QUANTI: sont visibles dans votre **Meta Ads Manager > Audiences**
-* La taille minimale pour diffuser une campagne est de **100 membres** après correspondance
-* Meta applique ses propres règles de confidentialité — assurez-vous d'avoir obtenu le consentement approprié de vos utilisateurs avant de pousser leurs données
-* Les Lookalike Audiences peuvent être créées manuellement dans Meta Ads Manager à partir d'une Custom Audience existante
+* Custom Audiences created by QUANTI: are visible in **Meta Ads Manager > Audiences**
+* The minimum audience size to run a campaign is **100 matched members**
+* Meta enforces its own privacy policies — make sure you have obtained appropriate consent from your users before pushing their data
+* Lookalike Audiences can be created manually in Meta Ads Manager from an existing Custom Audience
