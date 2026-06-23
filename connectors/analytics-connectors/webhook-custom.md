@@ -13,7 +13,7 @@ To ingest data from the QUANTI: web tracking tag, use the dedicated **Real-Time 
 ## How it works
 
 1. QUANTI: generates a **unique HTTPS endpoint** for your tenant
-2. You configure your source's webhook to POST payloads to that URL
+2. You configure your source's webhook to POST or GET payloads to that URL
 3. On receipt of the first payload, QUANTI: **automatically infers the schema** (field names and types)
 4. You validate the schema and the connector starts ingesting
 
@@ -95,29 +95,11 @@ The URL is static and does not change. If you need to change the connector name,
 
 ***
 
-## Authentication and security
-
-The endpoint URL is public by default — no authentication is enforced at the network level. To secure access, QUANTI: supports two complementary approaches:
-
-**Secret header (recommended)**
-
-Most webhook sources let you add a custom HTTP header to each request. Configure a shared secret header in the connector settings (e.g. `X-Webhook-Secret: my-secret-value`). QUANTI: will reject any request that does not include the expected header and value, returning a `401 Unauthorized` response.
-
-**IP allowlist**
-
-If your source emits webhooks from a fixed IP range, you can restrict access to those IPs in the connector settings. Requests from other IPs will be rejected with a `403 Forbidden` response.
-
-{% hint style="info" %}
-It is strongly recommended to use at least one security mechanism, especially if your payloads contain personally identifiable information (PII).
-{% endhint %}
-
-***
-
 ## Payload format
 
 | Property | Value |
 |---|---|
-| HTTP method | `POST` |
+| HTTP method | `POST` or `GET` |
 | Content-Type | `application/json` |
 | Maximum payload size | 1 MB |
 | Encoding | UTF-8 |
@@ -148,6 +130,12 @@ Type changes (e.g. a field that was STRING and becomes NUMERIC) are not applied 
 
 Columns are never automatically removed from the warehouse table, even if a field stops appearing in payloads. Missing fields will simply produce `NULL` values in those rows.
 
+### Minimum field presence threshold
+
+QUANTI: applies a **minimum field presence threshold** to filter out incomplete or malformed payloads. By default, a payload must contain at least **30% of the fields defined in the schema** to be accepted and written to the warehouse. Payloads below this threshold are silently dropped.
+
+This threshold can be adjusted in the connector settings (value between `0` and `1`). Setting it to `0` disables filtering entirely.
+
 ***
 
 ## HTTP response codes
@@ -156,8 +144,6 @@ Columns are never automatically removed from the warehouse table, even if a fiel
 |---|---|
 | `200 OK` | Payload received and queued for ingestion |
 | `400 Bad Request` | Payload is not valid JSON or Content-Type is missing |
-| `401 Unauthorized` | Secret header is missing or incorrect |
-| `403 Forbidden` | Request origin is not in the IP allowlist |
 | `413 Payload Too Large` | Payload exceeds the 1 MB limit |
 | `503 Service Unavailable` | Temporary QUANTI: ingestion issue — retry with backoff |
 
