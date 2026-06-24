@@ -36,6 +36,11 @@
   * [BYOD ClickHouse](primary-destination/byod-clickhouse.md)
 * [GCP / Big Query](data-warehouses/bigquery.md)
 
+## DASHBOARDS
+
+* [Dashboards](dashboards/README.md)
+  * [Create & share a dashboard](dashboards/create-dashboard.md)
+
 ## CONNECTORS
 
 * [Analytics connectors](connectors/analytics-connectors/README.md)
