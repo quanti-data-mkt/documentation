@@ -8,6 +8,7 @@
   * [Connected Account](concepts/connected-account.md)
   * [Data Source](concepts/data-source.md)
   * [Project](concepts/project.md)
+    * [Roles & Permissions](concepts/project-roles.md)
   * [Data Refresh](concepts/data-refresh.md)
   * [Real-time Analytics](concepts/real-time-analytics.md)
   * [Pre-built Report](concepts/pre-built-report.md)
