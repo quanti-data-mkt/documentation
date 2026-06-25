@@ -72,6 +72,18 @@ Review the available prebuilt reports and select the ones you want to activate.
 
 ***
 
+## Historical data limitation
+
+{% hint style="warning" %}
+**`campaign_stats` only covers the last 6 months of data.**
+
+This is an API-level constraint from Brevo: the list campaigns endpoint does not return statistics for events older than 6 months. Campaigns sent before that window will show `NULL` or `0` for all performance metrics — views, clicks, unsubscribes, bounces, etc. — regardless of their actual performance.
+
+**If you need data beyond 6 months, use `campaign_lists_stats` instead.** This table fetches statistics per campaign individually via a dedicated Brevo endpoint, which is not subject to the 6-month restriction and provides full historical coverage.
+{% endhint %}
+
+***
+
 ## Notes
 
 * **Rate limits**: Brevo enforces a limit of 600 requests per 10 minutes. QUANTI manages this automatically.
@@ -80,6 +92,5 @@ Review the available prebuilt reports and select the ones you want to activate.
 * **Custom attributes**: Contact attributes vary by account and are stored as JSON.
 * **`deferred` metric**: Only available in `campaign_lists_stats`, not in `campaign_stats`.
 * **Deprecated fields**: `totalBlacklisted`, `totalSubscribers`, and `uniqueSubscribers` are deprecated by Brevo and not collected.
-* **Historical data coverage**: `campaign_stats` uses the Brevo list campaigns API, which only returns statistics for events that occurred in the **last 6 months**. Campaigns older than 6 months will have `NULL` or `0` values for all performance metrics (views, clicks, unsubscribes, etc.) in this table. For complete historical coverage, use `campaign_lists_stats`, which fetches stats per campaign individually via a dedicated endpoint and is not subject to this limitation.
 * **`clickers` vs `clicks`**: The Brevo API exposes `clickers` (number of unique individuals who clicked at least once) and `unique_clicks` (total unique click count). There is no field named `clicks` in the API response — if you observe a `clicks` column returning `NULL` in your warehouse, it is an unmapped field. Refer to `clickers` or `unique_clicks` depending on the metric you need.
 * **Deduplication**: If you use `campaign_stats` or `campaign_lists_stats` in a dashboard or aggregated model, filter on the most recent `_quanti_process_id` to avoid counting duplicate rows from multiple syncs on the same day.
