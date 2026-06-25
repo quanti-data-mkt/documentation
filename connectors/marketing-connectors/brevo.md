@@ -80,3 +80,4 @@ Review the available prebuilt reports and select the ones you want to activate.
 * **Custom attributes**: Contact attributes vary by account and are stored as JSON.
 * **`deferred` metric**: Only available in `campaign_lists_stats`, not in `campaign_stats`.
 * **Deprecated fields**: `totalBlacklisted`, `totalSubscribers`, and `uniqueSubscribers` are deprecated by Brevo and not collected.
+* **Historical data coverage**: `campaign_stats` uses the Brevo list campaigns API, which only returns statistics for events that occurred in the **last 6 months**. Campaigns older than 6 months will have `NULL` or `0` values for all performance metrics (views, clicks, unsubscribes, etc.) in this table. For complete historical coverage, use `campaign_lists_stats`, which fetches stats per campaign individually via a dedicated endpoint and is not subject to this limitation.
