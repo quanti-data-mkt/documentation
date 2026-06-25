@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome to Quanti: Documention](README.md)
+* [Welcome to Quanti: Documentation](README.md)
 
 ## KEY CONCEPTS
 
