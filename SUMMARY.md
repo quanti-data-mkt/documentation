@@ -77,6 +77,7 @@
   * [Criteo](connectors/marketing-connectors/criteo.md)
   * [Effinity](connectors/marketing-connectors/effinity.md)
   * [Facebook Organic](connectors/marketing-connectors/facebookorganic.md)
+  * [Google Ad Manager](connectors/marketing-connectors/google-ad-manager.md)
   * [Google Ads](connectors/marketing-connectors/google-ads.md)
   * [Google Business Profile](connectors/marketing-connectors/google-business-profile.md)
   * [Google Display & Video 360](connectors/marketing-connectors/dv360-advertising.md)
