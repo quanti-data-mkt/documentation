@@ -4,6 +4,8 @@ description: Follow our setup guide to connect Google Ad Manager to QUANTI.
 
 # Google Ad Manager
 
+<a href="https://dbdiagram.io/e/6a427a9c36d348d120298fc8/6a427abe36d348d12029926f" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+
 {% hint style="info" %}
 This connector is currently in **beta**. The Google Ad Manager REST API is itself in Open Beta — breaking changes may occur. Monitor the [release notes](https://developers.google.com/ad-manager/api/beta/docs/release-notes) before upgrading.
 {% endhint %}
@@ -73,6 +75,10 @@ Choose which tables to activate. All 7 reports are selected by default. You can 
 ### Metrics
 
 * **delivery\_stats**: Daily ad serving performance by ad unit — impressions, clicks, CTR, revenue, and average eCPM across all traffic sources (Ad Server, AdSense, Ad Exchange). Granularity: one row per `date × ad_unit_id`. Refreshed with `delete_insert` on the synced date range.
+
+***
+
+<a href="https://dbdiagram.io/e/6a427a9c36d348d120298fc8/6a427abe36d348d12029926f" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
