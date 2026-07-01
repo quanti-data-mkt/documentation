@@ -79,6 +79,7 @@
   * [Facebook Organic](connectors/marketing-connectors/facebookorganic.md)
   * [Google Ad Manager](connectors/marketing-connectors/google-ad-manager.md)
   * [Google Ads](connectors/marketing-connectors/google-ads.md)
+    * [FAQ](connectors/marketing-connectors/faq/google-ads.md)
   * [Google Business Profile](connectors/marketing-connectors/google-business-profile.md)
   * [Google Display & Video 360](connectors/marketing-connectors/dv360-advertising.md)
   * [Google Merchant Center](connectors/marketing-connectors/google-merchant-center.md)
