@@ -14,7 +14,8 @@ AppsFlyer is a mobile attribution and analytics platform. This connector collect
 
 * An active AppsFlyer account with at least one app configured
 * **Account Admin** role (required to retrieve the API Token V2)
-* For raw data reports (`installs`, `in_app_events`, `uninstalls`, `reinstalls`): a plan that includes **raw data access**
+* For `installs`, `in_app_events`, and `uninstalls`: a plan that includes **raw data access**
+* For `reinstalls`: raw data access **and** explicit activation by your AppsFlyer CSM (contact AppsFlyer support to enable this endpoint)
 
 ***
 
@@ -76,7 +77,7 @@ These tables are sourced from the AppsFlyer Aggregate Pull API. Each row represe
 
 ### Raw data reports
 
-These tables provide user-level event data. They require raw data access on your AppsFlyer plan. Each row represents a single event attributed to a non-organic user.
+These tables provide user-level event data. Each row represents a single event attributed to a non-organic user.
 
 * **installs**: One row per install, with full attribution fields (media source, campaign, adset, ad, channel, keywords), device information (platform, device type, OS version, app version, SDK version), geographic data (country, city), user identifiers (AppsFlyer ID, customer user ID), LAT flag, and multi-touch attribution contributors. Refreshed with `delete_insert`.
 
@@ -87,7 +88,11 @@ These tables provide user-level event data. They require raw data access on your
 * **reinstalls**: One row per reinstall of a user who had previously uninstalled the app and was re-attributed to a UA campaign. Includes both `install_time` (reinstall date) and `original_install_time` (first ever install date). Users present in `reinstalls` also appear in `installs` — avoid cross-table deduplication on `appsflyer_id`. Refreshed with `delete_insert`.
 
 {% hint style="warning" %}
-**Raw data reports require a specific AppsFlyer plan.** The tables `installs`, `in_app_events`, `uninstalls`, and `reinstalls` are only available if your AppsFlyer subscription includes raw data access. If it does not, AppsFlyer returns an HTTP 400 or 403 error and the affected tables remain empty. This is expected behavior — no action is needed on your end.
+**`installs`, `in_app_events`, and `uninstalls` require raw data access.** If your AppsFlyer subscription does not include raw data reports, AppsFlyer returns an HTTP 400 or 403 error and these tables remain empty. This is expected behavior — no action is needed on your end.
+{% endhint %}
+
+{% hint style="warning" %}
+**`reinstalls` requires an additional activation step.** Beyond raw data access, the reinstalls endpoint must be explicitly enabled by your AppsFlyer CSM. If it has not been activated, AppsFlyer returns an HTTP 400 error (`"Your current subscription package doesn't include raw data reports"`) and the table remains empty. Contact your AppsFlyer Customer Success Manager to request activation.
 {% endhint %}
 
 ***
