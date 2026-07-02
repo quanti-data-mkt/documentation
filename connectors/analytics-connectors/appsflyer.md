@@ -6,6 +6,8 @@ description: Follow our setup guide to connect AppsFlyer to QUANTI.
 
 AppsFlyer is a mobile attribution and analytics platform. This connector collects your app performance data via the AppsFlyer Pull API: aggregate LTV reports by media source, campaign and geography, as well as raw event-level data for installs, in-app events, uninstalls and reinstalls.
 
+<a href="https://dbdiagram.io/e/6a466e9b4ac62e474c17bc7a/6a466f2b36d348d120547e7f" class="button primary" data-icon="table-tree">Prebuilt reports and definitions</a>
+
 ***
 
 ## Prerequisites
@@ -87,6 +89,10 @@ These tables provide user-level event data. They require raw data access on your
 {% hint style="warning" %}
 **`reinstalls` requires a specific AppsFlyer plan.** If your subscription does not include raw data reports, AppsFlyer returns an HTTP 400 error and the table remains empty. This is expected behavior — no action is needed on your end.
 {% endhint %}
+
+***
+
+<a href="https://dbdiagram.io/e/6a466e9b4ac62e474c17bc7a/6a466f2b36d348d120547e7f" class="button primary" data-icon="table-tree">Prebuilt reports and definitions</a>
 
 ***
 
