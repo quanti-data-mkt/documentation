@@ -77,7 +77,7 @@ In contrast, the creative\_history, ad\_history, and adset\_history tables only 
 
 This behavior is designed to optimize performance and reduce load times.
 
-As a result, any item that hasn’t changed during the selected period will not appear in these \_history tables.
+As a result, any item that hasn't changed during the selected period will not appear in these \_history tables.
 
 We recommend running two separate historical loads:
 
@@ -95,6 +95,41 @@ Be sure to choose a start date far enough in the past to ensure that all relevan
 
 ## <mark style="background-color:blue;">Custom query</mark>
 
-To help you create your own custom queries and understand the compatibility of fields, you can build the custom reports you need using the [Facebook Graph API Explorer](https://developers.facebook.com/docs/graph-api/guides/explorer/) and then replicate them in Quanti:. The Explorer indicates field compatibility, highlights potential errors, and shows whether the data you need is available.&#x20;
+Custom reports let you build your own queries against the [Meta Ads Insights API](https://developers.facebook.com/docs/marketing-api/insights), with full control over the fields, breakdowns, and attribution windows collected. Each custom report produces a dedicated table in your dataset.
 
-The Meta connector relies entirely on Meta's "[API insights](https://developers.facebook.com/docs/marketing-api/insights)" documentation.
+To validate field and breakdown combinations before configuring them in QUANTI, use the [Facebook Graph API Explorer](https://developers.facebook.com/docs/graph-api/guides/explorer/): it shows which fields are compatible with which breakdowns and surfaces errors before any data is collected.
+
+### Building a custom report
+
+In the connector setup, click **Add custom report** and configure:
+
+* **Fields**: metrics and dimensions from the Meta Insights API (e.g. `impressions`, `spend`, `clicks`, `actions`, `conversions`, `reach`, `frequency`, `cpm`, `cpc`, `ctr`…). The full list is available in [Meta's documentation](https://developers.facebook.com/docs/marketing-api/insights/parameters/v21.0#fields).
+* **Breakdowns**: optional additional dimensions to split results by (e.g. `age`, `gender`, `country`, `region`, `device_platform`, `publisher_platform`, `impression_device`, `placement`…). Breakdowns must be compatible with the fields selected — the Graph API Explorer will flag incompatible combinations.
+* **Level**: granularity of the report — `ad`, `adset`, `campaign`, or `account`.
+* **Action attribution windows**: defines the conversion window used to attribute actions to ads. See the compatibility table below.
+
+### Action attribution windows
+
+The `action_attribution_windows` parameter controls which click and view windows are used to count conversions. Not all windows are available on all conversion types:
+
+| Window | Web (Pixel) | Android | iOS 14+ |
+|---|:---:|:---:|:---:|
+| `1d_click` | ✅ | ✅ | ✅ |
+| `7d_click` | ✅ | ✅ | ✅ |
+| `1d_view` | ✅ | ✅ | ✅ |
+| `28d_click` | ✅ | ✅ | ❌ |
+| `28d_view` | ✅ | ✅ | ❌ |
+| `7d_view` | ✅ | ✅ | ❌ |
+
+{% hint style="warning" %}
+**`28d_click`, `28d_view` and `7d_view` are not available for iOS 14+ app campaigns.** Using these windows on app campaigns targeting iOS 14+ devices will result in empty or incomplete data. Use `1d_click` or `7d_click` for these campaigns.
+{% endhint %}
+
+### Deprecated parameters
+
+Since **June 10, 2025**, Meta has deprecated the following two parameters. They are silently ignored by the API regardless of the value passed — Meta now applies its own defaults automatically:
+
+* **`action_report_time`**: Meta now automatically uses `mixed` (impression-based for on-Meta actions, conversion-based for off-Meta actions). This parameter no longer has any effect.
+* **`use_unified_attribution_setting`**: Meta now automatically aligns with the ad set's attribution settings. This parameter no longer has any effect.
+
+These parameters have been removed from QUANTI's prebuilt reports and custom report configuration. If you have existing custom reports that included them, the reports will continue to function — the parameters are simply ignored by the API.
