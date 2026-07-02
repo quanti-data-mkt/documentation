@@ -87,7 +87,7 @@ These tables provide user-level event data. They require raw data access on your
 * **reinstalls**: One row per reinstall of a user who had previously uninstalled the app and was re-attributed to a UA campaign. Includes both `install_time` (reinstall date) and `original_install_time` (first ever install date). Users present in `reinstalls` also appear in `installs` — avoid cross-table deduplication on `appsflyer_id`. Refreshed with `delete_insert`.
 
 {% hint style="warning" %}
-**`reinstalls` requires a specific AppsFlyer plan.** If your subscription does not include raw data reports, AppsFlyer returns an HTTP 400 error and the table remains empty. This is expected behavior — no action is needed on your end.
+**Raw data reports require a specific AppsFlyer plan.** The tables `installs`, `in_app_events`, `uninstalls`, and `reinstalls` are only available if your AppsFlyer subscription includes raw data access. If it does not, AppsFlyer returns an HTTP 400 or 403 error and the affected tables remain empty. This is expected behavior — no action is needed on your end.
 {% endhint %}
 
 ***
