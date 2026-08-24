@@ -64,6 +64,7 @@
   * [Email](connectors/custom-connectors/email.md)
   * [Google Sheets](connectors/custom-connectors/google-sheets.md)
   * [(S)FTP](connectors/custom-connectors/ftp.md)
+  * [PostgreSQL](connectors/custom-connectors/postgresql.md)
   * [Semantic View](connectors/custom-connectors/semantic-connector.md)
 * [Market insights](connectors/exogenous-connectors/README.md)
   * [Calendar](connectors/exogenous-connectors/calendar.md)
