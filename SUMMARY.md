@@ -97,6 +97,7 @@
   * [Pinterest](connectors/marketing-connectors/pinterest-advertising.md)
   * [Rakuten Advertising](connectors/marketing-connectors/rakuten.md)
   * [RTB House](connectors/marketing-connectors/rtbhouse.md)
+  * [Semrush](connectors/marketing-connectors/semrush.md)
   * [Snapchat](connectors/marketing-connectors/snapchat.md)
   * [Stylight](connectors/marketing-connectors/stylight.md)
   * [Taboola](connectors/marketing-connectors/taboola.md)
