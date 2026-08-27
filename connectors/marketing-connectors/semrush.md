@@ -1,5 +1,5 @@
 ---
-description: Follow our setup guide to connect Semrush to QUANTI:
+description: 'Follow our setup guide to connect Snapchat to QUANTI:'
 ---
 
 # Semrush
