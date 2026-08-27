@@ -30,6 +30,144 @@ To connect Taboola to Quanti:, you need to access a [Taboola](https://authentica
 * **account\_history**: Contains historical records of advertising accounts, including their configurations and activity status.
 * **campaign\_history**: Tracks the lifecycle and setup of advertising campaigns over time.
 * **campaign\_site\_day\_report**: Provides daily performance insights for campaigns across different sites and time periods.
+* **campaign\_item\_report**: Daily performance by promoted item (article), including destination URL, thumbnail and content provider.
+* **user\_segment\_report**: Daily campaign performance broken down by 3rd party audience segment (Marketplace Audiences).
+
+***
+
+## <mark style="background-color:blue;">Data Schema</mark>
+
+### Dimensions
+
+#### `account_history`
+
+```mermaid
+erDiagram
+    account_history {
+        timestamp _quanti_loaded_at PK
+        int id PK
+        string account_id PK
+        boolean is_active
+        string language
+        string name
+        string parent_network
+        string timezone
+        string type
+    }
+```
+
+#### `campaign_history`
+
+```mermaid
+erDiagram
+    campaign_history {
+        timestamp _quanti_loaded_at PK
+        string account_id PK
+        int id PK
+        string approval_state
+        float cpc
+        string daily_ad_delivery_model
+        float daily_cap
+        date end_date
+        boolean is_active
+        string name
+        float spending_limit
+        string spending_limit_model
+        float spent
+        date start_date
+        string status
+        string tracking_code
+        string traffic_allocation_mode
+    }
+```
+
+### Reports
+
+#### `campaign_site_day_report`
+
+```mermaid
+erDiagram
+    campaign_site_day_report {
+        timestamp _quanti_date PK
+        int campaign_id PK
+        string site PK
+        string campaign_name
+        string site_name
+        int impressions
+        int visible_impressions
+        int clicks
+        float spent
+        float ctr
+        float vctr
+        float cpc
+        float cpm
+        float vcpm
+        float cpa
+        float roas
+        float conversions_value
+        string currency
+        string timezone
+    }
+```
+
+#### `campaign_item_report`
+
+```mermaid
+erDiagram
+    campaign_item_report {
+        timestamp _quanti_date PK
+        int campaign_id PK
+        string item_id PK
+        string campaign_name
+        string item_name
+        string url
+        string thumbnail_url
+        string content_provider
+        int impressions
+        int visible_impressions
+        int clicks
+        float spent
+        float conversions_value
+        float ctr
+        float vctr
+        float cpc
+        float cpm
+        float vcpm
+        float cpa
+        float cvr
+        float roas
+        string currency
+    }
+```
+
+#### `user_segment_report`
+
+```mermaid
+erDiagram
+    user_segment_report {
+        timestamp _quanti_date PK
+        int campaign_id PK
+        string data_partner_audience_id PK
+        string partner_name
+        string audience_name
+        string audience_description
+        int impressions
+        int visible_impressions
+        int clicks
+        float spent
+        float conversions_value
+        float ctr
+        float vctr
+        float cpc
+        float cpm
+        float vcpm
+        float cpa
+        float cvr
+        float roas
+        string currency
+        string timezone
+    }
+```
 
 ***
 
