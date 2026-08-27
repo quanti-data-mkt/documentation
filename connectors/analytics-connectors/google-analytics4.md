@@ -87,7 +87,7 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 
 ## Pre-built reports
 
-#### Dimension Tables (Configuration & History)
+### Dimension Tables (Configuration & History)
 
 * **accounts**: List of accessible Google Analytics 4 accounts with basic information and settings.
 * **conversion\_events**: List of conversion events configured in GA4 with counting methods.
@@ -95,22 +95,228 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 * **google\_ads\_links**: List of Google Ads links configured in GA4 properties.
 * **properties**: List of GA4 properties with their configuration settings.
 
-#### Metric Tables (Reports & Analytics)
+```mermaid
+erDiagram
+    accounts {
+        string name PK
+        string display_name PK
+        string gmp_organization PK
+        string region_code PK
+        timestamp create_time PK
+        timestamp update_time
+    }
+    conversion_events {
+        string name PK
+        string event_name PK
+        string property PK
+        string counting_method PK
+        timestamp create_time
+    }
+    custom_dimensions {
+        string name PK
+        string display_name PK
+        string parameter_name PK
+        string property PK
+        string scope PK
+    }
+    google_ads_links {
+        string name PK
+        string property PK
+        string customer_id PK
+        string creator_email_address PK
+        boolean ads_personalization_enabled PK
+        timestamp update_time PK
+        timestamp create_time
+    }
+    properties {
+        string name PK
+        string account PK
+        string display_name PK
+        string parent PK
+        string property_type PK
+        string service_level PK
+        string currency_code PK
+        string time_zone PK
+        timestamp create_time
+        timestamp update_time
+    }
+```
 
-**Attribution & Campaign Performance**
+### Attribution & Campaign Performance
 
 * **data\_driven\_key\_events\_report**: Key events attributed to marketing campaigns with data-driven attribution model.
 * **data\_driven\_transaction\_ids**: Transaction-level data with data-driven attribution to campaigns.
 * **session\_acquisition\_report**: Session metrics by acquisition source, medium, and campaign.
 * **first\_user\_acquisition\_report**: New user metrics by first acquisition source and campaign.
+* **conversion\_attribution\_stats**: Attributed conversions and revenue compared across DATA\_DRIVEN and LAST\_CLICK models, with ad spend metrics (cost, clicks, impressions, CPA).
 
-**Traffic & Source Analysis**
+```mermaid
+erDiagram
+    data_driven_key_events_report {
+        date date
+        string campaign_id PK
+        string campaign_name PK
+        string event_name PK
+        string manual_ad_content PK
+        string manual_term PK
+        string source_medium PK
+        string source_platform PK
+        float key_events
+        float total_revenue
+        int total_users
+    }
+    data_driven_transaction_ids {
+        date date
+        string campaign_id PK
+        string campaign_name PK
+        string manual_ad_content PK
+        string manual_creative_format PK
+        string manual_term PK
+        string source_medium PK
+        string source_platform PK
+        string transaction_id PK
+        float key_events
+        float purchase_revenue
+    }
+    session_acquisition_report {
+        date date
+        string session_campaign_id PK
+        string session_campaign_name PK
+        string session_manual_ad_content PK
+        string session_manual_term PK
+        string session_source_medium PK
+        string session_source_platform PK
+        string sessionmanual_creative_format PK
+        string sessionmanual_marketing_tactic PK
+        int ecommerce_purchases
+        int engaged_sessions
+        int event_count
+        float events_per_session
+        float key_events
+        float purchase_revenue
+        int sessions
+        float total_revenue
+        int total_users
+        int user_engagement_duration
+    }
+    first_user_acquisition_report {
+        date date
+        string first_user_campaign_id PK
+        string first_user_campaign_name PK
+        string first_user_manual_ad_content PK
+        string first_user_manual_creative_format PK
+        string first_user_manual_marketing_tactic PK
+        string first_user_manual_term PK
+        string first_user_source_medium PK
+        string first_user_source_platform PK
+        int ecommerce_purchases
+        int engaged_sessions
+        int event_count
+        float events_per_session
+        float key_events
+        float purchase_revenue
+        int sessions
+        float total_revenue
+        int total_users
+        int user_engagement_duration
+    }
+    conversion_attribution_stats {
+        date date
+        string attribution_model PK
+        string campaign_name PK
+        string channel_group PK
+        string medium PK
+        string primary_channel_group PK
+        string source PK
+        string source_medium PK
+        string source_platform PK
+        float conversions_by_conversion_date
+        float conversions_by_interaction_date
+        float attributed_revenue_by_conversion_date
+        float attributed_revenue_by_interaction_date
+        float ad_cost
+        int ad_clicks
+        int ad_impressions
+        float ad_cost_per_click
+        float ad_cost_per_conversion_by_conversion_date
+        float ad_cost_per_conversion_by_interaction_date
+    }
+```
+
+### Traffic & Source Analysis
 
 * **daily\_global\_report**: Daily aggregated statistics across all traffic sources (overview).
 * **daily\_source\_medium\_report**: Daily statistics by source/medium combination.
 * **daily\_source\_medium\_campaign\_report**: Daily statistics by source/medium/campaign combination.
+* **ai\_traffic\_stats**: Session acquisition filtered to AI assistant referral traffic (medium = ai-assistant), broken down by source (chatgpt.com, gemini.google.com, etc.).
+* **session\_acquisition\_by\_geo\_report**: Session acquisition report broken down by country, language and campaign.
 
-**Content & Engagement**
+```mermaid
+erDiagram
+    daily_global_report {
+        date date
+        int conversions
+        int engaged_sessions
+        float engagement_rate
+        int sessions
+        float total_revenue
+        int total_users
+    }
+    daily_source_medium_report {
+        date date
+        string session_source_medium PK
+        int conversions
+        int engaged_sessions
+        float engagement_rate
+        int sessions
+        float total_revenue
+        int total_users
+    }
+    daily_source_medium_campaign_report {
+        date date
+        string session_source_medium PK
+        string session_campaign_name PK
+        string session_campaign_id
+        int conversions
+        int engaged_sessions
+        float engagement_rate
+        int sessions
+        float total_revenue
+        int total_users
+    }
+    ai_traffic_stats {
+        date date
+        string channel_group PK
+        string medium PK
+        string source PK
+        int engaged_sessions
+        float key_events
+        float purchase_revenue
+        int sessions
+        float total_revenue
+        int total_users
+    }
+    session_acquisition_by_geo_report {
+        date date
+        string country PK
+        string language PK
+        string session_campaign_id PK
+        string session_campaign_name PK
+        string session_manual_ad_content PK
+        string session_manual_term PK
+        string session_source_medium PK
+        string session_source_platform PK
+        int engaged_sessions
+        float engagement_rate
+        float key_events
+        float purchase_revenue
+        int sessions
+        float total_revenue
+        int total_users
+    }
+```
+
+### Content & Engagement
 
 * **events\_report**: Event-level metrics showing user interactions and key events.
 * **pages\_path\_report**: Page-level metrics by URL path.
@@ -118,15 +324,154 @@ Before connecting Google Analytics 4 to QUANTI, ensure you have:
 * **unified\_screen\_class\_report**: Screen class metrics for mobile apps and web pages.
 * **landing\_page\_device\_report**: Daily performance metrics by landing page path and device category (desktop, mobile, tablet). Includes sessions, engaged sessions, total users, screen/page views, event count, key events, total revenue, and session source/medium and campaign ID. Useful for analyzing how entry pages perform across different devices and traffic sources.
 
-**E-commerce**
+```mermaid
+erDiagram
+    events_report {
+        date date
+        string event_name PK
+        int event_count
+        float event_count_per_user
+        float total_revenue
+        int total_users
+    }
+    pages_path_report {
+        date date
+        string page_path PK
+        string page_title PK
+        float bounce_rate
+        int event_count
+        float key_events
+        int screen_page_views
+        float screen_page_views_per_session
+        int sessions
+        float total_revenue
+        int total_users
+        int user_engagement_duration
+    }
+    pages_screen_name_report {
+        date date
+        string page_path PK
+        string page_title PK
+        string unified_screen_name PK
+        float bounce_rate
+        int event_count
+        float key_events
+        int screen_page_views
+        float screen_page_views_per_session
+        int sessions
+        float total_revenue
+        int total_users
+        int user_engagement_duration
+    }
+    unified_screen_class_report {
+        date date
+        string unified_screen_class PK
+        float average_session_duration
+        float bounce_rate
+        int conversions
+        int screen_page_views
+        float total_revenue
+        int total_users
+        float user_engagement_duration
+    }
+    landing_page_device_report {
+        date date
+        string device_category PK
+        string landing_page PK
+        string session_campaign_id PK
+        string session_source_medium PK
+        int engaged_sessions
+        int event_count
+        float key_events
+        int screen_page_views
+        int sessions
+        float total_revenue
+        int total_users
+    }
+```
 
-* **ecommerce\_item\_report**: Product-level metrics including views, cart additions, and purchases.
+### E-commerce
+
+* **ecommerce\_item\_report**: Product-level metrics including views, views in list, cart additions, and purchases.
 * **ecommerce\_purchase\_item\_report**: Purchase transaction details by item and transaction ID.
 
-**Technology & Devices**
+```mermaid
+erDiagram
+    ecommerce_item_report {
+        date date
+        string item_brand PK
+        string item_category PK
+        string item_category2 PK
+        string item_category3 PK
+        string item_category4 PK
+        string item_category5 PK
+        string item_id PK
+        string item_name PK
+        float item_revenue
+        int items_added_to_cart
+        int items_checked_out
+        int items_purchased
+        int items_viewed
+        int items_viewed_in_list
+    }
+    ecommerce_purchase_item_report {
+        date date
+        string item_id PK
+        string transaction_id PK
+        float item_revenue
+        int items_purchased
+    }
+```
+
+### Technology & Devices
 
 * **tech\_device\_report**: User metrics by device category, model, and operating system.
 * **tech\_browser\_report**: User metrics by browser type.
+* **funnel\_tech\_report**: Funnel steps (event\_name) crossed with technical segments (platform, OS version, browser version, screen resolution, device model) to detect conversion drop-offs isolated to a specific technical segment.
+
+```mermaid
+erDiagram
+    tech_device_report {
+        date date
+        string device_category PK
+        string device_model PK
+        string mobile_device_branding PK
+        string mobile_device_model PK
+        string operating_system PK
+        string operating_system_version PK
+        int engaged_sessions
+        int event_count
+        float key_events
+        int sessions
+        int total_users
+    }
+    tech_browser_report {
+        date date
+        string browser PK
+        int engaged_sessions
+        float engagement_rate
+        int event_count
+        float key_events
+        int new_users
+        float total_revenue
+        int total_users
+    }
+    funnel_tech_report {
+        date date
+        string browser PK
+        string browser_version PK
+        string device_category PK
+        string event_name PK
+        string mobile_device_model PK
+        string operating_system_with_version PK
+        string platform PK
+        string screen_resolution PK
+        int event_count
+        float key_events
+        float total_revenue
+        int total_users
+    }
+```
 
 ***
 

@@ -60,6 +60,21 @@ If automatic renewal fails, project members will receive an email notification r
 * **campaign\_history**: Campaign-level metadata history.
 * **ad\_set\_history**: Ad set-level metadata history.
 * **ad\_history**: Ad-level metadata history.
+* **ad\_video\_history**: Metadata of ad videos (thumbnail, duration, status) per ad account.
+
+```mermaid
+erDiagram
+    ad_video_history {
+        string id PK
+        string title
+        string description
+        string picture
+        string permalink_url
+        float length
+        timestamp created_time
+        timestamp updated_time
+    }
+```
 
 #### Breakdowns
 

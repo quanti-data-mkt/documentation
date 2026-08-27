@@ -62,7 +62,7 @@ Click **Next**
 
 ## Data Schema
 
-[View schema on dbdiagram.io](DBDIAGRAM\_PLACEHOLDER)
+[View schema on dbdiagram.io](https://dbdiagram.io/e/6a905637698f76ad5cd2a902/6a905647698f76ad5cd2a9d7)
 
 ### Domain Overview — `domain_ranks`
 
