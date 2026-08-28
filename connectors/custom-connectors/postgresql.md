@@ -1,5 +1,5 @@
 ---
-description: Follow our setup guide to connect PostgreSQL to QUANTI:
+description: 'Follow our setup guide to connect PostgreSQL to QUANTI:'
 ---
 
 # PostgreSQL
