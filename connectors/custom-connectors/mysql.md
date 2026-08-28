@@ -1,5 +1,5 @@
 ---
-description: Follow our setup guide to connect MySQL to QUANTI:
+description: 'Follow our setup guide to connect MySQL to QUANTI:'
 ---
 
 # MySQL
