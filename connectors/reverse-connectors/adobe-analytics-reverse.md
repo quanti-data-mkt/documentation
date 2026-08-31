@@ -1,5 +1,5 @@
 ---
-description: Follow our setup guide to push Classifications and offline data to Adobe Analytics with QUANTI:
+description: 'Follow our setup guide to push Classifications and offline data to Adobe Analytics with QUANTI:'
 ---
 
 # Adobe Analytics (Reverse)
