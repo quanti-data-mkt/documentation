@@ -1,176 +1,209 @@
 ---
-title: Adobe Analytics Reverse connector
-lead: ''
-date: 2020-11-16T12:59:39.000Z
-lastmod: 2020-11-16T12:59:39.000Z
-draft: false
-images: []
-menu:
-  docs:
-    parent: prologue
-weight: 110
-toc: true
-description: Follow our setup guide to integer the reverse-connector Adobe Analytics
+description: Follow our setup guide to push Classifications and offline data to Adobe Analytics with QUANTI:
 ---
 
-# Adobe Analytics
+# Adobe Analytics (Reverse)
+
+{% hint style="info" %}
+This connector replaces the two separate connectors that previously handled **Adobe Analytics — Classification** and **Adobe Analytics — Data Source**. Both push types are now available in a single connector.
+{% endhint %}
 
 {% hint style="warning" %}
-Adobe Analytics takes some time to process the data imports we send, but unfortunately, it does not communicate how long this processing takes.\
-It’s important to understand that imported data is not immediately available in the interface.
+Adobe Analytics takes time to process imports — it does not communicate how long this processing takes. Imported data is **not immediately visible** in the interface.
 
-We recommend syncing your Adobe Analytics connector no more than once per day, to give Adobe sufficient time to process the data properly.
+We recommend syncing this connector **no more than once per day** to give Adobe sufficient processing time.
 {% endhint %}
 
 ***
 
-## <mark style="background-color:red;">Prerequisites</mark>
+## Overview
 
-To establish a connection between the QUANTI platform and the Adobe Analytics reverse connector, it is essential to possess an Adobe Experience Cloud account. This account will provide the necessary permissions to access and interact with the Adobe Analytics product.
+The Adobe Analytics Reverse connector pushes data **from your data warehouse into Adobe Analytics**. It supports two push types:
 
-***
+* **Classification** — enriches an Adobe Analytics dimension by importing a lookup table (e.g. tracking code → campaign name, channel…)
+* **Data Source** — imports offline business data (CRM, call center, in-store transactions) to unify attribution across online and offline channels
 
-## <mark style="background-color:red;">Setup Instructions</mark>
-
-### Create Your Credentials
-
-1. Access the [Adobe Developer Console](https://developer.adobe.com/console/home) using your Adobe Experience Cloud credentials.
-2. Navigate to the Console tab, specifically the APIs and services section, and review the available services.
-3.  Locate the Adobe Analytics service and proceed to create a new project.\
-    <br>
-
-    <figure><img src="../../.gitbook/assets/adobe1.png" alt="" width="355"><figcaption><p>Create a new project</p></figcaption></figure>
-
-
-
-* Select OAuth server-to-server.
-*   Assign a unique name to your project (For example: Quanti Reverse Connector API) and move to the next step.\
-    <br>
-
-    <figure><img src="../../.gitbook/assets/adobe2.png" alt=""><figcaption><p>Selection page of authentication type</p></figcaption></figure>
-
-
-* Select your organization's name and click on "Save configured API".
-
-4.  Then on the new project page, you will see your API Key (Client ID). Note the API key. You will need it to configure QUANTI:\
-    <br>
-
-    <figure><img src="../../.gitbook/assets/adobe3.png" alt="" width="375"><figcaption><p>Access path to the secret token</p></figcaption></figure>
-
-
-5.  Click on OAuth Server-to-Server < 'Retrieve Client Secret'. Note the Client Secret. You will need it to configure QUANTI:\
-    <br>
-
-    <figure><img src="../../.gitbook/assets/adobe4.png" alt="" width="494"><figcaption><p>Access path to the client secret</p></figcaption></figure>
-
-### Declare your classification
-
-1. Enter Adobe Analytics UI and go to your Adobe Analytics product.
-2. Click on the tab Admin > Report Suite > Select your Report Suite > Edit Settings > Conversion > Conversion Classification.
-3.  Select Classification Type "Campaign" and add your classification field names.\
-    <br>
-
-    <figure><img src="../../.gitbook/assets/adobe6.png" alt="" width="361"><figcaption><p>Classification creation on Adobe Analytics UI</p></figcaption></figure>
-
-
-4. Note the classification field names. You will need them to configure QUANTI:
-
-### Declare your custom metrics
-
-1. Click on the tab Admin > Report Suite > Select your Report Suite > Edit Settings > Conversion > Success Events.
-2.  Select events of your choice and add your custom metrics names.\
-    <br>
-
-    <figure><img src="../../.gitbook/assets/adobe7.png" alt=""><figcaption><p>Custom metrics creation on Adobe Analytics UI</p></figcaption></figure>
-
-
-3. Write down events and meanings. You will need them to configure QUANTI:
-
-### **Create your data source**
-
-1. Click on the tab Admin > Data sources > Select your Report Suite in the top-right corner > Create
-2. Now, on the page for creating a new data source, in the first multi-select field, choose: Ad Campaigns, and in the second multi-select field, choose: Generic Pay-Per-Click Service. Click Next.
-3. A pop-up will open and ask you to name your data source and provide an email address where notifications will be sent each time data is uploaded.
-4. Check the box to give your consent, then click on "Next".&#x20;
-5. Check the metrics you wish to import and fill in the fields with any additional metrics you wish to import, then click on "Next".
-6. In the selection fields, for each metric listed, select the events you created previously in the "Declare your custom metrics" step. Then click "Next".
-7. Check the box labeled "Tracking codes" and click on "Next".
-8. In the selection field for Tracking codes, select "Tracking Code".
-9. Then click "Next", "Save" and "Close".
-
-### 2 connectors types to set
-
-You will have to set 2 connectors type : Adobe Analytics - Data Sources Connector and Adobe Analytics - Classifications Connector. They don’t use the same API point and don’t import the same data type. Therefore, we formally present you with the subject, separating it into two distinct connectors
-
-* Adobe Analytics - Data Sources Connector is used to import metrics.
-*   Adobe Analytics - Classifications Connector is used to import dimensions. In Data Warehousing language, we can talk about "Fact table" for data source importing and "Dimensions table" for classification importing. It is very important to understand this point for the rest because Adobe Analytics will match your two imports using the primary keys concept.\
-    <br>
-
-    <figure><img src="../../.gitbook/assets/adobe8.png" alt=""><figcaption><p>Tables diagram representation</p></figcaption></figure>
-
-
-
-### Create your Data Source Query
-
-These steps show how to create a SQL query which permits to import data into Adobe Analytics UI. The selected fields in your query must coincide with custom metrics that you created above. You can import all custom metrics you want, but you have to respect two mandatory fields: Date and tracking\_code.
-
-* Date field: Make a coincidence between a field with a date data type from your query and the date field expected by the connector.
-* Tracking Code field: Make a coincidence between a string data type field from your query and the tracking\_code expected by the connector. Tracking\_code + date are the unique keys of your query which permit afterwards to match your data source with classification dimensions that we will configure together later in this tutorial. Data type expected :
-* Date (DATE - YYYY-mm-dd)
-* Tracking Code (STRING - Matching with your Classification)
-* Event 1 (FLOAT)
-* Event 2 (FLOAT)
-* Event 3 (FLOAT)&#x20;
-
-All custom events must be of FLOAT type. Date, Tracking Code & Events are written with space and upper case as in the example above.&#x20;
-
-### Quanti: Data Source Connnector Configuration
-
-These steps show how to extract data from your table:
-
-1. Build a new SQL request from your table following the last step and give aliases to your queried fields. Your query must only compose of fields expected by Adobe Analytics.
-2. In the connector setup form, copy/paste your query.
-3. Click Next.
-4. Make correspondence between query fields and fields expected by Adobe Analytics.
-
-* Tracking\_code field and date field are expected by Adobe Analytics: You have to indicate which fields are used for them in your query.
-* You also have to fill each text input using custom metric names created earlier in your Adobe Analytics UI.
-
-5. Click View details.
-
-### Create Your Classification Query
-
-These steps show how to create a SQL query which permits to import dimensions in Adobe Analytics UI. The selected fields in your query must coincide with classification names that you created above. You have to respect one mandatory field: tracking\_code. Make a coincidence between a string data type field from your query and the tracking\_code expected by the connector. Tracking\_code must be the unique key of your query and permit afterwards to match your classification dimensions with your data source.
-
-### Quanti: Classification Connnector Configuration
-
-These steps show how to extract a classification table from your Data Warehouse:
-
-1. Build a new SQL request from your table following the last step and give aliases to your queried fields. Your query must only compose of fields expected by Adobe Analytics.
-2. In the connector setup form, copy/paste your query.
-3. Click Next.
-4. Make correspondence between query fields and fields expected by Adobe Analytics.
-
-* Key field is expected by Adobe Analytics: You have to indicate which field is used for it in your query.
-* You also have to fill each text input using classification names created earlier in Adobe Analytics UI in step 2 above.
-
-5. Click View details.
+In data warehousing terms: Classifications populate **dimension tables** and Data Sources populate **fact tables**. Adobe matches them using a shared primary key (the tracking code).
 
 ***
 
-## <mark style="background-color:red;">Use Case</mark>
+## Prerequisites
 
-I want to know the expenses made on my advertising platforms for each of my traffic sources to my site. Therefore, I will need to identify the traffic sent to my site and match it with the metrics imported from the data source to have a clear dispatch of my campaign performances between my sources and campaigns.
+* An **Adobe Experience Cloud** account with access to Adobe Analytics
+* Access to [Adobe Developer Console](https://developer.adobe.com/console) to create OAuth Server-to-Server credentials
 
-To align the metrics you import from external sources into Adobe Analytics (such as impressions, clicks, or spend from your advertising platforms) with internal Adobe Analytics metrics (for example: visits, conversions, or revenue), it is crucial to match them.
+***
 
-<figure><img src="../../.gitbook/assets/Untitled-dbdiagram-io.png" alt=""><figcaption><p>Final full join result of importing datas on Adobe User interface</p></figcaption></figure>
+## Setup Instructions
 
-Quanti supports you in these transformation procedures with [pre-built transformations](../../transformations/pre-built-tables/) that allow you to merge your data from different sources (campaign data and navigation data) using the concept of  [reconciliation](../../transformations/the-principle-of-reconciliation.md) and the use of [Tracking Template.](../../transformations/tracking-templates.md)
+{% stepper %}
+{% step %}
+**Create your API credentials**
 
-{% hint style="warning" %}
-Adobe Analytics takes some time to process the data imports we send, but unfortunately, it does not communicate how long this processing takes.\
-It’s important to understand that imported data is not immediately available in the interface.
+In [Adobe Developer Console](https://developer.adobe.com/console/home):
 
-We recommend syncing your Adobe Analytics connector no more than once per day, to give Adobe sufficient time to process the data properly.
+1. Create a new project (or open an existing one)
+2. Click **Add API** and select **Adobe Analytics**
+3. Choose **OAuth Server-to-Server** as the authentication method
+4. Give your project a name (e.g. `Quanti Reverse Connector`)
+5. Select your organization and click **Save configured API**
+
+Note your **Client ID** (API Key) and **Client Secret** — you will need both in the next step. Your **Global Company ID** will be detected automatically.
+{% endstep %}
+
+{% step %}
+**Authorize your Adobe Analytics connection**
+
+In QUANTI:, enter the credentials you retrieved:
+
+* **Client ID** — found on the project overview page in Adobe Developer Console
+* **Client Secret** — click *OAuth Server-to-Server → Retrieve Client Secret*
+
+QUANTI: will automatically detect the **Global Company ID** associated with your credentials.
+{% endstep %}
+
+{% step %}
+**Select your Report Suites**
+
+Choose the Adobe Analytics Report Suites into which classifications and offline data will be pushed.
+{% endstep %}
+
+{% step %}
+**Choose your push type**
+
+Select the push templates to activate:
+
+* **Classification** — to enrich an Adobe Analytics dimension (lookup table import)
+* **Data Source — Offline import** — to import offline events and transactions
+
+You can activate both in a single connector. Field mapping is configured in the **Mapping** tab after the connector is created.
+{% endstep %}
+
+{% step %}
+**Connector information**
+
+* **Connector name** — must be unique within your QUANTI: project
+
+Source queries and field mappings for each activated push type are configured in the **Mapping** tab after creation.
+{% endstep %}
+{% endstepper %}
+
+***
+
+## Push Types
+
+### Classification
+
+Imports a lookup table that enriches an Adobe Analytics dimension. Each row maps a **key** (dimension value, e.g. a tracking code) to one or more classification columns (e.g. Channel, Campaign Name).
+
+Adobe matches the imported keys against collected dimension values in your report suite.
+
+**Available fields:**
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `key` | STRING | ✅ | The dimension value to classify (e.g. tracking code, product ID). Primary key used by Adobe to match against collected data. |
+| `channel` | STRING | — | Example classification column — rename or replace to match your dimension sub-attributes in Adobe. |
+| `campaign_name` | STRING | — | Example classification column — rename or replace to match your dimension sub-attributes in Adobe. |
+
+{% hint style="info" %}
+Classification columns are flexible: add or rename them to reflect your exact classification dataset in Adobe Analytics. The only mandatory field is `key`.
 {% endhint %}
+
+**Before activating Classification**, you must declare your classification fields in Adobe Analytics:
+
+1. In Adobe Analytics, go to **Admin → Report Suites → \[select your suite\] → Edit Settings → Conversion → Conversion Classifications**
+2. Select Classification Type (e.g. **Campaign**) and add your classification field names
+3. Note the field names — they must match the column names you configure in QUANTI:
+
+📖 [Adobe Classifications API documentation](https://developer.adobe.com/analytics-apis/docs/2.0/guides/endpoints/classifications/)
+
+***
+
+### Data Source — Offline import
+
+Imports offline events (CRM conversions, call center data, in-store transactions) into Adobe Analytics via the Data Sources 2.0 API. Enables unified attribution between digital campaigns and offline conversions.
+
+**Available fields:**
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `row_id` | STRING | ✅ | Internal row identifier — used as idempotence key for the import batch. |
+| `date` | DATE | ✅ | Date of the offline event (transaction date, call date…). Sent to Adobe as MM/DD/YYYY. |
+| `visitor_id` | STRING | — | Adobe Analytics visitor ID (MCID / ECID). Used to stitch the offline event to an online session when available. |
+| `campaign` | STRING | — | Tracking code (campaign variable) for offline attribution back to digital campaigns. |
+| `events` | STRING | — | Comma-separated list of Adobe Analytics events triggered by this row. |
+| `revenue` | FLOAT | — | Transaction revenue, margin, or lead value. |
+| `currency` | STRING | — | ISO 4217 currency code (e.g. `EUR`, `USD`). |
+| `products` | STRING | — | Product string in Adobe Analytics format. |
+
+{% hint style="info" %}
+The `campaign` field is the join key between your Data Source rows and your Classification lookup: Adobe uses it to attach classification attributes (channel, campaign name…) to each offline event.
+{% endhint %}
+
+**Before activating Data Source**, you must create the data source and declare your custom metrics in Adobe Analytics:
+
+1. Go to **Admin → Data Sources → \[select your suite\] → Create**
+2. Select **Ad Campaigns** then **Generic Pay-Per-Click Service**
+3. Name your data source and provide a notification email
+4. Map your custom metrics and tracking code fields as prompted
+
+Then declare custom metrics at **Admin → Report Suites → Edit Settings → Conversion → Success Events**.
+
+📖 [Adobe Data Sources API documentation](https://developer.adobe.com/analytics-apis/docs/2.0/guides/endpoints/data-sources/)
+
+***
+
+## How Classification and Data Source work together
+
+Adobe Analytics matches your two imports using the **tracking code** as a shared primary key:
+
+* The **Data Source** row carries the `campaign` field (tracking code) + metrics (revenue, events…)
+* The **Classification** row carries the same `key` (tracking code) + dimension attributes (channel, campaign name…)
+
+Adobe joins them in the interface, giving you a fully enriched view of your offline conversions — segmented by campaign, channel, and any other classification dimension you configured.
+
+***
+
+## Scheduling
+
+* **Default frequency**: Daily (recommended — at 3 AM)
+* **Lookback window**: 2, 7, or 30 days (default: 7 days)
+* **Historical load**: 3, 6, or 12 months — or a custom date range (up to 365 days)
+
+***
+
+## Troubleshooting
+
+<details>
+
+<summary>Data imported but not visible in Adobe Analytics yet</summary>
+
+Adobe Analytics processes imports asynchronously and does not expose a processing timeline. Wait at least a few hours after a sync before checking the interface. Avoid triggering multiple syncs in quick succession.
+
+</details>
+
+<details>
+
+<summary>Classification keys are not matching</summary>
+
+Verify that the `key` values in your QUANTI: mapping exactly match the dimension values collected in Adobe Analytics (case-sensitive). A mismatch means Adobe cannot attach classification attributes to those rows.
+
+</details>
+
+<details>
+
+<summary>Authentication error / Invalid credentials</summary>
+
+* Verify that your **Client ID** and **Client Secret** are correct and that the OAuth Server-to-Server credential is active in Adobe Developer Console
+* Ensure the Adobe Analytics API has been added to the project and is set to **OAuth Server-to-Server**
+
+</details>
+
+<details>
+
+<summary>Need help?</summary>
+
+Contact QUANTI: support at support@quanti.io or consult our documentation at https://docs.quanti.io
+
+</details>
