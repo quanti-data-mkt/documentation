@@ -63,6 +63,8 @@
   * [Custom Webhook](connectors/analytics-connectors/webhook-custom.md)
 * [Advertiser connectors](connectors/advertiser-connectors/README.md)
   * [Tune](connectors/advertiser-connectors/tune.md)
+* [Business connectors](connectors/business-connectors/README.md)
+  * [Aircall](connectors/business-connectors/aircall.md)
 * [Custom connectors](connectors/custom-connectors/README.md)
   * [Email](connectors/custom-connectors/email.md)
   * [Google Sheets](connectors/custom-connectors/google-sheets.md)
