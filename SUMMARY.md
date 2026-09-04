@@ -61,6 +61,8 @@
       * [raw\_sessions](tag-tracker/tag-data-model/raw_sessions.md)
       * [Rules for calculated attribution](tag-tracker/tag-data-model/rules-for-calculated-attribution.md)
   * [Custom Webhook](connectors/analytics-connectors/webhook-custom.md)
+* [Advertiser connectors](connectors/advertiser-connectors/README.md)
+  * [Tune](connectors/advertiser-connectors/tune.md)
 * [Custom connectors](connectors/custom-connectors/README.md)
   * [Email](connectors/custom-connectors/email.md)
   * [Google Sheets](connectors/custom-connectors/google-sheets.md)
