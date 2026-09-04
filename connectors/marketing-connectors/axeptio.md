@@ -1,3 +1,3 @@
 ---
-redirect: /connectors/analytics-connectors/axeptio
+redirect: /connectors/sales-analytics-connectors/axeptio
 ---
