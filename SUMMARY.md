@@ -75,6 +75,7 @@
   * [Amazon DSP](connectors/marketing-connectors/amazon-dsp.md)
   * [Affilae](connectors/marketing-connectors/affilae.md)
   * [Awin](connectors/marketing-connectors/awin.md)
+  * [Axeptio](connectors/marketing-connectors/axeptio.md)
   * [Brevo](connectors/marketing-connectors/brevo.md)
   * [CJ](connectors/marketing-connectors/cj.md)
   * [Criteo](connectors/marketing-connectors/criteo.md)
