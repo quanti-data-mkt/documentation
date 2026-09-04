@@ -59,7 +59,7 @@ The connector provides **3 prebuilt tables** organized into two groups: offers a
 
 ### Data model
 
-<a href="[DBDIAGRAM_URL]" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a9ad9345450bea1bef104c4/6a9ad9435450bea1bef1057b" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ```mermaid
 erDiagram
@@ -112,7 +112,7 @@ erDiagram
 
 ***
 
-<a href="[DBDIAGRAM_URL]" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a9ad9345450bea1bef104c4/6a9ad9435450bea1bef1057b" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
