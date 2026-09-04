@@ -8,6 +8,8 @@ description: 'Follow our setup guide to connect X Ads to QUANTI:'
 This connector is currently in **beta**. It uses the [X Ads API v12](https://developer.x.com/en/docs/x-ads-api) via OAuth 1.0a.
 {% endhint %}
 
+<a href="https://dbdiagram.io/e/6a9ab9a550ad2c46dc403b31/6a9ab9b95450bea1beef25a1" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
+
 ***
 
 ## Overview
@@ -325,3 +327,7 @@ X applies late attribution corrections within a 30-day window. Use a lookback of
 Contact QUANTI: support at support@quanti.io or consult our documentation at https://docs.quanti.io
 
 </details>
+
+***
+
+<a href="https://dbdiagram.io/e/6a9ab9a550ad2c46dc403b31/6a9ab9b95450bea1beef25a1" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
