@@ -62,7 +62,7 @@ The connector provides **3 prebuilt tables** organized into two groups: call rec
 
 ### Data model
 
-<a href="[DBDIAGRAM_URL]" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a9add725450bea1bef14411/6a9addda5450bea1bef1498c" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ```mermaid
 erDiagram
@@ -132,7 +132,7 @@ erDiagram
 
 ***
 
-<a href="[DBDIAGRAM_URL]" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a9add725450bea1bef14411/6a9addda5450bea1bef1498c" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
