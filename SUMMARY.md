@@ -107,7 +107,7 @@
   * [TikTok Organic](connectors/marketing-connectors/tiktok-organic.md)
   * [TimeOne](connectors/marketing-connectors/timeone.md)
   * [Wonderpush](connectors/marketing-connectors/wonderpush.md)
-  * [X Ads](connectors/marketing-connectors/x-ads.md)
+  * [X Ads](connectors/marketing-connectors/x.md)
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse.md)
   * [Google Ads](connectors/reverse-connectors/google-ads-reverse-connector.md)
