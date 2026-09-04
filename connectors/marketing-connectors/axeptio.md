@@ -64,7 +64,7 @@ The connector provides **12 prebuilt tables** organized into five groups: consen
 
 ### Data model
 
-<a href="[DBDIAGRAM_URL]" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a9ad2b050ad2c46dc41cbd5/6a9ad2fb5450bea1bef0b272" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ```mermaid
 erDiagram
@@ -240,7 +240,7 @@ Stats tables provide **daily metrics per project**, refreshed by delete-insert o
 
 ***
 
-<a href="[DBDIAGRAM_URL]" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6a9ad2b050ad2c46dc41cbd5/6a9ad2fb5450bea1bef0b272" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
