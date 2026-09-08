@@ -121,6 +121,7 @@
   * [Lengow Catalog](connectors/sales-analytics-connectors/lengow-catalog.md)
   * [Mirakl Seller](connectors/sales-analytics-connectors/mirakl-seller.md)
   * [Pennylane](connectors/sales-analytics-connectors/pennylane.md)
+  * [Pennylane API](connectors/sales-analytics-connectors/pennylane-api.md)
   * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
   * [Stripe](connectors/sales-analytics-connectors/stripe.md)
