@@ -86,9 +86,34 @@ Select the pre-built reports you want to activate, and/or create your own custom
 
 ## Pre-built reports
 
+All prebuilt tables are metric tables partitioned by `_quanti_date` (delete-insert per day).
+
+### Content & Navigation
+
 * **content\_pages**: Contains daily records of user interactions for each website page, enabling content-level performance tracking.
 * **traffic\_sources**: Describes how users arrive on the site, with detailed information about traffic origin, campaigns, and referrers.
+* **internal\_search**: Internal site search performance — keywords searched and result page consulted, with unique visitor counts.
+* **marketing\_campaigns**: Consolidated traffic and conversion view by marketing campaign (UTM source, campaign name, content, term).
+
+### Commerce & Conversions
+
 * **transaction\_source**: Stores transactional data along with marketing attribution fields, providing insight into the source and context of each purchase.
+* **product\_cart\_funnel**: Product and cart funnel — product page views, add/remove-to-cart and purchases by product ID and category. Complements `transaction_source`, which only captures the final transaction.
+
+### Audience & Behaviour
+
+* **geo\_breakdown**: Audience and revenue breakdown by geographic zone (country, region, city).
+* **device\_tech**: Audience breakdown by device type, operating system, browser family and screen resolution.
+* **visitor\_loyalty**: Visitor loyalty metrics — new vs returning visitors split by `visitor_new_return` dimension.
+
+### Advertising
+
+* **onsite\_ads\_performance**: Onsite advertising and self-promotion performance (impressions, clicks) by campaign, type, placement, format and advertiser.
+* **publisher\_ad\_revenue**: Third-party advertising revenue for publishers — clicks by advertiser, format and placement.
+
+### Media
+
+* **video\_engagement**: Video and audio content engagement (plays, completion, time watched) by media name, type (video / audio / live) and channel.
 
 ## Custom reports
 
@@ -108,21 +133,21 @@ The easiest way to identify the field names expected by the Piano API is to use 
 
 * In Piano Analytics, navigate to **Data Query** (top-right corner, icon with 4 squares)
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""></figure>
 
 * Build the report you want to extract via the QUANTI connector by selecting your dimensions and metrics
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""></figure>
 
 * Once your report is configured, click the **copy/paste button** in the top-right corner, then select **Copy the API body (POST)**<br>
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""></figure>
 
 * A pop-in appears with the full API body. Retrieve:
   * The content of the `columns` object → this will populate the `fields` array in your JSON
   * The content of the `filter` object (if any) → this will populate the `filter` field in your JSON
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""></figure>
 {% endstep %}
 
 {% step %}
