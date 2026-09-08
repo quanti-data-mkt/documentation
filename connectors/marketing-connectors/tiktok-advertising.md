@@ -27,11 +27,17 @@ To connect Tiktok to Quanti:, you need to access a [Tiktok](https://ads.tiktok.c
 
 ## <mark style="background-color:blue;">Prebuilt reports</mark>
 
+### Dimension tables (append-only)
+
 * **Advertiser:** Attributes information at advertiser level
 * **Campaign history:** Attributes information at campaign level
 * **Ad group history:** Attributes information at adgroup level.
 * **Ad history:** Attributes information at ad level.
-* **Image history:** Attributes information at image level.
+* **Image history:** Attributes information at image level (format, dimensions, URL, carousel usability).
+* **Video history:** Video creative asset metadata — format, dimensions (width/height), poster/thumbnail URL. Joins to `ad_history` via `video_id`.
+
+### Metric tables (delete-insert on `_quanti_date`)
+
 * **Ad daily report:** Advertising report at ad level.
 
 ***
