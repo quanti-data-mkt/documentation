@@ -1,9 +1,13 @@
+---
+description: 'Follow our setup guide to push Custom Audiences from QUANTI: to Meta (Facebook & Instagram Ads)'
+---
+
 # Meta Custom Audiences
 
-The **Meta Custom Audiences** connector is a reverse connector: it pushes audience segments from your data warehouse to Meta (Facebook & Instagram Ads) as Custom Audiences. Use it to activate retargeting, exclusion, or Lookalike Audiences directly from your first-party data.
-
 {% hint style="info" %}
-This connector handles **Custom Audiences** (CRM matching) only. To send server-side conversion events (Conversions API / CAPI), use the **Meta Pixel (Reverse)** connector.
+**Reverse connector** — this connector pushes data **from** your data warehouse **to** Meta. It creates or updates Custom Audiences in your Meta Ads account for retargeting, exclusion, or as seeds for Lookalike Audiences.
+
+To send server-side conversion events (Conversions API / CAPI), use the **Meta Pixel (Reverse)** connector instead.
 {% endhint %}
 
 ***
@@ -12,85 +16,127 @@ This connector handles **Custom Audiences** (CRM matching) only. To send server-
 
 * A **Meta Business Manager** account with access to at least one ad account
 * The ad account must have the `ads_management` permission
-* The data to push must be available in a table in your QUANTI: data warehouse (typically via a **Semantic View** or a source connector)
-* PII fields (email, phone, etc.) must be present in the source table — they will be automatically hashed in SHA-256 before being sent
+* The audience data must be available in a table or view in your QUANTI: data warehouse — typically via a **Semantic View** or a source connector
+* At least one of `email` or `phone` must be present in the source table for Meta to match users
 
 ***
 
 ## Authentication
 
-The connection is made via **Facebook OAuth2**. During setup, you will be redirected to Meta to authorize QUANTI: to manage your Custom Audiences.
+Authentication uses **Facebook OAuth2**. During setup you will be redirected to Meta to authorize QUANTI:.
 
 Requested permissions: `ads_management`, `ads_read`, `business_management`, `leads_retrieval`.
 
 ***
 
-## Setup
+## Setup Instructions
 
 {% stepper %}
 {% step %}
-### Connect to Meta
+**Authorize your Meta account**
 
-Click **Continue with Facebook** and authorize QUANTI: on your Meta Business account.
+Click **Continue with Facebook** and grant QUANTI: access to your Meta Business account.
 {% endstep %}
 
 {% step %}
-### Select ad account(s)
+**Select Ad Account(s)**
 
-Enter one or more **Ad Account IDs** in the format `act_XXXXXXXXXX` (visible in Business Manager or in your ad account URL).
+Enter one or more **Ad Account IDs** where Custom Audiences will be created. The expected format is `act_XXXXXXXXXX` — visible in Meta Business Manager or in your ad account URL.
+
+You can connect multiple ad accounts from a single connector.
 {% endstep %}
 
 {% step %}
-### Choose push type
+**Select push type**
 
-Select the **Custom Audience** template and choose the sync mode that fits your use case.
+Select the **Custom Audience** template. This determines the sync mode and the fields that will be pushed to Meta.
 {% endstep %}
 
 {% step %}
-### Field mapping
+**Name your connector**
 
-From the **Mapping** tab, map the columns of your source table to the fields expected by Meta. Name your connector and create it.
+Give the connector a unique name, then click **Create**. The source table and field mapping are configured in the **Mapping** tab after creation.
 {% endstep %}
 {% endstepper %}
 
 ***
 
-## Sync modes
+## Sync Modes
+
+Three sync modes are available, selected per push template:
 
 | Mode | Behavior |
-|------|----------|
-| `mirror` | Full sync — members added in the source are added to the audience; members removed from the source are removed from the audience |
-| `add_only` | Additive only — new members are added, no removals are performed |
-| `remove_only` | Removal only — members present in the source are removed from the audience |
+|---|---|
+| `mirror` | Full sync — users added in the source are added to the audience; users removed from the source are removed from the audience *(default)* |
+| `add_only` | Additive only — new users are added, no removals performed |
+| `remove_only` | Removal only — users present in the source are removed from the audience |
 
 ***
 
-## Available matching fields
+## Field Mapping
 
-Meta accepts the following identifiers for matching. QUANTI: automatically applies **SHA-256** hashing before sending for all PII fields.
+After connector creation, configure the field mapping in the **Mapping** tab by linking your source table columns to the following destination fields.
 
-| QUANTI: field | Meta type | Expected format |
+| Field | Required | Description |
 |---|---|---|
-| `email` | `EMAIL` | Lowercase email address |
-| `phone` | `PHONE` | E.164 format (e.g. `+33612345678`) |
-| `first_name` | `FN` | Lowercase, no accents |
-| `last_name` | `LN` | Lowercase, no accents |
-| `date_of_birth` | `DOBY` / `DOBM` / `DOBD` | Year, month, day as separate fields |
-| `gender` | `GEN` | `m` or `f` |
-| `city` | `CT` | Lowercase, no spaces |
-| `state` | `ST` | 2-letter state/region code |
-| `zip` | `ZIP` | Postal code without spaces |
-| `country` | `COUNTRY` | ISO 3166-1 alpha-2 code (e.g. `fr`) |
+| `user_id` | **Yes** | Internal user identifier — used as the deduplication key to detect additions and removals across syncs. Not sent to Meta. |
+| `email` | No | User email address. QUANTI: normalizes it (lowercase, whitespace removed) then hashes it with **SHA-256** before upload. |
+| `phone` | No | User phone number. QUANTI: normalizes it to **E.164** format (e.g. `+33612345678`, defaulting to the FR region), then hashes it with **SHA-256** before upload. |
 
 {% hint style="warning" %}
-To maximize match rate, provide at least **email** or **phone**, ideally combined with first and last name.
+**At least one of `email` or `phone` must be mapped** for Meta to match users. Providing both maximizes the match rate.
+
+`user_id` is mandatory in all cases as the internal deduplication key — it is never sent to Meta.
 {% endhint %}
+
+{% hint style="info" %}
+**Hashing is automatic.** QUANTI: applies SHA-256 normalization and hashing before any data leaves your warehouse. You do not need to pre-hash your data.
+{% endhint %}
+
+***
+
+## Scheduling
+
+| Setting | Default |
+|---|---|
+| **Frequency** | Daily |
+| **Sync time** | 3:00 AM |
+| **Lookback window** | 7 days |
 
 ***
 
 ## Notes
 
-* Custom Audiences created by QUANTI: are visible in **Meta Ads Manager > Audiences**
-* The minimum audience size to run a campaign is **100 matched members**
-* Meta enforces its own privacy policies — make sure you have obtained appropriate consent from your users before pushing their data
-* Lookalike Audiences can be created manually in Meta Ads Manager from an existing Custom Audience
+* Custom Audiences created by QUANTI: are visible in **Meta Ads Manager → Audiences**
+* The minimum audience size to activate a campaign is **100 matched members** (Meta requirement)
+* **Lookalike Audiences** can be created manually in Meta Ads Manager from any existing Custom Audience
+* Meta enforces its own privacy and data policies — ensure you have obtained appropriate consent from your users before pushing their data
+* `mirror` mode computes the diff between two syncs using `user_id` — make sure this field is stable and unique in your source table
+
+***
+
+## Troubleshooting
+
+<details>
+
+<summary>The audience size in Meta Ads Manager is lower than expected</summary>
+
+Meta only counts users it was able to match against its own graph. The match rate depends on the quality and coverage of the PII provided. To improve it: provide both email and phone when available, and make sure phone numbers are in a clean format (QUANTI: will normalize them to E.164).
+
+</details>
+
+<details>
+
+<summary>Users are not being removed in `mirror` mode</summary>
+
+`mirror` mode detects removals by comparing the current sync against the previous one using `user_id`. If `user_id` values change between runs (e.g. because the source query is not deterministic), removals may not be detected correctly. Ensure `user_id` is a stable, unique identifier across runs.
+
+</details>
+
+<details>
+
+<summary>Need help?</summary>
+
+Contact QUANTI: support at support@quanti.io or consult our documentation at https://docs.quanti.io
+
+</details>
