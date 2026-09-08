@@ -60,6 +60,30 @@ Before connecting Pinterest Ads to QUANTI, ensure you have:
 {% endstep %}
 
 {% step %}
+**Attribution Settings** _(optional)_
+
+Configure how Pinterest attributes conversions in your report tables. These three fields are optional — leaving them blank preserves the current behavior (Pinterest API defaults apply).
+
+| Field | API parameter | Allowed values | Default |
+|---|---|---|---|
+| **Click Attribution Window** | `click_window_days` | 1 / 7 / 30 / 60 | 30 |
+| **View Attribution Window** | `view_window_days` | 1 / 7 / 30 / 60 | 1 |
+| **Conversion Report Time** | `conversion_report_time` | `AD_EVENT` / `CONVERSION_EVENT` | `AD_EVENT` |
+
+{% hint style="warning" %}
+**View Attribution Window cannot exceed Click Attribution Window.** Valid combinations (click, view) are: (60, 60) (60, 30) (60, 7) (60, 1) (30, 30) (30, 7) (30, 1) (7, 7) (7, 1) (1, 1).
+{% endhint %}
+
+{% hint style="info" %}
+**Conversion Report Time** controls the date used to report conversions:
+* `AD_EVENT` — conversion is attributed to the date the user interacted with the ad (default)
+* `CONVERSION_EVENT` — conversion is attributed to the date the conversion actually occurred
+
+These settings only affect **Campaign Report**, **Ad Group Report**, and **Pin Promotion Report**. History/dimension tables are not impacted.
+{% endhint %}
+{% endstep %}
+
+{% step %}
 **Finish Setup**
 
 * Define a sync period and a lookback window
@@ -89,6 +113,8 @@ Before connecting Pinterest Ads to QUANTI, ensure you have:
 * **Pin Media Image**: Available image renditions of the Pin's media, one row per `(pin_id, image_size_label)`. Provides direct image URLs per resolution (150x150, 400x300, 600x, 1200x, originals) for display in dashboards without re-calling the API.
 
 ### Metric tables (delete-insert on `_quanti_date`)
+
+Conversion metrics in these tables reflect the attribution window configured at connector level (see Attribution Settings above).
 
 * **Campaign Report**: Daily performance metrics aggregated at campaign level including impressions, clicks, spend, and conversions
 * **Ad Group Report**: Daily performance metrics aggregated at ad group level with detailed engagement and conversion tracking
