@@ -25,6 +25,124 @@ Data is split into two types:
 
 ***
 
+## Data Model
+
+<a href="DBDIAGRAM_URL" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+
+```mermaid
+erDiagram
+    companies {
+        int id PK
+        string name
+        string registration_number
+    }
+    fiscal_years {
+        int id PK
+        date start_date
+        date end_date
+        string status
+        timestamp created_at
+        timestamp updated_at
+    }
+    customers {
+        int id PK
+        string name
+        string customer_type
+        int ledger_account_id
+        string country_alpha2
+        timestamp created_at
+        timestamp updated_at
+    }
+    suppliers {
+        int id PK
+        string name
+        int ledger_account_id
+        string country_alpha2
+        timestamp created_at
+        timestamp updated_at
+    }
+    bank_accounts {
+        int id PK
+        string name
+        string currency
+        float balance
+        int journal_id
+        int ledger_account_id
+        timestamp created_at
+        timestamp updated_at
+    }
+    tags {
+        int analytical_ledger_id FK
+        string tag_label
+        string tag_group
+        float tag_weight
+    }
+    bank_transactions {
+        int id PK
+        date execution_date
+        float amount
+        string currency
+        int bank_account_id FK
+        int customer_id FK
+        int supplier_id FK
+        timestamp created_at
+        timestamp updated_at
+    }
+    customer_invoices {
+        int id PK
+        date issue_date
+        date deadline
+        int customer_id FK
+        float amount
+        string status
+        timestamp created_at
+        timestamp updated_at
+    }
+    supplier_invoices {
+        int id PK
+        date issue_date
+        date deadline
+        int supplier_id FK
+        float amount
+        string payment_status
+        timestamp created_at
+        timestamp updated_at
+    }
+    general_ledger {
+        int id PK
+        date date
+        float debit
+        float credit
+        string plan_item_number
+        string journal_code
+        int document_id
+        timestamp document_created_at
+        timestamp document_updated_at
+    }
+    analytical_ledger {
+        int id PK
+        date date
+        float debit
+        float credit
+        string plan_item_number
+        string journal_code
+        int document_id
+        string analytical_code
+        date fiscal_start_date
+        date fiscal_end_date
+    }
+
+    bank_accounts ||--o{ bank_transactions : "bank_account_id"
+    customers ||--o{ bank_transactions : "customer_id"
+    suppliers ||--o{ bank_transactions : "supplier_id"
+    customers ||--o{ customer_invoices : "customer_id"
+    suppliers ||--o{ supplier_invoices : "supplier_id"
+    analytical_ledger ||--o{ tags : "analytical_ledger_id"
+    fiscal_years ||--o{ analytical_ledger : "fiscal dates"
+```
+
+***
+
 ## Prerequisites
 
 * An active **Pennylane account** with at least one company configured
