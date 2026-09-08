@@ -27,7 +27,7 @@ Data is split into two types:
 
 ## Data Model
 
-<a href="DBDIAGRAM_URL" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
+<a href="https://dbdiagram.io/e/6aa01a38ff72c756bc0c4146/6aa01a71ff72c756bc0c45d2" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ```mermaid
 erDiagram
