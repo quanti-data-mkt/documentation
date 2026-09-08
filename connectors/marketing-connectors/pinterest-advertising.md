@@ -78,11 +78,18 @@ Before connecting Pinterest Ads to QUANTI, ensure you have:
 
 ## Prebuilt reports
 
+### Dimension tables (append-only)
+
 * **Advertiser History**: Advertiser account attributes including name, country, currency, permissions, and timestamps
 * **Campaign History**: Campaign configuration and attributes at campaign level including status, budget caps, objectives, and scheduling
 * **Ad Group History**: Ad group configuration including name, status, budget settings, targeting parameters, and optimization goals
-* **Ad History**: Individual ad attributes and configuration including creative references, status, and tracking settings
 * **Pin Promotion History**: Promoted Pin details including creative specifications, destination URLs, and promotion settings
+* **Pin History**: Editorial and creative attributes of the Pin behind a Pinterest ad — title, description, alt text, dominant color, creative type (REGULAR, VIDEO, CAROUSEL, MAX\_VIDEO, SHOPPING, COLLECTION, IDEA), board, and promotion flag. Joins to `pin_promotion_history` via `pin_id`.
+* **Pin Media**: Media asset metadata of the Pin — type (image / video / multi\_image), cover image URL, video duration (ms), dimensions, and Idea Pin item attributes. One row per Pin.
+* **Pin Media Image**: Available image renditions of the Pin's media, one row per `(pin_id, image_size_label)`. Provides direct image URLs per resolution (150x150, 400x300, 600x, 1200x, originals) for display in dashboards without re-calling the API.
+
+### Metric tables (delete-insert on `_quanti_date`)
+
 * **Campaign Report**: Daily performance metrics aggregated at campaign level including impressions, clicks, spend, and conversions
 * **Ad Group Report**: Daily performance metrics aggregated at ad group level with detailed engagement and conversion tracking
 * **Pin Promotion Report**: Daily performance metrics at Pin promotion level including video metrics, web sessions, and ROAS calculations
