@@ -1,5 +1,8 @@
 {
   "sgtm.web_container": "reference/sgtm.md#web_container",
   "connector.reverse-adobe.clientId": "connectors/reverse-connectors/adobe-analytics-reverse.md#step:Authorize your Adobe Analytics connection",
-  "connector.reverse-adobe.clientSecret": "connectors/reverse-connectors/adobe-analytics-reverse.md#step:Create your API credentials"
+  "connector.reverse-adobe.clientSecret": "connectors/reverse-connectors/adobe-analytics-reverse.md#step:Create your API credentials",
+  "data.primary_key": "data-management/fundamental-concepts/primary-key.md",
+  "data.table_nature": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#What type of data are you synchronizing?",
+  "data.insert_mode": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#When to use each method"
 }
