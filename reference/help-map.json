@@ -1,0 +1,5 @@
+{
+  "sgtm.web_container": "reference/sgtm.md#web_container",
+  "connector.reverse-adobe.clientId": "connectors/reverse-connectors/adobe-analytics-reverse.md#step:Authorize your Adobe Analytics connection",
+  "connector.reverse-adobe.clientSecret": "connectors/reverse-connectors/adobe-analytics-reverse.md#step:Create your API credentials"
+}
