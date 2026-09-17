@@ -127,7 +127,8 @@
 
 ## SERVER-SIDE TAGGING
 
-* [Field reference](reference/sgtm.md)
+* [Server-side tagging](server-side-tagging/README.md)
+  * [Field reference](server-side-tagging/field-reference.md)
 
 ## MCP Server
 
