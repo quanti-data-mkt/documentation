@@ -27,8 +27,6 @@
   "connector.aircall": "connectors/sales-analytics-connectors/aircall.md",
   "connector.amazon-dsp": "connectors/marketing-connectors/amazon-dsp.md",
   "connector.amazonads": "connectors/marketing-connectors/amazon-dsp.md",
-  "connector.api-rest-v2": "connectors/custom-connectors/README.md",
-  "connector.apirest": "connectors/custom-connectors/README.md",
   "connector.appsflyer": "connectors/analytics-connectors/appsflyer.md",
   "connector.awin": "connectors/marketing-connectors/awin.md",
   "connector.brevo": "connectors/marketing-connectors/brevo.md",
