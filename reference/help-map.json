@@ -95,5 +95,7 @@
   "sgtm.subdomain": "server-side-tagging/field-reference.md#subdomain",
   "sgtm.traffic": "server-side-tagging/field-reference.md#traffic",
   "sgtm.web_container": "server-side-tagging/field-reference.md#web_container",
-  "connector.hubspot.form-submissions": "connectors/sales-analytics-connectors/hubspot.md#form-submissions"
+  "connector.hubspot.form-submissions": "connectors/sales-analytics-connectors/hubspot.md#form-submissions",
+  "semantic.account_description": "mcp-server/semantic-layer.md#account_description",
+  "semantic.account_purpose": "mcp-server/semantic-layer.md#account_purpose"
 }
