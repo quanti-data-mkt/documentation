@@ -125,6 +125,10 @@
   * [Shopify](connectors/sales-analytics-connectors/shopify.md)
   * [Stripe](connectors/sales-analytics-connectors/stripe.md)
 
+## SERVER-SIDE TAGGING
+
+* [Field reference](reference/sgtm.md)
+
 ## MCP Server
 
 * [MCP overview](mcp-server/mcp-overview.md)
