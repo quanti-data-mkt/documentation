@@ -112,6 +112,7 @@
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse.md)
   * [Google Ads](connectors/reverse-connectors/google-ads-reverse-connector.md)
+  * [Meta Custom Audiences](connectors/reverse-connectors/meta-custom-audiences.md)
 * [Sales analytics connectors](connectors/sales-analytics-connectors/README.md)
   * [Aircall](connectors/sales-analytics-connectors/aircall.md)
   * [Axeptio](connectors/sales-analytics-connectors/axeptio.md)
