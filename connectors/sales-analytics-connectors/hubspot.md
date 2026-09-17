@@ -152,3 +152,15 @@ Listed on the HubSpot consent screen when you click Continue with HubSpot, and a
 **Why it matters**
 
 Letting a user without Marketing Hub access grant the consent: the forms scope is not granted, and the Forms and Form Submissions reports fail with a 403 at every run while the CRM tables keep filling normally. The connector looks healthy and those two tables stay empty. Grant access with a Super Admin whose account covers every hub you intend to read.
+
+### formSubmissions — Form Submissions depends on Forms
+
+Syncs form submission events — conversion ID, submission timestamp, page URL and submitted field values — for each form in your portal.
+
+**Where to find it**
+
+Selected in the report list at the Prebuilt reports step; in HubSpot, the same data sits under Marketing → Forms, in the submissions tab of each form.
+
+**Why it matters**
+
+Enabling Form Submissions without enabling Forms. Submissions are fetched form by form, from the form GUIDs the Forms report collects during the same run: with Forms disabled there is no GUID list, the run still ends in success, and the form_submissions table stays empty. Keep both enabled — disabling Forms later has the same effect.
