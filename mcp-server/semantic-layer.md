@@ -43,3 +43,42 @@ The general idea of this transformation step is to make the data more digestible
 [quanti\_ids.md](../transformations/pre-built-tables/quanti_ids.md)
 {% endcontent-ref %}
 
+## Describing a connected account
+
+Two fields, on the **Reports** tab of any connected account. They are read by the
+assistant, not by the pipeline: nothing in your data changes if you leave them
+empty — but the answers you get do.
+
+### account_description — What this connected account holds
+
+A sentence describing what this particular account brings in: which perimeter,
+which market, which brand.
+
+**Where to find it**
+
+Connector → **Reports** tab → *Description*, at the top of the page. It is saved
+per connected account, not per connector.
+
+**Why it matters**
+
+When a project has several accounts of the same connector — two Google Ads
+accounts, one per country, or three Google Sheets — the assistant has no way to
+tell them apart without this. Asked for "last month's spend", it picks one, and
+the figure looks perfectly plausible while being the wrong perimeter. Left empty,
+the mistake is silent; filled in, it cannot happen.
+
+### account_purpose — What this account is used for
+
+What the data serves: which decision, which reporting, which team.
+
+**Where to find it**
+
+Connector → **Reports** tab → *Purpose*, just below the description.
+
+**Why it matters**
+
+The description says what the data *is*, the purpose says what it is *for*. The
+second is what lets the assistant choose between two accounts that hold similar
+data but answer different questions — a paid-media account fed for budget
+arbitration, and a second one kept for reconciling invoices.
+
