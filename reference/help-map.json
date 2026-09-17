@@ -30,7 +30,6 @@
   "connector.googlesheets": "connectors/custom-connectors/google-sheets.md",
   "connector.googlesheets-v2": "connectors/custom-connectors/google-sheets.md",
   "connector.hubspot": "connectors/sales-analytics-connectors/hubspot.md",
-  "connector.hubspot.formSubmissions": "connectors/sales-analytics-connectors/hubspot.md#formSubmissions",
   "connector.hubspot.hubId": "connectors/sales-analytics-connectors/hubspot.md#hubId",
   "connector.hubspot.lookback": "connectors/sales-analytics-connectors/hubspot.md#lookback",
   "connector.hubspot.scopes": "connectors/sales-analytics-connectors/hubspot.md#scopes",
@@ -95,5 +94,6 @@
   "sgtm.snippet": "server-side-tagging/field-reference.md#snippet",
   "sgtm.subdomain": "server-side-tagging/field-reference.md#subdomain",
   "sgtm.traffic": "server-side-tagging/field-reference.md#traffic",
-  "sgtm.web_container": "server-side-tagging/field-reference.md#web_container"
+  "sgtm.web_container": "server-side-tagging/field-reference.md#web_container",
+  "connector.hubspot.form-submissions": "connectors/sales-analytics-connectors/hubspot.md#form-submissions"
 }
