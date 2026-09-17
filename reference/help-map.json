@@ -30,6 +30,7 @@
   "connector.googlesheets": "connectors/custom-connectors/google-sheets.md",
   "connector.googlesheets-v2": "connectors/custom-connectors/google-sheets.md",
   "connector.hubspot": "connectors/sales-analytics-connectors/hubspot.md",
+  "connector.hubspot.formSubmissions": "connectors/sales-analytics-connectors/hubspot.md#formSubmissions",
   "connector.hubspot.hubId": "connectors/sales-analytics-connectors/hubspot.md#hubId",
   "connector.hubspot.scopes": "connectors/sales-analytics-connectors/hubspot.md#scopes",
   "connector.instagramorganic": "connectors/marketing-connectors/instagramorganic.md",
