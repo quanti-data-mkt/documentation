@@ -140,3 +140,15 @@ In HubSpot, the top-right account menu shows the Hub ID under your account name,
 **Why it matters**
 
 Authorizing while your browser is logged into another portal — a sandbox, a partner or agency portal, or a second brand. The consent screen binds the connector to that portal silently: the sync succeeds, the tables fill, and the mismatch only surfaces later as unknown record IDs and a foreign Hub ID in the adAccount column. Log into the intended portal in HubSpot before clicking Continue with HubSpot; switching portal afterwards means creating a new connector, not editing this one.
+
+### scopes — Permissions requested at authorization
+
+The set of HubSpot scopes QUANTI: requests — read access to contacts, deals, leads, companies and their schemas, plus forms and business-intelligence.
+
+**Where to find it**
+
+Listed on the HubSpot consent screen when you click Continue with HubSpot, and afterwards in HubSpot under Settings → Integrations → Connected Apps → QUANTI:.
+
+**Why it matters**
+
+Letting a user without Marketing Hub access grant the consent: the forms scope is not granted, and the Forms and Form Submissions reports fail with a 403 at every run while the CRM tables keep filling normally. The connector looks healthy and those two tables stay empty. Grant access with a Super Admin whose account covers every hub you intend to read.
