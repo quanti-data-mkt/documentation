@@ -32,6 +32,7 @@
   "connector.hubspot": "connectors/sales-analytics-connectors/hubspot.md",
   "connector.hubspot.formSubmissions": "connectors/sales-analytics-connectors/hubspot.md#formSubmissions",
   "connector.hubspot.hubId": "connectors/sales-analytics-connectors/hubspot.md#hubId",
+  "connector.hubspot.lookback": "connectors/sales-analytics-connectors/hubspot.md#lookback",
   "connector.hubspot.scopes": "connectors/sales-analytics-connectors/hubspot.md#scopes",
   "connector.instagramorganic": "connectors/marketing-connectors/instagramorganic.md",
   "connector.klaviyo": "connectors/marketing-connectors/klaviyo.md",
