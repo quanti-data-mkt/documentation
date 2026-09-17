@@ -153,7 +153,7 @@ Listed on the HubSpot consent screen when you click Continue with HubSpot, and a
 
 Letting a user without Marketing Hub access grant the consent: the forms scope is not granted, and the Forms and Form Submissions reports fail with a 403 at every run while the CRM tables keep filling normally. The connector looks healthy and those two tables stay empty. Grant access with a Super Admin whose account covers every hub you intend to read.
 
-### formSubmissions — Form Submissions depends on Forms
+### form-submissions — Form Submissions depends on Forms
 
 Syncs form submission events — conversion ID, submission timestamp, page URL and submitted field values — for each form in your portal.
 
