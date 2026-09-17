@@ -164,3 +164,15 @@ Selected in the report list at the Prebuilt reports step; in HubSpot, the same d
 **Why it matters**
 
 Enabling Form Submissions without enabling Forms. Submissions are fetched form by form, from the form GUIDs the Forms report collects during the same run: with Forms disabled there is no GUID list, the run still ends in success, and the form_submissions table stays empty. Keep both enabled — disabling Forms later has the same effect.
+
+### lookback — What the lookback window actually filters
+
+Sets how many days back each scheduled sync re-reads, so records updated after they were first synced are picked up again.
+
+**Where to find it**
+
+Last setup step, next to the sync frequency; editable afterwards in the connector's scheduling settings.
+
+**Why it matters**
+
+Reading it as a window on the close date or the create date. The filter is on hs_lastmodifieddate: a deal created last year and edited yesterday comes back in today's sync, while a deal closed yesterday and untouched since does not. Related limit: HubSpot's search API returns at most 10,000 records per window — the connector bisects the window down to one minute, so a bulk workflow or CSV import that touches more than 10,000 records within the same minute leaves the excess unretrieved.
