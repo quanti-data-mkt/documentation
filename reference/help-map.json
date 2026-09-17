@@ -75,7 +75,7 @@
   "connector.postgres": "connectors/custom-connectors/postgresql.md",
   "connector.prestashop-api": "connectors/sales-analytics-connectors/prestashop-api.md",
   "connector.rakuten": "connectors/marketing-connectors/rakuten.md",
-  "connector.reverse-adobe": "connectors/reverse-connectors/adobe-analytics-reverse-connector.md",
+  "connector.reverse-adobe": "connectors/reverse-connectors/adobe-analytics-reverse.md",
   "connector.reverse-googleads": "connectors/reverse-connectors/google-ads-reverse-connector.md",
   "connector.reverse-meta": "connectors/reverse-connectors/meta-custom-audiences.md",
   "connector.rtbhouse": "connectors/marketing-connectors/rtbhouse.md",
