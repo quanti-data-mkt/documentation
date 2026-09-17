@@ -95,6 +95,34 @@ l'inventer — `help_write` refusera, et c'est le signal qu'il faut aller demand
 - Le média **complète**, il ne remplace pas : il n'est pas indexable par
   l'assistant, et c'est le texte qui survivra à la prochaine refonte.
 
+## Une clé doit désigner quelque chose de VISIBLE
+
+Écrire une clé depuis le modèle de données de la configuration produit des clés
+sans point d'accroche : elles existent au manifeste, mais aucun écran ne peut les
+ouvrir. Une clé se décide **depuis l'écran**, pas depuis le `conf.json`.
+
+Ce qui porte une aide dans le produit, aujourd'hui :
+
+| Ce que voit l'utilisateur | Forme de la clé |
+|---|---|
+| un champ d'authentification | `connector.<sku>.<clé du champ>` |
+| un paramètre ou un réglage du wizard | `connector.<sku>.<clé du champ>` |
+| une ligne de la vue d'ensemble (`confKeys`) | `connector.<sku>.<clé>` |
+| **un rapport dans le sélecteur** | `connector.<sku>.<ID du prebuild>` |
+| toute la documentation du connecteur | `connector.<sku>` |
+
+⚠️ **Pour un rapport, c'est l'IDENTIFIANT du prebuild, jamais son libellé.**
+`form-submissions` et non `Form Submissions` ni `formSubmissions`. C'est lui qui
+est stable, et c'est lui que le produit utilise pour fabriquer la clé — un libellé
+recopié donne une clé qui ne s'affichera jamais, sans aucun message d'erreur.
+Les identifiants se lisent avec `list_prebuilds` ou dans le `conf.json` du
+connecteur.
+
+Un contre-exemple vécu : `hubId` a été écrit depuis la configuration HubSpot.
+Il n'est saisi nulle part — il est déduit de l'autorisation OAuth — et n'était
+affiché qu'en lecture seule dans la vue d'ensemble. La clé a fini par trouver un
+point d'accroche, mais c'est un coup de chance, pas une méthode.
+
 ## Le déroulé
 
 1. **`help_coverage`** — ce qui manque, ce qui pointe dans le vide. Lecture seule,
