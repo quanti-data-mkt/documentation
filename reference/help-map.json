@@ -4,5 +4,19 @@
   "connector.reverse-adobe.clientSecret": "connectors/reverse-connectors/adobe-analytics-reverse.md#Setup Instructions",
   "data.primary_key": "data-management/fundamental-concepts/primary-key.md",
   "data.table_nature": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#What type of data are you synchronizing?",
-  "data.insert_mode": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#When to use each method"
+  "data.insert_mode": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#When to use each method",
+  "sgtm.container_config": "reference/sgtm.md#container_config",
+  "sgtm.subdomain": "reference/sgtm.md#subdomain",
+  "sgtm.dns_zone": "reference/sgtm.md#dns_zone",
+  "sgtm.region": "reference/sgtm.md#region",
+  "sgtm.dns_records": "reference/sgtm.md#dns_records",
+  "sgtm.domain_change": "reference/sgtm.md#domain_change",
+  "sgtm.snippet": "reference/sgtm.md#snippet",
+  "sgtm.adblock_paths": "reference/sgtm.md#adblock_paths",
+  "sgtm.library_slug": "reference/sgtm.md#library_slug",
+  "sgtm.library_origin": "reference/sgtm.md#library_origin",
+  "sgtm.billable_hits": "reference/sgtm.md#billable_hits",
+  "sgtm.traffic": "reference/sgtm.md#traffic",
+  "sgtm.availability": "reference/sgtm.md#availability",
+  "sgtm.server_status": "reference/sgtm.md#server_status"
 }
