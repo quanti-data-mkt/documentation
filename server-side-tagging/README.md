@@ -95,3 +95,15 @@ it to watch trends and spot an outage, never to check an invoice.
 Availability is measured with a real request to the container, not a simple port
 test: a server that is up but broken counts as down. We keep a full year of daily
 history, so the figure survives the server itself.
+
+## Field by field
+
+Every field of the setup screens — the container configuration, the subdomain,
+the DNS records, the snippet, the proxied libraries, and what exactly counts as a
+billable hit — is described one by one in the
+[field reference](field-reference.md).
+
+That page is also what the **?** buttons open inside the product: the explanation
+you read next to a field and the one published here are the same text, so they
+can never drift apart.
+
