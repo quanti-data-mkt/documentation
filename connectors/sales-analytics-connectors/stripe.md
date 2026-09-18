@@ -158,3 +158,15 @@ Contact QUANTI support at [support@quanti.io](mailto:support@quanti.io) or consu
 For Stripe-specific API questions, refer to [Stripe's official documentation](https://stripe.com/docs/api)
 
 </details>
+
+### apiKey — Which Stripe key to create, and with which permissions
+
+Authenticates every call QUANTI makes to the Stripe API; the connector only ever reads, and never writes anything back to your Stripe account.
+
+**Where to find it**
+
+Stripe Dashboard > Developers > API keys > Create restricted key. Stripe first asks how you will use the key: choose **Send this key to a third-party application** — QUANTI is the third party. Then grant **Read** on: Account, Customers, PaymentIntents, Refunds, Disputes, SetupIntents, Setup attempts, Products, Prices, Subscriptions, Subscription items, and Usage records (only if you bill on usage). Shipping rates and Order returns belong to the legacy Orders API and may not appear on your account — skip them if they are absent. Leave every other permission on **None**. Copy the key, which starts with `rk_live_` (or `rk_test_` in test mode). **Account: Read is not optional**: QUANTI calls `/v1/account` at the verification step to identify and name your Stripe account, so a key that cannot read account information is rejected as an invalid key.
+
+**Why it matters**
+
+Pasting the plain secret key (`sk_live_...`) instead of a restricted one. QUANTI's field accepts it and the sync works perfectly, so nothing ever signals a problem — but that key carries full write access to your Stripe account, and it now sits inside a third-party integration. The second frequent slip happens in the very first dialog: **Power an integration you built** and **Authorize an AI agent** both end up producing a usable key, so the connector will sync either way and the wrong choice never surfaces as an error — only **Send this key to a third-party application** describes what QUANTI actually is, and keeps your Stripe audit trail truthful about who holds the key.
