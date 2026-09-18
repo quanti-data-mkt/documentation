@@ -30,6 +30,7 @@
   "connector.googlesheets": "connectors/custom-connectors/google-sheets.md",
   "connector.googlesheets-v2": "connectors/custom-connectors/google-sheets.md",
   "connector.hubspot": "connectors/sales-analytics-connectors/hubspot.md",
+  "connector.hubspot.form-submissions": "connectors/sales-analytics-connectors/hubspot.md#form-submissions",
   "connector.hubspot.hubId": "connectors/sales-analytics-connectors/hubspot.md#hubId",
   "connector.hubspot.lookback": "connectors/sales-analytics-connectors/hubspot.md#lookback",
   "connector.hubspot.scopes": "connectors/sales-analytics-connectors/hubspot.md#scopes",
@@ -65,6 +66,7 @@
   "connector.shopify-v2": "connectors/sales-analytics-connectors/shopify.md",
   "connector.snapchat": "connectors/marketing-connectors/snapchat.md",
   "connector.stripe": "connectors/sales-analytics-connectors/stripe.md",
+  "connector.stripe.apiKey": "connectors/sales-analytics-connectors/stripe.md#apiKey",
   "connector.stylight": "connectors/marketing-connectors/stylight.md",
   "connector.taboola": "connectors/marketing-connectors/taboola.md",
   "connector.tiktok": "connectors/marketing-connectors/tiktok-advertising.md",
@@ -79,6 +81,8 @@
   "data.insert_mode": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#When to use each method",
   "data.primary_key": "data-management/fundamental-concepts/primary-key.md",
   "data.table_nature": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#What type of data are you synchronizing?",
+  "semantic.account_description": "mcp-server/semantic-layer.md#account_description",
+  "semantic.account_purpose": "mcp-server/semantic-layer.md#account_purpose",
   "sgtm.adblock_paths": "server-side-tagging/field-reference.md#adblock_paths",
   "sgtm.availability": "server-side-tagging/field-reference.md#availability",
   "sgtm.billable_hits": "server-side-tagging/field-reference.md#billable_hits",
@@ -94,8 +98,5 @@
   "sgtm.snippet": "server-side-tagging/field-reference.md#snippet",
   "sgtm.subdomain": "server-side-tagging/field-reference.md#subdomain",
   "sgtm.traffic": "server-side-tagging/field-reference.md#traffic",
-  "sgtm.web_container": "server-side-tagging/field-reference.md#web_container",
-  "connector.hubspot.form-submissions": "connectors/sales-analytics-connectors/hubspot.md#form-submissions",
-  "semantic.account_description": "mcp-server/semantic-layer.md#account_description",
-  "semantic.account_purpose": "mcp-server/semantic-layer.md#account_purpose"
+  "sgtm.web_container": "server-side-tagging/field-reference.md#web_container"
 }
