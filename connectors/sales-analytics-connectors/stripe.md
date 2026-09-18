@@ -28,17 +28,23 @@ Before connecting Stripe to QUANTI, ensure you have:
 * Log into your [Stripe Dashboard](https://dashboard.stripe.com/)
 * Navigate to **Developers** > **API keys**
 * Click on **Create restricted key**
+* Stripe asks how you will use the key — choose **Send this key to a third-party application**. QUANTI is the third party
 * Configure the following read permissions:
+  * Account: Read — **required**. QUANTI calls `/v1/account` to verify the key and identify your account; without this permission Stripe returns a 403 and the key is rejected as invalid
   * Customers: Read
   * Payment Intents: Read
-  * Products: Read
-  * Prices: Read
   * Refunds: Read
   * Disputes: Read
-  * Subscriptions: Read
   * Setup Intents: Read
-  * Shipping Rates: Read
-  * Orders: Read (if using Order Returns)
+  * Setup Attempts: Read
+  * Products: Read
+  * Prices: Read
+  * Subscriptions: Read
+  * Subscription Items: Read
+  * Usage Records: Read (only if you bill on usage)
+  * Shipping Rates: Read (legacy Orders API — skip if absent from your account)
+  * Orders: Read (if using Order Returns — legacy, skip if absent)
+* Leave every other permission on **None**
 * Name your key (e.g., "QUANTI Integration")
 * Copy and securely store the generated API key
 {% endstep %}
