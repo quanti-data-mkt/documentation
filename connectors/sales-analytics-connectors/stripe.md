@@ -37,14 +37,14 @@ Before connecting Stripe to QUANTI, ensure you have:
   * Refunds: Read
   * Disputes: Read
   * Setup Intents: Read
-  * Setup Attempts: Read
   * Products: Read
   * Prices: Read
+  * Shipping Rates: Read
   * Subscriptions: Read
   * Subscription Items: Read
-  * Usage Records: Read (only if you bill on usage)
-  * Shipping Rates: Read (legacy Orders API — skip if absent from your account)
-  * Orders: Read (if using Order Returns — legacy, skip if absent)
+  * Usage Records: Read — needed by the **usage_record_summaries** report
+  * Orders: Read — needed by the **order_returns** report
+* Both reports are selected by default. If you leave out one of these two permissions, deselect the matching report at the next step, otherwise it fails with a 403 on every sync
 * Leave every other permission on **None**
 * Copy and securely store the generated API key
 {% endstep %}
