@@ -107,7 +107,6 @@ Before connecting Stripe to QUANTI, ensure you have:
 * **disputes**: Payment disputes and chargebacks with amounts, reasons, statuses, evidence submission deadlines, and associated charges. Critical for fraud monitoring and dispute management.
 * **subscriptions**: Subscription lifecycle data including billing cycles, trial periods, cancellation dates, and renewal information. Key for MRR (Monthly Recurring Revenue) analysis.
 * **setup\_intents**: Payment method setup attempts for future charges, including status tracking and error details. Used to analyze payment method onboarding success rates.
-* **setup\_attempts**: Individual attempts to set up payment methods, with detailed error information and success/failure tracking. Useful for optimizing payment method collection flows.
 * **order\_returns**: Product returns linked to orders (Beta API), including amounts, currencies, and refund references. For e-commerce return analysis.
 * **usage\_record\_summaries**: Aggregated usage data for metered billing subscriptions, tracking total usage per billing period. Essential for usage-based revenue reporting.
 
