@@ -370,3 +370,15 @@ The ad_user_data column of the QUANTI: Tag Analytics connector (Consent Mode v2)
 **Why it matters**
 
 Mapping a column whose values are not recognized. Only granted / true / 1 / yes and denied / false / 0 / no are understood; anything else ("accepted", "oui", "opt-in"…) is silently dropped and the row leaves with no consent signal, exactly as if the field were unmapped — EEA data may then be unusable by Google. Check your values before mapping.
+
+### consent_ad_personalization — Consent — Ad Personalization
+
+The EEA (DMA) consent signal allowing Google to use this user's data for personalized ads — required for Customer Match and remarketing in the EEA.
+
+**Where to find it**
+
+The ad_personalization column of the QUANTI: Tag Analytics connector (Consent Mode v2), or your CMP export. It is a distinct consent from Ad User Data.
+
+**Why it matters**
+
+Mapping the same column to both consent fields because only one consent was collected. Each field then claims a consent the user may never have given for that purpose. Map each field to its own consent, and leave this one unmapped rather than guess — an unmapped field sends no signal, QUANTI: never infers one.
