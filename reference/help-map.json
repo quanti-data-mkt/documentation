@@ -59,6 +59,7 @@
   "connector.reverse-adobe.clientId": "connectors/reverse-connectors/adobe-analytics-reverse.md#Setup Instructions",
   "connector.reverse-adobe.clientSecret": "connectors/reverse-connectors/adobe-analytics-reverse.md#Setup Instructions",
   "connector.reverse-googleads": "connectors/reverse-connectors/google-ads-reverse-connector.md",
+  "connector.reverse-googleads.ad_accounts": "connectors/reverse-connectors/google-ads-reverse-connector.md#ad_accounts",
   "connector.reverse-googleads.destination_name": "connectors/reverse-connectors/google-ads-reverse-connector.md#destination_name",
   "connector.reverse-meta": "connectors/reverse-connectors/meta-custom-audiences.md",
   "connector.rtbhouse": "connectors/marketing-connectors/rtbhouse.md",
