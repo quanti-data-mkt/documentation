@@ -60,6 +60,7 @@
   "connector.reverse-adobe.clientSecret": "connectors/reverse-connectors/adobe-analytics-reverse.md#Setup Instructions",
   "connector.reverse-googleads": "connectors/reverse-connectors/google-ads-reverse-connector.md",
   "connector.reverse-googleads.ad_accounts": "connectors/reverse-connectors/google-ads-reverse-connector.md#ad_accounts",
+  "connector.reverse-googleads.adjustment_type": "connectors/reverse-connectors/google-ads-reverse-connector.md#adjustment_type",
   "connector.reverse-googleads.consent_ad_personalization": "connectors/reverse-connectors/google-ads-reverse-connector.md#consent_ad_personalization",
   "connector.reverse-googleads.consent_ad_user_data": "connectors/reverse-connectors/google-ads-reverse-connector.md#consent_ad_user_data",
   "connector.reverse-googleads.conversion_action": "connectors/reverse-connectors/google-ads-reverse-connector.md#conversion_action",
