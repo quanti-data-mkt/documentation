@@ -406,3 +406,15 @@ A column of your source computed from the business event: partial refund or revi
 **Why it matters**
 
 Sending RESTATEMENT without mapping Adjusted value: the row is rejected, since a restatement without a new value would do nothing. A full refund is a RETRACTION, not a RESTATEMENT to 0.
+
+### scopes — Permissions requested from Google
+
+QUANTI: asks for two scopes: adwords (Google Ads API — account setup, Customer Match lists, Conversion Adjustments) and datamanager (Data Manager API — offline conversions, Enhanced Conversions for Leads, Customer Match members). Both are required.
+
+**Where to find it**
+
+Sign in with a Google account that has access to the manager account (MCC) and to the customer accounts you will push to.
+
+**Why it matters**
+
+Reusing a Google authorization granted before the datamanager scope existed: pushes fail with "insufficient authentication scopes". Disconnect and reconnect the same Google account so the consent screen includes both scopes.
