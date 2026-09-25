@@ -430,3 +430,15 @@ A lead or opportunity table from your CRM, and a conversion action of type Enhan
 **Why it matters**
 
 Activating the push before accepting the Enhanced Conversions for Leads terms in Google Ads (Goals → Conversions → Settings): every upload fails with DESTINATION_ACCOUNT_ENHANCED_CONVERSIONS_TERMS_NOT_SIGNED. It is a one-time step per account and cannot be done through the API.
+
+### conversion_adjustments — Conversion Adjustments
+
+Corrects a conversion already sent (refund, cancellation, revised margin) within 90 days, matched on the same order ID and conversion action as the original upload.
+
+**Where to find it**
+
+A refunds or order-status table joined to the order IDs you already send through an offline conversions push.
+
+**Why it matters**
+
+Setting it up on a Google Ads account created recently. Adjustments still go through the legacy Google Ads upload service, which Google closed to new integrations on June 15, 2026: only accounts allowlisted before that date can use it, the others see every row rejected. Check with QUANTI: support before building the source.
