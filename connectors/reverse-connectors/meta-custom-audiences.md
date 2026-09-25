@@ -176,3 +176,15 @@ Your CRM or customer table, in its raw, readable form.
 **Why it matters**
 
 Mapping a column that is already SHA-256 hashed while leaving Auto-hash on: QUANTI: hashes the hash, Meta recognizes nobody, and the audience stays empty without any error. Map raw emails — or turn Auto-hash off for this field if your source only has hashes.
+
+### phone — Phone
+
+A second identifier that raises the match rate. QUANTI: normalizes it to international E.164 format (+33612345678) then hashes it with SHA-256. A number without a country code is read as a French number.
+
+**Where to find it**
+
+Your CRM or customer table. Prefer the international format (+CC…) whenever your base has non-French numbers.
+
+**Why it matters**
+
+Mapping a phone column with values that cannot be read as a valid number — foreign numbers without their +country code, placeholders like "0000000000", free text. The WHOLE row is then dropped, email included, not just the phone. The run reports these rows as transform failures. Clean the column, or leave the field unmapped if your email coverage is good.
