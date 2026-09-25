@@ -334,3 +334,15 @@ You choose it. Type it before the first sync: that is when the list is created u
 **Why it matters**
 
 Reusing the name of a list that already exists in the Google Ads account — one you created by hand, or the one of another push. QUANTI: then adopts that list and writes into it: two audiences end up mixed in a single list, and with the mirror sync mode each push removes the other's members. Pick a name that is not used anywhere in the account.
+
+### ad_accounts — Which customer account to select
+
+The Google Ads customer account (not the manager account) where conversions are recorded and Customer Match lists are created.
+
+**Where to find it**
+
+The list shows the customer accounts managed by the MCC chosen in the previous step. The 10-digit ID is displayed at the top right of Google Ads when you are inside the account.
+
+**Why it matters**
+
+Selecting several accounts in one connector. Only the first selected account receives data: every conversion and every audience goes there, and a conversion action belonging to another account is rejected by Google. Create one connector per customer account.
