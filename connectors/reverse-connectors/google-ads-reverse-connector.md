@@ -394,3 +394,15 @@ Your CRM or customer table, in its raw, readable form.
 **Why it matters**
 
 Mapping a column that is already SHA-256 hashed while leaving Auto-hash on: QUANTI: hashes the hash, Google recognizes nobody, and the match rate falls to zero without any error. Map raw emails — or turn Auto-hash off for this field if your source only has hashes, knowing the Gmail normalization will then not be applied.
+
+### adjustment_type — Adjustment type
+
+What to do with a conversion already uploaded: RESTATEMENT changes its value, RETRACTION removes it, ENHANCEMENT adds user data to it.
+
+**Where to find it**
+
+A column of your source computed from the business event: partial refund or revised margin → RESTATEMENT, full refund or cancellation → RETRACTION. The legacy value RESTATE_VALUE is accepted as an alias of RESTATEMENT.
+
+**Why it matters**
+
+Sending RESTATEMENT without mapping Adjusted value: the row is rejected, since a restatement without a new value would do nothing. A full refund is a RETRACTION, not a RESTATEMENT to 0.
