@@ -460,3 +460,15 @@ A table with one row per user and at least one identifier (email, phone, or name
 **Why it matters**
 
 Expecting the list to be usable right away with a small audience: Google only serves a Customer Match list once it has at least 1,000 matched members, and typically matches 40–70% of a B2C list — a 1,500-row table can stay unusable. Send several identifiers per user to raise the match rate.
+
+### phone_number — Phone number
+
+A second identifier that raises the match rate (Customer Match, Enhanced Conversions for Leads). QUANTI: normalizes it to international E.164 format (+33612345678) then hashes it with SHA-256. A number without a country code is read as a French number.
+
+**Where to find it**
+
+Your CRM or lead table. Prefer the international format (+CC…) whenever your base has non-French numbers.
+
+**Why it matters**
+
+Mapping a phone column with values that cannot be read as a valid number — foreign numbers without their +country code, placeholders like "0000000000", free text. The WHOLE row is then dropped, email included, not just the phone. The run reports these rows as transform failures. Clean the column, or leave the field unmapped if your email coverage is good.
