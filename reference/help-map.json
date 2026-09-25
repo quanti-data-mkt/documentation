@@ -66,6 +66,7 @@
   "connector.reverse-googleads.conversion_action": "connectors/reverse-connectors/google-ads-reverse-connector.md#conversion_action",
   "connector.reverse-googleads.destination_name": "connectors/reverse-connectors/google-ads-reverse-connector.md#destination_name",
   "connector.reverse-googleads.email": "connectors/reverse-connectors/google-ads-reverse-connector.md#email",
+  "connector.reverse-googleads.enhanced_conversions_leads": "connectors/reverse-connectors/google-ads-reverse-connector.md#enhanced_conversions_leads",
   "connector.reverse-googleads.scopes": "connectors/reverse-connectors/google-ads-reverse-connector.md#scopes",
   "connector.reverse-meta": "connectors/reverse-connectors/meta-custom-audiences.md",
   "connector.rtbhouse": "connectors/marketing-connectors/rtbhouse.md",
