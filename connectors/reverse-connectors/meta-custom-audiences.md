@@ -164,3 +164,15 @@ Meta Business Manager → Business settings → Ad accounts, or the act= paramet
 **Why it matters**
 
 Adding an ad account to a push that has already synced. At the next run, only new or removed users are sent — none are left to fill the newly added account, so QUANTI: refuses to create an empty audience there and that account's sync fails. Select every ad account before the first sync, or create a new push for the additional account.
+
+### email — Email
+
+The main identifier Meta uses to match a user. QUANTI: normalizes it (lowercase, spaces removed) then hashes it with SHA-256 before upload. Unlike Google, Meta expects Gmail addresses as they are: dots and +suffix are kept.
+
+**Where to find it**
+
+Your CRM or customer table, in its raw, readable form.
+
+**Why it matters**
+
+Mapping a column that is already SHA-256 hashed while leaving Auto-hash on: QUANTI: hashes the hash, Meta recognizes nobody, and the audience stays empty without any error. Map raw emails — or turn Auto-hash off for this field if your source only has hashes.
