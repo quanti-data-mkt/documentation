@@ -442,3 +442,15 @@ A refunds or order-status table joined to the order IDs you already send through
 **Why it matters**
 
 Setting it up on a Google Ads account created recently. Adjustments still go through the legacy Google Ads upload service, which Google closed to new integrations on June 15, 2026: only accounts allowlisted before that date can use it, the others see every row rejected. Check with QUANTI: support before building the source.
+
+### customer_match — Customer Match
+
+Keeps a Google Ads user list in sync with an audience from your data warehouse — one list per push, named after the push's destination name — for targeting, exclusion or Performance Max signals.
+
+**Where to find it**
+
+A table with one row per user and at least one identifier (email, phone, or name + country + postal code). In mirror mode, users leaving the table are removed from the list at the next sync.
+
+**Why it matters**
+
+Expecting the list to be usable right away with a small audience: Google only serves a Customer Match list once it has at least 1,000 matched members, and typically matches 40–70% of a B2C list — a 1,500-row table can stay unusable. Send several identifiers per user to raise the match rate.
