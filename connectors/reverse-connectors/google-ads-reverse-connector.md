@@ -382,3 +382,15 @@ The ad_personalization column of the QUANTI: Tag Analytics connector (Consent Mo
 **Why it matters**
 
 Mapping the same column to both consent fields because only one consent was collected. Each field then claims a consent the user may never have given for that purpose. Map each field to its own consent, and leave this one unmapped rather than guess — an unmapped field sends no signal, QUANTI: never infers one.
+
+### email — Email
+
+The main identifier Google uses to match a user (Customer Match) or a lead (Enhanced Conversions for Leads). QUANTI: normalizes it — lowercase, spaces removed, and for gmail.com / googlemail.com the dots and +suffix of the local part stripped — then hashes it with SHA-256 before upload.
+
+**Where to find it**
+
+Your CRM or customer table, in its raw, readable form.
+
+**Why it matters**
+
+Mapping a column that is already SHA-256 hashed while leaving Auto-hash on: QUANTI: hashes the hash, Google recognizes nobody, and the match rate falls to zero without any error. Map raw emails — or turn Auto-hash off for this field if your source only has hashes, knowing the Gmail normalization will then not be applied.
