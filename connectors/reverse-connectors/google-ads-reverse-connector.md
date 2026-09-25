@@ -377,11 +377,11 @@ The EEA (DMA) consent signal allowing Google to use this user's data for persona
 
 **Where to find it**
 
-The ad_personalization column of the QUANTI: Tag Analytics connector (Consent Mode v2), or your CMP export. It is a distinct consent from Ad User Data.
+The ad_personalization column of the QUANTI: Tag Analytics connector (Consent Mode v2), or your CMP export. If your CMP collects a single consent covering both purposes, the same column can feed both consent fields.
 
 **Why it matters**
 
-Mapping the same column to both consent fields because only one consent was collected. Each field then claims a consent the user may never have given for that purpose. Map each field to its own consent, and leave this one unmapped rather than guess — an unmapped field sends no signal, QUANTI: never infers one.
+Leaving it unmapped on an EEA Customer Match audience because Ad User Data is already mapped. The two signals are independent: without this one, no personalization consent is sent — QUANTI: never infers it — and Google may not use those members for targeting. Same value rules as Ad User Data: only granted / true / 1 / yes and denied / false / 0 / no are understood, anything else is silently dropped.
 
 ### email — Email
 
