@@ -43,7 +43,7 @@ Click **Continue with Facebook** and grant QUANTI: access to your Meta Business 
 
 Enter one or more **Ad Account IDs** where Custom Audiences will be created. The expected format is `act_XXXXXXXXXX` — visible in Meta Business Manager or in your ad account URL.
 
-You can connect multiple ad accounts from a single connector.
+You can connect multiple ad accounts from a single connector: the full audience is pushed to each of them, as a separate audience per account. Select them all before the first sync — an account added later only receives users added from then on.
 {% endstep %}
 
 {% step %}
@@ -107,7 +107,8 @@ After connector creation, configure the field mapping in the **Mapping** tab by 
 
 ## Notes
 
-* Custom Audiences created by QUANTI: are visible in **Meta Ads Manager → Audiences**
+* Custom Audiences created by QUANTI: are visible in **Meta Ads Manager → Audiences**, named exactly after the push's **Destination name** (set in the **Mapping** tab) — one audience per selected ad account. Choose a name not already used in the ad account: an existing audience with that exact name is adopted and written into
+* Once created, an audience is followed by its ID: you can rename it in Meta Ads Manager without breaking the sync
 * The minimum audience size to activate a campaign is **100 matched members** (Meta requirement)
 * **Lookalike Audiences** can be created manually in Meta Ads Manager from any existing Custom Audience
 * Meta enforces its own privacy and data policies — ensure you have obtained appropriate consent from your users before pushing their data
