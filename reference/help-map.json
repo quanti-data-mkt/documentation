@@ -73,6 +73,7 @@
   "connector.reverse-meta": "connectors/reverse-connectors/meta-custom-audiences.md",
   "connector.reverse-meta.ad_accounts": "connectors/reverse-connectors/meta-custom-audiences.md#ad_accounts",
   "connector.reverse-meta.destination_name": "connectors/reverse-connectors/meta-custom-audiences.md#destination_name",
+  "connector.reverse-meta.email": "connectors/reverse-connectors/meta-custom-audiences.md#email",
   "connector.rtbhouse": "connectors/marketing-connectors/rtbhouse.md",
   "connector.semrush": "connectors/marketing-connectors/semrush.md",
   "connector.shopify": "connectors/sales-analytics-connectors/shopify.md",
