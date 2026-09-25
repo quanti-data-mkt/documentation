@@ -140,3 +140,15 @@ Meta only counts users it was able to match against its own graph. The match rat
 Contact QUANTI: support at support@quanti.io or consult our documentation at https://docs.quanti.io
 
 </details>
+
+### destination_name — Naming the Custom Audience
+
+The exact name of the Custom Audience QUANTI: creates in Meta on the first sync. With several ad accounts, one audience is created in each account, all under this name. Names longer than 60 characters are truncated (Meta limit).
+
+**Where to find it**
+
+You choose it. Type it before the first sync: that is when the audience is created under this name. Once created, QUANTI: follows the audience by its ID, so rename it directly in Meta Ads Manager → Audiences if needed — the sync keeps working. Changing the name here afterwards only renames the push in QUANTI:, not the audience in Meta.
+
+**Why it matters**
+
+Reusing the name of an audience that already exists in the ad account — one you created by hand, or the one of another push. QUANTI: then adopts that audience and writes into it: two audiences end up mixed, and with the mirror sync mode each push removes the other's members. Pick a name that is not used anywhere in the ad account.
