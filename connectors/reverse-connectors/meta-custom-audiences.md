@@ -163,7 +163,7 @@ Meta Business Manager → Business settings → Ad accounts, or the act= paramet
 
 **Why it matters**
 
-Adding an ad account to a push that has already synced. At the next run, only new or removed users are sent — none are left to fill the newly added account, so QUANTI: refuses to create an empty audience there and that account's sync fails. Select every ad account before the first sync, or create a new push for the additional account.
+Adding an ad account to a push that has already synced. Each run only sends the users added or removed since the previous one, so the new account never receives the existing audience: its audience gets only the users added from then on, and on runs with no new user its sync reports an error. Select every ad account before the first sync, or create a new push for the additional account.
 
 ### email — Email
 
