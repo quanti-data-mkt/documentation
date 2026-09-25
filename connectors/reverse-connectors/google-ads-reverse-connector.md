@@ -418,3 +418,15 @@ Sign in with a Google account that has access to the manager account (MCC) and t
 **Why it matters**
 
 Reusing a Google authorization granted before the datamanager scope existed: pushes fail with "insufficient authentication scopes". Disconnect and reconnect the same Google account so the consent screen includes both scopes.
+
+### enhanced_conversions_leads — Enhanced Conversions for Leads
+
+Sends lead conversions from your CRM with hashed user data (email, phone, name, address), so Google can tie them back to the ad click even without a GCLID.
+
+**Where to find it**
+
+A lead or opportunity table from your CRM, and a conversion action of type Enhanced Conversions for Leads in Google Ads (Goals → Conversions).
+
+**Why it matters**
+
+Activating the push before accepting the Enhanced Conversions for Leads terms in Google Ads (Goals → Conversions → Settings): every upload fails with DESTINATION_ACCOUNT_ENHANCED_CONVERSIONS_TERMS_NOT_SIGNED. It is a one-time step per account and cannot be done through the API.
