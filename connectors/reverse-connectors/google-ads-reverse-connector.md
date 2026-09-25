@@ -322,3 +322,15 @@ The `order_id` in the adjustment row does not match any previously uploaded conv
 Contact QUANTI: support at support@quanti.io or consult our documentation at https://docs.quanti.io
 
 </details>
+
+### destination_name — Naming the destination
+
+For a Customer Match push, this is the exact name of the Google Ads user list QUANTI: creates on the first sync — one list per push. For conversion pushes (OCI, Enhanced Conversions for Leads, Adjustments), it is only a label inside QUANTI:.
+
+**Where to find it**
+
+You choose it. Type it before the first sync: that is when the list is created under this name. Once created, QUANTI: follows the list by its ID, so rename it directly in Google Ads (Tools → Audience manager) if needed — the sync keeps working. Changing the name here afterwards only renames the push in QUANTI:, not the list in Google Ads.
+
+**Why it matters**
+
+Reusing the name of a list that already exists in the Google Ads account — one you created by hand, or the one of another push. QUANTI: then adopts that list and writes into it: two audiences end up mixed in a single list, and with the mirror sync mode each push removes the other's members. Pick a name that is not used anywhere in the account.
