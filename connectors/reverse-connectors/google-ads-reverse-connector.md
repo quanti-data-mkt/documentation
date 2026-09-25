@@ -358,3 +358,15 @@ In Google Ads: Goals → Conversions → Summary → click the action; its numer
 **Why it matters**
 
 Putting the action's display name (e.g. "Offline purchase") instead of its ID: every row is rejected. Second trap: the customer ID written in the resource name is ignored — rows always go to the connector's customer account, so a conversion action belonging to another account is rejected too.
+
+### consent_ad_user_data — Consent — Ad User Data
+
+The EEA (DMA) consent signal allowing Google to receive this user's data, sent row by row with each conversion or audience member.
+
+**Where to find it**
+
+The ad_user_data column of the QUANTI: Tag Analytics connector (Consent Mode v2), or the matching column of your CMP export if you collect consent server-side.
+
+**Why it matters**
+
+Mapping a column whose values are not recognized. Only granted / true / 1 / yes and denied / false / 0 / no are understood; anything else ("accepted", "oui", "opt-in"…) is silently dropped and the row leaves with no consent signal, exactly as if the field were unmapped — EEA data may then be unusable by Google. Check your values before mapping.
