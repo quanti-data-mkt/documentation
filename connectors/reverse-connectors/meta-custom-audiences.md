@@ -152,3 +152,15 @@ You choose it. Type it before the first sync: that is when the audience is creat
 **Why it matters**
 
 Reusing the name of an audience that already exists in the ad account — one you created by hand, or the one of another push. QUANTI: then adopts that audience and writes into it: two audiences end up mixed, and with the mirror sync mode each push removes the other's members. Pick a name that is not used anywhere in the ad account.
+
+### ad_accounts — Which ad accounts to select
+
+The Meta ad accounts that receive the audience. Meta does not share Custom Audiences between ad accounts, so QUANTI: pushes the full audience to each selected account, as a separate audience in each.
+
+**Where to find it**
+
+Meta Business Manager → Business settings → Ad accounts, or the act= parameter in the Ads Manager URL. The format is act_XXXXXXXXXX.
+
+**Why it matters**
+
+Adding an ad account to a push that has already synced. At the next run, only new or removed users are sent — none are left to fill the newly added account, so QUANTI: refuses to create an empty audience there and that account's sync fails. Select every ad account before the first sync, or create a new push for the additional account.
