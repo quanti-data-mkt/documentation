@@ -56,9 +56,11 @@ The MCC Customer ID is a 10-digit number visible in the Google Ads interface (to
 {% step %}
 **Select your customer accounts**
 
-Select one or more **Google Ads customer accounts** (the leaf accounts where conversions and audiences will land). These are the accounts containing your conversion actions and user lists.
+Select the **Google Ads customer account** (the leaf account where conversions and audiences will land). This is the account containing your conversion actions and user lists.
 
-If you manage multiple brands or clients, you can target multiple accounts in a single connector — the `conversion_action` field in your source table determines which account each row goes to.
+{% hint style="warning" %}
+Select **one account per connector**. If several are selected, only the first one receives data — every conversion and audience goes there, and the customer ID written in a `conversion_action` resource name is ignored. To push to several brands or clients, create one connector per customer account.
+{% endhint %}
 {% endstep %}
 
 {% step %}
@@ -97,7 +99,7 @@ The conversion must have been preceded by a Google Ads click — the GCLID is th
 | Field | Type | Required | Description |
 |---|---|---|---|
 | `gclid` | STRING | ✅ | Google Click Identifier captured at the time of the click (typically stored in your CRM or landing page). Must be the GCLID from the original click that led to the conversion — not a later click. |
-| `conversion_action` | STRING | ✅ | Full resource name of the Google Ads conversion action: `customers/{customer_id}/conversionActions/{conversion_action_id}`. Find it in Google Ads → Goals → Conversions → click the action → the ID is in the URL, or use the Google Ads API to list conversion actions. |
+| `conversion_action` | STRING | ✅ | ID of the Google Ads conversion action, or its full resource name `customers/{customer_id}/conversionActions/{conversion_action_id}`. Find it in Google Ads → Goals → Conversions → click the action → the ID is in the URL. Not the action's display name. The action must belong to the connector's customer account. |
 | `conversion_time` | TIMESTAMP | ✅ | UTC timestamp of the offline conversion event (order confirmed, payment received…). Format: RFC3339 (`2024-11-15T14:32:00Z`). Must be within the conversion action's attribution window (up to 90 days). |
 | `conversion_value` | FLOAT | ✅ | Gross revenue of the conversion in the currency specified. Used directly by Smart Bidding to optimize tROAS. |
 | `currency` | STRING | ✅ | ISO 4217 currency code (`EUR`, `USD`, `GBP`…). Must match the currency accepted by the conversion action. |
@@ -205,7 +207,11 @@ Syncs a user audience from your data warehouse to a Google Ads **user list**. Us
 - Lookalike / Performance Max seeds
 - Observation audiences for Smart Bidding insights
 
-QUANTI: automatically creates the user list in Google Ads (named `Quanti Reverse — {prebuild_id}`) and keeps it in sync. PII is hashed with SHA-256 before upload — provide at least one identifier (email or phone) per row for a usable match rate.
+QUANTI: automatically creates **one user list per push** in Google Ads, named exactly after the push's **Destination name**, and keeps it in sync. Once created, the list is followed by its ID: you can rename it in Google Ads without breaking the sync. PII is hashed with SHA-256 before upload — provide at least one identifier (email or phone) per row for a usable match rate.
+
+{% hint style="warning" %}
+Choose a destination name that is **not already used** by another list in the account. If a list with that exact name exists, QUANTI: adopts it and writes into it.
+{% endhint %}
 
 **Sync modes:**
 
