@@ -346,3 +346,15 @@ The list shows the customer accounts managed by the MCC chosen in the previous s
 **Why it matters**
 
 Selecting several accounts in one connector. Only the first selected account receives data: every conversion and every audience goes there, and a conversion action belonging to another account is rejected by Google. Create one connector per customer account.
+
+### conversion_action — Conversion action
+
+Tells Google Ads which conversion action each row is recorded against. It is read per row, so a single push can feed several conversion actions of the same account.
+
+**Where to find it**
+
+In Google Ads: Goals → Conversions → Summary → click the action; its numeric ID is in the page URL (ctId=…). Put either that ID or the full resource name customers/{customer_id}/conversionActions/{id} in your source column.
+
+**Why it matters**
+
+Putting the action's display name (e.g. "Offline purchase") instead of its ID: every row is rejected. Second trap: the customer ID written in the resource name is ignored — rows always go to the connector's customer account, so a conversion action belonging to another account is rejected too.
