@@ -94,6 +94,7 @@
   * [Linkedin Ads](connectors/marketing-connectors/linkedin-ads.md)
   * [Mailchimp](connectors/marketing-connectors/mailchimp.md)
   * [Meta Ads](connectors/marketing-connectors/meta-ads.md)
+  * [Meta Ads Library](connectors/marketing-connectors/meta-ads-library.md)
   * [Microsoft Advertising](connectors/marketing-connectors/microsoft-advertising.md)
   * [Outbrain](connectors/marketing-connectors/outbrain.md)
   * [Pinterest](connectors/marketing-connectors/pinterest-advertising.md)
