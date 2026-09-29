@@ -64,6 +64,41 @@ Commercial ads that never reached the EU or UK are not available in the Ad Libra
 
 ***
 
+## Data Model
+
+```mermaid
+erDiagram
+    ads_archive {
+        STRING id PK "Ad Library ID"
+        STRING page_id
+        STRING page_name
+        DATETIME ad_creation_time
+        DATETIME ad_delivery_start_time
+        DATETIME ad_delivery_stop_time
+        STRING ad_creative_bodies "JSON array"
+        STRING ad_creative_link_titles "JSON array"
+        STRING ad_creative_link_descriptions "JSON array"
+        STRING ad_creative_link_captions "JSON array"
+        STRING ad_snapshot_url
+        STRING publisher_platforms "JSON array"
+        STRING languages "JSON array"
+        STRING bylines
+        STRING currency
+        FLOAT spend_lower_bound
+        FLOAT spend_upper_bound
+        INTEGER impressions_lower_bound
+        INTEGER impressions_upper_bound
+        INTEGER estimated_audience_size_lower_bound
+        INTEGER estimated_audience_size_upper_bound
+        INTEGER eu_total_reach
+        INTEGER br_total_reach
+    }
+```
+
+<a href="https://dbdiagram.io/e/6abb96dd5869425612c7fa6f/6abb96f15869425612c7fb6c" class="button primary" data-icon="table-tree">Open in dbdiagram</a>
+
+***
+
 ## Available Reports
 
 ### Ads Archive
