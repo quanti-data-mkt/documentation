@@ -335,7 +335,7 @@ For a Customer Match push, this is the exact name of the Google Ads user list QU
 
 **Where to find it**
 
-You choose it. Type it before the first sync: that is when the list is created under this name. Once created, QUANTI: follows the list by its ID, so rename it directly in Google Ads (Tools → Audience manager) if needed — the sync keeps working. Changing the name here afterwards only renames the push in QUANTI:, not the list in Google Ads.
+You choose it. Type it before the first sync: that is when the list is created under this name. Once created, QUANTI: follows the list by its ID, so rename it directly in Google Ads (Tools → Audience manager) if needed — the sync keeps working. After the first sync, the name is locked here: changing it would not rename the list in Google Ads.
 
 **Why it matters**
 

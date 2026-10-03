@@ -148,7 +148,7 @@ The exact name of the Custom Audience QUANTI: creates in Meta on the first sync.
 
 **Where to find it**
 
-You choose it. Type it before the first sync: that is when the audience is created under this name. Once created, QUANTI: follows the audience by its ID, so rename it directly in Meta Ads Manager → Audiences if needed — the sync keeps working. Changing the name here afterwards only renames the push in QUANTI:, not the audience in Meta.
+You choose it. Type it before the first sync: that is when the audience is created under this name. Once created, QUANTI: follows the audience by its ID, so rename it directly in Meta Ads Manager → Audiences if needed — the sync keeps working. After the first sync, the name is locked here: changing it would not rename the audience in Meta.
 
 **Why it matters**
 
