@@ -96,6 +96,7 @@
   "connector.x": "connectors/marketing-connectors/x.md",
   "data.insert_mode": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#When to use each method",
   "data.primary_key": "data-management/fundamental-concepts/primary-key.md",
+  "data.reverse_lookback": "data-management/fundamental-concepts/lookback-window.md#reverse_lookback",
   "data.sync_schedule": "concepts/data-refresh.md#sync_schedule",
   "data.table_nature": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#What type of data are you synchronizing?",
   "semantic.account_description": "mcp-server/semantic-layer.md#account_description",
