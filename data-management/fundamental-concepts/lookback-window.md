@@ -100,3 +100,15 @@ The lookback window interacts differently with each insertion method:
 The lookback window is configured at the connector level and can be adjusted based on your data quality requirements and platform-specific behavior.
 {% endstep %}
 {% endstepper %}
+
+### reverse_lookback — Lookback on a reverse push
+
+On a reverse connector, the lookback sets how many days of rows are re-sent to the destination platform at every run, which is not the same thing as refreshing days in your warehouse.
+
+**Where to find it**
+
+In the Sync tab of the reverse connector, the same selector as on a pull connector. It applies to the date column declared as the push source date field.
+
+**Why it matters**
+
+Copying the value used on pull connectors, where 7 days is ordinary. A push in insert mode keeps no snapshot of what it already sent: the whole window leaves again at every run, and it is the destination that is expected to discard the repeats. Meta only does so for events received within 48 hours of the first event carrying a given event_id, so a window of 3 days or more sends the oldest day back after deduplication has expired and the same purchase is counted twice, inflating the conversions the platform reports and the bids it places on them. Two days covers two daily runs, which is the practical ceiling. A longer window does not make a missed day recoverable either: fix the hour the sync runs instead.
