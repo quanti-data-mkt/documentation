@@ -2268,3 +2268,15 @@ Removing these reports keeps the quota available for the other reports, so every
 Contact QUANTI support at [support@quanti.io](mailto:support@quanti.io) or consult our comprehensive documentation at [https://docs.quanti.io](https://docs.quanti.io/)
 
 </details>
+
+### video — Video metadata and comment counts
+
+One row per video: title, publication date, duration, status, and lifetime counters (views, likes, comments) read at sync time.
+
+**Where to find it**
+
+Comment totals are in the `statistics_comment_count` column of this table. Daily comment counts per video are in the `comments` column of the channel_basic_a3 report.
+
+**Why it matters**
+
+Looking for a comment table with the comment text. It was removed in September 2026: it needed one API call per video and used up the YouTube daily quota shared by all QUANTI customers, so syncs could not complete.
