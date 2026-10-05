@@ -62,21 +62,21 @@ The three metadata tables are the core dimension tables. Analytics tables refere
 ```mermaid
 erDiagram
     channel {
-        STRING   id PK "channel ID"
+        STRING   id PK "quantiId"
         STRING   snippet_title
         STRING   snippet_description
         STRING   snippet_country
         STRING   snippet_custom_url
         DATETIME snippet_published_at
         BOOLEAN  statistics_hidden_subscriber_count
-        INTEGER  statistics_subscriber_count "lifetime counter"
-        INTEGER  statistics_video_count "lifetime counter"
-        INTEGER  statistics_view_count "lifetime counter"
+        INTEGER  statistics_subscriber_count
+        INTEGER  statistics_video_count
+        INTEGER  statistics_view_count
         STRING   status
         STRING   topic_details
     }
     video {
-        STRING   id PK "video ID"
+        STRING   id PK "quantiId"
         STRING   snippet_channel_id FK
         STRING   snippet_title
         STRING   snippet_description
@@ -89,20 +89,40 @@ erDiagram
         STRING   upload_status
         BOOLEAN  status_made_for_kids
         BOOLEAN  status_embeddable
-        INTEGER  statistics_view_count "lifetime counter"
-        INTEGER  statistics_like_count "lifetime counter"
-        INTEGER  statistics_dislike_count "lifetime counter"
-        INTEGER  statistics_comment_count "lifetime counter"
-        INTEGER  statistics_favorite_count "lifetime counter"
+        INTEGER  statistics_view_count
+        INTEGER  statistics_like_count
+        INTEGER  statistics_dislike_count
+        INTEGER  statistics_comment_count
+        INTEGER  statistics_favorite_count
     }
     playlist {
-        STRING   id PK "playlist ID"
+        STRING   id PK "quantiId"
         STRING   snippet_channel_id FK
         STRING   snippet_title
         STRING   snippet_description
         DATETIME snippet_published_at
         INTEGER  content_details_item_count
         STRING   privacy_status
+    }
+    audience_retention {
+        DATE   date PK
+        STRING video_id PK
+        FLOAT  elapsed_video_time_ratio PK
+        FLOAT  audience_watch_ratio
+        FLOAT  relative_retention_performance
+    }
+    channel_annotations_a1 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  annotation_type PK
+        STRING  annotation_id PK
+        INTEGER annotation_impressions
+        INTEGER annotation_clicks
+        FLOAT   annotation_click_through_rate
     }
     channel_basic_a3 {
         DATE    date PK
@@ -115,7 +135,93 @@ erDiagram
         FLOAT   watch_time_minutes
         INTEGER likes
         INTEGER comments
-        INTEGER shares
+        INTEGER subscribers_gained
+    }
+    channel_cards_a1 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  card_type PK
+        STRING  card_id PK
+        INTEGER card_impressions
+        INTEGER card_clicks
+        FLOAT   card_click_rate
+    }
+    channel_combined_a3 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  playback_location_type PK
+        STRING  traffic_source_type PK
+        STRING  device_type PK
+        STRING  operating_system PK
+        INTEGER views
+        FLOAT   watch_time_minutes
+        INTEGER engaged_views
+    }
+    channel_demographics_a1 {
+        DATE   date PK
+        STRING channel_id PK
+        STRING video_id PK
+        STRING live_or_on_demand PK
+        STRING subscribed_status PK
+        STRING country_code PK
+        STRING age_group PK
+        STRING gender PK
+        FLOAT  views_percentage
+    }
+    channel_device_os_a3 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  device_type PK
+        STRING  operating_system PK
+        INTEGER views
+        FLOAT   watch_time_minutes
+        INTEGER engaged_views
+    }
+    channel_end_screens_a1 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  end_screen_element_type PK
+        STRING  end_screen_element_id PK
+        INTEGER end_screen_element_impressions
+        INTEGER end_screen_element_clicks
+        FLOAT   end_screen_element_click_rate
+    }
+    channel_playback_location_a3 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  playback_location_type PK
+        STRING  playback_location_detail PK
+        INTEGER views
+        FLOAT   watch_time_minutes
+        INTEGER engaged_views
+    }
+    channel_province_a3 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  province_code PK
+        INTEGER views
+        FLOAT   watch_time_minutes
         INTEGER subscribers_gained
     }
     channel_reach_basic_a1 {
@@ -125,6 +231,50 @@ erDiagram
         INTEGER video_thumbnail_impressions
         FLOAT   video_thumbnail_impressions_ctr
     }
+    channel_reach_combined_a1 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  traffic_source_type PK
+        STRING  traffic_source_detail PK
+        STRING  operating_system PK
+        STRING  device_type PK
+        INTEGER video_thumbnail_impressions
+        FLOAT   video_thumbnail_impressions_ctr
+    }
+    channel_sharing_service_a1 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  sharing_service PK
+        INTEGER shares
+    }
+    channel_subtitles_a3 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  subtitle_language PK
+        STRING  subtitle_language_autotranslated PK
+        INTEGER views
+        FLOAT   watch_time_minutes
+        INTEGER engaged_views
+    }
+    channel_traffic_source_a3 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  traffic_source_type PK
+        STRING  traffic_source_detail PK
+        INTEGER views
+        FLOAT   watch_time_minutes
+        INTEGER engaged_views
+    }
     playlist_basic_a2 {
         DATE    date PK
         STRING  channel_id PK
@@ -133,20 +283,110 @@ erDiagram
         INTEGER views
         INTEGER playlist_starts
     }
-    audience_retention {
-        DATE   date PK
-        STRING video_id PK
-        FLOAT  elapsed_video_time_ratio PK
-        FLOAT  audience_watch_ratio
-        FLOAT  relative_retention_performance
+    playlist_combined_a2 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  playlist_id PK
+        STRING  video_id PK
+        STRING  playback_location_type PK
+        STRING  traffic_source_type PK
+        STRING  device_type PK
+        STRING  operating_system PK
+        INTEGER views
+        INTEGER playlist_starts
+    }
+    playlist_device_os_a2 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  playlist_id PK
+        STRING  video_id PK
+        STRING  device_type PK
+        STRING  operating_system PK
+        INTEGER views
+        INTEGER playlist_starts
+    }
+    playlist_playback_location_a2 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  playlist_id PK
+        STRING  video_id PK
+        STRING  playback_location_type PK
+        STRING  playback_location_detail PK
+        INTEGER views
+        INTEGER playlist_starts
+    }
+    playlist_province_a2 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  playlist_id PK
+        STRING  video_id PK
+        STRING  live_or_on_demand PK
+        STRING  subscribed_status PK
+        STRING  country_code PK
+        STRING  province_code PK
+        INTEGER views
+        INTEGER playlist_starts
+    }
+    playlist_traffic_source_a2 {
+        DATE    date PK
+        STRING  channel_id PK
+        STRING  playlist_id PK
+        STRING  video_id PK
+        STRING  traffic_source_type PK
+        STRING  traffic_source_detail PK
+        INTEGER views
+        INTEGER playlist_starts
     }
 
-    channel  ||--o{ video                  : "id = snippet_channel_id"
-    channel  ||--o{ playlist               : "id = snippet_channel_id"
-    video    ||--o{ channel_basic_a3       : "id = video_id"
-    video    ||--o{ channel_reach_basic_a1 : "id = video_id"
-    video    ||--o{ audience_retention     : "id = video_id"
-    playlist ||--o{ playlist_basic_a2      : "id = playlist_id"
+    channel  ||--o{ video                         : "id = snippet_channel_id"
+    channel  ||--o{ playlist                      : "id = snippet_channel_id"
+    channel  ||--o{ channel_annotations_a1        : "id = channel_id"
+    channel  ||--o{ channel_basic_a3              : "id = channel_id"
+    channel  ||--o{ channel_cards_a1              : "id = channel_id"
+    channel  ||--o{ channel_combined_a3           : "id = channel_id"
+    channel  ||--o{ channel_demographics_a1       : "id = channel_id"
+    channel  ||--o{ channel_device_os_a3          : "id = channel_id"
+    channel  ||--o{ channel_end_screens_a1        : "id = channel_id"
+    channel  ||--o{ channel_playback_location_a3  : "id = channel_id"
+    channel  ||--o{ channel_province_a3           : "id = channel_id"
+    channel  ||--o{ channel_reach_basic_a1        : "id = channel_id"
+    channel  ||--o{ channel_reach_combined_a1     : "id = channel_id"
+    channel  ||--o{ channel_sharing_service_a1    : "id = channel_id"
+    channel  ||--o{ channel_subtitles_a3          : "id = channel_id"
+    channel  ||--o{ channel_traffic_source_a3     : "id = channel_id"
+    channel  ||--o{ playlist_basic_a2             : "id = channel_id"
+    channel  ||--o{ playlist_combined_a2          : "id = channel_id"
+    channel  ||--o{ playlist_device_os_a2         : "id = channel_id"
+    channel  ||--o{ playlist_playback_location_a2 : "id = channel_id"
+    channel  ||--o{ playlist_province_a2          : "id = channel_id"
+    channel  ||--o{ playlist_traffic_source_a2    : "id = channel_id"
+    video    ||--o{ audience_retention            : "id = video_id"
+    video    ||--o{ channel_annotations_a1        : "id = video_id"
+    video    ||--o{ channel_basic_a3              : "id = video_id"
+    video    ||--o{ channel_cards_a1              : "id = video_id"
+    video    ||--o{ channel_combined_a3           : "id = video_id"
+    video    ||--o{ channel_demographics_a1       : "id = video_id"
+    video    ||--o{ channel_device_os_a3          : "id = video_id"
+    video    ||--o{ channel_end_screens_a1        : "id = video_id"
+    video    ||--o{ channel_playback_location_a3  : "id = video_id"
+    video    ||--o{ channel_province_a3           : "id = video_id"
+    video    ||--o{ channel_reach_basic_a1        : "id = video_id"
+    video    ||--o{ channel_reach_combined_a1     : "id = video_id"
+    video    ||--o{ channel_sharing_service_a1    : "id = video_id"
+    video    ||--o{ channel_subtitles_a3          : "id = video_id"
+    video    ||--o{ channel_traffic_source_a3     : "id = video_id"
+    video    ||--o{ playlist_basic_a2             : "id = video_id"
+    video    ||--o{ playlist_combined_a2          : "id = video_id"
+    video    ||--o{ playlist_device_os_a2         : "id = video_id"
+    video    ||--o{ playlist_playback_location_a2 : "id = video_id"
+    video    ||--o{ playlist_province_a2          : "id = video_id"
+    video    ||--o{ playlist_traffic_source_a2    : "id = video_id"
+    playlist ||--o{ playlist_basic_a2             : "id = playlist_id"
+    playlist ||--o{ playlist_combined_a2          : "id = playlist_id"
+    playlist ||--o{ playlist_device_os_a2         : "id = playlist_id"
+    playlist ||--o{ playlist_playback_location_a2 : "id = playlist_id"
+    playlist ||--o{ playlist_province_a2          : "id = playlist_id"
+    playlist ||--o{ playlist_traffic_source_a2    : "id = playlist_id"
 ```
 
 <a href="https://dbdiagram.io/d/6ac360a70f25a52d018da819" class="button primary" data-icon="table-tree">Open in dbdiagram</a>
