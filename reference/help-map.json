@@ -94,6 +94,7 @@
   "connector.webhook-tag-analytics": "tag-tracker/tag-setup.md",
   "connector.wonderpush": "connectors/marketing-connectors/wonderpush.md",
   "connector.x": "connectors/marketing-connectors/x.md",
+  "connector.youtube-analytics.video": "connectors/analytics-connectors/youtube-analytics.md#video",
   "data.insert_mode": "data-management/data-insertion-strategies/insertion-method-selection-guide.md#When to use each method",
   "data.primary_key": "data-management/fundamental-concepts/primary-key.md",
   "data.reverse_lookback": "data-management/fundamental-concepts/lookback-window.md#reverse_lookback",
