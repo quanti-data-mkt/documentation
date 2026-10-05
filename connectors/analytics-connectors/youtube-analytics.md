@@ -389,7 +389,7 @@ erDiagram
     playlist ||--o{ playlist_traffic_source_a2    : "id = playlist_id"
 ```
 
-<a href="https://dbdiagram.io/d/6ac360a70f25a52d018da819" class="button primary" data-icon="table-tree">Open in dbdiagram</a>
+<a href="https://dbdiagram.io/e/6ac360a70f25a52d018da819/6ac3b5ebabcc87fb7af6e31c" class="button primary" data-icon="table-tree">Open in dbdiagram</a>
 
 ***
 
