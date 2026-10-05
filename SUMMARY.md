@@ -52,6 +52,7 @@
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
   * [Piano Analytics](connectors/analytics-connectors/piano-analytics-1.md)
   * [Piwik PRO](connectors/analytics-connectors/piwik-pro-analytics.md)
+  * [YouTube Analytics](connectors/analytics-connectors/youtube-analytics.md)
   * [Real-Time Analytics](tag-tracker/README.md)
     * [Tag setup](tag-tracker/tag-setup.md)
     * [Tag data model](tag-tracker/tag-data-model/README.md)
