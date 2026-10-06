@@ -1,4 +1,5 @@
 {
+  "agents.actions": "ai-agents/field-reference.md#actions",
   "agents.active": "ai-agents/field-reference.md#active",
   "agents.context": "ai-agents/field-reference.md#context",
   "agents.plan_status": "ai-agents/field-reference.md#plan_status",
