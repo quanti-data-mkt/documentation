@@ -37,3 +37,15 @@ Analyze › Agents › My agents, “Edit” on the agent, first field of the pa
 **Why it matters**
 
 Giving the agent a task instead of context — “also look at our CRM data”, “compute the margin per product”. The agent cannot reach data outside its scope: it reads the tables of your connected sources only, and a pacing agent will never query orders. Such instructions produce either a failed plan or a check that quietly finds nothing. Write what you know and the agent cannot see: “Google Ads budget: 5 000 € a month, excluding the brand campaign”.
+
+### actions — Actions and their parameters
+
+An action is one concrete thing the agent watches — “monthly pacing”, “campaign stalled”, “volume anomaly” — with the parameters that set its sensitivity (a tolerance in %, an observation window in days, a minimum volume below which nothing is reported). Each check of the plan serves one action.
+
+**Where to find it**
+
+In the agent’s panel, under “What it watches”: a switch per action, and when the action is on, one field per parameter with its label, its unit and the default value when you changed it. Changing an action makes the agent plan again at its next pass.
+
+**Why it matters**
+
+Lowering a threshold to “see more” and getting an alert every morning. A 40 % variation threshold on daily spend reports real moves; at 10 % it reports normal noise, and the daily digest stops being read. If you want to silence one recommendation, dismiss that recommendation with a reason — the agent reads it at its next planning; if you want to silence the whole family, switch the action off. Do not turn the agent off for that: it would stop every other action with it.
