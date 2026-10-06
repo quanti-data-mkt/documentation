@@ -3,6 +3,7 @@
   "agents.active": "ai-agents/field-reference.md#active",
   "agents.context": "ai-agents/field-reference.md#context",
   "agents.plan_status": "ai-agents/field-reference.md#plan_status",
+  "agents.recommendation_review": "ai-agents/field-reference.md#recommendation_review",
   "connector.adobeanalytics": "connectors/analytics-connectors/adobe-analytics.md",
   "connector.adobeclassif": "connectors/reverse-connectors/adobe-analytics-reverse.md",
   "connector.adobedatasource": "connectors/reverse-connectors/adobe-analytics-reverse.md",
