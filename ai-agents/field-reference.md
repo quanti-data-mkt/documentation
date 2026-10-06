@@ -61,3 +61,15 @@ Analyze › Agents › Recommendations, buttons on each card. The same actions e
 **Why it matters**
 
 Dismissing to stop a whole kind of alert. Dismiss only concerns this recommendation — this campaign, this day, this connector — and the agent will still report the next one of the same kind. To stop the kind, switch the corresponding action off in the agent’s panel, or raise its threshold. Conversely, “Later” on a recommendation you do not want anymore only delays it: it will be back in a week.
+
+### notifications — Email alerts
+
+How and when you receive the recommendations of the agents you follow: instantly as they are found, in a daily digest at the hour you choose, in a weekly digest, or not at all. The minimum severity filters what is worth an email. Each member sets their own; the project owner and admins start with a daily digest at 9:00, other members with emails off.
+
+**Where to find it**
+
+Analyze › Agents › Email alerts. One email groups everything new for you since the previous one, by agent, with the managers’ summaries first; nothing is sent when there is nothing new. The footer of each email carries a link to stop them, no login needed.
+
+**Why it matters**
+
+Turning the digest on and following no agent. The digest only carries the recommendations of the agents you follow in My agents: with none, it is always empty and never sent, whatever the frequency. Follow at least one agent. Also, “instantly” is capped at a few emails per hour and per project: when an agent finds many things at once, the rest waits for the digest.
