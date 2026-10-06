@@ -49,3 +49,15 @@ In the agent’s panel, under “What it watches”: a switch per action, and wh
 **Why it matters**
 
 Lowering a threshold to “see more” and getting an alert every morning. A 40 % variation threshold on daily spend reports real moves; at 10 % it reports normal noise, and the daily digest stops being read. If you want to silence one recommendation, dismiss that recommendation with a reason — the agent reads it at its next planning; if you want to silence the whole family, switch the action off. Do not turn the agent off for that: it would stop every other action with it.
+
+### recommendation_review — Got it, Later, Dismiss
+
+Three ways to answer a recommendation. “Got it”: seen, you are on it — it stays open, the agent keeps counting the mornings the signal is still there, silently, and closes it by itself when the signal disappears. “Later”: hide it for 7 days — if the signal is still there afterwards it comes back as new, with the same text. “Dismiss”: never show this one again — with a reason, which the agent reads at its next planning.
+
+**Where to find it**
+
+Analyze › Agents › Recommendations, buttons on each card. The same actions exist from your assistant (ChatGPT, Claude) with the first 8 characters of the recommendation’s reference, printed in the email.
+
+**Why it matters**
+
+Dismissing to stop a whole kind of alert. Dismiss only concerns this recommendation — this campaign, this day, this connector — and the agent will still report the next one of the same kind. To stop the kind, switch the corresponding action off in the agent’s panel, or raise its threshold. Conversely, “Later” on a recommendation you do not want anymore only delays it: it will be back in a week.
