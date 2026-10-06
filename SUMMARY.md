@@ -133,6 +133,11 @@
 * [Server-side tagging](server-side-tagging/README.md)
   * [Field reference](server-side-tagging/field-reference.md)
 
+## AI AGENTS
+
+* [AI agents](ai-agents/README.md)
+  * [Field reference](ai-agents/field-reference.md)
+
 ## MCP Server
 
 * [MCP overview](mcp-server/mcp-overview.md)
