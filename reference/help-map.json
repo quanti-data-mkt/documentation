@@ -35,6 +35,7 @@
   "connector.googlesheet": "connectors/custom-connectors/google-sheets.md",
   "connector.googlesheets": "connectors/custom-connectors/google-sheets.md",
   "connector.googlesheets-v2": "connectors/custom-connectors/google-sheets.md",
+  "connector.googlesheets-v2.mapping_source": "connectors/custom-connectors/google-sheets.md#mapping_source",
   "connector.hubspot": "connectors/sales-analytics-connectors/hubspot.md",
   "connector.hubspot.form-submissions": "connectors/sales-analytics-connectors/hubspot.md#form-submissions",
   "connector.hubspot.hubId": "connectors/sales-analytics-connectors/hubspot.md#hubId",
