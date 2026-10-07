@@ -34,8 +34,12 @@ Open your Google Sheet, then go to **Data** > **Named ranges** and create a name
 {% step %}
 4. Ensure the selected range includes:
 
-* The header row with a name for each column
+* The header row with a **unique, non-empty** name for each column
 * All data rows you want to sync
+
+{% hint style="warning" %}
+**Empty headers are not supported.** If several columns have an empty header, they are read as the same column and only one of them is kept. Give every column a name, or exclude unused columns from the named range.
+{% endhint %}
 {% endstep %}
 
 {% step %}
@@ -112,6 +116,7 @@ Click **Next**
 For each column detected in your sample file:
 
 * **Destination field name**: Define the column name in BigQuery (lowercase, underscores recommended)
+  * Each **Destination field name** must be **unique**. Two fields mapped to the same name will make the sync fail.
 * **Data type**: Choose the appropriate type:
   * `STRING` - Text values, alphanumeric data
   * `INTEGER` - Whole numbers (e.g., 42, -10, 0)
@@ -145,3 +150,12 @@ Click **Next**
 * You can now active the auto-sync or launch a sync now.
 {% endstep %}
 {% endstepper %}
+
+***
+
+## Troubleshooting
+
+| Issue | Cause | Fix |
+|---|---|---|
+| Columns missing or values in the wrong column | Several columns have an empty header | Name every column in the header row, or shrink the named range to exclude empty columns |
+| Setup or sync fails at the mapping step | The same destination field name is used twice | Rename the fields so every destination name is unique |
