@@ -171,3 +171,15 @@ In your Google Sheet, the first row of the named range (Data > Named ranges show
 **Why it matters**
 
 Leaving several columns with an empty header. They are all read as the same column, so only one of them is kept and the others are silently lost. Give every column a unique, non-empty header, or shrink the named range so it excludes unused columns.
+
+### mapping_destination — Destination names must be unique
+
+Each Destination is the name of the column created in your warehouse table for the matching Source column.
+
+**Where to find it**
+
+It is pre-filled from the Source header in snake_case (lowercase, underscores). You can rename it directly in the mapping table before saving.
+
+**Why it matters**
+
+Giving the same Destination name to two fields, for example by renaming two columns to "date". A table cannot hold two columns with the same name, so the sync fails. Rename the fields so every Destination name is unique.
