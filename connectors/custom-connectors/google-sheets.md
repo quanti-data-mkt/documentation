@@ -159,3 +159,15 @@ Click **Next**
 |---|---|---|
 | Columns missing or values in the wrong column | Several columns have an empty header | Name every column in the header row, or shrink the named range to exclude empty columns |
 | Setup or sync fails at the mapping step | The same destination field name is used twice | Rename the fields so every destination name is unique |
+
+### mapping_source — Source columns come from your header row
+
+Each Source entry is a column header read from the first row of the named range you selected; its values are imported under that column.
+
+**Where to find it**
+
+In your Google Sheet, the first row of the named range (Data > Named ranges shows which cells it covers). To change a Source name, edit the header cell in the sheet, then detect the columns again.
+
+**Why it matters**
+
+Leaving several columns with an empty header. They are all read as the same column, so only one of them is kept and the others are silently lost. Give every column a unique, non-empty header, or shrink the named range so it excludes unused columns.
