@@ -126,14 +126,17 @@ Conversion metrics in these tables reflect the attribution window configured at 
 
 ***
 
-### conversion_report_time — Which date a conversion is reported on
+### conversion_report_time — Which day your conversions are counted on
 
-A conversion has two dates: when the user interacted with the ad, and when they completed the conversion. This setting picks the date used in the daily report tables.
+Pinterest records two dates for each conversion: the day someone engaged with your ad, and the day they completed the purchase or sign-up. This setting decides which of the two days your conversions appear on in your daily reports.
 
 **Where to find it**
 
-Choose Time of ad action (Pinterest default) or Time of conversion. Left empty, Pinterest applies Time of ad action.
+Two options:
 
-**Why it matters**
+* **Time of ad action** (Pinterest's default): the conversion is counted on the day the person clicked or viewed your ad. Best to judge each day's ads against their spend.
+* **Time of conversion**: the conversion is counted on the day the purchase or sign-up happened. Best to match your site's daily sales.
 
-Before October 8, 2026, this field offered "Ad Event" / "Conversion Event", values the Pinterest API rejects. Accounts with this setting had every history run older than 90 days fail with "hors de la fenêtre sync Pinterest (max 90 jours)", and recent syncs finished OK with 0 rows inserted. Fixed since then: if your account shows this, re-run the history over the affected dates.
+Example: a click on May 3, a €80 purchase on May 6. Time of ad action shows 1 conversion and €80 on May 3. Time of conversion shows them on May 6. Each conversion is counted once.
+
+Left empty, Pinterest applies Time of ad action.
