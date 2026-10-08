@@ -125,3 +125,15 @@ Conversion metrics in these tables reflect the attribution window configured at 
 <a href="https://dbdiagram.io/e/68e7ba6bd2b621e42211ab2b/68e7be77d2b621e422129949" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
+
+### conversion_report_time — Which date a conversion is reported on
+
+A conversion has two dates: when the user interacted with the ad, and when they completed the conversion. This setting picks the date used in the daily report tables.
+
+**Where to find it**
+
+Choose Time of ad action (Pinterest default) or Time of conversion. Left empty, Pinterest applies Time of ad action.
+
+**Why it matters**
+
+Before October 8, 2026, this field offered "Ad Event" / "Conversion Event", values the Pinterest API rejects. Accounts with this setting had every history run older than 90 days fail with "hors de la fenêtre sync Pinterest (max 90 jours)", and recent syncs finished OK with 0 rows inserted. Fixed since then: if your account shows this, re-run the history over the affected dates.
