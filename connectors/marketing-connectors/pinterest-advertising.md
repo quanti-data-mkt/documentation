@@ -68,7 +68,7 @@ Configure how Pinterest attributes conversions in your report tables. These thre
 |---|---|---|---|
 | **Click Attribution Window** | `click_window_days` | 1 / 7 / 30 / 60 | 30 |
 | **View Attribution Window** | `view_window_days` | 1 / 7 / 30 / 60 | 1 |
-| **Conversion Report Time** | `conversion_report_time` | `AD_EVENT` / `CONVERSION_EVENT` | `AD_EVENT` |
+| **Conversion Report Time** | `conversion_report_time` | `TIME_OF_AD_ACTION` / `TIME_OF_CONVERSION` | `TIME_OF_AD_ACTION` |
 
 {% hint style="warning" %}
 **View Attribution Window cannot exceed Click Attribution Window.** Valid combinations (click, view) are: (60, 60) (60, 30) (60, 7) (60, 1) (30, 30) (30, 7) (30, 1) (7, 7) (7, 1) (1, 1).
@@ -76,8 +76,8 @@ Configure how Pinterest attributes conversions in your report tables. These thre
 
 {% hint style="info" %}
 **Conversion Report Time** controls the date used to report conversions:
-* `AD_EVENT` — conversion is attributed to the date the user interacted with the ad (default)
-* `CONVERSION_EVENT` — conversion is attributed to the date the conversion actually occurred
+* `TIME_OF_AD_ACTION` — conversion is reported on the date the user interacted with the ad (default)
+* `TIME_OF_CONVERSION` — conversion is reported on the date the user completed the conversion
 
 These settings only affect **Campaign Report**, **Ad Group Report**, and **Pin Promotion Report**. History/dimension tables are not impacted.
 {% endhint %}
