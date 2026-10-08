@@ -59,6 +59,7 @@
   "connector.pennylane-api": "connectors/sales-analytics-connectors/pennylane-api.md",
   "connector.piano": "connectors/analytics-connectors/piano-analytics.md",
   "connector.pinterest": "connectors/marketing-connectors/pinterest-advertising.md",
+  "connector.pinterest.conversion_report_time": "connectors/marketing-connectors/pinterest-advertising.md#conversion_report_time",
   "connector.piwikpro": "connectors/analytics-connectors/piwik-pro-analytics.md",
   "connector.postgres": "connectors/custom-connectors/postgresql.md",
   "connector.prestashop-api": "connectors/sales-analytics-connectors/prestashop-api.md",
