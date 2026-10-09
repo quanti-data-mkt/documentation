@@ -71,8 +71,8 @@ Before connecting Google Merchant Center to QUANTI, ensure you have:
 
 ### Dimension Tables
 
-* **product**: Complete product catalog with attribute change tracking. Contains product details including ID, title, brand, availability, condition, channel, language, and aggregated status. This table includes historization to track product attribute changes over time.
-* **item\_issue**: Product issues child table linked to the product table. Captures all issues affecting products including issue code, affected attribute, description, resolution type, severity level, and documentation links. Each product can have multiple issues.
+* **product**: Complete product catalog with attribute change tracking. Contains product details including ID, offer ID, title, brand, availability, condition, price, language, feed label, links and Merchant Center dates. This table includes historization to track product attribute changes over time.
+* **item\_issue**: Product issues child table linked to the product table. Captures all issues affecting products including issue code, affected attribute, description, resolution type, severity level, documentation links and the product thumbnail link. Each product can have multiple issues.
 
 ### Metric Tables
 
@@ -93,3 +93,8 @@ Before connecting Google Merchant Center to QUANTI, ensure you have:
 ## Notes
 
 * **Historical Limitations**: Google's API allows historical data retrieval up to 18 months for performance metrics.
+* **Merchant API v1**: Since October 2026 the connector uses Google's Merchant API v1 (Content API for Shopping was sunset by Google).
+  * `availability` and `condition` are stored as returned by the API (e.g. `IN_STOCK`, `NEW`); older rows use the legacy format (`in stock`, `new`).
+  * `price` is stored as returned by the API: `{"amountMicros": "...", "currencyCode": "..."}`.
+  * `channel`, `target_country` and `tax_category` no longer exist in the Merchant API and are left empty.
+  * In `item_issue`, the `link` column was replaced by `thumbnail_link` (product image URL).
