@@ -61,18 +61,52 @@ erDiagram
     account_history {
         STRING profile_id PK
         STRING country_code PK
-        STRING account_info_name
+        STRING account_info_id PK
+        STRING account_info_name PK
+        STRING account_info_type PK
         STRING currency_code
         STRING timezone
+        FLOAT daily_budget
     }
+
     sp_campaign_history {
         STRING campaign_id PK
+        STRING extended_data_last_update_date_time PK
         STRING name
         STRING state
         STRING targeting_type
         FLOAT budget_budget
         STRING dynamic_bidding_strategy
     }
+    sp_ad_group_history {
+        STRING ad_group_id PK
+        STRING campaign_id FK
+        STRING name
+        STRING state
+        FLOAT default_bid
+    }
+    sp_keyword_history {
+        STRING keyword_id PK
+        STRING ad_group_id FK
+        STRING keyword_text
+        STRING match_type
+        FLOAT bid
+    }
+    sp_product_ad_history {
+        STRING ad_id PK
+        STRING ad_group_id FK
+        STRING asin
+        STRING sku
+        STRING state
+    }
+    sp_targeting_clause_history {
+        STRING targeting_clause_id PK
+        STRING ad_group_id FK
+        STRING expression_type
+        FLOAT bid
+        STRING state
+    }
+
     sp_campaign_report {
         DATE date PK
         STRING campaign_id PK
@@ -81,65 +115,389 @@ erDiagram
         FLOAT cost
         INTEGER purchases7d
         FLOAT sales7d
+        FLOAT top_of_search_impression_share
     }
     sp_adgroup_report {
         DATE date PK
         STRING campaign_id PK
         STRING ad_group_id PK
         INTEGER impressions
+        INTEGER clicks
         FLOAT cost
+        INTEGER purchases7d
+        FLOAT sales7d
+    }
+    sp_advertised_product_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING advertised_asin PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        INTEGER purchases7d
+        FLOAT sales7d
+    }
+    sp_campaign_placement_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING placement PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        INTEGER purchases7d
     }
     sp_search_term_report {
         DATE date PK
         STRING campaign_id PK
         STRING ad_group_id PK
+        STRING keyword_id PK
         STRING search_term PK
+        STRING match_type
         INTEGER impressions
         FLOAT cost
         FLOAT acos_clicks7d
+        FLOAT roas_clicks7d
     }
+    sp_targeting_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING targeting_id PK
+        STRING targeting_expression
+        INTEGER impressions
+        FLOAT cost
+        INTEGER purchases7d
+    }
+    sp_purchased_product_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING advertised_asin PK
+        STRING purchased_asin PK
+        INTEGER purchases7d
+        FLOAT sales7d
+    }
+    sp_gross_and_invalids_report {
+        DATE date PK
+        STRING campaign_id PK
+        INTEGER gross_impressions
+        INTEGER gross_clicks
+        INTEGER invalid_impressions
+        INTEGER invalid_clicks
+    }
+
     sb_campaign_history {
         STRING campaign_id PK
+        STRING extended_data_last_update_date PK
+        STRING name
+        STRING state
+        FLOAT budget
+        STRING cost_type
+        STRING goal
+    }
+    sb_ad_group_history {
+        STRING ad_group_id PK
+        STRING campaign_id FK
         STRING name
         STRING state
     }
+    sb_keyword_history {
+        STRING keyword_id PK
+        STRING ad_group_id FK
+        STRING keyword_text
+        STRING match_type
+        FLOAT bid
+    }
+    sb_ad_history {
+        STRING ad_id PK
+        STRING campaign_id FK
+        STRING ad_group_id
+        STRING state
+    }
+    sb_creative_history {
+        STRING creative_id PK
+        STRING campaign_id FK
+        STRING headline
+        STRING landing_page
+    }
+
     sb_campaign_report {
         DATE date PK
         STRING campaign_id PK
         INTEGER impressions
+        INTEGER clicks
         FLOAT cost
+        INTEGER purchases
+        FLOAT sales
         INTEGER new_to_brand_purchases
+        FLOAT new_to_brand_sales
+        FLOAT top_of_search_impression_share
+        INTEGER video_complete_views
     }
-    sd_campaign_history {
-        STRING campaign_id PK
-        STRING name
-        STRING state
-    }
-    sd_campaign_report {
+    sb_adgroup_report {
         DATE date PK
         STRING campaign_id PK
+        STRING ad_group_id PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        INTEGER purchases
+        FLOAT sales
+    }
+    sb_ad_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_id PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        INTEGER purchases
+        FLOAT sales
+    }
+    sb_campaign_placement_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING placement PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        INTEGER purchases
+    }
+    sb_search_term_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING keyword_id PK
+        STRING search_term PK
+        INTEGER impressions
+        FLOAT cost
+        INTEGER purchases
+        FLOAT sales
+    }
+    sb_targeting_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING targeting_id PK
         INTEGER impressions
         FLOAT cost
         INTEGER purchases
     }
-    st_campaign_history {
+    sb_purchased_product_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING advertised_asin PK
+        STRING purchased_asin PK
+        INTEGER purchases
+        FLOAT sales
+    }
+    sb_gross_and_invalids_report {
+        DATE date PK
+        STRING campaign_id PK
+        INTEGER gross_impressions
+        INTEGER gross_clicks
+        INTEGER invalid_impressions
+        INTEGER invalid_clicks
+    }
+
+    sd_campaign_history {
         STRING campaign_id PK
         STRING name
         STRING state
+        FLOAT budget
+        STRING tactic
+        STRING cost_type
     }
+    sd_ad_group_history {
+        STRING ad_group_id PK
+        STRING campaign_id FK
+        STRING name
+        STRING state
+        FLOAT default_bid
+    }
+    sd_product_ad_history {
+        STRING ad_id PK
+        STRING campaign_id FK
+        STRING ad_group_id
+        STRING asin
+        STRING state
+    }
+    sd_targeting_history {
+        STRING targeting_id PK
+        STRING campaign_id FK
+        STRING ad_group_id
+        STRING expression
+        FLOAT bid
+    }
+
+    sd_campaign_report {
+        DATE date PK
+        STRING campaign_id PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        FLOAT sales
+        INTEGER purchases
+        FLOAT sales_clicks
+        INTEGER purchases_clicks
+        INTEGER add_to_cart
+        INTEGER new_to_brand_purchases
+    }
+    sd_advertised_product_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING advertised_asin PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        FLOAT sales
+    }
+    sd_campaign_target_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING targeting_expression PK
+        INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        FLOAT sales
+    }
+    sd_targeting_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING targeting_id PK
+        INTEGER impressions
+        FLOAT cost
+        FLOAT sales
+    }
+    sd_purchased_product_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING advertised_asin PK
+        STRING purchased_asin PK
+        INTEGER purchases
+        FLOAT sales
+    }
+    sd_gross_and_invalids_report {
+        DATE date PK
+        STRING campaign_id PK
+        INTEGER gross_impressions
+        INTEGER gross_clicks
+        INTEGER invalid_impressions
+        INTEGER invalid_clicks
+    }
+
+    st_campaign_history {
+        STRING campaign_id PK
+        STRING extended_data_last_update_date PK
+        STRING name
+        STRING state
+        STRING cost_type
+        STRING targeting_type
+        FLOAT budget_settings_budget_budget_value_amount
+    }
+    st_ad_group_history {
+        STRING ad_group_id PK
+        STRING campaign_id FK
+        STRING name
+        STRING state
+    }
+    st_ad_history {
+        STRING ad_id PK
+        STRING campaign_id FK
+        STRING ad_group_id
+        STRING state
+    }
+    st_targeting_history {
+        STRING targeting_id PK
+        STRING campaign_id FK
+        STRING ad_group_id
+        STRING expression
+    }
+
     st_campaign_report {
         DATE date PK
         STRING campaign_id PK
         INTEGER impressions
+        INTEGER clicks
+        FLOAT cost
+        FLOAT cost_per_thousand_impressions
+        INTEGER reach
+        INTEGER household_reach
+        FLOAT frequency_average
+        INTEGER purchases
+        FLOAT sales
+        INTEGER new_to_brand_purchases
+        FLOAT roas
+    }
+    st_adgroup_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        INTEGER impressions
+        INTEGER clicks
         FLOAT cost
         INTEGER reach
+        INTEGER purchases
+        FLOAT sales
     }
+    st_targeting_report {
+        DATE date PK
+        STRING campaign_id PK
+        STRING ad_group_id PK
+        STRING targeting_id PK
+        INTEGER impressions
+        FLOAT cost
+        INTEGER reach
+        INTEGER purchases
+    }
+
+    sp_campaign_history ||--o{ sp_ad_group_history : "campaign_id"
     sp_campaign_history ||--o{ sp_campaign_report : "campaign_id"
-    sp_campaign_history ||--o{ sp_adgroup_report : "campaign_id"
-    sp_campaign_history ||--o{ sp_search_term_report : "campaign_id"
+    sp_campaign_history ||--o{ sp_campaign_placement_report : "campaign_id"
+    sp_campaign_history ||--o{ sp_gross_and_invalids_report : "campaign_id"
+    sp_ad_group_history ||--o{ sp_keyword_history : "ad_group_id"
+    sp_ad_group_history ||--o{ sp_product_ad_history : "ad_group_id"
+    sp_ad_group_history ||--o{ sp_targeting_clause_history : "ad_group_id"
+    sp_ad_group_history ||--o{ sp_adgroup_report : "ad_group_id"
+    sp_ad_group_history ||--o{ sp_advertised_product_report : "ad_group_id"
+    sp_ad_group_history ||--o{ sp_search_term_report : "ad_group_id"
+    sp_ad_group_history ||--o{ sp_targeting_report : "ad_group_id"
+    sp_ad_group_history ||--o{ sp_purchased_product_report : "ad_group_id"
+
+    sb_campaign_history ||--o{ sb_ad_group_history : "campaign_id"
+    sb_campaign_history ||--o{ sb_ad_history : "campaign_id"
+    sb_campaign_history ||--o{ sb_creative_history : "campaign_id"
     sb_campaign_history ||--o{ sb_campaign_report : "campaign_id"
+    sb_campaign_history ||--o{ sb_campaign_placement_report : "campaign_id"
+    sb_campaign_history ||--o{ sb_gross_and_invalids_report : "campaign_id"
+    sb_ad_group_history ||--o{ sb_keyword_history : "ad_group_id"
+    sb_ad_group_history ||--o{ sb_adgroup_report : "ad_group_id"
+    sb_ad_group_history ||--o{ sb_search_term_report : "ad_group_id"
+    sb_ad_group_history ||--o{ sb_targeting_report : "ad_group_id"
+    sb_ad_group_history ||--o{ sb_purchased_product_report : "ad_group_id"
+    sb_ad_history ||--o{ sb_ad_report : "ad_id"
+
+    sd_campaign_history ||--o{ sd_ad_group_history : "campaign_id"
     sd_campaign_history ||--o{ sd_campaign_report : "campaign_id"
+    sd_campaign_history ||--o{ sd_campaign_target_report : "campaign_id"
+    sd_campaign_history ||--o{ sd_gross_and_invalids_report : "campaign_id"
+    sd_ad_group_history ||--o{ sd_product_ad_history : "ad_group_id"
+    sd_ad_group_history ||--o{ sd_targeting_history : "ad_group_id"
+    sd_ad_group_history ||--o{ sd_advertised_product_report : "ad_group_id"
+    sd_ad_group_history ||--o{ sd_targeting_report : "ad_group_id"
+    sd_ad_group_history ||--o{ sd_purchased_product_report : "ad_group_id"
+
+    st_campaign_history ||--o{ st_ad_group_history : "campaign_id"
     st_campaign_history ||--o{ st_campaign_report : "campaign_id"
+    st_ad_group_history ||--o{ st_ad_history : "ad_group_id"
+    st_ad_group_history ||--o{ st_targeting_history : "ad_group_id"
+    st_ad_group_history ||--o{ st_adgroup_report : "ad_group_id"
+    st_ad_group_history ||--o{ st_targeting_report : "ad_group_id"
 ```
 
 <a href="https://dbdiagram.io/e/6acdf7d110dbb6efb5e263d6/6acdfa80e308025ea5dc51c3" class="button primary" data-icon="table-tree">Open in dbdiagram</a>
