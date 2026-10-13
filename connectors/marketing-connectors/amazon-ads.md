@@ -142,7 +142,7 @@ erDiagram
     st_campaign_history ||--o{ st_campaign_report : "campaign_id"
 ```
 
-<a href="https://dbdiagram.io/e/amazon-ads-quanti" class="button primary" data-icon="table-tree">Open in dbdiagram</a>
+<a href="https://dbdiagram.io/e/6acdf7d110dbb6efb5e263d6/6acdfa80e308025ea5dc51c3" class="button primary" data-icon="table-tree">Open in dbdiagram</a>
 
 ***
 
@@ -160,8 +160,6 @@ Amazon Ads provides **44 pre-built reports** organized in two categories:
 ### Account
 
 #### account\_history
-
-Amazon Advertising profiles (accounts) selected during connector setup.
 
 | Column | Type | Description |
 |---|---|---|
@@ -181,8 +179,6 @@ Amazon Advertising profiles (accounts) selected during connector setup.
 
 ### Sponsored Products (SP)
 
-Sponsored Products are keyword- and product-targeted ads that appear in Amazon search results and on product detail pages.
-
 #### History Tables
 
 | Table | Description |
@@ -193,122 +189,30 @@ Sponsored Products are keyword- and product-targeted ads that appear in Amazon s
 | `sp_product_ad_history` | SP product ads: ASIN, SKU, state |
 | `sp_targeting_clause_history` | SP targeting clauses: expression type, bid, state |
 
-**sp\_campaign\_history — key columns**
-
-| Column | Type | Description |
-|---|---|---|
-| `campaign_id` | STRING | Campaign ID (PK) |
-| `extended_data_last_update_date_time` | STRING | Last update timestamp (PK) |
-| `name` | STRING | Campaign name |
-| `state` | STRING | enabled / paused / archived |
-| `targeting_type` | STRING | manual / auto |
-| `start_date` | DATE | Campaign start date |
-| `end_date` | DATE | Campaign end date |
-| `portfolio_id` | STRING | Portfolio ID |
-| `budget_budget` | FLOAT | Campaign budget amount |
-| `budget_budget_type` | STRING | daily / monthly |
-| `budget_effective_budget` | FLOAT | Effective budget in use |
-| `dynamic_bidding_strategy` | STRING | legacyForSales / autoForSales / manual |
-| `dynamic_bidding_placement_bidding` | STRING | Placement bid adjustments (JSON) |
-| `auto_manage_campaign` | STRING | Auto-management flag |
-| `extended_data_serving_status` | STRING | Campaign serving status |
-| `tags` | STRING | Campaign tags (JSON) |
-
 #### Performance Reports
 
-**sp\_campaign\_report**
-
-Sponsored Products campaign-level performance (API v3). Grouped by `campaign`.
-
-**Dimensions**
-
-| Column | Type | Description |
-|---|---|---|
-| `date` | DATE | Report date (PK, isQuantiDate) |
-| `campaign_id` | STRING | Campaign ID (PK) |
-| `campaign_name` | STRING | Campaign name |
-| `campaign_status` | STRING | Campaign status |
-| `campaign_budget_amount` | FLOAT | Budget amount |
-| `campaign_budget_type` | STRING | Budget type |
-| `campaign_budget_currency_code` | STRING | Currency |
-| `campaign_bidding_strategy` | STRING | Bidding strategy |
-| `campaign_rule_based_budget_amount` | FLOAT | Rule-based budget |
-| `campaign_applicable_budget_rule_id` | STRING | Budget rule ID |
-| `campaign_applicable_budget_rule_name` | STRING | Budget rule name |
-
-**Metrics**
-
-| Column | Type | Description |
-|---|---|---|
-| `impressions` | INTEGER | Total impressions |
-| `clicks` | INTEGER | Total clicks |
-| `cost` | FLOAT | Total spend |
-| `cost_per_click` | FLOAT | CPC |
-| `click_through_rate` | FLOAT | CTR |
-| `top_of_search_impression_share` | FLOAT | Top-of-search impression share |
-| `purchases1d` / `7d` / `14d` / `30d` | INTEGER | Purchases within attribution window |
-| `purchases_same_sku1d` / `7d` / `14d` / `30d` | INTEGER | Same-SKU purchases |
-| `sales1d` / `7d` / `14d` / `30d` | FLOAT | Attributed sales |
-| `attributed_sales_same_sku1d` / `7d` / `14d` / `30d` | FLOAT | Same-SKU attributed sales |
-| `units_sold_clicks1d` / `7d` / `14d` / `30d` | INTEGER | Units sold from clicks |
-| `units_sold_same_sku1d` / `7d` / `14d` / `30d` | INTEGER | Same-SKU units sold |
-| `add_to_list` | INTEGER | Add to list actions |
-| `qualified_borrows` | INTEGER | Kindle Unlimited qualified borrows |
-| `royalty_qualified_borrows` | INTEGER | Kindle Unlimited royalty borrows |
-| `kindle_edition_normalized_pages_read14d` | INTEGER | KENP read (14d) |
-| `kindle_edition_normalized_pages_royalties14d` | FLOAT | KENP royalties (14d) |
-
-***
-
-**sp\_adgroup\_report**
-
-Sponsored Products ad group-level performance. Grouped by `campaign` + `adGroup`.
-
-**Dimensions**
+**sp\_campaign\_report** — campaign-level, grouped by `campaign`
 
 | Column | Type | Description |
 |---|---|---|
 | `date` | DATE | Report date (PK) |
 | `campaign_id` | STRING | Campaign ID (PK) |
-| `ad_group_id` | STRING | Ad group ID (PK) |
-| `ad_group_name` | STRING | Ad group name |
 | `campaign_name` | STRING | Campaign name |
-| `campaign_status` | STRING | Campaign status |
-| `campaign_budget_amount` | FLOAT | Budget amount |
-| `campaign_budget_type` | STRING | Budget type |
-| `campaign_budget_currency_code` | STRING | Currency |
-| `campaign_bidding_strategy` | STRING | Bidding strategy |
-| `campaign_rule_based_budget_amount` | FLOAT | Rule-based budget |
-| `campaign_applicable_budget_rule_id` | STRING | Budget rule ID |
-| `campaign_applicable_budget_rule_name` | STRING | Budget rule name |
+| `impressions` | INTEGER | Total impressions |
+| `clicks` | INTEGER | Total clicks |
+| `cost` | FLOAT | Total spend |
+| `purchases1d` / `7d` / `14d` / `30d` | INTEGER | Purchases by attribution window |
+| `sales1d` / `7d` / `14d` / `30d` | FLOAT | Attributed sales |
+| `units_sold_clicks1d` / `7d` / `14d` / `30d` | INTEGER | Units sold from clicks |
+| `top_of_search_impression_share` | FLOAT | Top-of-search impression share |
 
-**Metrics** — same as `sp_campaign_report` (impressions, clicks, cost, CPC, CTR, purchases 1d/7d/14d/30d, sales 1d/7d/14d/30d, units sold, KENP)
+**sp\_adgroup\_report** — ad group-level, grouped by `campaign` + `adGroup`
 
-***
+**sp\_advertised\_product\_report** — by advertised ASIN/SKU, grouped by `advertiser`
 
-**sp\_advertised\_product\_report**
+**sp\_campaign\_placement\_report** — by placement (Top of Search, Rest of Search, Product Pages)
 
-Performance by advertised ASIN/SKU. Grouped by `advertiser`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `advertised_asin`, `advertised_sku`\
-Metrics: impressions, clicks, cost, purchases/sales with attribution windows
-
-***
-
-**sp\_campaign\_placement\_report**
-
-Performance by campaign placement (Top of Search, Rest of Search, Product Pages). Grouped by `campaign` + `campaignPlacement`.
-
-Dimensions: `date`, `campaign_id`, `campaign_name`, `placement`\
-Metrics: impressions, clicks, cost, purchases/sales with attribution windows
-
-***
-
-**sp\_search\_term\_report**
-
-Performance by customer search term. Grouped by `searchTerm`.
-
-**Dimensions**
+**sp\_search\_term\_report** — by customer search term
 
 | Column | Type | Description |
 |---|---|---|
@@ -317,63 +221,21 @@ Performance by customer search term. Grouped by `searchTerm`.
 | `ad_group_id` | STRING | Ad group ID (PK) |
 | `keyword_id` | STRING | Keyword ID (PK) |
 | `search_term` | STRING | Customer search term (PK) |
-| `campaign_name` | STRING | Campaign name |
-| `campaign_status` | STRING | Campaign status |
-| `campaign_budget_amount` | FLOAT | Budget amount |
-| `campaign_budget_type` | STRING | Budget type |
-| `campaign_budget_currency_code` | STRING | Currency |
-| `ad_group_name` | STRING | Ad group name |
 | `keyword` | STRING | Matched keyword text |
 | `match_type` | STRING | exact / phrase / broad |
-
-**Metrics**
-
-| Column | Type | Description |
-|---|---|---|
 | `impressions` | INTEGER | Total impressions |
 | `clicks` | INTEGER | Total clicks |
 | `cost` | FLOAT | Total spend |
-| `cost_per_click` | FLOAT | CPC |
-| `click_through_rate` | FLOAT | CTR |
 | `purchases1d` / `7d` / `14d` / `30d` | INTEGER | Purchases by attribution window |
-| `purchases_same_sku1d` / `7d` / `14d` / `30d` | INTEGER | Same-SKU purchases |
 | `sales1d` / `7d` / `14d` / `30d` | FLOAT | Attributed sales |
-| `attributed_sales_same_sku1d` / `7d` / `14d` / `30d` | FLOAT | Same-SKU attributed sales |
-| `sales_other_sku7d` | FLOAT | Sales of other SKUs (7d) |
-| `units_sold_clicks1d` / `7d` / `14d` / `30d` | INTEGER | Units sold from clicks |
-| `units_sold_same_sku1d` / `7d` / `14d` / `30d` | INTEGER | Same-SKU units sold |
-| `units_sold_other_sku7d` | INTEGER | Other-SKU units sold (7d) |
-| `acos_clicks7d` / `14d` | FLOAT | ACoS (7d / 14d) |
-| `roas_clicks7d` / `14d` | FLOAT | RoAS (7d / 14d) |
-| `add_to_list` | INTEGER | Add to list actions |
-| `qualified_borrows` | INTEGER | Kindle qualified borrows |
-| `royalty_qualified_borrows` | INTEGER | Kindle royalty borrows |
-| `kindle_edition_normalized_pages_read14d` | INTEGER | KENP read (14d) |
-| `kindle_edition_normalized_pages_royalties14d` | FLOAT | KENP royalties (14d) |
+| `acos_clicks7d` / `14d` | FLOAT | ACoS |
+| `roas_clicks7d` / `14d` | FLOAT | RoAS |
 
-***
+**sp\_targeting\_report** — by targeting clause
 
-**sp\_targeting\_report**
+**sp\_purchased\_product\_report** — cross-sell by purchased ASIN
 
-Performance by targeting clause (keywords and product targets). Grouped by `targeting`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `targeting_id`, `targeting_expression`, `targeting_text`, `targeting_type`, `match_type`\
-Metrics: same as `sp_adgroup_report`
-
-***
-
-**sp\_purchased\_product\_report**
-
-Performance by purchased product (ASIN), including cross-selling attribution. Grouped by `purchasedProduct`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `keyword_id`, `advertised_asin`, `purchased_asin`\
-Metrics: purchases7d, sales7d, units_sold7d and other attribution windows
-
-***
-
-**sp\_gross\_and\_invalids\_report**
-
-Invalid traffic metrics per campaign for quality monitoring. Grouped by `campaign`.
+**sp\_gross\_and\_invalids\_report** — invalid traffic metrics
 
 | Column | Type | Description |
 |---|---|---|
@@ -388,8 +250,6 @@ Invalid traffic metrics per campaign for quality monitoring. Grouped by `campaig
 
 ### Sponsored Brands (SB)
 
-Sponsored Brands are headline ads featuring your brand logo, custom headline, and multiple products. They appear prominently in search results and support video creatives.
-
 #### History Tables
 
 | Table | Description |
@@ -402,154 +262,40 @@ Sponsored Brands are headline ads featuring your brand logo, custom headline, an
 
 #### Performance Reports
 
-**sb\_campaign\_report**
-
-Sponsored Brands campaign-level performance (API v3). Grouped by `campaign`.
-
-**Dimensions**
-
-| Column | Type | Description |
-|---|---|---|
-| `date` | DATE | Report date (PK, isQuantiDate) |
-| `campaign_id` | STRING | Campaign ID (PK) |
-| `campaign_name` | STRING | Campaign name |
-| `campaign_status` | STRING | Campaign status |
-| `campaign_budget_amount` | FLOAT | Budget amount |
-| `campaign_budget_type` | STRING | Budget type |
-| `campaign_budget_currency_code` | STRING | Currency |
-| `campaign_rule_based_budget_amount` | FLOAT | Rule-based budget |
-| `cost_type` | STRING | Cost model (CPC, vCPM…) |
-| `start_date` | DATE | Campaign start date |
-| `end_date` | DATE | Campaign end date |
-
-**Metrics**
-
-| Column | Type | Description |
-|---|---|---|
-| `impressions` | INTEGER | Total impressions |
-| `viewable_impressions` | INTEGER | Viewable impressions |
-| `clicks` | INTEGER | Total clicks |
-| `cost` | FLOAT | Total spend |
-| `top_of_search_impression_share` | FLOAT | Top-of-search impression share |
-| `purchases` | INTEGER | Attributed purchases |
-| `purchases_clicks` | INTEGER | Purchases attributed to clicks |
-| `purchases_promoted` | INTEGER | Purchases of promoted products |
-| `sales` | FLOAT | Attributed sales |
-| `sales_clicks` | FLOAT | Sales attributed to clicks |
-| `sales_promoted` | FLOAT | Sales of promoted products |
-| `units_sold` | INTEGER | Units sold |
-| `units_sold_clicks` | INTEGER | Units sold from clicks |
-| `new_to_brand_purchases` | INTEGER | New-to-brand purchases |
-| `new_to_brand_purchases_clicks` | INTEGER | NTB purchases from clicks |
-| `new_to_brand_purchases_percentage` | FLOAT | % purchases that are NTB |
-| `new_to_brand_purchases_rate` | FLOAT | NTB purchase rate |
-| `new_to_brand_sales` | FLOAT | New-to-brand sales |
-| `new_to_brand_sales_clicks` | FLOAT | NTB sales from clicks |
-| `new_to_brand_sales_percentage` | FLOAT | % sales that are NTB |
-| `new_to_brand_units_sold` | INTEGER | NTB units sold |
-| `new_to_brand_units_sold_clicks` | INTEGER | NTB units sold from clicks |
-| `new_to_brand_units_sold_percentage` | FLOAT | % units sold that are NTB |
-| `detail_page_views` | INTEGER | Product detail page views |
-| `detail_page_views_clicks` | INTEGER | Detail page views from clicks |
-| `new_to_brand_detail_page_views` | INTEGER | NTB detail page views |
-| `new_to_brand_ecp_detail_page_view` | FLOAT | eCPDPV for NTB |
-| `brand_store_page_view` | INTEGER | Brand Store page views |
-| `branded_searches` | INTEGER | Branded search events |
-| `branded_searches_clicks` | INTEGER | Branded searches from clicks |
-| `add_to_cart` | INTEGER | Add to cart events |
-| `add_to_cart_clicks` | INTEGER | Add to cart from clicks |
-| `add_to_cart_rate` | FLOAT | Add-to-cart rate |
-| `e_cp_add_to_cart` | FLOAT | eCPATC |
-| `video5_second_view_rate` | FLOAT | 5-second video view rate |
-| `video5_second_views` | INTEGER | 5-second video views |
-| `video_complete_views` | INTEGER | Video completions |
-| `video_first_quartile_views` | INTEGER | Video 25% views |
-| `video_midpoint_views` | INTEGER | Video 50% views |
-| `video_third_quartile_views` | INTEGER | Video 75% views |
-| `video_unmutes` | INTEGER | Video unmutes |
-| `view_click_through_rate` | FLOAT | View-through CTR |
-| `viewability_rate` | FLOAT | Viewability rate |
-| `long_term_sales` | FLOAT | Long-term attributed sales |
-| `long_term_roas` | FLOAT | Long-term RoAS |
-| `qualified_borrows` | INTEGER | Kindle qualified borrows |
-| `royalty_qualified_borrows` | INTEGER | Kindle royalty borrows |
-| `kindle_edition_normalized_pages_read14d` | INTEGER | KENP read (14d) |
-| `kindle_edition_normalized_pages_royalties14d` | FLOAT | KENP royalties (14d) |
-
-***
-
-**sb\_adgroup\_report**
-
-Sponsored Brands ad group-level performance. Grouped by `campaign` + `adGroup`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `ad_group_name`, + campaign metadata\
-Metrics: same set as `sb_campaign_report`
-
-***
-
-**sb\_ad\_report**
-
-Sponsored Brands ad-level performance. Grouped by `campaign` + `ad`.
-
-Dimensions: `date`, `campaign_id`, `ad_id`, + campaign/ad group metadata\
-Metrics: impressions, clicks, cost, purchases, sales, NTB metrics, video metrics
-
-***
-
-**sb\_campaign\_placement\_report**
-
-Sponsored Brands performance by placement. Grouped by `campaign` + `campaignPlacement`.
-
-Dimensions: `date`, `campaign_id`, `campaign_name`, `placement`\
-Metrics: impressions, clicks, cost, purchases, sales, NTB metrics
-
-***
-
-**sb\_search\_term\_report**
-
-Sponsored Brands performance by customer search term. Grouped by `searchTerm`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `keyword_id`, `search_term`, `keyword`, `match_type`\
-Metrics: impressions, clicks, cost, purchases, sales, NTB metrics
-
-***
-
-**sb\_targeting\_report**
-
-Sponsored Brands performance by targeting clause. Grouped by `targeting`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `targeting_id`, `targeting_expression`\
-Metrics: same as `sb_campaign_report`
-
-***
-
-**sb\_purchased\_product\_report**
-
-Sponsored Brands cross-sell attribution by purchased ASIN. Grouped by `purchasedProduct`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `advertised_asin`, `purchased_asin`\
-Metrics: purchases, sales, units_sold, NTB equivalents
-
-***
-
-**sb\_gross\_and\_invalids\_report**
-
-Sponsored Brands invalid traffic metrics per campaign.
+**sb\_campaign\_report** — campaign-level
 
 | Column | Type | Description |
 |---|---|---|
 | `date` | DATE | Report date (PK) |
 | `campaign_id` | STRING | Campaign ID (PK) |
-| `gross_impressions` | INTEGER | Gross impressions |
-| `gross_clicks` | INTEGER | Gross clicks |
-| `invalid_impressions` | INTEGER | Invalid impressions |
-| `invalid_clicks` | INTEGER | Invalid clicks |
+| `impressions` | INTEGER | Total impressions |
+| `clicks` | INTEGER | Total clicks |
+| `cost` | FLOAT | Total spend |
+| `purchases` | INTEGER | Attributed purchases |
+| `sales` | FLOAT | Attributed sales |
+| `new_to_brand_purchases` | INTEGER | New-to-brand purchases |
+| `new_to_brand_sales` | FLOAT | New-to-brand sales |
+| `new_to_brand_purchases_percentage` | FLOAT | % purchases that are NTB |
+| `video_complete_views` | INTEGER | Video completions |
+| `top_of_search_impression_share` | FLOAT | Top-of-search impression share |
+
+**sb\_adgroup\_report** — ad group-level
+
+**sb\_ad\_report** — ad-level
+
+**sb\_campaign\_placement\_report** — by placement
+
+**sb\_search\_term\_report** — by customer search term
+
+**sb\_targeting\_report** — by targeting clause
+
+**sb\_purchased\_product\_report** — cross-sell by purchased ASIN
+
+**sb\_gross\_and\_invalids\_report** — invalid traffic metrics
 
 ***
 
 ### Sponsored Display (SD)
-
-Sponsored Display ads appear on and off Amazon to reach relevant audiences based on shopping behavior and product interest.
 
 #### History Tables
 
@@ -562,122 +308,39 @@ Sponsored Display ads appear on and off Amazon to reach relevant audiences based
 
 #### Performance Reports
 
-> **SD attribution model:** Sponsored Display supports both click-through and **view-through** attribution. Metrics are suffixed `_clicks` (click-attributed) and `_views` (view-attributed).
+> SD supports click-through and view-through attribution. Metrics are suffixed `_clicks` and `_views` accordingly.
 
-**sd\_campaign\_report**
-
-Sponsored Display campaign-level performance. Grouped by `campaign`.
-
-**Dimensions**
+**sd\_campaign\_report** — campaign-level
 
 | Column | Type | Description |
 |---|---|---|
 | `date` | DATE | Report date (PK) |
 | `campaign_id` | STRING | Campaign ID (PK) |
-| `campaign_name` | STRING | Campaign name |
-| `campaign_budget_currency_code` | STRING | Currency |
-
-**Metrics**
-
-| Column | Type | Description |
-|---|---|---|
 | `impressions` | INTEGER | Total impressions |
-| `impressions_views` | INTEGER | Viewable impressions |
 | `clicks` | INTEGER | Total clicks |
 | `cost` | FLOAT | Total spend |
-| `sales` | FLOAT | Total attributed sales (click + view) |
-| `purchases` | INTEGER | Total attributed purchases |
+| `sales` | FLOAT | Attributed sales (click + view) |
+| `purchases` | INTEGER | Attributed purchases |
 | `sales_clicks` | FLOAT | Sales attributed to clicks |
 | `purchases_clicks` | INTEGER | Purchases attributed to clicks |
-| `sales_promoted_clicks` | FLOAT | Promoted product sales (clicks) |
-| `purchases_promoted_clicks` | INTEGER | Promoted product purchases (clicks) |
-| `units_sold` | INTEGER | Total units sold |
-| `units_sold_clicks` | INTEGER | Units sold from clicks |
-| `detail_page_views` | INTEGER | Product page views |
-| `detail_page_views_clicks` | INTEGER | Product page views from clicks |
-| `add_to_cart` | INTEGER | Add to cart events |
-| `add_to_cart_clicks` | INTEGER | Add to cart from clicks |
-| `add_to_cart_views` | INTEGER | Add to cart from views |
-| `add_to_cart_rate` | FLOAT | Add-to-cart rate |
-| `e_cp_add_to_cart` | FLOAT | eCPATC |
 | `new_to_brand_purchases` | INTEGER | NTB purchases |
-| `new_to_brand_purchases_clicks` | INTEGER | NTB purchases from clicks |
 | `new_to_brand_sales_clicks` | FLOAT | NTB sales from clicks |
-| `new_to_brand_units_sold` | INTEGER | NTB units sold |
-| `new_to_brand_units_sold_clicks` | INTEGER | NTB units sold from clicks |
-| `branded_searches` | INTEGER | Branded searches |
-| `branded_searches_clicks` | INTEGER | Branded searches from clicks |
-| `branded_searches_views` | INTEGER | Branded searches from views |
-| `branded_search_rate` | FLOAT | Branded search rate |
-| `e_cp_brand_search` | FLOAT | eCPBS |
-| `view_click_through_rate` | FLOAT | vCTR |
-| `viewability_rate` | FLOAT | Viewability rate |
-| `video_complete_views` | INTEGER | Video completions |
-| `video_first_quartile_views` | INTEGER | Video 25% views |
-| `video_midpoint_views` | INTEGER | Video 50% views |
-| `video_third_quartile_views` | INTEGER | Video 75% views |
-| `video_unmutes` | INTEGER | Video unmutes |
-| `kindle_edition_normalized_pages_read` | INTEGER | KENP read |
-| `kindle_edition_normalized_pages_royalties` | FLOAT | KENP royalties |
-| `qualified_borrows` | INTEGER | Kindle qualified borrows |
-| `royalty_qualified_borrows` | INTEGER | Kindle royalty borrows |
+| `add_to_cart` | INTEGER | Add to cart events |
+| `detail_page_views` | INTEGER | Product page views |
 
-***
+**sd\_advertised\_product\_report** — by advertised ASIN
 
-**sd\_advertised\_product\_report**
+**sd\_campaign\_target\_report** — by targeting expression
 
-Sponsored Display performance by advertised product (ASIN). Grouped by `advertiser`.
+**sd\_targeting\_report** — ad group × targeting level
 
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `advertised_asin`\
-Metrics: impressions, clicks, cost, sales (click+view), purchases (click+view), NTB metrics
+**sd\_purchased\_product\_report** — cross-sell by purchased ASIN
 
-***
-
-**sd\_campaign\_target\_report**
-
-Sponsored Display performance by targeting expression. Grouped by `campaign` + `targeting`.
-
-Dimensions: `date`, `campaign_id`, `targeting_expression`, `targeting_text`, `targeting_type`\
-Metrics: same as `sd_campaign_report`
-
-***
-
-**sd\_targeting\_report**
-
-Sponsored Display performance at ad group × targeting level.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `targeting_id`, `targeting_expression`, `targeting_type`\
-Metrics: same as `sd_campaign_report`
-
-***
-
-**sd\_purchased\_product\_report**
-
-Sponsored Display cross-sell attribution by purchased ASIN.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `advertised_asin`, `purchased_asin`\
-Metrics: purchases, sales, units_sold (click + view attribution)
-
-***
-
-**sd\_gross\_and\_invalids\_report**
-
-Sponsored Display invalid traffic metrics per campaign.
-
-| Column | Type | Description |
-|---|---|---|
-| `date` | DATE | Report date (PK) |
-| `campaign_id` | STRING | Campaign ID (PK) |
-| `gross_impressions` | INTEGER | Gross impressions |
-| `gross_clicks` | INTEGER | Gross clicks |
-| `invalid_impressions` | INTEGER | Invalid impressions |
-| `invalid_clicks` | INTEGER | Invalid clicks |
+**sd\_gross\_and\_invalids\_report** — invalid traffic metrics
 
 ***
 
 ### Sponsored Television (ST)
-
-Sponsored TV enables advertisers to run streaming video ads on Amazon-owned and third-party connected TV inventory (Prime Video, Freevee, Twitch, etc.).
 
 #### History Tables
 
@@ -690,90 +353,30 @@ Sponsored TV enables advertisers to run streaming video ads on Amazon-owned and 
 
 #### Performance Reports
 
-> **ST attribution model:** Sponsored TV supports click-through and view-through attribution. TV-specific metrics include `reach`, `household_reach`, `frequency_average`, and `cost_per_thousand_impressions`.
+> ST supports click-through and view-through attribution. TV-specific metrics include `reach`, `household_reach`, `frequency_average`, and `cost_per_thousand_impressions`.
 
-**st\_campaign\_report**
-
-Sponsored Television campaign-level performance. Grouped by `campaign`.
-
-**Dimensions**
+**st\_campaign\_report** — campaign-level
 
 | Column | Type | Description |
 |---|---|---|
 | `date` | DATE | Report date (PK) |
 | `campaign_id` | STRING | Campaign ID (PK) |
-| `campaign_name` | STRING | Campaign name |
-| `campaign_status` | STRING | Campaign status |
-| `campaign_budget_amount` | FLOAT | Budget amount |
-| `campaign_budget_type` | STRING | Budget type |
-| `campaign_budget_currency_code` | STRING | Currency |
-| `portfolio_id` | STRING | Portfolio ID |
-
-**Metrics**
-
-| Column | Type | Description |
-|---|---|---|
 | `impressions` | INTEGER | Total impressions |
 | `clicks` | INTEGER | Total clicks |
 | `cost` | FLOAT | Total spend |
 | `cost_per_thousand_impressions` | FLOAT | CPM |
-| `click_through_rate` | FLOAT | CTR |
 | `reach` | INTEGER | Unique reach |
 | `household_reach` | INTEGER | Unique household reach |
 | `frequency_average` | FLOAT | Average frequency per user |
-| `household_frequency_average` | FLOAT | Average frequency per household |
-| `roas` | FLOAT | Return on ad spend |
-| `long_term_sales` | FLOAT | Long-term attributed sales |
-| `long_term_roas` | FLOAT | Long-term RoAS |
-| `purchases` | INTEGER | Total attributed purchases |
-| `purchases_clicks` | INTEGER | Purchases from clicks |
-| `purchases_views` | INTEGER | Purchases from views |
-| `sales` | FLOAT | Total attributed sales |
-| `sales_clicks` | FLOAT | Sales from clicks |
-| `sales_views` | FLOAT | Sales from views |
-| `units_sold` | INTEGER | Total units sold |
-| `units_sold_clicks` | INTEGER | Units sold from clicks |
-| `units_sold_views` | INTEGER | Units sold from views |
-| `detail_page_views` | INTEGER | Product page views |
-| `detail_page_views_clicks` | INTEGER | Product page views from clicks |
-| `detail_page_views_views` | INTEGER | Product page views from impressions |
-| `add_to_cart` | INTEGER | Add to cart events |
-| `add_to_cart_clicks` | INTEGER | Add to cart from clicks |
-| `add_to_cart_views` | INTEGER | Add to cart from views |
+| `purchases` | INTEGER | Attributed purchases |
+| `sales` | FLOAT | Attributed sales |
 | `new_to_brand_purchases` | INTEGER | NTB purchases |
-| `new_to_brand_purchases_clicks` | INTEGER | NTB purchases from clicks |
-| `new_to_brand_purchases_views` | INTEGER | NTB purchases from views |
 | `new_to_brand_sales` | FLOAT | NTB sales |
-| `new_to_brand_sales_clicks` | FLOAT | NTB sales from clicks |
-| `new_to_brand_sales_views` | FLOAT | NTB sales from views |
-| `new_to_brand_detail_page_views` | INTEGER | NTB detail page views |
-| `new_to_brand_detail_page_view_clicks` | INTEGER | NTB DPVs from clicks |
-| `new_to_brand_detail_page_view_views` | INTEGER | NTB DPVs from views |
-| `branded_searches` | INTEGER | Branded searches |
-| `branded_searches_clicks` | INTEGER | Branded searches from clicks |
-| `branded_searches_views` | INTEGER | Branded searches from views |
 | `video_complete_views` | INTEGER | Video completions |
-| `video_first_quartile_views` | INTEGER | Video 25% views |
-| `video_midpoint_views` | INTEGER | Video 50% views |
-| `video_third_quartile_views` | INTEGER | Video 75% views |
 
-***
+**st\_adgroup\_report** — ad group-level
 
-**st\_adgroup\_report**
-
-Sponsored Television ad group-level performance. Grouped by `campaign` + `adGroup`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `ad_group_name`\
-Metrics: same as `st_campaign_report`
-
-***
-
-**st\_targeting\_report**
-
-Sponsored Television performance by targeting segment. Grouped by `targeting`.
-
-Dimensions: `date`, `campaign_id`, `ad_group_id`, `targeting_id`, `targeting_expression`\
-Metrics: same as `st_campaign_report`
+**st\_targeting\_report** — by targeting segment
 
 ***
 
