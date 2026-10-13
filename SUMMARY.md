@@ -73,6 +73,7 @@
   * [CSP](connectors/exogenous-connectors/csp.md)
   * [Weather](connectors/exogenous-connectors/weather.md)
 * [Marketing connectors](connectors/marketing-connectors/README.md)
+  * [Amazon Ads](connectors/marketing-connectors/amazon-ads.md)
   * [Amazon DSP](connectors/marketing-connectors/amazon-dsp.md)
   * [Affilae](connectors/marketing-connectors/affilae.md)
   * [Awin](connectors/marketing-connectors/awin.md)
