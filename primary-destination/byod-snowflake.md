@@ -135,3 +135,15 @@ In Snowsight, open the account menu and use **Connect a tool to Snowflake**, or 
 **Why it matters**
 
 Entering only the account name, or a URL with a path or a trailing slash (`…snowflakecomputing.com/`). QUANTI: reads the account identifier from the part before the first dot of the host, so the connection test fails on **Next**.
+
+### database — The database QUANTI: writes into
+
+The Snowflake database where QUANTI: creates one schema per data source, then its tables.
+
+**Where to find it**
+
+In Snowsight, under **Data › Databases**. The role entered in the form needs `USAGE` and `CREATE SCHEMA` on this database.
+
+**Why it matters**
+
+A database created with a quoted lower-case name, such as `"quanti_db"`. QUANTI: converts the name to upper case and looks for `QUANTI_DB`, which does not exist: the connection test or the project creation fails. Use a database created without double quotes.
