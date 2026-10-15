@@ -123,3 +123,15 @@ Everything QUANTI: runs in your Snowflake account is billed to your account:
 
 * **Connector loads** run on the user's default warehouse.
 * **Webhook data** is ingested with Snowpipe Streaming: no warehouse is used, and Snowflake bills per GB received. See [Snowpipe Streaming costs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/snowpipe-streaming-high-performance-cost).
+
+### host — Your Snowflake account host
+
+The host name of the Snowflake account QUANTI: connects to, for example `myorg-myaccount.snowflakecomputing.com`.
+
+**Where to find it**
+
+In Snowsight, open the account menu and use **Connect a tool to Snowflake**, or build it from your account identifier: `<orgname>-<account_name>.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
+
+**Why it matters**
+
+Entering only the account name, or a URL with a path or a trailing slash (`…snowflakecomputing.com/`). QUANTI: reads the account identifier from the part before the first dot of the host, so the connection test fails on **Next**.
