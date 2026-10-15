@@ -131,5 +131,7 @@
   "snowflake.database": "primary-destination/byod-snowflake.md#database",
   "snowflake.host": "primary-destination/byod-snowflake.md#host",
   "snowflake.passphrase": "primary-destination/byod-snowflake.md#passphrase",
-  "snowflake.private_key": "primary-destination/byod-snowflake.md#private_key"
+  "snowflake.private_key": "primary-destination/byod-snowflake.md#private_key",
+  "snowflake.role": "primary-destination/byod-snowflake.md#Before you start, in Snowflake",
+  "snowflake.user": "primary-destination/byod-snowflake.md#Before you start, in Snowflake"
 }
