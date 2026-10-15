@@ -129,5 +129,6 @@
   "sgtm.traffic": "server-side-tagging/field-reference.md#traffic",
   "sgtm.web_container": "server-side-tagging/field-reference.md#web_container",
   "snowflake.database": "primary-destination/byod-snowflake.md#database",
-  "snowflake.host": "primary-destination/byod-snowflake.md#host"
+  "snowflake.host": "primary-destination/byod-snowflake.md#host",
+  "snowflake.private_key": "primary-destination/byod-snowflake.md#private_key"
 }
