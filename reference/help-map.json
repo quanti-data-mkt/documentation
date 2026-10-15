@@ -127,5 +127,6 @@
   "sgtm.snippet": "server-side-tagging/field-reference.md#snippet",
   "sgtm.subdomain": "server-side-tagging/field-reference.md#subdomain",
   "sgtm.traffic": "server-side-tagging/field-reference.md#traffic",
-  "sgtm.web_container": "server-side-tagging/field-reference.md#web_container"
+  "sgtm.web_container": "server-side-tagging/field-reference.md#web_container",
+  "snowflake.host": "primary-destination/byod-snowflake.md#host"
 }
