@@ -103,6 +103,58 @@ Your project is ready: add your first data source. When it runs, QUANTI: creates
 
 ***
 
+## Field reference
+
+### host — Your Snowflake account host
+
+The host name of the Snowflake account QUANTI: connects to, for example `myorg-myaccount.snowflakecomputing.com`.
+
+**Where to find it**
+
+In Snowsight, open the account menu and use **Connect a tool to Snowflake**, or build it from your account identifier: `<orgname>-<account_name>.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
+
+**Common mistake**
+
+Entering only the account name, or a URL with a path or a trailing slash (`…snowflakecomputing.com/`). QUANTI: reads the account identifier from the part before the first dot of the host, so the connection test fails on **Next**.
+
+### database — The database QUANTI: writes into
+
+The Snowflake database where QUANTI: creates one schema per data source, then its tables.
+
+**Where to find it**
+
+In Snowsight, under **Data › Databases**. The role entered in the form needs `USAGE` and `CREATE SCHEMA` on this database.
+
+**Common mistake**
+
+A database created with a quoted lower-case name, such as `"quanti_db"`. QUANTI: converts the name to upper case and looks for `QUANTI_DB`, which does not exist: the connection test or the project creation fails. Use a database created without double quotes.
+
+### private_key — The private key of the QUANTI: user
+
+The private half of the key pair whose public key is set on the Snowflake user QUANTI: signs in as. QUANTI: accepts an unencrypted key or an encrypted one.
+
+**Where to find it**
+
+The private key file you generated, for example `rsa_key.p8` (see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth)). Paste its whole content, the `-----BEGIN …-----` and `-----END …-----` lines included.
+
+**Common mistake**
+
+Pasting the key without its line breaks, or only part of it: QUANTI: answers `invalid PEM block`. Pasting the **public** key (`BEGIN PUBLIC KEY`) fails the same way: the public key goes on the Snowflake user, QUANTI: needs the private one.
+
+### passphrase — The passphrase of an encrypted key
+
+Decrypts an encrypted private key once, when the project is created. QUANTI: then stores the decrypted key and never stores the passphrase.
+
+**Where to find it**
+
+The passphrase chosen when the key was encrypted, for example with `openssl pkcs8 -topk8 -v2 aes-256-cbc`. Turn on **Is Private Key Encrypted** only if your key starts with `-----BEGIN ENCRYPTED PRIVATE KEY-----`.
+
+**Common mistake**
+
+A key encrypted in the legacy OpenSSL format (a `BEGIN RSA PRIVATE KEY` block followed by `Proc-Type: 4,ENCRYPTED`) is refused even with the right passphrase: QUANTI: answers `legacy OpenSSL key encryption is not supported`. Re-export it as PKCS#8 with `openssl pkcs8 -topk8 -v2 aes-256-cbc`.
+
+***
+
 ## Troubleshooting
 
 | Message | What to do |
@@ -123,51 +175,3 @@ Everything QUANTI: runs in your Snowflake account is billed to your account:
 
 * **Connector loads** run on the user's default warehouse.
 * **Webhook data** is ingested with Snowpipe Streaming: no warehouse is used, and Snowflake bills per GB received. See [Snowpipe Streaming costs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/snowpipe-streaming-high-performance-cost).
-
-### host — Your Snowflake account host
-
-The host name of the Snowflake account QUANTI: connects to, for example `myorg-myaccount.snowflakecomputing.com`.
-
-**Where to find it**
-
-In Snowsight, open the account menu and use **Connect a tool to Snowflake**, or build it from your account identifier: `<orgname>-<account_name>.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
-
-**Why it matters**
-
-Entering only the account name, or a URL with a path or a trailing slash (`…snowflakecomputing.com/`). QUANTI: reads the account identifier from the part before the first dot of the host, so the connection test fails on **Next**.
-
-### database — The database QUANTI: writes into
-
-The Snowflake database where QUANTI: creates one schema per data source, then its tables.
-
-**Where to find it**
-
-In Snowsight, under **Data › Databases**. The role entered in the form needs `USAGE` and `CREATE SCHEMA` on this database.
-
-**Why it matters**
-
-A database created with a quoted lower-case name, such as `"quanti_db"`. QUANTI: converts the name to upper case and looks for `QUANTI_DB`, which does not exist: the connection test or the project creation fails. Use a database created without double quotes.
-
-### private_key — The private key of the QUANTI: user
-
-The private half of the key pair whose public key is set on the Snowflake user QUANTI: signs in as. QUANTI: accepts an unencrypted key or an encrypted one.
-
-**Where to find it**
-
-The private key file you generated, for example `rsa_key.p8` (see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth)). Paste its whole content, the `-----BEGIN …-----` and `-----END …-----` lines included.
-
-**Why it matters**
-
-Pasting the key without its line breaks, or only part of it: QUANTI: answers `invalid PEM block`. Pasting the **public** key (`BEGIN PUBLIC KEY`) fails the same way: the public key goes on the Snowflake user, QUANTI: needs the private one.
-
-### passphrase — The passphrase of an encrypted key
-
-Decrypts an encrypted private key once, when the project is created. QUANTI: then stores the decrypted key and never stores the passphrase.
-
-**Where to find it**
-
-The passphrase chosen when the key was encrypted, for example with `openssl pkcs8 -topk8 -v2 aes-256-cbc`. Turn on **Is Private Key Encrypted** only if your key starts with `-----BEGIN ENCRYPTED PRIVATE KEY-----`.
-
-**Why it matters**
-
-A key encrypted in the legacy OpenSSL format (a `BEGIN RSA PRIVATE KEY` block followed by `Proc-Type: 4,ENCRYPTED`) is refused even with the right passphrase: QUANTI: answers `legacy OpenSSL key encryption is not supported`. Re-export it as PKCS#8 with `openssl pkcs8 -topk8 -v2 aes-256-cbc`.
