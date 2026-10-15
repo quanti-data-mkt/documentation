@@ -159,3 +159,15 @@ The private key file you generated, for example `rsa_key.p8` (see [Key-pair auth
 **Why it matters**
 
 Pasting the key without its line breaks, or only part of it: QUANTI: answers `invalid PEM block`. Pasting the **public** key (`BEGIN PUBLIC KEY`) fails the same way: the public key goes on the Snowflake user, QUANTI: needs the private one.
+
+### passphrase — The passphrase of an encrypted key
+
+Decrypts an encrypted private key once, when the project is created. QUANTI: then stores the decrypted key and never stores the passphrase.
+
+**Where to find it**
+
+The passphrase chosen when the key was encrypted, for example with `openssl pkcs8 -topk8 -v2 aes-256-cbc`. Turn on **Is Private Key Encrypted** only if your key starts with `-----BEGIN ENCRYPTED PRIVATE KEY-----`.
+
+**Why it matters**
+
+A key encrypted in the legacy OpenSSL format (a `BEGIN RSA PRIVATE KEY` block followed by `Proc-Type: 4,ENCRYPTED`) is refused even with the right passphrase: QUANTI: answers `legacy OpenSSL key encryption is not supported`. Re-export it as PKCS#8 with `openssl pkcs8 -topk8 -v2 aes-256-cbc`.
