@@ -36,6 +36,12 @@ Then extract its public key, which you set on the Snowflake user below:
 openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
 ```
 
+Print the public key on a single line, without its `BEGIN` and `END` lines, ready to paste as `RSA_PUBLIC_KEY` in the setup script:
+
+```bash
+grep -v "PUBLIC KEY" rsa_key.pub | tr -d '\n'
+```
+
 Keep `rsa_key.p8`: you paste it into QUANTI: when you create the project. See [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth) for details.
 
 ### 2. Run the setup script
@@ -43,7 +49,7 @@ Keep `rsa_key.p8`: you paste it into QUANTI: when you create the project. See [K
 Open a new worksheet in Snowsight, paste the script below, then:
 
 * replace the names in the first four lines if you want your own;
-* paste the content of `rsa_key.pub`, **without** the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines, as `RSA_PUBLIC_KEY`;
+* paste the public key printed by the command above as `RSA_PUBLIC_KEY`;
 * to use a warehouse you already have, set its name in `warehouse_name` and remove the `CREATE WAREHOUSE` statement.
 
 Run it with the **ACCOUNTADMIN** role: it is the only role that can grant `CREATE INTEGRATION`.
