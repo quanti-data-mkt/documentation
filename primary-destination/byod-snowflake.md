@@ -14,35 +14,87 @@ BYOD Snowflake is available on the **Enterprise** plan only.
 
 ## Before you start, in Snowflake
 
-QUANTI: signs in to Snowflake as a dedicated user, with a **key pair**. Passwords are not accepted.
+QUANTI: signs in to Snowflake as a dedicated **service user**, with a **key pair**. Passwords are not accepted. You create this user and everything it needs **yourself, in your Snowflake account**: QUANTI: has no access to your account until then.
 
-Prepare the following with a Snowflake administrator. Creating users, roles, warehouses and key pairs is standard Snowflake administration: follow the Snowflake documentation linked below.
+### 1. Generate a key pair
 
-1. **A user for QUANTI:** with a key pair. See [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth) and [CREATE USER](https://docs.snowflake.com/en/sql-reference/sql/create-user). Keep the **private** key: you will paste it into QUANTI:.
-2. **A role, a database and a warehouse** for that user. See [Overview of Access Control](https://docs.snowflake.com/en/user-guide/security-access-control-overview).
-3. **The privileges QUANTI: needs**, granted to that role:
+On your computer, generate an RSA private key and its public key:
+
+```bash
+# Unencrypted private key
+openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -nocrypt
+
+# Or an encrypted private key (you will enter its passphrase in QUANTI:)
+openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -v2 aes-256-cbc
+
+# Public key, set on the Snowflake user below
+openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
+```
+
+Keep `rsa_key.p8`: you paste it into QUANTI: when you create the project. See [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth) for details.
+
+### 2. Run the setup script
+
+Open a new worksheet in Snowsight, paste the script below, then:
+
+* replace the names in the first four lines if you want your own;
+* paste the content of `rsa_key.pub`, **without** the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines, as `RSA_PUBLIC_KEY`;
+* to use a warehouse you already have, set its name in `warehouse_name` and remove the `CREATE WAREHOUSE` statement.
+
+Run it with the **ACCOUNTADMIN** role: it is the only role that can grant `CREATE INTEGRATION`.
+
+```sql
+SET role_name      = 'QUANTI_ROLE';
+SET user_name      = 'QUANTI_USER';
+SET warehouse_name = 'QUANTI_WH';
+SET database_name  = 'QUANTI_DB';
+
+USE ROLE ACCOUNTADMIN;
+
+-- Role used by QUANTI:, managed by your SYSADMIN
+CREATE ROLE IF NOT EXISTS identifier($role_name);
+GRANT ROLE identifier($role_name) TO ROLE SYSADMIN;
+
+-- Warehouse and database QUANTI: loads into
+CREATE WAREHOUSE IF NOT EXISTS identifier($warehouse_name)
+  WAREHOUSE_SIZE = XSMALL
+  AUTO_SUSPEND = 60
+  AUTO_RESUME = TRUE
+  INITIALLY_SUSPENDED = TRUE;
+CREATE DATABASE IF NOT EXISTS identifier($database_name);
+
+-- Service user, signs in with the key pair only
+CREATE USER IF NOT EXISTS identifier($user_name)
+  TYPE = SERVICE
+  DEFAULT_ROLE = $role_name
+  DEFAULT_WAREHOUSE = $warehouse_name
+  RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...';
+GRANT ROLE identifier($role_name) TO USER identifier($user_name);
+
+-- Privileges QUANTI: needs
+GRANT USAGE ON WAREHOUSE identifier($warehouse_name) TO ROLE identifier($role_name);
+GRANT USAGE, CREATE SCHEMA ON DATABASE identifier($database_name) TO ROLE identifier($role_name);
+GRANT CREATE INTEGRATION ON ACCOUNT TO ROLE identifier($role_name);
+```
+
+The user already exists? Set the key and the defaults on it instead of creating it:
+
+```sql
+ALTER USER identifier($user_name) SET
+  RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...'
+  DEFAULT_ROLE = $role_name
+  DEFAULT_WAREHOUSE = $warehouse_name;
+```
+
+### What each privilege is for
 
 | Object | Privilege | Why QUANTI: needs it |
 |---|---|---|
-| Account | `CREATE INTEGRATION` | When the project is created, QUANTI: creates **once** a storage integration that lets Snowflake read the files QUANTI: stages in its cloud storage. Only an `ACCOUNTADMIN` can grant it. **You can revoke it once the project is created.** |
+| Account | `CREATE INTEGRATION` | When the project is created, QUANTI: creates **once** a storage integration that lets Snowflake read the files QUANTI: stages in its cloud storage. **You can revoke it once the project is created.** |
 | Database | `USAGE`, `CREATE SCHEMA` | QUANTI: creates one schema per data source, then its tables. |
 | Warehouse | `USAGE` | Loads run on a warehouse. |
 | User | `DEFAULT_ROLE` = this role | The storage integration is created with the user's default role. |
 | User | `DEFAULT_WAREHOUSE` = this warehouse | QUANTI: uses the user's default warehouse. |
-
-```sql
--- Replace QUANTI_ROLE, QUANTI_USER, QUANTI_DB and QUANTI_WH with your own names
-USE ROLE ACCOUNTADMIN;
-
-GRANT CREATE INTEGRATION ON ACCOUNT TO ROLE QUANTI_ROLE;
-GRANT USAGE, CREATE SCHEMA ON DATABASE QUANTI_DB TO ROLE QUANTI_ROLE;
-GRANT USAGE ON WAREHOUSE QUANTI_WH TO ROLE QUANTI_ROLE;
-GRANT ROLE QUANTI_ROLE TO USER QUANTI_USER;
-
-ALTER USER QUANTI_USER SET
-  DEFAULT_ROLE = QUANTI_ROLE
-  DEFAULT_WAREHOUSE = QUANTI_WH;
-```
 
 Once the project is created, you can revoke the account-level privilege:
 
@@ -51,9 +103,7 @@ USE ROLE ACCOUNTADMIN;
 REVOKE CREATE INTEGRATION ON ACCOUNT FROM ROLE QUANTI_ROLE;
 ```
 
-The storage integration stays: it belongs to `QUANTI_ROLE`, which keeps using it for every load.
-
-Each QUANTI: project has its own storage integration: to create another project on the same Snowflake account, grant the privilege again for the time of the creation.
+The storage integration stays: it belongs to the role, which keeps using it for every load. Each QUANTI: project has its own storage integration: to create another project on the same Snowflake account, grant the privilege again for the time of the creation.
 
 {% hint style="warning" %}
 Use the **same role** in the QUANTI: form and as the user's `DEFAULT_ROLE`. The storage integration is created with the default role and used with the role from the form: with two different roles, loads fail.
@@ -75,9 +125,9 @@ Fill in the connection form:
 |---|---|
 | **Name of connexion** | Any name that helps you recognize this connection. |
 | **Host** | The host name of your Snowflake account, for example `myorg-myaccount.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier). |
-| **User** | The Snowflake user created for QUANTI:. |
-| **Role** | The role that received the privileges above. |
-| **Database** | The database QUANTI: writes into. |
+| **User** | The Snowflake user created by the setup script (`QUANTI_USER` by default). |
+| **Role** | The role created by the setup script (`QUANTI_ROLE` by default). |
+| **Database** | The database created by the setup script (`QUANTI_DB` by default). |
 | **Private Key** | The **whole** private key, `-----BEGIN …-----` and `-----END …-----` lines included. QUANTI: accepts an unencrypted key or an encrypted one. |
 | **Is Private Key Encrypted** | Turn it on if your key is encrypted (it starts with `-----BEGIN ENCRYPTED PRIVATE KEY-----`). |
 | **Pass phrase** | The passphrase of the encrypted key. Used once to decrypt the key, never stored. |
