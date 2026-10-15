@@ -147,3 +147,15 @@ In Snowsight, under **Data › Databases**. The role entered in the form needs `
 **Why it matters**
 
 A database created with a quoted lower-case name, such as `"quanti_db"`. QUANTI: converts the name to upper case and looks for `QUANTI_DB`, which does not exist: the connection test or the project creation fails. Use a database created without double quotes.
+
+### private_key — The private key of the QUANTI: user
+
+The private half of the key pair whose public key is set on the Snowflake user QUANTI: signs in as. QUANTI: accepts an unencrypted key or an encrypted one.
+
+**Where to find it**
+
+The private key file you generated, for example `rsa_key.p8` (see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth)). Paste its whole content, the `-----BEGIN …-----` and `-----END …-----` lines included.
+
+**Why it matters**
+
+Pasting the key without its line breaks, or only part of it: QUANTI: answers `invalid PEM block`. Pasting the **public** key (`BEGIN PUBLIC KEY`) fails the same way: the public key goes on the Snowflake user, QUANTI: needs the private one.
