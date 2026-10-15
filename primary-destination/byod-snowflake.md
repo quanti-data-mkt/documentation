@@ -24,7 +24,7 @@ Prepare the following with a Snowflake administrator. Creating users, roles, war
 
 | Object | Privilege | Why QUANTI: needs it |
 |---|---|---|
-| Account | `CREATE INTEGRATION` | QUANTI: creates a storage integration to load files from its cloud storage into your tables. Granting it requires `ACCOUNTADMIN`. |
+| Account | `CREATE INTEGRATION` | When the project is created, QUANTI: creates **once** a storage integration that lets Snowflake read the files QUANTI: stages in its cloud storage. Only an `ACCOUNTADMIN` can grant it. **You can revoke it once the project is created.** |
 | Database | `USAGE`, `CREATE SCHEMA` | QUANTI: creates one schema per data source, then its tables. |
 | Warehouse | `USAGE` | Loads run on a warehouse. |
 | User | `DEFAULT_ROLE` = this role | The storage integration is created with the user's default role. |
@@ -44,8 +44,19 @@ ALTER USER QUANTI_USER SET
   DEFAULT_WAREHOUSE = QUANTI_WH;
 ```
 
+Once the project is created, you can revoke the account-level privilege:
+
+```sql
+USE ROLE ACCOUNTADMIN;
+REVOKE CREATE INTEGRATION ON ACCOUNT FROM ROLE QUANTI_ROLE;
+```
+
+The storage integration stays: it belongs to `QUANTI_ROLE`, which keeps using it for every load.
+
+Each QUANTI: project has its own storage integration: to create another project on the same Snowflake account, grant the privilege again for the time of the creation.
+
 {% hint style="warning" %}
-Use the **same role** in the QUANTI: form and as the user's `DEFAULT_ROLE`. With two different roles, loads fail.
+Use the **same role** in the QUANTI: form and as the user's `DEFAULT_ROLE`. The storage integration is created with the default role and used with the role from the form: with two different roles, loads fail.
 {% endhint %}
 
 ***
@@ -102,7 +113,7 @@ Your project is ready: add your first data source. When it runs, QUANTI: creates
 | `… cannot decrypt the private key, check the passphrase` | The passphrase is wrong. |
 | `… legacy OpenSSL key encryption is not supported` | Re-export the key as PKCS#8: `openssl pkcs8 -topk8 -v2 aes-256-cbc`. |
 | `… not an RSA private key` | Snowflake key-pair authentication requires an RSA key. |
-| `… failed to create storage integration` | The role lacks `CREATE INTEGRATION ON ACCOUNT`, or it is not the user's `DEFAULT_ROLE`. |
+| `… failed to create storage integration` (when creating the project) | The role lacks `CREATE INTEGRATION ON ACCOUNT`, or it is not the user's `DEFAULT_ROLE`. |
 
 ***
 
