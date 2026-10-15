@@ -18,16 +18,21 @@ QUANTI: signs in to Snowflake as a dedicated **service user**, with a **key pair
 
 ### 1. Generate a key pair
 
-On your computer, generate an RSA private key and its public key:
+On your computer, generate an RSA private key, either unencrypted:
 
 ```bash
-# Unencrypted private key
 openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -nocrypt
+```
 
-# Or an encrypted private key (you will enter its passphrase in QUANTI:)
+or encrypted (you will enter its passphrase in QUANTI:):
+
+```bash
 openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -v2 aes-256-cbc
+```
 
-# Public key, set on the Snowflake user below
+Then extract its public key, which you set on the Snowflake user below:
+
+```bash
 openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
 ```
 
