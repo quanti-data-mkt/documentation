@@ -50,7 +50,7 @@ Open a new worksheet in Snowsight, paste the script below, then:
 
 * replace the names in the first four lines if you want your own;
 * paste the public key printed by the command above as `RSA_PUBLIC_KEY`;
-* to use a warehouse you already have, set its name in `warehouse_name` and remove the `CREATE WAREHOUSE` statement.
+* to use a warehouse you already have, set its name in `warehouse_name` and remove the `CREATE WAREHOUSE` statement. Check its auto-suspend delay first: it is billed after every load (see [Cost](#cost)).
 
 Run it with the **ACCOUNTADMIN** role: it is the only role that can grant `CREATE INTEGRATION`.
 
@@ -236,3 +236,14 @@ Everything QUANTI: runs in your Snowflake account is billed to your account:
 
 * **Connector loads** run on the user's default warehouse.
 * **Webhook data** is ingested with Snowpipe Streaming: no warehouse is used, and Snowflake bills per GB received. See [Snowpipe Streaming costs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/snowpipe-streaming-high-performance-cost).
+
+### The warehouse auto-suspend delay is billed after every load
+
+Each load resumes the warehouse. Snowflake bills at least 60 seconds per resume, then every second until the warehouse suspends again. The `AUTO_SUSPEND` delay is therefore billed after every load, however short the load: with 300 seconds, a 20-second load bills about 5 minutes. See [Warehouse considerations](https://docs.snowflake.com/en/user-guide/warehouses-considerations).
+
+The setup script sets 30 seconds. On a warehouse you already use, check its delay and lower it if nothing else needs it to stay on:
+
+```sql
+SHOW WAREHOUSES LIKE 'MY_WAREHOUSE';   -- see the auto_suspend column, in seconds
+ALTER WAREHOUSE MY_WAREHOUSE SET AUTO_SUSPEND = 30;
+```
