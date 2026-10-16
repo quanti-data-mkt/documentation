@@ -69,7 +69,7 @@ GRANT ROLE identifier($role_name) TO ROLE SYSADMIN;
 -- Warehouse and database QUANTI: loads into
 CREATE WAREHOUSE IF NOT EXISTS identifier($warehouse_name)
   WAREHOUSE_SIZE = XSMALL
-  AUTO_SUSPEND = 60
+  AUTO_SUSPEND = 30
   AUTO_RESUME = TRUE
   INITIALLY_SUSPENDED = TRUE;
 CREATE DATABASE IF NOT EXISTS identifier($database_name);
