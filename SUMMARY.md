@@ -131,6 +131,7 @@
 ## SERVER-SIDE TAGGING
 
 * [Server-side tagging](server-side-tagging/README.md)
+  * [Setting up server-side tagging](server-side-tagging/setup-guide.md)
   * [Field reference](server-side-tagging/field-reference.md)
 
 ## AI AGENTS
