@@ -66,7 +66,7 @@ Paste the string you copied from GTM. QUANTI: stores it in a secret vault and ne
 {% step %}
 **Choose your collection domain**
 
-Enter the subdomain your site will use to reach the server, for example `collect` to get `collect.yoursite.com`.
+Enter the subdomain your site will use to reach the server, for example `tag` to get `tag.yoursite.com`.
 
 A few things to keep in mind:
 
@@ -116,7 +116,7 @@ Now that the server is running, configure GTM to use it correctly.
 {% step %}
 **Set the Server container URL**
 
-In GTM, open your **Server** container → *Admin* → *Container settings*. Add your collection domain (`https://collect.yoursite.com`) in the **Server container URLs** field. This tells GTM where to open the Preview debugger.
+In GTM, open your **Server** container → *Admin* → *Container settings*. Add your collection domain (`https://tag.yoursite.com`) in the **Server container URLs** field. This tells GTM where to open the Preview debugger.
 {% endstep %}
 
 {% step %}
@@ -169,7 +169,7 @@ Go to your **Web** container — the one currently deployed on your site.
 
 Open your GA4 Configuration tag (or GA4 Event tags if you don't use a configuration tag). Find the **Server container URL** field — it may be hidden under *Advanced settings* depending on your GTM version.
 
-Enter your collection domain: `https://collect.yoursite.com`.
+Enter your collection domain: `https://tag.yoursite.com`.
 
 This tells the GA4 tag to send its hits to your server instead of directly to Google. Every event — page views, purchases, custom events — will transit through sGTM before reaching GA4 and your other destinations.
 
@@ -223,9 +223,7 @@ In QUANTI:, the server status should be **Active** and you should see **Billable
 
 ## What to do next
 
-With the server running and the snippet in place, a few optimisations are worth setting up:
+With the server running and the snippet in place, you can go further:
 
-* **Extend cookie lifetime on Safari** — if you have not already set Cookie management to *Server-managed* in your GA4 tag, do it now. This removes the 7-day cap Safari applies to JavaScript-written cookies.
-* **Add CAPI destinations** — send server-side conversion events directly to Meta, TikTok, Pinterest and others from the same container.
-
-Each of these is covered in the dedicated articles in this section.
+* **Add CAPI destinations** — send server-side conversion events directly to Meta, TikTok, Pinterest and others from the same server container.
+* **Declare your other sites** — a single server can serve several web containers, each with its own snippet. See [One server, several sites](README.md#one-server-several-sites).
