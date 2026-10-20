@@ -2,7 +2,7 @@
 
 A tagging server of your own, on your own domain.
 
-Your site sends its measurement hits to `gtm.yoursite.com` instead of Google's
+Your site sends its measurement hits to `tag.yoursite.com` instead of Google's
 domains. That server runs the official Google Tag Manager **server** container and
 forwards the data to GA4 and to your other destinations.
 
@@ -49,12 +49,13 @@ fleet on the same day. Yours are derived for your server alone.
 
 ## Setting one up
 
-Four steps, in this order.
+Four steps, in this order. The [setup guide](setup-guide.md) walks through each
+of them in detail, including the Tag Manager configuration.
 
 1. **Your container configuration.** Copy it from your Tag Manager *server*
    container — not the container identifier, which is a different value.
 2. **Your collection domain.** Pick the subdomain your site will call, for example
-   `gtm.yoursite.com`. Choose carefully: changing it later means editing the
+   `tag.yoursite.com`. Choose carefully: changing it later means editing the
    snippet on every page.
 3. **Two DNS records.** Add them at your registrar. We check them automatically
    and the server goes live once they have propagated — usually minutes.
