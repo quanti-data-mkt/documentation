@@ -33,6 +33,7 @@
   * [Managed BigQuery](primary-destination/managed-bigquery.md)
   * [BYOD BigQuery](primary-destination/byod-bigquery.md)
   * [BYOD Snowflake](primary-destination/byod-snowflake.md)
+    * [Webhooks on Snowflake](primary-destination/byod-snowflake-webhooks.md)
   * [BYOD ClickHouse](primary-destination/byod-clickhouse.md)
 * [GCP / Big Query](data-warehouses/bigquery.md)
 
