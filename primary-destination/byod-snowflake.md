@@ -6,161 +6,156 @@ description: >-
 
 # Create a project with Snowflake as destination
 
-**BYOD Snowflake** (Bring Your Own Data Warehouse) lets you create a QUANTI: project that loads your data directly into your own Snowflake account. You keep full ownership of your data and infrastructure.
+**BYOD Snowflake** (Bring Your Own Data Warehouse): QUANTI: loads your data into your own Snowflake account. You keep your data, your warehouse and your bill.
 
 {% hint style="warning" %}
 BYOD Snowflake is available on the **Enterprise** plan only.
 {% endhint %}
 
-## Before you start, in Snowflake
+It works like a BigQuery project you own: you provide the place where the data lands, QUANTI: provides its identity, you give that identity access.
 
-QUANTI: signs in to Snowflake as a dedicated **service user**, with a **key pair**. Passwords are not accepted. You create this user and everything it needs **yourself, in your Snowflake account**: QUANTI: has no access to your account until then.
-
-### 1. Generate a key pair
-
-On your computer, generate an RSA private key, either unencrypted:
-
-```bash
-openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -nocrypt
-```
-
-or encrypted (you will enter its passphrase in QUANTI:):
-
-```bash
-openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -v2 aes-256-cbc
-```
-
-Then extract its public key, which you set on the Snowflake user below:
-
-```bash
-openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
-```
-
-Print the public key on a single line, without its `BEGIN` and `END` lines, ready to paste as `RSA_PUBLIC_KEY` in the setup script:
-
-```bash
-grep -v "PUBLIC KEY" rsa_key.pub | tr -d '\n'
-```
-
-Keep `rsa_key.p8`: you paste it into QUANTI: when you create the project. See [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth) for details.
-
-### 2. Run the setup script
-
-Open a new worksheet in Snowsight, paste the script below, then:
-
-* replace the names in the first four lines if you want your own;
-* paste the public key printed by the command above as `RSA_PUBLIC_KEY`;
-* to use a warehouse you already have, set its name in `warehouse_name` and remove the `CREATE WAREHOUSE` statement. Check its auto-suspend delay first: it is billed after every load (see [Cost](#cost)).
-
-Run it with the **ACCOUNTADMIN** role: it is the only role that can grant `CREATE INTEGRATION`.
-
-```sql
-SET role_name      = 'QUANTI_ROLE';
-SET user_name      = 'QUANTI_USER';
-SET warehouse_name = 'QUANTI_WH';
-SET database_name  = 'QUANTI_DB';
-
-USE ROLE ACCOUNTADMIN;
-
--- Role used by QUANTI:, managed by your SYSADMIN
-CREATE ROLE IF NOT EXISTS identifier($role_name);
-GRANT ROLE identifier($role_name) TO ROLE SYSADMIN;
-
--- Warehouse and database QUANTI: loads into
-CREATE WAREHOUSE IF NOT EXISTS identifier($warehouse_name)
-  WAREHOUSE_SIZE = XSMALL
-  AUTO_SUSPEND = 30
-  AUTO_RESUME = TRUE
-  INITIALLY_SUSPENDED = TRUE;
-CREATE DATABASE IF NOT EXISTS identifier($database_name);
-
--- Service user, signs in with the key pair only
-CREATE USER IF NOT EXISTS identifier($user_name)
-  TYPE = SERVICE
-  DEFAULT_ROLE = $role_name
-  DEFAULT_WAREHOUSE = $warehouse_name
-  RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...';
-GRANT ROLE identifier($role_name) TO USER identifier($user_name);
-
--- Privileges QUANTI: needs
-GRANT USAGE ON WAREHOUSE identifier($warehouse_name) TO ROLE identifier($role_name);
-GRANT USAGE, CREATE SCHEMA ON DATABASE identifier($database_name) TO ROLE identifier($role_name);
-GRANT CREATE INTEGRATION ON ACCOUNT TO ROLE identifier($role_name);
-```
-
-The user already exists? Set the key and the defaults on it instead of creating it:
-
-```sql
-ALTER USER identifier($user_name) SET
-  RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...'
-  DEFAULT_ROLE = $role_name
-  DEFAULT_WAREHOUSE = $warehouse_name;
-```
-
-### What each privilege is for
-
-| Object | Privilege | Why QUANTI: needs it |
+| | BigQuery (your project) | Snowflake |
 |---|---|---|
-| Account | `CREATE INTEGRATION` | When the project is created, QUANTI: creates **once** a storage integration that lets Snowflake read the files QUANTI: stages in its cloud storage. **You can revoke it once the project is created.** |
-| Database | `USAGE`, `CREATE SCHEMA` | QUANTI: creates one schema per data source, then its tables. |
-| Warehouse | `USAGE` | Loads run on a warehouse. |
-| User | `DEFAULT_ROLE` = this role | The storage integration is created with the user's default role. |
-| User | `DEFAULT_WAREHOUSE` = this warehouse | QUANTI: uses the user's default warehouse. |
+| You provide | a GCP project | a database and a warehouse |
+| QUANTI: identity | a service account created by QUANTI: | a user you create with the script QUANTI: gives you |
+| Access you grant | BigQuery Data Editor, BigQuery Job User | `USAGE` on the warehouse, `USAGE` and `CREATE SCHEMA` on the database |
+| QUANTI: creates | one dataset per data source | one schema per data source |
 
-Once the project is created, you can revoke the account-level privilege:
+You need:
 
-```sql
-USE ROLE ACCOUNTADMIN;
-REVOKE CREATE INTEGRATION ON ACCOUNT FROM ROLE QUANTI_ROLE;
-```
+* a Snowflake **warehouse** and a **database**, existing ones or new ones you create for QUANTI:;
+* the **ACCOUNTADMIN** role, for step 2 only.
 
-The storage integration stays: it belongs to the role, which keeps using it for every load. Each QUANTI: project has its own storage integration: to create another project on the same Snowflake account, grant the privilege again for the time of the creation.
+## Step 1. Create the project in QUANTI:
 
-{% hint style="warning" %}
-Use the **same role** in the QUANTI: form and as the user's `DEFAULT_ROLE`. The storage integration is created with the default role and used with the role from the form: with two different roles, loads fail.
-{% endhint %}
-
-***
-
-## Create the project in QUANTI:
-
-### 1. Name the project and choose Snowflake
-
-Start a new project. Enter a name in **Name your project**, then select **Snowflake** in **Choose a data warehouse type**. Click **Next**.
-
-### 2. Connect your Snowflake account
-
-Fill in the connection form:
+1. Start a new project, name it, select **Snowflake**, click **Next**.
+2. Fill in the form:
 
 | Field | What to enter |
 |---|---|
 | **Name of connexion** | Any name that helps you recognize this connection. |
-| **Host** | The host name of your Snowflake account, for example `myorg-myaccount.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier). |
-| **User** | The Snowflake user created by the setup script (`QUANTI_USER` by default). |
-| **Role** | The role created by the setup script (`QUANTI_ROLE` by default). |
-| **Database** | The database created by the setup script (`QUANTI_DB` by default). |
-| **Private Key** | The **whole** private key, `-----BEGIN …-----` and `-----END …-----` lines included. QUANTI: accepts an unencrypted key or an encrypted one. |
-| **Is Private Key Encrypted** | Turn it on if your key is encrypted (it starts with `-----BEGIN ENCRYPTED PRIVATE KEY-----`). |
-| **Pass phrase** | The passphrase of the encrypted key. Used once to decrypt the key, never stored. |
+| **Host** | Your account host, for example `myorg-myaccount.snowflakecomputing.com`. |
+| **Database** | The database QUANTI: writes into. |
 
-Click **Next**: QUANTI: tests the connection before moving on.
+3. Check the summary, then click **Create your project**.
 
-{% hint style="info" %}
-An encrypted key is decrypted **once**, when the project is created. QUANTI: does not store the passphrase.
+QUANTI: generates a key pair for this project. The private key stays in QUANTI:, it is never shown. You only handle the public key, which cannot be used to sign in.
+
+## Step 2. Run the setup script in Snowflake
+
+When you open the project, a window shows a **setup script**, with your project's names and public key already in it.
+
+1. Click **Copy the script**.
+2. Open a worksheet in Snowsight and paste it.
+3. Replace `MY_WAREHOUSE` with the warehouse QUANTI: loads run on.
+4. Run it with the **ACCOUNTADMIN** role.
+
+The script looks like this, with `P2F89CC8E` replaced by your project's id:
+
+```sql
+-- Run as ACCOUNTADMIN. Replace MY_WAREHOUSE with the warehouse QUANTI: loads run on.
+SET warehouse_name = 'MY_WAREHOUSE';
+SET database_name  = 'MY_DATABASE';
+SET role_name      = 'QUANTI_P2F89CC8E_ROLE';
+SET user_name      = 'QUANTI_P2F89CC8E_USER';
+
+USE ROLE ACCOUNTADMIN;
+
+CREATE ROLE IF NOT EXISTS identifier($role_name);
+GRANT ROLE identifier($role_name) TO ROLE SYSADMIN;
+
+CREATE USER IF NOT EXISTS identifier($user_name)
+  TYPE = SERVICE
+  DEFAULT_ROLE = $role_name
+  DEFAULT_WAREHOUSE = $warehouse_name
+  DEFAULT_SECONDARY_ROLES = ()
+  RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...';
+GRANT ROLE identifier($role_name) TO USER identifier($user_name);
+
+GRANT USAGE ON WAREHOUSE identifier($warehouse_name) TO ROLE identifier($role_name);
+GRANT USAGE, CREATE SCHEMA ON DATABASE identifier($database_name) TO ROLE identifier($role_name);
+
+-- Webhooks only: a nightly serverless task computes the visits. Uncomment if you use webhooks.
+-- GRANT EXECUTE MANAGED TASK, EXECUTE TASK ON ACCOUNT TO ROLE identifier($role_name);
+
+-- To cut QUANTI:'s access at any time:
+-- ALTER USER identifier($user_name) SET DISABLED = TRUE;
+```
+
+{% hint style="warning" %}
+Each project has its **own** user and role. Do not replace them by a user you already have: QUANTI: would sign in with all its roles.
 {% endhint %}
 
-Common errors:
+## Step 3. Check the access
 
-* Pasting the **public** key (`BEGIN PUBLIC KEY`). The public key goes on the Snowflake user; QUANTI: needs the private one.
-* A host with a path or a trailing slash (`…snowflakecomputing.com/`), or only the account name.
-* A database created with a quoted lower-case name (`"quanti_db"`). QUANTI: converts the name to upper case and does not find it.
-* A key encrypted in the legacy OpenSSL format (a `BEGIN RSA PRIVATE KEY` block with `Proc-Type: 4,ENCRYPTED`). Re-export it as PKCS#8 (`openssl pkcs8 -topk8 -v2 aes-256-cbc`), see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth).
+Back in QUANTI:, click **Check**. QUANTI: signs in with its key and checks, without starting your warehouse:
 
-### 3. Review and create
+| Check | If it fails |
+|---|---|
+| **Sign in with QUANTI:'s key** | The script did not run, or ran on another account. Run it again, as ACCOUNTADMIN. |
+| **Role QUANTI_…_ROLE** | The role is not granted to the user. Run the `GRANT ROLE … TO USER` line again. |
+| **USAGE on the user's default warehouse** | `MY_WAREHOUSE` was not replaced, or the warehouse does not exist. Fix the first line and run the script again. |
+| **USAGE, CREATE SCHEMA on database …** | The database name differs from the one in the form, or the grant failed. |
+| **No admin role on the user** | The user holds ACCOUNTADMIN, SECURITYADMIN, SYSADMIN, USERADMIN or ORGADMIN. Revoke it: QUANTI: does not need it. |
 
-Check the summary, then click **Create your project**. QUANTI: connects with your key and creates a storage integration whose name ends with `_STAGE`. You have nothing to configure on it.
+When every check passes, the window closes: add your first data source.
 
-Your project is ready: add your first data source. When it runs, QUANTI: creates one schema per data source in your database, then its tables.
+## Webhooks: visits
+
+On Snowflake, a serverless task in your account groups the hits of the previous day into **visits**, each night. It runs on Snowflake serverless compute, not on your warehouse.
+
+It needs one more privilege, once per project. The **Install code** tab of your webhook shows the command with your role filled in:
+
+```sql
+GRANT EXECUTE MANAGED TASK, EXECUTE TASK ON ACCOUNT TO ROLE QUANTI_P2F89CC8E_ROLE;
+```
+
+Run it as ACCOUNTADMIN. Without it, hits are still collected, but no visits are computed. You can also uncomment this line in the setup script before running it.
+
+***
+
+## What the script does
+
+The script creates **who** QUANTI: is in your account (a user), and **what** it may do (a role). Nothing else.
+
+```
+ACCOUNTADMIN ──creates──▶ QUANTI_<ID>_ROLE ◀──held by── QUANTI_<ID>_USER (public key)
+                              │
+                              ├─ USAGE                  → your warehouse  (run loads)
+                              ├─ USAGE + CREATE SCHEMA  → your database   (1 schema per source)
+                              └─ EXECUTE (MANAGED) TASK → account         (webhook visits, optional)
+```
+
+1. **The four `SET` lines** are worksheet variables, used only while the script runs. `identifier($x)` turns a variable into an object name.
+2. **`USE ROLE ACCOUNTADMIN`**: the only role allowed to create a user and grant account privileges. QUANTI: never uses it.
+3. **`CREATE ROLE`**: in Snowflake, privileges are never given to a user directly, only to a role. This role holds every privilege QUANTI: gets.
+4. **`GRANT ROLE … TO ROLE SYSADMIN`**: SYSADMIN inherits QUANTI:'s role, never the other way round. In Snowflake an object belongs to the role that created it, and even SYSADMIN cannot see it otherwise. With this grant, your admins see and manage every schema and table QUANTI: creates. QUANTI: gains nothing from it.
+5. **`CREATE USER … TYPE = SERVICE`**: the identity QUANTI: signs in with. A service user has no password and cannot sign in to Snowsight: only the key works.
+   * `DEFAULT_ROLE`: the role used when QUANTI: signs in.
+   * `DEFAULT_WAREHOUSE`: the warehouse QUANTI: loads run on.
+   * `DEFAULT_SECONDARY_ROLES = ()`: QUANTI: only ever acts with its own role, even if more roles are granted to this user later.
+   * `RSA_PUBLIC_KEY`: Snowflake checks QUANTI:'s signature with it.
+6. **`GRANT ROLE … TO USER`**: without it, the user signs in with no privilege.
+7. **`USAGE` on the warehouse**: run queries on it. QUANTI: cannot resize or change it.
+8. **`USAGE`, `CREATE SCHEMA` on the database**: enter the database and create one schema per data source. QUANTI: owns what it creates and never touches your other schemas.
+9. **`EXECUTE MANAGED TASK`, `EXECUTE TASK`**: webhooks only, see above.
+
+## Cut or remove QUANTI:'s access
+
+To cut it at once, reversibly:
+
+```sql
+ALTER USER QUANTI_P2F89CC8E_USER SET DISABLED = TRUE;
+```
+
+When you delete the project in QUANTI:, its user and role stay in your account. Remove them yourself:
+
+```sql
+DROP USER IF EXISTS QUANTI_P2F89CC8E_USER;
+DROP ROLE IF EXISTS QUANTI_P2F89CC8E_ROLE;
+```
+
+The schemas QUANTI: created stay in your database, with your data: drop them only if you no longer need them.
 
 ***
 
@@ -176,43 +171,19 @@ In Snowsight, open the account menu and use **Connect a tool to Snowflake**, or 
 
 **Common mistake**
 
-Entering only the account name, or a URL with a path or a trailing slash (`…snowflakecomputing.com/`). QUANTI: reads the account identifier from the part before the first dot of the host, so the connection test fails on **Next**.
+Entering only the account name, or another address. QUANTI: only accepts hosts that end with `.snowflakecomputing.com`, PrivateLink ones included, and always connects on port 443.
 
 ### database — The database QUANTI: writes into
 
-The Snowflake database where QUANTI: creates one schema per data source, then its tables.
+Your Snowflake database, where QUANTI: creates one schema per data source, then its tables.
 
 **Where to find it**
 
-In Snowsight, under **Data › Databases**. The role entered in the form needs `USAGE` and `CREATE SCHEMA` on this database.
+In Snowsight, under **Data › Databases**. The setup script grants QUANTI:'s role `USAGE` and `CREATE SCHEMA` on it.
 
 **Common mistake**
 
-A database created with a quoted lower-case name, such as `"quanti_db"`. QUANTI: converts the name to upper case and looks for `QUANTI_DB`, which does not exist: the connection test or the project creation fails. Use a database created without double quotes.
-
-### private_key — The private key of the QUANTI: user
-
-The private half of the key pair whose public key is set on the Snowflake user QUANTI: signs in as. QUANTI: accepts an unencrypted key or an encrypted one.
-
-**Where to find it**
-
-The private key file you generated, for example `rsa_key.p8` (see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth)). Paste its whole content, the `-----BEGIN …-----` and `-----END …-----` lines included.
-
-**Common mistake**
-
-Pasting the key without its line breaks, or only part of it: QUANTI: answers `invalid PEM block`. Pasting the **public** key (`BEGIN PUBLIC KEY`) fails the same way: the public key goes on the Snowflake user, QUANTI: needs the private one.
-
-### passphrase — The passphrase of an encrypted key
-
-Decrypts an encrypted private key once, when the project is created. QUANTI: then stores the decrypted key and never stores the passphrase.
-
-**Where to find it**
-
-The passphrase chosen when the key was encrypted, for example with `openssl pkcs8 -topk8 -v2 aes-256-cbc`. Turn on **Is Private Key Encrypted** only if your key starts with `-----BEGIN ENCRYPTED PRIVATE KEY-----`.
-
-**Common mistake**
-
-A key encrypted in the legacy OpenSSL format (a `BEGIN RSA PRIVATE KEY` block followed by `Proc-Type: 4,ENCRYPTED`) is refused even with the right passphrase: QUANTI: answers `legacy OpenSSL key encryption is not supported`. Re-export it as PKCS#8 with `openssl pkcs8 -topk8 -v2 aes-256-cbc`.
+A database created with a quoted lower-case name, such as `"quanti_db"`. QUANTI: converts the name to upper case and looks for `QUANTI_DB`, which does not exist: the check fails. Use a database created without double quotes.
 
 ***
 
@@ -220,30 +191,25 @@ A key encrypted in the legacy OpenSSL format (a `BEGIN RSA PRIVATE KEY` block fo
 
 | Message | What to do |
 |---|---|
-| `Error connexion, check your credentials or database.` (on **Next**) | Check the host, user, database and key. Check that the public key is set on this user and that the user has the role. |
-| `… invalid PEM block` | The key is incomplete. Paste it again, `BEGIN` and `END` lines included. |
-| `… this private key is encrypted: a passphrase is required` | Turn on **Is Private Key Encrypted** and enter the passphrase. |
-| `… cannot decrypt the private key, check the passphrase` | The passphrase is wrong. |
-| `… legacy OpenSSL key encryption is not supported` | Re-export the key as PKCS#8: `openssl pkcs8 -topk8 -v2 aes-256-cbc`. |
-| `… not an RSA private key` | Snowflake key-pair authentication requires an RSA key. |
-| `… failed to create storage integration` (when creating the project) | The role lacks `CREATE INTEGRATION ON ACCOUNT`, or it is not the user's `DEFAULT_ROLE`. |
+| `Enter your Snowflake host, for example myorg-myaccount.snowflakecomputing.com` | The host does not end with `.snowflakecomputing.com`. |
+| `Snowflake access is not complete` | One of the checks failed: see [Step 3](#step-3-check-the-access). |
+| `Can't load the setup script` | Reload the page. If it persists, contact support. |
+| Loads fail with `No active warehouse` | The warehouse is suspended with auto-resume off: turn `AUTO_RESUME` on, or grant `OPERATE` on it to QUANTI:'s role. |
 
 ***
 
 ## Cost
 
-Everything QUANTI: runs in your Snowflake account is billed to your account:
+Everything QUANTI: runs in your Snowflake account is billed to your account.
 
-* **Connector loads** run on the user's default warehouse.
-* **Webhook data** is ingested with Snowpipe Streaming: no warehouse is used, and Snowflake bills per GB received. See [Snowpipe Streaming costs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/snowpipe-streaming-high-performance-cost).
+1. **Connector loads** run on your warehouse. Each load resumes it: Snowflake bills at least 60 seconds, then every second until the warehouse suspends. Its `AUTO_SUSPEND` delay is billed after every load: with 300 seconds, a 20-second load bills about 5 minutes. See [Warehouse considerations](https://docs.snowflake.com/en/user-guide/warehouses-considerations).
+2. **Webhook data** is ingested with Snowpipe Streaming: no warehouse, billed per GB received. See [Snowpipe Streaming costs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/snowpipe-streaming-high-performance-cost).
+3. **Webhook visits** are computed once a night by a serverless task, a few seconds of serverless compute.
+4. **The access check** only reads metadata: it never starts your warehouse.
 
-### The warehouse auto-suspend delay is billed after every load
-
-Each load resumes the warehouse. Snowflake bills at least 60 seconds per resume, then every second until the warehouse suspends again. The `AUTO_SUSPEND` delay is therefore billed after every load, however short the load: with 300 seconds, a 20-second load bills about 5 minutes. See [Warehouse considerations](https://docs.snowflake.com/en/user-guide/warehouses-considerations).
-
-The setup script sets 30 seconds. On a warehouse you already use, check its delay and lower it if nothing else needs it to stay on:
+If nothing else needs your warehouse to stay on, lower its delay:
 
 ```sql
-SHOW WAREHOUSES LIKE 'MY_WAREHOUSE';   -- see the auto_suspend column, in seconds
+SHOW WAREHOUSES LIKE 'MY_WAREHOUSE';   -- auto_suspend column, in seconds
 ALTER WAREHOUSE MY_WAREHOUSE SET AUTO_SUSPEND = 30;
 ```
