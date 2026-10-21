@@ -23,7 +23,7 @@ It works like a BigQuery project you own: you provide the place where the data l
 
 You need:
 
-* a Snowflake **warehouse** and a **database**, existing ones or new ones you create for QUANTI:;
+* a Snowflake **warehouse** and a **database** that already exist: QUANTI: does not create them, you enter their names in the form;
 * the **ACCOUNTADMIN** role, for step 2 only.
 
 ## Step 1. Create the project in QUANTI:
@@ -36,6 +36,7 @@ You need:
 | **Name of connexion** | Any name that helps you recognize this connection. |
 | **Host** | Your account host, for example `myorg-myaccount.snowflakecomputing.com`. |
 | **Database** | The database QUANTI: writes into. |
+| **Warehouse** | The warehouse QUANTI: loads run on. |
 
 3. Check the summary, then click **Create your project**.
 
@@ -43,19 +44,18 @@ QUANTI: generates a key pair for this project. The private key stays in QUANTI:,
 
 ## Step 2. Run the setup script in Snowflake
 
-When you open the project, a window shows a **setup script**, with your project's names and public key already in it.
+When you open the project, a window shows a **setup script**, complete: your database, your warehouse, your project's user and role, and its public key are already in it. Nothing is left to edit.
 
 1. Click **Copy the script**.
 2. Open a worksheet in Snowsight and paste it.
-3. Replace `MY_WAREHOUSE` with the warehouse QUANTI: loads run on.
-4. Run it with the **ACCOUNTADMIN** role.
+3. Run it as is, with the **ACCOUNTADMIN** role.
 
-The script looks like this, with `P2F89CC8E` replaced by your project's id:
+The script only creates QUANTI:'s user and role, and gives them access to the database and warehouse from the form. It looks like this, for a project `P2F89CC8E` with the database `SHOP` and the warehouse `LOAD_WH`:
 
 ```sql
--- Run as ACCOUNTADMIN. Replace MY_WAREHOUSE with the warehouse QUANTI: loads run on.
-SET warehouse_name = 'MY_WAREHOUSE';
-SET database_name  = 'MY_DATABASE';
+-- Run as ACCOUNTADMIN.
+SET warehouse_name = 'LOAD_WH';
+SET database_name  = 'SHOP';
 SET role_name      = 'QUANTI_P2F89CC8E_ROLE';
 SET user_name      = 'QUANTI_P2F89CC8E_USER';
 
@@ -94,7 +94,7 @@ Back in QUANTI:, click **Check**. QUANTI: signs in with its key and checks, with
 |---|---|
 | **Sign in with QUANTI:'s key** | The script did not run, or ran on another account. Run it again, as ACCOUNTADMIN. |
 | **Role QUANTI_…_ROLE** | The role is not granted to the user. Run the `GRANT ROLE … TO USER` line again. |
-| **USAGE on the user's default warehouse** | `MY_WAREHOUSE` was not replaced, or the warehouse does not exist. Fix the first line and run the script again. |
+| **USAGE on the user's default warehouse** | The warehouse from the form does not exist, or the script failed on it. Check its name in Snowsight, under **Admin › Warehouses**. |
 | **USAGE, CREATE SCHEMA on database …** | The database name differs from the one in the form, or the grant failed. |
 | **No admin role on the user** | The user holds ACCOUNTADMIN, SECURITYADMIN, SYSADMIN, USERADMIN or ORGADMIN. Revoke it: QUANTI: does not need it. |
 
