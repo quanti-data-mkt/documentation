@@ -228,3 +228,15 @@ exactly like a broken setup.
 
 Beyond fifteen minutes, we stop and report an error rather than leave a server
 that looks healthy while answering nothing.
+
+### ga4_routing — Sending your GA4 hits to this server
+
+The snippet only changes where Tag Manager is downloaded from. Your GA4 hits keep going straight to Google until the Google tag of your web container points to this server.
+
+**Where to find it**
+
+In Tag Manager, open your web container, then your Google tag (its ID starts with G-). In Configuration settings, add the parameter server_container_url with your collection domain as value, for example https://tag.yoursite.com. Publish the web container. Google Ads tags left in the browser keep sending to Google directly: move them to your server container to route them through this server.
+
+**Why it matters**
+
+Writing the URL without https:// or with a trailing slash: the hits go nowhere and the server sees nothing. Without the parameter at all, the server sits idle and your site keeps sending its data directly to Google.
