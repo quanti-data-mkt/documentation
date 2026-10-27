@@ -119,6 +119,7 @@
   "sgtm.dns_records": "server-side-tagging/field-reference.md#dns_records",
   "sgtm.dns_zone": "server-side-tagging/field-reference.md#dns_zone",
   "sgtm.domain_change": "server-side-tagging/field-reference.md#domain_change",
+  "sgtm.ga4_routing": "server-side-tagging/field-reference.md#ga4_routing",
   "sgtm.library_origin": "server-side-tagging/field-reference.md#library_origin",
   "sgtm.library_slug": "server-side-tagging/field-reference.md#library_slug",
   "sgtm.overview": "server-side-tagging/README.md",
