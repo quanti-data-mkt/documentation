@@ -114,6 +114,36 @@ Run it as ACCOUNTADMIN. Without it, hits are still collected, but no visits are 
 
 ***
 
+## Tables you created yourself
+
+QUANTI: sees the schemas and tables it creates: they belong to its role. A table you created yourself, in `PUBLIC` or any other schema, belongs to **your** role, and QUANTI: cannot see it. You need it to:
+
+* push it to a destination with a **reverse connector**;
+* declare it in a **semantic view**, so the AI assistant can query it.
+
+Give QUANTI:'s role read access, nothing more: `USAGE` on the schema, `SELECT` on the table. Run as ACCOUNTADMIN, or as the role that owns the table:
+
+```sql
+GRANT USAGE  ON SCHEMA NEW_DB.PUBLIC        TO ROLE QUANTI_P2F89CC8E_ROLE;
+GRANT SELECT ON TABLE  NEW_DB.PUBLIC.ADOBE1 TO ROLE QUANTI_P2F89CC8E_ROLE;
+```
+
+For every table of a schema, including the ones you create later:
+
+```sql
+GRANT USAGE  ON SCHEMA NEW_DB.PUBLIC                    TO ROLE QUANTI_P2F89CC8E_ROLE;
+GRANT SELECT ON ALL TABLES    IN SCHEMA NEW_DB.PUBLIC   TO ROLE QUANTI_P2F89CC8E_ROLE;
+GRANT SELECT ON FUTURE TABLES IN SCHEMA NEW_DB.PUBLIC   TO ROLE QUANTI_P2F89CC8E_ROLE;
+GRANT SELECT ON ALL VIEWS     IN SCHEMA NEW_DB.PUBLIC   TO ROLE QUANTI_P2F89CC8E_ROLE;
+GRANT SELECT ON FUTURE VIEWS  IN SCHEMA NEW_DB.PUBLIC   TO ROLE QUANTI_P2F89CC8E_ROLE;
+```
+
+In Snowsight, you can also open the table, go to **Access › + Privilege**, pick QUANTI:'s role and the `SELECT` privilege; the schema still needs `USAGE`.
+
+{% hint style="warning" %}
+Never grant `OWNERSHIP` or write privileges on your tables: QUANTI: only reads them.
+{% endhint %}
+
 ## What the script does
 
 The script creates **who** QUANTI: is in your account (a user), and **what** it may do (a role). Nothing else.
