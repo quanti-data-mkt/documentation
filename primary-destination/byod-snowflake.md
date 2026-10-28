@@ -102,7 +102,7 @@ When every check passes, the window closes: add your first data source.
 
 ## Webhooks: visits
 
-On Snowflake, a serverless task in your account groups the hits of the previous day into **visits**, each night. It runs on Snowflake serverless compute, not on your warehouse.
+On Snowflake, a serverless task in your account groups the hits into **visits** once a night, at **02:30 UTC**, for the previous UTC day. Today's visits appear tomorrow after 02:30 UTC, up to about 26 hours after the hit. On BigQuery, visits are updated every 15 minutes. The task runs on Snowflake serverless compute, not on your warehouse.
 
 It needs one more privilege, once per project. The **Install code** tab of your webhook shows the command with your role filled in:
 
@@ -215,6 +215,18 @@ In Snowsight, under **Data › Databases**. The setup script grants QUANTI:'s ro
 
 A database created with a quoted lower-case name, such as `"quanti_db"`. QUANTI: converts the name to upper case and looks for `QUANTI_DB`, which does not exist: the check fails. Use a database created without double quotes.
 
+### warehouse — The warehouse QUANTI: loads run on
+
+The warehouse QUANTI: loads run on. It becomes the default warehouse of QUANTI:'s user.
+
+**Where to find it**
+
+In Snowsight, under **Admin › Warehouses**. It must already exist: QUANTI: does not create it.
+
+**Why it matters**
+
+A warehouse suspended with auto-resume off: loads fail with `No active warehouse`. Turn `AUTO_RESUME` on, or grant `OPERATE` on it to QUANTI:'s role.
+
 ***
 
 ## Troubleshooting
@@ -234,7 +246,7 @@ Everything QUANTI: runs in your Snowflake account is billed to your account.
 
 1. **Connector loads** run on your warehouse. Each load resumes it: Snowflake bills at least 60 seconds, then every second until the warehouse suspends. Its `AUTO_SUSPEND` delay is billed after every load: with 300 seconds, a 20-second load bills about 5 minutes. See [Warehouse considerations](https://docs.snowflake.com/en/user-guide/warehouses-considerations).
 2. **Webhook data** is ingested with Snowpipe Streaming: no warehouse, billed per GB received. See [Snowpipe Streaming costs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/snowpipe-streaming-high-performance-cost).
-3. **Webhook visits** are computed once a night by a serverless task, a few seconds of serverless compute.
+3. **Webhook visits** are computed once a night, at 02:30 UTC, by a serverless task: a few seconds of serverless compute.
 4. **The access check** only reads metadata: it never starts your warehouse.
 
 If nothing else needs your warehouse to stay on, lower its delay:
@@ -243,15 +255,3 @@ If nothing else needs your warehouse to stay on, lower its delay:
 SHOW WAREHOUSES LIKE 'MY_WAREHOUSE';   -- auto_suspend column, in seconds
 ALTER WAREHOUSE MY_WAREHOUSE SET AUTO_SUSPEND = 30;
 ```
-
-### warehouse — The warehouse QUANTI: loads run on
-
-The warehouse QUANTI: loads run on. It becomes the default warehouse of QUANTI:'s user.
-
-**Where to find it**
-
-In Snowsight, under **Admin › Warehouses**. It must already exist: QUANTI: does not create it.
-
-**Why it matters**
-
-A warehouse suspended with auto-resume off: loads fail with `No active warehouse`. Turn `AUTO_RESUME` on, or grant `OPERATE` on it to QUANTI:'s role.
