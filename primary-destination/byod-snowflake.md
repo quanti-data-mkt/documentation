@@ -197,9 +197,9 @@ The host name of the Snowflake account QUANTI: connects to, for example `myorg-m
 
 **Where to find it**
 
-In Snowsight, open the account menu and use **Connect a tool to Snowflake**, or build it from your account identifier: `<orgname>-<account_name>.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
+In Snowsight, open the account menu, then your account › **View account details**, and copy the **Account/Server URL** field, for example `myorg-myaccount.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
 
-**Common mistake**
+**Why it matters**
 
 Entering only the account name, or another address. QUANTI: only accepts hosts that end with `.snowflakecomputing.com`, PrivateLink ones included, and always connects on port 443.
 
