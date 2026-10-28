@@ -243,3 +243,15 @@ If nothing else needs your warehouse to stay on, lower its delay:
 SHOW WAREHOUSES LIKE 'MY_WAREHOUSE';   -- auto_suspend column, in seconds
 ALTER WAREHOUSE MY_WAREHOUSE SET AUTO_SUSPEND = 30;
 ```
+
+### warehouse — The warehouse QUANTI: loads run on
+
+The warehouse QUANTI: loads run on. It becomes the default warehouse of QUANTI:'s user.
+
+**Where to find it**
+
+In Snowsight, under **Admin › Warehouses**. It must already exist: QUANTI: does not create it.
+
+**Why it matters**
+
+A warehouse suspended with auto-resume off: loads fail with `No active warehouse`. Turn `AUTO_RESUME` on, or grant `OPERATE` on it to QUANTI:'s role.
