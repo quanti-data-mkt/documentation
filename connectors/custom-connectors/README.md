@@ -1,2 +1,9 @@
-# Custom connectors
+---
+description: 'Files, spreadsheets, databases, scrapers and views built in your warehouse.'
+---
 
+# Custom
+
+9 connectors. See every connector in [All connectors](../../connect/connectors.md).
+
+<table data-view="cards"><thead><tr><th width="48"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><img src="https://api-connectors-v2.app.quanti.io/v1/connectors/ftp/logo" alt="" data-size="line"></td><td><strong>(S)FTP</strong></td><td><a href="ftp.md">(S)FTP</a></td></tr><tr><td><img src="https://api-connectors-v2.app.quanti.io/v1/connectors/aggregation/logo" alt="" data-size="line"></td><td><strong>Aggregation Views</strong></td><td><a href="aggregation-views.md">Aggregation Views</a></td></tr><tr><td><i class="fa-plug"></i></td><td><strong>Apify</strong></td><td><a href="apify.md">Apify</a></td></tr><tr><td><i class="fa-plug"></i></td><td><strong>Captain Data</strong></td><td><a href="captain-data.md">Captain Data</a></td></tr><tr><td><img src="https://api-connectors-v2.app.quanti.io/v1/connectors/email/logo" alt="" data-size="line"></td><td><strong>Email</strong></td><td><a href="email.md">Email</a></td></tr><tr><td><img src="https://api-connectors-v2.app.quanti.io/v1/connectors/googlesheets-v2/logo" alt="" data-size="line"></td><td><strong>Google Sheets</strong></td><td><a href="google-sheets.md">Google Sheets</a></td></tr><tr><td><img src="https://api-connectors-v2.app.quanti.io/v1/connectors/mysql/logo" alt="" data-size="line"></td><td><strong>MySQL</strong></td><td><a href="mysql.md">MySQL</a></td></tr><tr><td><img src="https://api-connectors-v2.app.quanti.io/v1/connectors/postgres/logo" alt="" data-size="line"></td><td><strong>PostgreSQL</strong></td><td><a href="postgresql.md">PostgreSQL</a></td></tr><tr><td><img src="https://api-connectors-v2.app.quanti.io/v1/connectors/dwh-database/logo" alt="" data-size="line"></td><td><strong>Semantic View</strong></td><td><a href="semantic-connector.md">Semantic View</a></td></tr></tbody></table>

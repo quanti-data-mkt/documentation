@@ -1,4 +1,4 @@
-# BYOD ClickHouse
+# ClickHouse
 
 **BYOD ClickHouse** (Bring Your Own Data Warehouse) lets you connect QUANTI: to your own ClickHouse instance. Your data is loaded directly into your ClickHouse database, leveraging its performance for high-volume analytical workloads.
 

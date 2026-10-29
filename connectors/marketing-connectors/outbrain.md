@@ -1,5 +1,5 @@
 ---
-description: 'Follow our setup guide to connect Microsoft Advertising to QUANTI:'
+description: 'Follow our setup guide to connect Outbrain to QUANTI:'
 ---
 
 # Outbrain
