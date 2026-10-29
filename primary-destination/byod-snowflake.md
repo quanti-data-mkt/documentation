@@ -245,9 +245,8 @@ A warehouse suspended with auto-resume off: loads fail with `No active warehouse
 Everything QUANTI: runs in your Snowflake account is billed to your account.
 
 1. **Connector loads** run on your warehouse. Each load resumes it: Snowflake bills at least 60 seconds, then every second until the warehouse suspends. Its `AUTO_SUSPEND` delay is billed after every load: with 300 seconds, a 20-second load bills about 5 minutes. See [Warehouse considerations](https://docs.snowflake.com/en/user-guide/warehouses-considerations).
-2. **Webhook data** is ingested with Snowpipe Streaming: no warehouse, billed per GB received. See [Snowpipe Streaming costs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/snowpipe-streaming-high-performance-cost).
-3. **Webhook visits** are computed once a night, at 02:30 UTC, by a serverless task: a few seconds of serverless compute.
-4. **The access check** only reads metadata: it never starts your warehouse.
+2. **Webhook visits** are computed once a night, at 02:30 UTC, by a serverless task: a few seconds of serverless compute.
+3. **The access check** only reads metadata: it never starts your warehouse.
 
 If nothing else needs your warehouse to stay on, lower its delay:
 
