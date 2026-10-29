@@ -135,6 +135,7 @@
 * [Reverse connectors](connectors/reverse-connectors/README.md)
   * [Adobe Analytics](connectors/reverse-connectors/adobe-analytics-reverse.md)
   * [Google Ads](connectors/reverse-connectors/google-ads-reverse-connector.md)
+  * [Google Analytics 4](connectors/reverse-connectors/google-analytics-4-reverse.md)
   * [Meta Conversions API](connectors/reverse-connectors/meta-conversions-api-reverse.md)
   * [Meta Custom Audiences](connectors/reverse-connectors/meta-custom-audiences.md)
 * [Sales analytics connectors](connectors/sales-analytics-connectors/README.md)
