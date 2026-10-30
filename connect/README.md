@@ -1,9 +1,10 @@
 ---
 description: 'Every marketing source in your warehouse, daily.'
-icon: plug
 ---
 
 # Connect
+
+<div align="left"><figure><img src="../.gitbook/assets/product-connect.svg" alt="Connect" width="48"><figcaption></figcaption></figure></div>
 
 Connect brings your marketing data into your warehouse: ad platforms, analytics tools, sales and business tools, files and databases. Real-time webhooks take in events as they happen.
 

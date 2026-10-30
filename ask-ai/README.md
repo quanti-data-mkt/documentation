@@ -1,9 +1,10 @@
 ---
 description: 'Ask questions about your data in plain language, in QUANTI: or in your own AI assistant.'
-icon: sparkles
 ---
 
 # Ask AI
+
+<div align="left"><figure><img src="../.gitbook/assets/product-ask-ai.svg" alt="Ask AI" width="48"><figcaption></figcaption></figure></div>
 
 Ask AI puts AI to work on your warehouse. Use cases and AI agents analyze your data for you, dashboards turn answers into shareable reports, and the QUANTI: MCP server lets your own AI assistant query your data directly.
 

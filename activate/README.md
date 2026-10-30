@@ -1,9 +1,10 @@
 ---
 description: 'Push audiences and conversions from your warehouse back to your platforms.'
-icon: bolt
 ---
 
 # Activate
+
+<div align="left"><figure><img src="../.gitbook/assets/product-activate.svg" alt="Activate" width="48"><figcaption></figcaption></figure></div>
 
 Activate sends data from your warehouse back to the platforms where you act on it: audiences and conversions to Google Ads and Meta, events to Google Analytics 4, classifications and offline data to Adobe Analytics.
 

@@ -1,9 +1,10 @@
 ---
 description: 'A managed warehouse, or your own: your single source of truth.'
-icon: database
 ---
 
 # Store
+
+<div align="left"><figure><img src="../.gitbook/assets/product-store.svg" alt="Store" width="48"><figcaption></figcaption></figure></div>
 
 Store is where your data lives: in a BigQuery warehouse that QUANTI: runs for you, or in your own BigQuery, Snowflake or ClickHouse, where you keep your data, your warehouse and your bill.
 

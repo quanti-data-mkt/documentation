@@ -1,9 +1,10 @@
 ---
 description: 'Collect events from your sites and apps, server-side and straight into your warehouse.'
-icon: crosshairs
 ---
 
 # Track
+
+<div align="left"><figure><img src="../.gitbook/assets/product-track.svg" alt="Track" width="48"><figcaption></figcaption></figure></div>
 
 Track collects the events of your websites and apps. Run your own server-side tagging, and send events straight into your data warehouse with tracking tags.
 
