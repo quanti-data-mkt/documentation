@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g style="isolation: isolate;">
+    <g id="Layer_1" data-name="Layer 1">
+      <rect x="-12" width="216" height="216" style="fill: #9ca3af;"/>
+      <rect x="204" y="0" width="216" height="216" rx="108" ry="108" style="fill: #d1d5db;"/>
+      <rect x="420" width="216" height="216" style="fill: #e5e7eb;"/>
+      <path d="M852,0h0v216h-216C636,96.79,732.79,0,852,0Z" style="fill: #f9fafb;"/>
+      <rect x="852" width="216" height="216" style="fill: #f3f4f6;"/>
+      <path d="M1284,0h0v216h-216C1068,96.79,1164.79,0,1284,0Z" style="fill: #e5e7eb;"/>
+      <rect x="1284" y="0" width="216" height="216" rx="108" ry="108" style="fill: #f9fafb;"/>
+      <path d="M1500,0h0C1619.21,0,1716,96.79,1716,216h-216V0h0Z" style="fill: #f3f4f6;"/>
+      <path d="M1716,0h216c0,119.21-96.79,216-216,216h0V0h0Z" style="fill: #9ca3af;"/>
+      <path d="M-12,216h0c119.21,0,216,96.79,216,216H-12v-216h0Z" style="fill: #f3f4f6;"/>
+      <path d="M420,216h0v216h-216c0-119.21,96.79-216,216-216Z" style="fill: #f9fafb;"/>
+      <rect x="420" y="216" width="216" height="216" style="fill: #f3f4f6;"/>
+      <rect x="636" y="216" width="216" height="216" style="fill: #d1d5db;"/>
+      <path d="M852,216h0c119.21,0,216,96.79,216,216h-216v-216h0Z" style="fill: #f9fafb;"/>
+      <rect x="1068" y="216" width="216" height="216" rx="108" ry="108" style="fill: #f3f4f6;"/>
+      <path d="M1500,216h0v216h-216c0-119.21,96.79-216,216-216Z" style="fill: #d1d5db;"/>
+      <path d="M1500,216h216c0,119.21-96.79,216-216,216h0v-216h0Z" style="fill: #e5e7eb;"/>
+      <rect x="1716" y="216" width="216" height="216" rx="108" ry="108" style="fill: #f9fafb;"/>
+      <rect x="-12" y="432" width="216" height="216" rx="108" ry="108" style="fill: #e5e7eb;"/>
+      <path d="M204,432h216v216h0c-119.21,0-216-96.79-216-216h0Z" style="fill: #d1d5db;"/>
+      <path d="M420,432h216c0,119.21-96.79,216-216,216h0v-216h0Z" style="fill: #9ca3af;"/>
+      <path d="M636,432h0c119.21,0,216,96.79,216,216h-216v-216h0Z" style="fill: #e5e7eb;"/>
+      <rect x="852" y="432" width="216" height="216" rx="108" ry="108" style="fill: #9ca3af;"/>
+      <path d="M1284,432h0v216h-216c0-119.21,96.79-216,216-216Z" style="fill: #f9fafb;"/>
+      <rect x="1284" y="432" width="216" height="216" style="fill: #e5e7eb;"/>
+      <path d="M1500,432h0c119.21,0,216,96.79,216,216h-216v-216h0Z" style="fill: #f3f4f6;"/>
+      <path d="M1716,432h216c0,119.21-96.79,216-216,216h0v-216h0Z" style="fill: #d1d5db;"/>
+      <path d="M204,648h0v216H-12c0-119.21,96.79-216,216-216Z" style="fill: #f9fafb;"/>
+      <rect x="204" y="648" width="216" height="216" style="fill: #e5e7eb;"/>
+      <rect x="420" y="648" width="216" height="216" rx="108" ry="108" style="fill: #f9fafb;"/>
+      <path d="M636,648h216v216h0c-119.21,0-216-96.79-216-216h0Z" style="fill: #d1d5db;"/>
+      <path d="M1068,648h0v216h-216c0-119.21,96.79-216,216-216Z" style="fill: #f3f4f6;"/>
+      <rect x="1068" y="648" width="216" height="216" style="fill: #9ca3af;"/>
+      <path d="M1500,648h0v216h-216c0-119.21,96.79-216,216-216Z" style="fill: #f3f4f6;"/>
+      <path d="M1500,648h216c0,119.21-96.79,216-216,216h0v-216h0Z" style="fill: #f9fafb;"/>
+      <path d="M1716,648h216v216h0c-119.21,0-216-96.79-216-216h0Z" style="fill: #e5e7eb;"/>
+      <path d="M-12,864h216v216h0c-119.21,0-216-96.79-216-216h0Z" style="fill: #d1d5db;"/>
+      <path d="M420,864h0v216h-216c0-119.21,96.79-216,216-216Z" style="fill: #9ca3af;"/>
+      <path d="M420,864h216c0,119.21-96.79,216-216,216h0v-216h0Z" style="fill: #d1d5db;"/>
+      <rect x="636" y="864" width="216" height="216" style="fill: #9ca3af;"/>
+      <path d="M852,864h216v216h0c-119.21,0-216-96.79-216-216h0Z" style="fill: #e5e7eb;"/>
+      <rect x="1068" y="864" width="216" height="216" style="fill: #f9fafb;"/>
+      <rect x="1284" y="864" width="216" height="216" style="fill: #9ca3af;"/>
+      <path d="M1716,864h0v216h-216c0-119.21,96.79-216,216-216Z" style="fill: #e5e7eb;"/>
+      <path d="M1716,864h216c0,119.21-96.79,216-216,216h0v-216h0Z" style="fill: #f9fafb;"/>
+    </g>
+    <g id="Layer_5_copy" data-name="Layer 5 copy">
+      <rect width="1920" height="1080" style="mix-blend-mode: hard-light; opacity: .8;"/>
+    </g>
+    <g id="Layer_6" data-name="Layer 6">
+      <g>
+        <path d="M960,156h-384v384c212.07,0,384-171.93,384-384Z" style="fill: #fdf98e;"/>
+        <path d="M1344,540V156h-384c0,212.07,171.93,384,384,384Z" style="fill: #fefdc4;"/>
+        <path d="M1344,540c-212.07,0-384,171.93-384,384h384v-384Z" style="fill: #f7e20e;"/>
+        <path d="M576,540v384h384c0-212.07-171.93-384-384-384Z" style="fill: #fcf14d;"/>
+      </g>
+    </g>
+  </g>
+</svg>

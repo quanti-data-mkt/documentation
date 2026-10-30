@@ -5,7 +5,7 @@ hidden: true
 
 # Piano Analytics
 
-<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
+<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 {% hint style="warning" %}
 **Piano Analytics limits the number of rows returned per query to 1,500,000.**\
@@ -29,19 +29,15 @@ To connect Piano to QUANTI, you need an [Piano](https://piano.io/fr/?utm_source=
 
 1.  Go on your profile parameters to the top-right corner : See profile < API Key<br>
 
-    <figure><img src="../../.gitbook/assets/piano1 (1).png" alt="Access path to API keys on Piano interface"><figcaption><p>Access path to API keys on Piano interface<br></p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/piano1.png" alt="Access path to API keys on Piano interface"><figcaption><p>Access path to API keys on Piano interface<br></p></figcaption></figure>
 2.  Create a new API Key clicking on the blue button "Create a new API Key".\
     <br>
 
-    <figure><img src="../../.gitbook/assets/piano2 (1).png" alt="Button to generate a new API key on Piano interface" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
-
-
+    <figure><img src="../../.gitbook/assets/piano2.png" alt="Button to generate a new API key on Piano interface" width="263"><figcaption><p>Button to generate a new API key</p></figcaption></figure>
 3.  Give it a name and a description. Let the box ticked and save it.\
     <br>
 
-    <figure><img src="../../.gitbook/assets/piano3 (1).png" alt="Description pop-in of API key in Piano interface" width="563"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
-
-
+    <figure><img src="../../.gitbook/assets/piano3.png" alt="Description pop-in of API key in Piano interface" width="563"><figcaption><p>Description pop-in of API key</p></figcaption></figure>
 4. Make a note of the API credentials. You will need it to configure QUANTI:.
 
 ### Find your Website ID
@@ -70,7 +66,7 @@ Your **Website ID** is in the url when you are connected to your Piano account. 
 
 ***
 
-<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Prebuilt reports and definition  </a>
+<a href="https://dbdiagram.io/e/684ae2df1dff20a534ca7171/684ae3f71dff20a534ca9d5f" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
 
 ***
 
@@ -169,4 +165,3 @@ Once all fields are correctly mapped, click **Save** to create the custom report
     As a result, the query fails, and the data is not inserted into our system.
 
     To avoid this, make sure to use the filtering feature to reduce the number of returned rows and stay within the API limits.
-
