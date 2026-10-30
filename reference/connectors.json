@@ -107,7 +107,7 @@
     {"name": "Mailchimp", "page": "connectors/marketing-connectors/mailchimp.md", "sku": "mailchimp", "filters": ["marketing"]},
     {"name": "Matomo", "page": "connectors/analytics-connectors/matomo.md", "sku": "matomo", "filters": ["analytics"]},
     {"name": "Meta Ads", "page": "connectors/marketing-connectors/meta-ads.md", "sku": "meta", "filters": ["marketing"]},
-    {"name": "Meta Ads Library", "page": "connectors/marketing-connectors/meta-ads-library.md", "sku": "meta-ads-library", "filters": ["marketing"]},
+    {"name": "Meta Ads Library", "page": "connectors/marketing-connectors/meta-ads-library.md", "sku": null, "filters": ["marketing"]},
     {"name": "Microsoft Advertising", "page": "connectors/marketing-connectors/microsoft-advertising.md", "sku": "microsoftads", "filters": ["marketing"]},
     {"name": "Mirakl Seller", "page": "connectors/sales-analytics-connectors/mirakl-seller.md", "sku": "mirakl-seller", "filters": ["sales"]},
     {"name": "MySQL", "page": "connectors/custom-connectors/mysql.md", "sku": "mysql", "filters": ["custom"]},
