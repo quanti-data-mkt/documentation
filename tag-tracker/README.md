@@ -1,6 +1,10 @@
-# Real-Time Analytics
+---
+description: 'Track web and app events straight into your data warehouse.'
+---
 
-QUANTI:'s Real-Time Analytics connector captures online and offline user events via a JavaScript tag and streams them directly into BigQuery tables.
+# Tracking tags
+
+QUANTI:'s tracking tags capture online and offline user events with a JavaScript tag and stream them straight into your data warehouse.
 
 * [Tag setup](tag-setup.md)
 * [Tag data model](tag-data-model/README.md)

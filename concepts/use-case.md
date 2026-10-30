@@ -1,4 +1,4 @@
-# Use Case
+# Use cases
 
 A **Use Case** is a pre-configured analysis built on top of your [Pre-built Reports](pre-built-report.md). Where Pre-built Reports give you raw data tables, a Use Case combines and structures that data into a ready-to-use analytical model. Examples include a cross-channel performance dashboard, a budget pacing analysis, or a customer journey report.
 

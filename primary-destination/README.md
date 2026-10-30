@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Primary Destination
 
 QUANTI: supports multiple data warehouse destinations. Choose the option that best fits your infrastructure and plan.

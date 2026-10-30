@@ -24,7 +24,7 @@ QUANTI: connects your ad platform data (spend, impressions, clicks) with your on
 
 The `qid` parameter is designed to work with any analytics data collection tool connected to QUANTI:. It is captured in two ways depending on your setup:
 
-* **QUANTI: Real-Time Analytics tag** — the tag reads the `qid` directly from the URL and stores it alongside the session in the `raw_hits` and `raw_sessions` tables.
+* **QUANTI: tracking tag** — the tag reads the `qid` directly from the URL and stores it alongside the session in the `raw_hits` and `raw_sessions` tables.
 * **Third-party analytics tools** (GA4, Piano Analytics, Piwik PRO, and others) — when `qid` is included in the landing page URL, these tools capture it as a URL parameter within their own data. QUANTI: can then read it from your analytics connector data and use it as the reconciliation key.
 
 In both cases, QUANTI: can match each session or conversion back to its exact campaign, ad group, and creative — across all ad platforms, in a single data model.

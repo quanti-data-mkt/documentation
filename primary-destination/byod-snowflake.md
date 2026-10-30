@@ -4,7 +4,7 @@ description: >-
   account.
 ---
 
-# Create a project with Snowflake as destination
+# Snowflake
 
 **BYOD Snowflake** (Bring Your Own Data Warehouse): QUANTI: loads your data into your own Snowflake account. You keep your data, your warehouse and your bill.
 

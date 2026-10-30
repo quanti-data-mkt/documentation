@@ -15,7 +15,7 @@ description: >-
   connect QUANTI: to Google Cloud Platform.
 ---
 
-# Manage rights on GCP
+# Configure GCP
 
 ***
 

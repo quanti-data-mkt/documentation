@@ -1,11 +1,11 @@
-# Custom Webhook
+# Real-time webhooks
 
-The **Custom Webhook** connector lets you ingest events from any third-party system via a dedicated HTTPS endpoint. QUANTI: automatically generates the receiving URL, infers the schema from your first test payload, and routes the data directly into your data warehouse.
+**Real-time webhooks** let you ingest events from any third-party system via a dedicated HTTPS endpoint. QUANTI: automatically generates the receiving URL, infers the schema from your first test payload, and routes the data directly into your data warehouse.
 
 Typical use cases: CRM events, application alerts, web forms, e-commerce notifications, exports from third-party platforms that do not have a native QUANTI: connector.
 
 {% hint style="info" %}
-To ingest data from the QUANTI: web tracking tag, use the dedicated **Real-Time Analytics** connector — it natively handles sessions, attribution, and consent.
+To ingest data from the QUANTI: web tracking tag, use [Tracking tags](../../tag-tracker/README.md) in Track — they natively handle sessions, attribution, and consent.
 {% endhint %}
 
 ***

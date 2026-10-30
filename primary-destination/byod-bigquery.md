@@ -1,4 +1,4 @@
-# BYOD BigQuery
+# BigQuery
 
 **BYOD BigQuery** (Bring Your Own Data Warehouse) lets you connect QUANTI: to your own Google BigQuery instance. Your data is loaded directly into your GCP project. You retain full ownership of your data and infrastructure.
 
