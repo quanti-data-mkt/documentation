@@ -85,9 +85,9 @@ The s\_content of a session is calculated from `raw_hits` table. Quanti: extract
 
 The s\_keyword of a session is calculated from `raw_hits` table. Quanti: extract value of **utm\_term** parameter of session's first hit.
 
-### s\_utm\_id
+### s\_utmid
 
-The s\_keyword of a session is calculated from `raw_hits` table. Quanti: extract value of **utm\_id** parameter of session's first hit.
+The s\_utmid of a session is calculated from `raw_hits` table. Quanti: extract value of **utm\_id** parameter of session's first hit.
 
 ### s\_consent
 
