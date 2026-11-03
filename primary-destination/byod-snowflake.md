@@ -50,7 +50,7 @@ When you open the project, a window shows a **setup script**, complete: your dat
 2. Open a worksheet in Snowsight and paste it.
 3. Run it as is, with the **ACCOUNTADMIN** role.
 
-The script only creates QUANTI:'s user and role, and gives them access to the database and warehouse from the form. It looks like this, for a project `P2F89CC8E` with the database `SHOP` and the warehouse `LOAD_WH`:
+The script only creates QUANTI:'s user and its two roles, one that loads and one that only reads, and gives them access to the database and warehouse from the form. It looks like this, for a project `P2F89CC8E` with the database `SHOP` and the warehouse `LOAD_WH`:
 
 ```sql
 -- Run as ACCOUNTADMIN.
@@ -75,6 +75,13 @@ GRANT ROLE identifier($role_name) TO USER identifier($user_name);
 GRANT USAGE ON WAREHOUSE identifier($warehouse_name) TO ROLE identifier($role_name);
 GRANT USAGE, CREATE SCHEMA ON DATABASE identifier($database_name) TO ROLE identifier($role_name);
 
+-- Read-only role for QUANTI:'s AI assistant: it only reads the schemas QUANTI: creates.
+SET reader_role_name = 'QUANTI_P2F89CC8E_READER';
+CREATE ROLE IF NOT EXISTS identifier($reader_role_name);
+GRANT ROLE identifier($reader_role_name) TO USER identifier($user_name);
+GRANT USAGE ON WAREHOUSE identifier($warehouse_name) TO ROLE identifier($reader_role_name);
+GRANT USAGE ON DATABASE identifier($database_name) TO ROLE identifier($reader_role_name);
+
 -- Webhooks only: a nightly serverless task computes the visits. Uncomment if you use webhooks.
 -- GRANT EXECUTE MANAGED TASK, EXECUTE TASK ON ACCOUNT TO ROLE identifier($role_name);
 
@@ -83,7 +90,7 @@ GRANT USAGE, CREATE SCHEMA ON DATABASE identifier($database_name) TO ROLE identi
 ```
 
 {% hint style="warning" %}
-Each project has its **own** user and role. Do not replace them by a user you already have: QUANTI: would sign in with all its roles.
+Each project has its **own** user and roles. Do not replace them by a user you already have: QUANTI: would sign in with all its roles.
 {% endhint %}
 
 ## Step 3. Check the access
@@ -116,19 +123,30 @@ Run it as ACCOUNTADMIN. Without it, hits are still collected, but no visits are 
 
 ## Tables you created yourself
 
-QUANTI: sees the schemas and tables it creates: they belong to its role. A table you created yourself, in `PUBLIC` or any other schema, belongs to **your** role, and QUANTI: cannot see it. You need it to:
+QUANTI: sees the schemas and tables it creates: they belong to its role. A table you created yourself, in `PUBLIC` or any other schema, belongs to **your** role, and QUANTI: cannot see it. Give read access to the role that needs it:
 
-* push it to a destination with a **reverse connector**;
-* declare it in a **semantic view**, so the AI assistant can query it.
+| To… | Grant to |
+|---|---|
+| push the table to a destination with a **reverse connector** | `QUANTI_<ID>_ROLE`, the loading role |
+| declare it in a **semantic view**, so the AI assistant can query it | `QUANTI_<ID>_READER`, the read-only role |
 
-Give QUANTI:'s role read access, nothing more: `USAGE` on the schema, `SELECT` on the table. Run as ACCOUNTADMIN, or as the role that owns the table:
+The AI assistant only reads with `QUANTI_<ID>_READER`: a table granted to `QUANTI_<ID>_ROLE` alone stays invisible to it. For both uses, grant both roles.
+
+Give read access, nothing more: `USAGE` on the schema, `SELECT` on the table. Run as ACCOUNTADMIN, or as the role that owns the table. For the reverse connector:
 
 ```sql
 GRANT USAGE  ON SCHEMA NEW_DB.PUBLIC        TO ROLE QUANTI_P2F89CC8E_ROLE;
 GRANT SELECT ON TABLE  NEW_DB.PUBLIC.ADOBE1 TO ROLE QUANTI_P2F89CC8E_ROLE;
 ```
 
-For every table of a schema, including the ones you create later:
+For the AI assistant, the same lines with the read-only role:
+
+```sql
+GRANT USAGE  ON SCHEMA NEW_DB.PUBLIC        TO ROLE QUANTI_P2F89CC8E_READER;
+GRANT SELECT ON TABLE  NEW_DB.PUBLIC.ADOBE1 TO ROLE QUANTI_P2F89CC8E_READER;
+```
+
+For every table of a schema, including the ones you create later (replace `_ROLE` by `_READER` for the AI assistant):
 
 ```sql
 GRANT USAGE  ON SCHEMA NEW_DB.PUBLIC                    TO ROLE QUANTI_P2F89CC8E_ROLE;
@@ -140,23 +158,32 @@ GRANT SELECT ON FUTURE VIEWS  IN SCHEMA NEW_DB.PUBLIC   TO ROLE QUANTI_P2F89CC8E
 
 In Snowsight, you can also open the table, go to **Access › + Privilege**, pick QUANTI:'s role and the `SELECT` privilege; the schema still needs `USAGE`.
 
+{% hint style="info" %}
+Run the `FUTURE` lines as ACCOUNTADMIN: in a schema of your own, Snowflake refuses them to the schema's owner.
+{% endhint %}
+
 {% hint style="warning" %}
 Never grant `OWNERSHIP` or write privileges on your tables: QUANTI: only reads them.
 {% endhint %}
 
 ## What the script does
 
-The script creates **who** QUANTI: is in your account (a user), and **what** it may do (a role). Nothing else.
+The script creates **who** QUANTI: is in your account (a user), and **what** it may do (two roles). Nothing else.
 
 ```
 ACCOUNTADMIN ──creates──▶ QUANTI_<ID>_ROLE ◀──held by── QUANTI_<ID>_USER (public key)
-                              │
+                              │                                 │
                               ├─ USAGE                  → your warehouse  (run loads)
                               ├─ USAGE + CREATE SCHEMA  → your database   (1 schema per source)
                               └─ EXECUTE (MANAGED) TASK → account         (webhook visits, optional)
+                                                                │
+ACCOUNTADMIN ──creates──▶ QUANTI_<ID>_READER ◀──held by─────────┘
+                              ├─ USAGE                  → your warehouse  (AI assistant queries)
+                              ├─ USAGE                  → your database
+                              └─ SELECT, granted by QUANTI: → only the schemas QUANTI: creates
 ```
 
-1. **The four `SET` lines** are worksheet variables, used only while the script runs. `identifier($x)` turns a variable into an object name.
+1. **The `SET` lines** are worksheet variables, used only while the script runs. `identifier($x)` turns a variable into an object name.
 2. **`USE ROLE ACCOUNTADMIN`**: the only role allowed to create a user and grant account privileges. QUANTI: never uses it.
 3. **`CREATE ROLE`**: in Snowflake, privileges are never given to a user directly, only to a role. This role holds every privilege QUANTI: gets.
 4. **`GRANT ROLE … TO ROLE SYSADMIN`**: SYSADMIN inherits QUANTI:'s role, never the other way round. In Snowflake an object belongs to the role that created it, and even SYSADMIN cannot see it otherwise. With this grant, your admins see and manage every schema and table QUANTI: creates. QUANTI: gains nothing from it.
@@ -169,6 +196,8 @@ ACCOUNTADMIN ──creates──▶ QUANTI_<ID>_ROLE ◀──held by── QUAN
 7. **`USAGE` on the warehouse**: run queries on it. QUANTI: cannot resize or change it.
 8. **`USAGE`, `CREATE SCHEMA` on the database**: enter the database and create one schema per data source. QUANTI: owns what it creates and never touches your other schemas.
 9. **`EXECUTE MANAGED TASK`, `EXECUTE TASK`**: webhooks only, see above.
+10. **The read-only role `QUANTI_<ID>_READER`**: the AI assistant queries your data with it, never with the loading role. The script gives it no read right: each time QUANTI: creates a schema, it grants this role `SELECT` on that schema's tables and views, and nothing else. So the assistant cannot write, and cannot read your own schemas unless you grant them yourself (see **Tables you created yourself**).
+11. **`WITH MANAGED ACCESS`**: QUANTI: creates its schemas in this mode. Only the schema's owner, QUANTI:'s loading role, or ACCOUNTADMIN can grant access to its tables. That is what lets QUANTI: open them to the read-only role without any account-wide privilege.
 
 ## Cut or remove QUANTI:'s access
 
@@ -183,6 +212,7 @@ When you delete the project in QUANTI:, its user and role stay in your account. 
 ```sql
 DROP USER IF EXISTS QUANTI_P2F89CC8E_USER;
 DROP ROLE IF EXISTS QUANTI_P2F89CC8E_ROLE;
+DROP ROLE IF EXISTS QUANTI_P2F89CC8E_READER;
 ```
 
 The schemas QUANTI: created stay in your database, with your data: drop them only if you no longer need them.
