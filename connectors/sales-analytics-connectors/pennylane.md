@@ -8,14 +8,17 @@ description: Follow our setup guide to connect Pennylane to QUANTI.
 
 ***
 
+{% hint style="info" %}
+This connector reads your data from **Pennylane Data Sharing**, a Redshift database provided by Pennylane. To connect through the Pennylane public API with OAuth2 instead, see [Pennylane API](pennylane-api.md).
+{% endhint %}
+
+***
+
 ## Prerequisites
 
-Before connecting Pennylane to QUANTI, ensure you have:
-
-* **Pennylane Account**: An active Pennylane account with appropriate access level
-* **API Access**: Administrator or Accountant role to generate API credentials
-* **Active Company**: At least one company configured in your Pennylane account
-* **Financial Data**: Existing invoices, transactions, or accounting data to synchronize
+* A Pennylane **Premium** subscription: Data Sharing is not available on other plans
+* Data Sharing activated for your company in Pennylane
+* The ID of each Pennylane company you want to sync
 
 ***
 
@@ -23,29 +26,36 @@ Before connecting Pennylane to QUANTI, ensure you have:
 
 {% stepper %}
 {% step %}
-**Generate API Token**
+**Get your Data Sharing credentials**
 
-* Log in to your Pennylane account
-* Navigate to **Settings** > **Connectivity** > **data sharing**
-* Click on **Generate new API token**
-* Copy the generated token immediately (it will only be shown once)
-* Store it securely
+* In Pennylane, go to **Company settings** > **Connectivity** > **Data sharing** tab (accounting firms: **Firm settings** > **Data sharing** tab)
+* Generate your credentials. Pennylane displays five values: **Server**, **Port**, **Database**, **Username** (starts with `u_`) and **Password**
+* Copy the password immediately: Pennylane shows it only once. If you lose it, reset it from the same page; the previous password stops working
+* After activation, your data may take a few hours to become available
+{% endstep %}
 
-You will also need your **Company ID** to complete the QUANTI connector setup. You can find it directly in the URL when navigating in the Pennylane app:
+{% step %}
+**Enter your credentials in QUANTI**
+
+* In QUANTI, select the **Pennylane** connector
+* Fill in each field with the value displayed by Pennylane:
+  * **Redshift Host** ← Server
+  * **Port** ← Port
+  * **Database** ← Database
+  * **User** ← Username
+  * **Password** ← Password
+* Click **Next**
+{% endstep %}
+
+{% step %}
+**Enter your company IDs**
+
+* Enter the numeric ID of each Pennylane company to sync
+* You can find it in the URL when navigating in the Pennylane app:
 
 ```
 https://app.pennylane.com/companies/{company-id}/...
 ```
-{% endstep %}
-
-{% step %}
-**Connect to QUANTI**
-
-* In QUANTI, click on **Connect to Pennylane**
-* Paste your API token in the authentication field
-* Click **Validate** to verify the connection
-* Select the company you want to synchronize data from
-* Click **Next**
 {% endstep %}
 
 {% step %}
