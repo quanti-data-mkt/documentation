@@ -304,3 +304,15 @@ GA4 counts every event it receives. On a **Custom event** push, each Event ID is
 Contact QUANTI: support at support@quanti.io or consult our documentation at https://docs.quanti.io
 
 </details>
+
+### event_id — Event ID
+
+Identifies each custom event: QUANTI: sends a given Event ID to GA4 only once, since GA4 counts every event it receives, even one it already got.
+
+**Where to find it**
+
+A column of your source that is unique per event and stable from one refresh to the next: an order ID, a lead ID, or a key built from them (order ID + event type). Avoid row numbers or IDs generated at each refresh of the view.
+
+**Why it matters**
+
+Expecting GA4 to drop events it already received: it does not, and before this push sent each Event ID once, the same events were counted two or three times in the reports. Today the risk is the other way round: an Event ID shared by two different events sends only the first, and an ID rebuilt at every refresh looks new each day and is sent again.
