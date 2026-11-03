@@ -34,6 +34,8 @@ The push **creates an object** at the provider and keeps it in line with your so
 | Add only | rows added to the source since the last sync, never a removal |
 | Remove only | rows removed from the source since the last sync, never an addition |
 
+One push uses **Add only** to send events rather than keep a destination: **Google Analytics 4 — Custom event**. It creates nothing at the provider; the snapshot only makes sure each event is sent once, since GA4 counts every event it receives. See [Google Analytics 4 (Reverse)](google-analytics-4-reverse.md#each-custom-event-is-sent-once).
+
 ### Pushes that send events — Insert
 
 The push **feeds an object you already own**: a conversion action in Google Ads, a Meta Pixel, an Adobe data source. Nothing is created and nothing is removed at the provider.
@@ -50,7 +52,7 @@ Sends every row of the source to the provider once, instead of only the changes 
 
 **Where to find it**
 
-On each push card of the Mapping tab, under Active. It is usable on Mirror and Add only pushes once the first sync has run; until then it is greyed out, since nothing has been sent yet. It stays greyed out on Insert pushes, which keep no record of what they sent, and on Remove only pushes, where a resync would only send additions that the mode ignores — hover the button to see why. The action starts a sync right away, and is refused while a sync is running.
+On each push card of the Mapping tab, under Active. It is usable on Mirror and Add only pushes once the first sync has run; until then it is greyed out, since nothing has been sent yet. It stays greyed out on Insert pushes, which keep no record of what they sent, on Remove only pushes, where a resync would only send additions that the mode ignores, and on Google Analytics 4 pushes, where every event would be counted twice — hover the button to see why. The action starts a sync right away, and is refused while a sync is running.
 
 **Why it matters**
 

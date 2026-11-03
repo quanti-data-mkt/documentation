@@ -101,6 +101,7 @@ One row per purchase — or one row per purchased item, see [Basket items](#bask
 | `value` | FLOAT | ✅ | Total revenue of the purchase in the specified currency. |
 | `currency` | STRING | ✅ | ISO 4217 currency code (`EUR`, `USD`, `GBP`…). |
 | `client_id` | STRING | — | GA4 Client ID of the web visitor — the value GA4 exports as `user_pseudo_id`. Each row needs `client_id` or `app_instance_id`, see [User identifier](#user-identifier). |
+| `session_id` | STRING | — | GA4 session of the visit the event belongs to — `ga_session_id` in the native GA4 BigQuery export. Sent with the Client ID as the `session_id` event parameter, so GA4 can count the event in that session. |
 | `app_instance_id` | STRING | — | Firebase app instance identifier — the app equivalent of the Client ID. Only for app data streams. |
 | `user_id` | STRING | — | Your own user identifier, for User-ID measurement. Use it when the event comes from a logged-in context. |
 | `gclid` | STRING | — | Google click identifier captured at conversion time. Improves attribution. |
@@ -128,6 +129,7 @@ Sends `refund` events so reported revenue reflects what was actually kept. Map t
 | `value` | FLOAT | — | Amount refunded in the specified currency. Leave unmapped for a full refund of the original order. |
 | `currency` | STRING | — | ISO 4217 currency code. Required whenever a value is sent. |
 | `client_id` | STRING | — | GA4 Client ID (`user_pseudo_id`). Each row needs `client_id` or `app_instance_id`. |
+| `session_id` | STRING | — | GA4 session of the visit (`ga_session_id` in the GA4 BigQuery export), sent as the `session_id` event parameter. |
 | `app_instance_id` | STRING | — | Firebase app instance identifier. Only for app data streams. |
 | `user_id` | STRING | — | Your own user identifier, for User-ID measurement. |
 | `gclid` | STRING | — | Google click identifier captured at conversion time. |
@@ -150,9 +152,10 @@ Sends any event of your own. Unlike Purchase and Refund, you choose the **event 
 
 | Field | Type | Required | Description |
 |---|---|---|---|
-| `event_id` | STRING | ✅ | Unique identifier of the row (primary key), used by QUANTI: as the deduplication key. Also sent to GA4 as an event parameter, which helps when debugging in DebugView. |
+| `event_id` | STRING | ✅ | Unique identifier of the event (primary key). QUANTI: sends each Event ID **once**, see [Each custom event is sent once](#each-custom-event-is-sent-once). Also sent to GA4 as an event parameter, which helps when debugging in DebugView. |
 | `event_timestamp` | TIMESTAMP | ✅ | UTC timestamp of the event (RFC3339). Must be less than **72 hours** old. |
 | `client_id` | STRING | — | GA4 Client ID (`user_pseudo_id`). Each row needs `client_id` or `app_instance_id`. |
+| `session_id` | STRING | — | GA4 session of the visit (`ga_session_id` in the GA4 BigQuery export), sent as the `session_id` event parameter. |
 | `app_instance_id` | STRING | — | Firebase app instance identifier. Only for app data streams. |
 | `user_id` | STRING | — | Your own user identifier, for User-ID measurement. |
 | `gclid` | STRING | — | Google click identifier captured at conversion time. |
@@ -168,8 +171,36 @@ Sends any event of your own. Unlike Purchase and Refund, you choose the **event 
 | `consent_ad_user_data` | STRING | — | DMA consent — Ad User Data. |
 | `consent_ad_personalization` | STRING | — | DMA consent — Ad Personalization. |
 
+### Custom parameters
+
+On top of the template fields, you can add **parameters of your own** to any event type (margin, channel, customer type…): click **Add custom parameter** in the Mapping tab, name it, then pick its source column. Each one is sent to GA4 as a **text** event parameter, under the name you gave it.
+
+* The name follows GA4 rules: it starts with a letter, holds only letters, digits and underscores, 40 characters at most. Names starting with `google_`, `ga_` or `firebase_` are reserved by GA4.
+* A name already sent elsewhere by the template (`client_id`, `email`, `value`, `currency`…) is refused: use the template field instead.
+* **No personal data.** A custom parameter is sent unhashed, and GA4 forbids personal data in event parameters. Names that point to one (`email`, `phone`, `first_name`, `address`…) are refused; emails, phones and names go through the template's hashed fields.
+* Up to **15** custom parameters per push: GA4 keeps at most 25 parameters per event.
+
+To see a custom parameter in your GA4 reports, register it as a **custom dimension** (or metric) in GA4 Admin.
+
 {% hint style="info" %}
 **Hashing is automatic.** QUANTI: normalizes and hashes `email`, `phone_number`, `first_name` and `last_name` with SHA-256 before any data leaves your warehouse. Map raw, readable values — do not pre-hash them.
+{% endhint %}
+
+***
+
+## Each custom event is sent once
+
+GA4 counts **every** event it receives: it does not recognise an event it already got, even with the same `event_id`. The **Custom event** push therefore runs in **Add only** mode: QUANTI: keeps a record of the Event IDs already sent, and each sync only sends the ones it has never sent.
+
+* The [lookback window](#scheduling) still re-reads the last days, to catch events that reached your warehouse late, without sending anything twice. Running **Sync now** on the same days does not resend them either.
+* A row that **changed** after being sent is not sent again: GA4 cannot update an event it already received. Exception: a row skipped earlier (no Client ID, for example) and fixed since is sent at the next sync.
+* Give **each event its own Event ID**. Two different events sharing one Event ID: only the first reaches GA4.
+* **Full resync** is not available on GA4 pushes: it would send every event of the window again, and GA4 would count them twice.
+
+**Purchase** and **Refund** keep the **Insert** mode: one order can span several rows (one per item, or several partial refunds), and they all share its Transaction ID.
+
+{% hint style="warning" %}
+Schedule the push **after** the connectors that feed its source table. A sync that finds the source still empty leaves an empty record, and the next sync sends the whole window again.
 {% endhint %}
 
 ***
@@ -219,7 +250,7 @@ Map the consent column captured by your tag or CMP. Left unmapped, no consent si
 
 * The connector sends events to the property's data stream, detected automatically at the start of each run. Web streams take precedence over app streams; a single app stream is also usable. A property exposing **several web data streams** is refused, rather than sending events to the wrong stream.
 * The Data Manager API accepts or rejects a batch of events **as a whole**. This is why QUANTI: skips invalid rows (too old, no Client ID) before sending, instead of letting one row reject the others.
-* Any field that is not a structured GA4 field is sent as an **event parameter**.
+* Any field that is not a structured GA4 field is sent as an **event parameter**, as are [custom parameters](#custom-parameters).
 * Server-side events show up in **GA4 → Reports → Realtime** within minutes, and in **DebugView**.
 
 ***
@@ -255,6 +286,14 @@ The Google account used to authorize QUANTI: does not have **Editor** access to 
 <summary>A custom event is rejected with INVALID_EVENT_NAME</summary>
 
 The event name entered in the Mapping tab is reserved by GA4. Pick another name.
+
+</details>
+
+<details>
+
+<summary>An event appears several times in GA4</summary>
+
+GA4 counts every event it receives. On a **Custom event** push, each Event ID is sent once: check that your source gives each event its own `event_id`, and that it is stable from one day to the next (an ID rebuilt at every refresh looks like a new event). On **Purchase**, GA4 relies on the `transaction_id` to recognise an order: map it.
 
 </details>
 
