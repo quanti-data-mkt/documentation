@@ -101,7 +101,7 @@ Back in QUANTI:, click **Check**. QUANTI: signs in with its key and checks, with
 |---|---|
 | **Sign in with QUANTI:'s key** | The script did not run, or ran on another account. Run it again, as ACCOUNTADMIN. |
 | **Role QUANTI_…_ROLE** | The role is not granted to the user. Run the `GRANT ROLE … TO USER` line again. |
-| **USAGE on the user's default warehouse** | The warehouse from the form does not exist, or the script failed on it. Check its name in Snowsight, under **Admin › Warehouses**. |
+| **USAGE on the user's default warehouse** | The warehouse from the form does not exist, or the script failed on it. Check its name in Snowsight, under **Compute » Warehouses**. |
 | **USAGE, CREATE SCHEMA on database …** | The database name differs from the one in the form, or the grant failed. |
 | **No admin role on the user** | The user holds ACCOUNTADMIN, SECURITYADMIN, SYSADMIN, USERADMIN or ORGADMIN. Revoke it: QUANTI: does not need it. |
 
@@ -227,7 +227,7 @@ The host name of the Snowflake account QUANTI: connects to, for example `myorg-m
 
 **Where to find it**
 
-In Snowsight, open the account menu, then your account › **View account details**, and copy the **Account/Server URL** field, for example `myorg-myaccount.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
+In Snowsight, open the account selector, then select **View account details**. In the **Account Details** dialog, copy the **Account/Server URL** field, for example `myorg-myaccount.snowflakecomputing.com`. See [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
 
 **Why it matters**
 
@@ -239,7 +239,16 @@ Your Snowflake database, where QUANTI: creates one schema per data source, then 
 
 **Where to find it**
 
-In Snowsight, under **Data › Databases**. The setup script grants QUANTI:'s role `USAGE` and `CREATE SCHEMA` on it.
+QUANTI: does not create the database: it must exist before you create the project.
+
+* **Existing database**: in Snowsight, **Catalog » Explorer** lists your databases. Copy its name.
+* **New database**: run this as `ACCOUNTADMIN`, or as a role allowed to create databases, then enter `QUANTI_DB` in the form. Do not put the name in double quotes.
+
+```sql
+CREATE DATABASE QUANTI_DB;
+```
+
+The setup script grants QUANTI:'s role `USAGE` and `CREATE SCHEMA` on it.
 
 **Common mistake**
 
@@ -251,7 +260,7 @@ The warehouse QUANTI: loads run on. It becomes the default warehouse of QUANTI:'
 
 **Where to find it**
 
-In Snowsight, under **Admin › Warehouses**. It must already exist: QUANTI: does not create it.
+In Snowsight, **Compute » Warehouses** lists your warehouses: copy the name shown in the list. It must already exist: QUANTI: does not create it. To create one, go to **Compute » Warehouses**, then select **+ Warehouse**.
 
 **Why it matters**
 
