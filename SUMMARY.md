@@ -143,6 +143,7 @@
   * [BigQuery](primary-destination/byod-bigquery.md)
     * [Configure GCP](data-warehouses/bigquery.md)
   * [Snowflake](primary-destination/byod-snowflake.md)
+    * [Snowflake: security and costs](primary-destination/byod-snowflake-security.md)
   * [ClickHouse](primary-destination/byod-clickhouse.md)
   * [Primary Destination](primary-destination/README.md)
 * [Activate](activate/README.md)

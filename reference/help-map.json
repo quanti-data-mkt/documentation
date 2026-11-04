@@ -132,7 +132,7 @@
   "sgtm.web_container": "server-side-tagging/field-reference.md#web_container",
   "snowflake.database": "primary-destination/byod-snowflake.md#database",
   "snowflake.host": "primary-destination/byod-snowflake.md#host",
-  "snowflake.own_tables": "primary-destination/byod-snowflake.md#Tables you created yourself",
-  "snowflake.setup_script": "primary-destination/byod-snowflake.md#What the script does",
+  "snowflake.own_tables": "primary-destination/byod-snowflake-security.md#Tables you created yourself",
+  "snowflake.setup_script": "primary-destination/byod-snowflake-security.md#What the script does",
   "snowflake.warehouse": "primary-destination/byod-snowflake.md#warehouse"
 }
