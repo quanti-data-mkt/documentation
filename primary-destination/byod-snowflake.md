@@ -8,10 +8,6 @@ description: >-
 
 **BYOD Snowflake** (Bring Your Own Data Warehouse): QUANTI: loads your data into your own Snowflake account. You keep your data, your warehouse and your bill.
 
-{% hint style="warning" %}
-BYOD Snowflake is available on the **Enterprise** plan only.
-{% endhint %}
-
 It works like a BigQuery project you own: you provide the place where the data lands, QUANTI: provides its identity, you give that identity access.
 
 | | BigQuery (your project) | Snowflake |
@@ -165,7 +161,7 @@ The warehouse QUANTI: loads run on. It becomes the default warehouse of QUANTI:'
 
 **Where to find it**
 
-In Snowsight, **Compute » Warehouses** lists your warehouses: copy the name shown in the list. It must already exist: QUANTI: does not create it. To create one, go to **Compute » Warehouses**, then select **+ Warehouse**.
+In Snowsight, **Compute » Warehouses** lists your warehouses: copy the name shown in the list. It must already exist: QUANTI: does not create it. You can create one from the same page.
 
 **Why it matters**
 
