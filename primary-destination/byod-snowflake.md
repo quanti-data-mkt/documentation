@@ -97,13 +97,13 @@ Each project has its **own** user and roles. Do not replace them by a user you a
 
 Back in QUANTI:, click **Check**. QUANTI: signs in with its key and checks, without starting your warehouse:
 
-| Check | If it fails |
-|---|---|
-| **Sign in with QUANTI:'s key** | The script did not run, or ran on another account. Run it again, as ACCOUNTADMIN. |
-| **Role QUANTI_…_ROLE** | The role is not granted to the user. Run the `GRANT ROLE … TO USER` line again. |
-| **USAGE on the user's default warehouse** | The warehouse from the form does not exist, or the script failed on it. Check its name in Snowsight, under **Compute » Warehouses**. |
-| **USAGE, CREATE SCHEMA on database …** | The database name differs from the one in the form, or the grant failed. |
-| **No admin role on the user** | The user holds ACCOUNTADMIN, SECURITYADMIN, SYSADMIN, USERADMIN or ORGADMIN. Revoke it: QUANTI: does not need it. |
+| Check | What it means | If it fails |
+|---|---|---|
+| **Sign in with QUANTI:'s key** | QUANTI: signs in with the key from the setup script. | The script did not run, or ran on another account. Run it again, as ACCOUNTADMIN. |
+| **Role QUANTI_…_ROLE** | QUANTI:'s user works with this role only, the one the script creates. | The role is not granted to the user. Run the `GRANT ROLE … TO USER` line again. |
+| **USAGE on the user's default warehouse** | Loads run on this warehouse. | The warehouse from the form does not exist, or the script failed on it. Check its name in Snowsight, under **Compute » Warehouses**. |
+| **USAGE, CREATE SCHEMA on database …** | QUANTI: creates one schema per source in this database, never elsewhere. | The database name differs from the one in the form, or the grant failed. |
+| **QUANTI:'s user has no admin role** | For your security, QUANTI: refuses a user that can take an admin role. | The user holds ACCOUNTADMIN, SECURITYADMIN, SYSADMIN, USERADMIN or ORGADMIN. Revoke it: QUANTI: does not need it. |
 
 When every check passes, the window closes: add your first data source.
 
