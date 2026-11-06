@@ -227,3 +227,4 @@ With the server running and the snippet in place, you can go further:
 
 * **Add CAPI destinations** — send server-side conversion events directly to Meta, TikTok, Pinterest and others from the same server container.
 * **Declare your other sites** — a single server can serve several web containers, each with its own snippet. See [One server, several sites](README.md#one-server-several-sites).
+* **Add your other country domains** — the same server can answer on `tag.yoursite.be`, `tag.yoursite.de`… each with its own DNS records and snippet. See [One server, several domains](README.md#one-server-several-domains).

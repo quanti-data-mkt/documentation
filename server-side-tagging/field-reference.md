@@ -93,6 +93,45 @@ stops answering — so collection stops.
 Plan it in this order: change the domain here, add the new DNS records, wait for
 the check to pass, then deploy the new snippet. Not the other way around.
 
+The [other domains](#extra_domains) of the server are not affected: they keep
+answering while the main domain changes.
+
+### extra_domains — Collecting on several domains
+
+One server can answer on several domains: typically the same site in several
+countries, for example `tag.yoursite.fr`, `tag.yoursite.be` and `tag.yoursite.de`.
+Each domain has its own DNS records and its own HTTPS certificate, and all of them
+reach the same tagging container.
+
+**Adding one**
+
+Add the domain on the server page, under *Other domains*, then add the two records
+we display in the DNS zone of that domain. Once they resolve, the certificate is
+issued within a few minutes and the domain turns *Active*. It collects nothing
+before that.
+
+**Each site uses the code of its own domain**
+
+The snippet and the Quanti tag are generated per domain: pick the domain before
+copying the code. A site on `yoursite.be` that loads from `tag.yoursite.fr` keeps
+working, but its requests and its cookies are no longer first-party for that site.
+
+**Not before it is active**
+
+The code of a domain is only given once that domain is active. Installed earlier,
+it would load from a name with no certificate yet, and the site would lose all its
+tags.
+
+**Removing one**
+
+Removing a domain stops collection for every site that calls it: replace their
+snippet first.
+
+**Billing**
+
+The main domain is included with the server. Each additional domain is billed
+separately, and all the domains of a server share its included hits.
+
 ### web_container — Where to find your web container ID
 
 The ID your website **already loads** — from the **web** container in your Tag
@@ -121,6 +160,9 @@ which one your site loads.
 Declare every web container you load through this server. Each one gets its own
 snippet: the container ID is scrambled differently per container, so a snippet
 cannot be reused from one to the next.
+
+If the server has [several domains](#extra_domains), pick the domain of the site
+before copying its snippet.
 
 ### snippet — Installing the snippet on your site
 

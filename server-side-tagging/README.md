@@ -82,6 +82,17 @@ A single server can serve several web containers. Declare each one, and each get
 its own snippet — the container identifier is scrambled differently for each, so a
 snippet cannot be reused from one site to the next.
 
+## One server, several domains
+
+A server can also answer on several domains — typically the same site in several
+countries: `tag.yoursite.fr`, `tag.yoursite.be`, `tag.yoursite.de`. Each domain has
+its own DNS records and its own certificate, and each site loads its snippet from
+its own domain, so its measurement stays first-party.
+
+The main domain is included with the server; each additional domain is billed
+separately. All the domains of a server share its included hits. Details in the
+[field reference](field-reference.md#extra_domains).
+
 ## What is measured
 
 Two different figures, and they do not mean the same thing.
