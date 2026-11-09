@@ -140,7 +140,9 @@ Lists added to and attributes updated are in `_raw` (`list_id`, `content`).
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `transactional_sms_events` and `campaign_sms_events`
+### Columns of the SMS tables
+
+Tables: `transactional_sms_events`, `campaign_sms_events`.
 
 | Column | Type | Description |
 |---|---|---|

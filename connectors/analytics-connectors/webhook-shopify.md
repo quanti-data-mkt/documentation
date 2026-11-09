@@ -144,7 +144,9 @@ QUANTI: checks every event in **observe** mode: an event with a missing or wrong
 
 Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including those beyond 2^53. Dates are timestamps in UTC.
 
-### Columns of `orders_create`, `orders_updated`, `orders_paid`, `orders_cancelled`, `orders_fulfilled`, `orders_partially_fulfilled`
+### Columns of the order tables
+
+Tables: `orders_create`, `orders_updated`, `orders_paid`, `orders_cancelled`, `orders_fulfilled`, `orders_partially_fulfilled`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -210,7 +212,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `orders_delete`, `draft_orders_delete`, `customers_delete`, `checkouts_delete`, `products_delete`, `collections_delete`, `inventory_items_delete`
+### Columns of the deletion tables
+
+Tables: `orders_delete`, `draft_orders_delete`, `customers_delete`, `checkouts_delete`, `products_delete`, `collections_delete`, `inventory_items_delete`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -258,7 +262,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `fulfillments_create`, `fulfillments_update`
+### Columns of the fulfillment tables
+
+Tables: `fulfillments_create`, `fulfillments_update`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -294,7 +300,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `disputes_create`, `disputes_update`
+### Columns of the dispute tables
+
+Tables: `disputes_create`, `disputes_update`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -314,7 +322,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `draft_orders_create`, `draft_orders_update`
+### Columns of the draft order tables
+
+Tables: `draft_orders_create`, `draft_orders_update`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -339,7 +349,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `customers_create`, `customers_update`, `customers_enable`, `customers_disable`
+### Columns of the customer tables
+
+Tables: `customers_create`, `customers_update`, `customers_enable`, `customers_disable`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -379,7 +391,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `checkouts_create`, `checkouts_update`
+### Columns of the checkout tables
+
+Tables: `checkouts_create`, `checkouts_update`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -407,7 +421,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `carts_create`, `carts_update`
+### Columns of the cart tables
+
+Tables: `carts_create`, `carts_update`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -420,7 +436,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `products_create`, `products_update`
+### Columns of the product tables
+
+Tables: `products_create`, `products_update`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -441,7 +459,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `variants_in_stock`, `variants_out_of_stock`
+### Columns of the variant tables
+
+Tables: `variants_in_stock`, `variants_out_of_stock`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -462,7 +482,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `collections_create`, `collections_update`
+### Columns of the collection tables
+
+Tables: `collections_create`, `collections_update`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -477,7 +499,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `inventory_levels_update`, `inventory_levels_connect`, `inventory_levels_disconnect`
+### Columns of the inventory level tables
+
+Tables: `inventory_levels_update`, `inventory_levels_connect`, `inventory_levels_disconnect`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -489,7 +513,9 @@ Amounts are exact decimals (NUMERIC). Ids are kept exactly as sent, including th
 | `_quanti_date` | DATE | Day the event was received (partition). |
 | `_quanti_loaded_at` | TIMESTAMP | When the event was written. |
 
-### Columns of `inventory_items_create`, `inventory_items_update`
+### Columns of the inventory item tables
+
+Tables: `inventory_items_create`, `inventory_items_update`.
 
 | Column | Type | Description |
 |---|---|---|
