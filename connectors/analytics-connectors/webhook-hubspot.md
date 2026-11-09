@@ -68,7 +68,9 @@ Private apps built with HubSpot **projects** use generic subscriptions (`object.
 | `line_item_events` | Line items | `line_item.*` |
 | `conversation_events` | Conversations | `conversation.*` |
 
-All tables share the same columns:
+### Columns of every table
+
+All the tables above share these columns.
 
 | Column | Type | Description |
 |---|---|---|
