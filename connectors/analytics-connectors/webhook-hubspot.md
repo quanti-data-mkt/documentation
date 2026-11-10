@@ -31,9 +31,9 @@ In **Connect › Real time**, choose **HubSpot webhooks**. Give it a name and a 
 {% endstep %}
 
 {% step %}
-### Set the target URL in your HubSpot private app
+### Set the target URL in HubSpot
 
-In HubSpot, open your private app (**Settings › Integrations › Private apps**), then its **Webhooks** tab:
+In HubSpot, webhooks are created in **Automation › Workflows**:
 
 * **Target URL**: the URL copied from QUANTI:;
 * **Subscriptions**: the events of the objects turned on in QUANTI: (for example `contact.creation`, `contact.propertyChange` with the properties to follow, `deal.creation`).
@@ -45,6 +45,10 @@ In HubSpot, open your private app (**Settings › Integrations › Private apps*
 In the **Auth** tab of the private app, copy the **client secret** and paste it in the **Security** tab of the QUANTI: webhook.
 {% endstep %}
 {% endstepper %}
+
+{% hint style="warning" %}
+Webhooks in HubSpot workflows are only available with some HubSpot plans (**Data Hub Professional or Enterprise**). If **Automation › Workflows** shows an upgrade page, your plan does not include them.
+{% endhint %}
 
 {% hint style="info" %}
 QUANTI: checks every event in **observe** mode: an event with a missing or wrong signature is still written, and flagged on our side. A mistyped key never makes you lose events, and the provider never disables your webhook because of it.
