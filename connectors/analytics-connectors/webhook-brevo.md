@@ -39,26 +39,40 @@ Open the **Security** tab of the QUANTI: webhook and copy the token.
 {% step %}
 ### Create one Brevo webhook per URL
 
-In Brevo, create a webhook for each URL shown on your active tables:
+Create one Brevo webhook for each URL shown on your active tables. Each Brevo webhook covers one event category:
 
-| Table | Brevo webhook | URL suffix |
+| Table | Brevo event category | URL suffix |
 |---|---|---|
-| `transactional_email_events` | Transactional, email | `/transactional-email` |
-| `campaign_email_events` | Marketing, email | `/marketing` |
-| `contact_events` | Marketing, email (contact events) | `/marketing` |
-| `transactional_sms_events` | Transactional, SMS | `/transactional-sms` |
-| `campaign_sms_events` | Marketing, SMS | `/marketing-sms` |
+| `transactional_email_events` | Transactional email | `/transactional-email` |
+| `campaign_email_events` | Marketing email | `/marketing` |
+| `contact_events` | Marketing email (contact events are listed there) | `/marketing` |
+| `transactional_sms_events` | Transactional SMS | `/transactional-sms` |
+| `campaign_sms_events` | Marketing SMS | `/marketing-sms` |
 
-Tick the events you want to receive, and set the webhook **authentication** to **Token** with the token copied from QUANTI:.
+For each URL:
+
+1. In Brevo, click your **account name** (bottom left), then **Integrations › Webhooks**.
+2. Click **Add webhook**, select **Outbound webhook**, then click **Add webhook**.
+3. Enter a name (for example `QUANTI: transactional email`) and click **Continue**.
+4. Paste the QUANTI: URL of the table.
+5. Under **Authentication**, select **Token** and paste the token copied from QUANTI:.
+6. Under the sending strategy, select **Send one at a time**, then click **Continue**.
+7. Select the **event category** from the table above. All its events are on by default: turn off the ones you don't want.
+8. (Optional) Click the **⋯** next to an event and choose **Send test request** to check that it arrives.
+9. Click **Activate webhook**.
+
+{% hint style="warning" %}
+QUANTI: does not accept batched events. Do not select **Send by batch**: keep **Send one at a time**.
+{% endhint %}
 
 {% hint style="info" %}
-On the marketing URL, an event whose table is not turned on in QUANTI: (for example a contact change while only `campaign_email_events` is active) is acknowledged and not written. Turn the table on in the Reports tab to start receiving it.
+`campaign_email_events` and `contact_events` share the `/marketing` URL: one Brevo webhook on the **Marketing email** category feeds both. An event whose table is not turned on in QUANTI: (for example a contact change while only `campaign_email_events` is active) is acknowledged and not written. Turn the table on in the Reports tab to start receiving it.
 {% endhint %}
 {% endstep %}
 {% endstepper %}
 
 {% hint style="info" %}
-QUANTI: checks the token in **observe** mode: an event without the token, or with a wrong one, is still written and flagged on our side. If your Brevo interface does not offer token authentication yet, the webhook works without it, and the token can be set later through the Brevo API (`auth` of the webhook).
+QUANTI: checks the token in **observe** mode: an event without the token, or with a wrong one, is still written and flagged on our side. A webhook created without the token keeps working; you can add it later by editing the webhook in **Integrations › Webhooks**, or through the Brevo API (`auth` of the webhook).
 {% endhint %}
 
 ***
