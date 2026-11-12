@@ -34,27 +34,44 @@ In **Connect › Real time**, choose **Stripe webhooks**. Give it a name and a d
 
 In your Stripe Dashboard, open **Developers › Webhooks** and add an endpoint (event destination):
 
-* **Endpoint URL**: the URL copied from QUANTI:;
+* **Payload style**: **Snapshot**, never **Thin**;
 * **Events**: the events of the tables turned on in QUANTI: (see the list below);
-* **Payload style**, when Stripe asks: **Snapshot**.
+* **Endpoint URL**: the URL copied from QUANTI:.
+
+{% hint style="danger" %}
+**A Thin destination writes nothing, and Stripe still shows every delivery as successful.** A thin event only carries the id of the object, not the object itself, and its type is prefixed (`v1.product.created` instead of `product.created`): no table takes it. To fix it: create a new Snapshot destination, paste its signing secret in QUANTI:, then delete the Thin one.
+{% endhint %}
 {% endstep %}
 
 {% step %}
 ### Paste the signing secret
 
-On the endpoint page, reveal the **signing secret** (`whsec_…`) and paste it in the **Security** tab of the QUANTI: webhook. Live and test mode endpoints have different secrets: one QUANTI: webhook per mode.
+On the endpoint page, reveal the **signing secret** (`whsec_…`) and paste it in the **Security** tab of the QUANTI: webhook. Each destination has its own secret: a new destination means a new secret to paste. Live and test mode endpoints have different secrets: one QUANTI: webhook per mode.
 {% endstep %}
 
 {% step %}
 ### Test
 
-Send a test event from the endpoint page, or run a test payment. The table is created with the first event, within a minute.
+Trigger a real event of a table you turned on, in the same mode (live or test) as the destination: create a product for `product_events`, run a test payment for `payment_intent_events`. The table is created with the first event, within a minute.
+
+The ping Stripe sends when you create the destination (`v2.core.event_destination.ping`) only lands in `other_events`, if that table is on. It proves nothing about the others.
 {% endstep %}
 {% endstepper %}
 
 {% hint style="info" %}
 QUANTI: checks every event in **observe** mode: an event with a missing or wrong signature is still written, and flagged on our side. A mistyped key never makes you lose events, and the provider never disables your webhook because of it.
 {% endhint %}
+
+***
+
+## Stripe shows "200", but the table stays empty
+
+QUANTI: answers **200** to every event it receives, even one that no table takes: an error would make Stripe retry, then disable the whole destination. A successful delivery in Stripe therefore only proves the event reached QUANTI:. Check, in this order:
+
+1. **Payload style.** Open a delivery in Stripe: if the request body has `"object": "v2.core.event"` and a type starting with `v1.`, the destination is **Thin**. Replace it with a Snapshot destination (see [Setup](#setup)).
+2. **Events.** Only the event types ticked on the destination are sent. A `payment_intent.succeeded` never reaches `product_events`; turn on `other_events` to catch everything else.
+3. **Mode.** Events triggered in test mode, or in a sandbox, never reach a live destination, and the other way round.
+4. **Delay.** Events are written in batches: allow about a minute before querying the table.
 
 ***
 
