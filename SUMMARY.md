@@ -71,6 +71,7 @@
     * [CSP](connectors/exogenous-connectors/csp.md)
     * [Effinity](connectors/marketing-connectors/effinity.md)
     * [Email](connectors/custom-connectors/email.md)
+    * [Exchange Rates](connectors/exogenous-connectors/exchange-rates.md)
     * [Facebook Organic](connectors/marketing-connectors/facebookorganic.md)
     * [Google Ad Manager](connectors/marketing-connectors/google-ad-manager.md)
     * [Google Ads](connectors/marketing-connectors/google-ads.md)
