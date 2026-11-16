@@ -114,6 +114,14 @@ https://app.pennylane.com/companies/{company-id}/...
 * **API Rate Limits**: Pennylane enforces rate limits on API requests. QUANTI automatically manages these limits to ensure reliable data extraction
 * **Accounting Standards**: Data follows French accounting standards (Plan Comptable Général)
 
+{% hint style="warning" %}
+**`general_ledger` and `analytical_ledger` — only new entries are picked up automatically**
+
+These two tables use `document_created_at` as the synchronization date field. The incremental sync only captures entries whose linked document was **created** within the sync window — entries that are **modified** after their initial creation are not re-synced automatically, even if the values change (correction, reclassification, lettering update…).
+
+To capture updates to existing entries, go to the connector's **Historical data** tab and launch a reload over the affected period.
+{% endhint %}
+
 ***
 
 ## Troubleshooting
