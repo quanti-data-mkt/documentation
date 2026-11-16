@@ -43,15 +43,11 @@ The setup page opens with a **Shared by Quanti** banner: you only pick your scop
 
 {% stepper %}
 {% step %}
-#### Choose your base currency
+#### Choose your currencies
 
-Choose the currency all rates are expressed against (default **EUR**): `1 base_currency = rate quote_currency`. EUR or any of the 29 currencies below can be the base.
-{% endstep %}
+In the **Currencies** step, first choose your **base currency**: the currency all rates are expressed against (default **EUR**), `1 base_currency = rate quote_currency`. EUR or any of the 29 currencies below can be the base.
 
-{% step %}
-#### Select destination currencies
-
-Choose the currencies you want rates for. Your rate views only show these currencies, against your base currency.
+Then select your **destination currencies**: the currencies you want rates for. Your rate views only show these currencies, against your base currency.
 
 Available currencies: USD, JPY, CZK, DKK, GBP, HUF, PLN, RON, SEK, CHF, ISK, NOK, TRY, AUD, BRL, CAD, CNY, HKD, IDR, ILS, INR, KRW, MXN, MYR, NZD, PHP, SGD, THB, ZAR.
 {% endstep %}
@@ -70,19 +66,19 @@ Review the available prebuilt reports and select the ones you want to activate.
 {% endstep %}
 {% endstepper %}
 
-Once created, open the **Share** tab of the connector to see the shared dataset, your views and the date of the last update by QUANTI. To change your scope later, edit the base currency, the currencies or the reports: your views follow, history included.
+Once created, open the **Share** tab of the connector to see the shared dataset, your views and the date of the last update by QUANTI. To change your scope later, edit the base currency and the currencies in the **Currencies** tab, or the reports in the **Reports** tab: your views follow, history included.
 
 ***
 
 ## Prebuilt reports
 
-All rates are expressed against the base currency chosen in the connector settings: `1 base_currency = rate quote_currency`. The ECB only publishes rates against the euro; for any other base, QUANTI computes the cross rate (`rate(base → X) = rate(EUR → X) / rate(EUR → base)`) for every base, so changing your base currency needs no reload.
+All rates are expressed against the base currency chosen in the **Currencies** tab: `1 base_currency = rate quote_currency`. The ECB only publishes rates against the euro; for any other base, QUANTI computes the cross rate (`rate(base → X) = rate(EUR → X) / rate(EUR → base)`) for every base, so changing your base currency needs no reload.
 
 **exchange\_rates\_daily**: One row per ECB publication day and per currency. Join it on `date` and `quote_currency` to convert any daily amount. The ECB publishes on TARGET working days only, so weekends and TARGET holidays have no row.
 
 | Column | Type | Description |
 |---|---|---|
-| `date` | DATE | Reference date of the ECB publication (TARGET working day). |
+| `date` | DATE | Day of the ECB publication (working days only). |
 | `base_currency` | STRING | Your base currency (ISO 4217, e.g. `EUR`). |
 | `quote_currency` | STRING | ISO 4217 code of the quoted currency (e.g. `USD`). |
 | `rate` | FLOAT | Units of quote currency for 1 unit of base currency. |
