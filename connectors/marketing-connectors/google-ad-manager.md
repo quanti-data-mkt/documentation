@@ -40,7 +40,7 @@ QUANTI lists all Ad Manager networks accessible from your Google account. Select
 {% step %}
 #### Select prebuilt reports
 
-Choose which tables to activate. All 7 reports are selected by default. You can deselect tables you don't need.
+Choose which tables to activate. All 8 reports are selected by default. You can deselect tables you don't need.
 {% endstep %}
 
 {% step %}
@@ -76,6 +76,8 @@ Choose which tables to activate. All 7 reports are selected by default. You can 
 
 * **delivery\_stats**: Daily ad serving performance by ad unit — impressions, clicks, CTR, revenue, and average eCPM across all traffic sources (Ad Server, AdSense, Ad Exchange). Granularity: one row per `date × ad_unit_id`. Refreshed with `delete_insert` on the synced date range.
 
+* **delivery\_stats\_item**: Same metrics as `delivery_stats` (all traffic sources), split by line item and ad unit — adds `line_item_id` and `line_item_name`. Granularity: one row per `date × line_item_id × ad_unit_id`. Summing by ad unit gives the same totals as `delivery_stats`; programmatic traffic (AdSense, Ad Exchange) appears on its own line items. Join `line_item_id` to `line_item` for order and advertiser details. Refreshed with `delete_insert` on the synced date range.
+
 ***
 
 <a href="https://dbdiagram.io/e/6a427a9c36d348d120298fc8/6a427abe36d348d12029926f" class="button primary" data-icon="table-tree">Prebuilt reports and definition</a>
@@ -90,4 +92,4 @@ Choose which tables to activate. All 7 reports are selected by default. You can 
 * **JSON fields**: The following columns are stored as JSON strings and must be parsed in BigQuery: `ad_unit_sizes`, `targeted_ad_units`, `targeting`, `cost_per_unit`. To extract the cost per unit value: `CAST(JSON_VALUE(cost_per_unit, '$.units') AS FLOAT64) + CAST(JSON_VALUE(cost_per_unit, '$.nanos') AS FLOAT64) / 1e9`.
 * **Ad unit hierarchy**: `ad_unit` is a tree structure (2–5 levels). Reconstruct the full path using recursive CTEs on `parent_ad_unit_id`.
 * **SCD2 dimensions**: `ad_unit`, `placement`, `order`, and `line_item` are historized — each modification creates a new row. To get the current state, filter on the latest `update_time` per entity ID.
-* **Reporting**: `delivery_stats` uses the asynchronous GAM Reporting API. The report is generated server-side and fetched once ready. This may add a few minutes to the sync time for large networks.
+* **Reporting**: `delivery_stats` and `delivery_stats_item` use the asynchronous GAM Reporting API. The report is generated server-side and fetched once ready. This may add a few minutes to the sync time for large networks.
