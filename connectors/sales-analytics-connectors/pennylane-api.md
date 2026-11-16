@@ -391,6 +391,14 @@ For lines with multiple analytical tags, only `categories[0]` (the primary tag) 
 | `fiscal_start_date` | DATE | Start date of the fiscal year containing this entry |
 | `fiscal_end_date` | DATE | End date of the fiscal year containing this entry |
 
+{% hint style="warning" %}
+**`general_ledger` and `analytical_ledger` — modifications to existing entries are not automatically re-synced**
+
+The accounting date (`date`) used as `_quanti_date` is set when the entry is created and **does not change** when the entry is later modified (correction, reclassification, lettering…). If the modification's accounting date falls outside the current lookback window, it will not be captured by the next incremental run.
+
+To capture updates to existing entries, go to the connector's **Historical data** tab and launch a reload over the affected period.
+{% endhint %}
+
 ***
 
 ## Pennylane API vs Pennylane (Redshift)
@@ -440,6 +448,16 @@ The OAuth refresh token is valid for 90 days from its last use. If no sync ran f
 <summary>Ledger or invoice data is missing for a specific date range</summary>
 
 The connector fetches data by accounting/issue date using the lookback window. If an entry was created in Pennylane after its accounting date (e.g. a back-dated entry), it will only appear in a run that covers the accounting date. Extend the lookback window to 90 days and trigger a manual sync, or use the historical load to re-fetch the affected date range.
+
+</details>
+
+<details>
+
+<summary>A modification to an existing ledger entry is not reflected in BigQuery</summary>
+
+The accounting date (`date`) is fixed at entry creation and does not change when an entry is later modified in Pennylane. If the entry's accounting date falls outside the current lookback window, the update will not be picked up by the next incremental sync — even if the modification is recent.
+
+To capture the modification, run a **historical data reload** covering the period where the entry is dated, from the connector's **Historical data** tab.
 
 </details>
 
