@@ -160,8 +160,6 @@
     * [Meta Custom Audiences](connectors/reverse-connectors/meta-custom-audiences.md)
 * [Ask AI](ask-ai/README.md)
   * [Use cases](concepts/use-case.md)
-  * [AI agents](ai-agents/README.md)
-    * [Field reference](ai-agents/field-reference.md)
   * [Semantic View](connectors/custom-connectors/semantic-connector.md)
   * [Dashboards](dashboards/README.md)
     * [Create & share a dashboard](dashboards/create-dashboard.md)
