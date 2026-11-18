@@ -64,6 +64,7 @@
     * [Chargebee](connectors/sales-analytics-connectors/chargebee.md)
     * [Chargify](connectors/sales-analytics-connectors/chargify.md)
     * [ChartMogul](connectors/analytics-connectors/chartmogul.md)
+    * [Chrome UX Report](connectors/exogenous-connectors/chrome-ux-report.md)
     * [CJ](connectors/marketing-connectors/cj.md)
     * [ClickMagick](connectors/marketing-connectors/clickmagick.md)
     * [ClickUp](connectors/sales-analytics-connectors/clickup.md)
