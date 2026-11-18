@@ -45,6 +45,7 @@
   "connector.mailchimp": "connectors/marketing-connectors/mailchimp.md",
   "connector.matomo": "connectors/analytics-connectors/matomo.md",
   "connector.meta": "connectors/marketing-connectors/meta-ads.md",
+  "connector.meta-ads-library.ad_accounts": "connectors/marketing-connectors/meta-ads-library.md#ad_accounts",
   "connector.microsoftads": "connectors/marketing-connectors/microsoft-advertising.md",
   "connector.mirakl-seller": "connectors/sales-analytics-connectors/mirakl-seller.md",
   "connector.mysql": "connectors/custom-connectors/mysql.md",
