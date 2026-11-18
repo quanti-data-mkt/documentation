@@ -133,3 +133,15 @@ Besides the Ads Archive report, you can build custom requests on the Ad Library 
 * A commercial (non-political) ad that never reached the EU is not in the Ad Library archive at all.
 * List columns (`ad_creative_*`, `publisher_platforms`, `languages`) hold a JSON array serialized as a string.
 * `ad_delivery_stop_time` is empty while the ad is still active.
+
+### ad_accounts — Where to find a Facebook Page ID
+
+The numeric ID of the Facebook Page whose ads you want to track, yours or a competitor's.
+
+**Where to find it**
+
+Open the Meta Ad Library (https://www.facebook.com/ads/library), pick a country and the "All ads" category, then type the brand name and click its Page in the suggestions (not "Search"). The URL then ends with view_all_page_id=1565057520410527: that number is the Page ID.
+
+**Why it matters**
+
+A number that is not a Page ID is rejected by Meta with "Invalid Page ID", and the Page cannot be added. Copy the number from view_all_page_id in the Ad Library URL rather than from another Facebook link.
