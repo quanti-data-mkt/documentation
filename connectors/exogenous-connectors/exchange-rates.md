@@ -26,7 +26,7 @@ No authentication is required.
 |---|---|---|
 | **Who loads the data** | Your connector, in your project | QUANTI, once a day for all clients |
 | **What lands in your dataset** | Tables | Views on the data shared by QUANTI |
-| **Scheduling** | You choose frequency, hour and lookback | Nothing to schedule |
+| **Scheduling** | You choose frequency, hour and lookback | Nothing to schedule: QUANTI refreshes the shared dataset once a day |
 | **Your choices** | Accounts, reports | Your scope: base currency, destination currencies and reports |
 | **Connector page** | Logs tab with each run | **Share** tab: shared dataset, your views, region, last update by QUANTI |
 | **Warehouse** | BigQuery, Snowflake… | BigQuery only for now |
