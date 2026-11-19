@@ -10,7 +10,7 @@ description: 'Follow our setup guide to connect Chrome UX Report to QUANTI:'
 
 ## Overview
 
-The Chrome UX Report connector gives you the real-user web performance of the websites you follow, yours and your competitors', as measured by Google on Chrome users through the [Chrome UX Report](https://developer.chrome.com/docs/crux) (CrUX) API. Use it to track your Core Web Vitals (LCP, INP, CLS) day by day, see how they evolved over the last 10 months, compare your loading speed and responsiveness with your competitors', and relate them to your SEO and conversion results.
+The Chrome UX Report connector gives you the real-user web performance of the websites you follow, yours and your competitors', as measured by Google on Chrome users through the [Chrome UX Report](https://developer.chrome.com/docs/crux) (CrUX) API. Use it to track your Core Web Vitals (LCP, INP, CLS) day by day, see how they evolved over the last 9 months, compare your loading speed and responsiveness with your competitors', and relate them to your SEO and conversion results.
 
 {% hint style="info" %}
 Chrome UX Report is a **Market Insights** connector that runs in your own project: it uses **your** Google API key and loads the data into your own dataset, like a regular connector.
@@ -87,12 +87,14 @@ Review the available prebuilt reports and select the ones you want to activate.
 Every value covers a **28-day window** of page loads. The Chrome UX Report API has no date parameter: it always returns the latest window, which Google refreshes once a day, about two days behind today. The connector therefore loads a **snapshot** on every run:
 
 * `core_web_vitals` and `crux_metrics` get the latest window, so one daily run builds a day-by-day history over time.
-* `core_web_vitals_weekly` gets the last 40 weekly windows from the History API, so you have about 10 months of history from the first run.
+* `core_web_vitals_weekly` gets weekly windows from the History API. "Weekly" is how often Google publishes a new point: each point still covers 28 days, ending on a Saturday, so two neighbouring points share three weeks. A daily run adds the latest week Google published. A historical load adds the weeks ending in its date range, up to the last 40 weeks (about 9 months).
+
+Use `core_web_vitals` for the freshest value, and `core_web_vitals_weekly` to see the trend over past months.
 
 Each website is queried for four devices: `PHONE`, `DESKTOP`, `TABLET`, and `ALL` for every device together. `collection_last_date` identifies the window of each row.
 
 {% hint style="info" %}
-Every run is **appended**: two runs that see the same window, or the weekly history loaded again on each run, give several copies of the same row. Keep the latest copy per website, device and window before aggregating:
+Every run is **appended**: two runs that see the same window give several copies of the same row. A new week comes out once a week, so the daily runs in between load the same week again. Keep the latest copy per website, device and window before aggregating:
 
 ```sql
 SELECT * FROM core_web_vitals_weekly
@@ -138,7 +140,7 @@ The three buckets are the ones Google returns for each metric; their shares add 
 | `collection_first_date` | DATE | First day of the 28-day window (Pacific time). |
 | `collection_last_date` | DATE | Last day of the 28-day window (Pacific time). |
 
-**core\_web\_vitals\_weekly**: The weekly history of the Core Web Vitals, from the Chrome UX Report History API. One row per website, device and week over the last 40 weeks, each over a 28-day window ending on a Saturday. Same columns as `core_web_vitals`. A week without enough Chrome traffic is left empty.
+**core\_web\_vitals\_weekly**: The weekly history of the Core Web Vitals, from the Chrome UX Report History API. One row per website, device and week, each over a 28-day window ending on a Saturday. For example, the week ending on Saturday 14 November covers 18 October to 14 November, and the week before covers 11 October to 7 November. A daily run adds the latest week; a historical load adds the weeks ending in its date range, up to the last 40 weeks. Same columns as `core_web_vitals`. A week without enough Chrome traffic is left empty.
 
 | Column | Type | Description |
 |---|---|---|
@@ -199,10 +201,10 @@ erDiagram
 | **Frequency** | Daily | Daily |
 | **Sync time** | 6:00 AM | — |
 | **Lookback window** | — | Not available |
-| **Historical load** | Last 40 weeks | Loaded by `core_web_vitals_weekly` on every run |
+| **Historical load** | — | 3, 6, 9 months or custom dates, up to 280 days (40 weeks). Past weeks only go to `core_web_vitals_weekly` |
 
 {% hint style="warning" %}
-The Chrome UX Report API only returns the current 28-day window, with no date parameter. The daily history of `core_web_vitals` and `crux_metrics` starts on the day you create the connector, and a day that is not loaded cannot be reloaded later. For the past, use the weekly points of `core_web_vitals_weekly`.
+The Chrome UX Report API only returns the current 28-day window, with no date parameter. The daily history of `core_web_vitals` and `crux_metrics` starts on the day you create the connector, and a day that is not loaded cannot be reloaded later. For the past, launch a historical load: it fills `core_web_vitals_weekly` with the weekly points of the range you choose.
 {% endhint %}
 
 ***
