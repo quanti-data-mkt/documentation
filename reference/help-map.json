@@ -21,6 +21,7 @@
   "connector.ftp": "connectors/custom-connectors/ftp.md",
   "connector.ga4": "connectors/analytics-connectors/google-analytics4.md",
   "connector.gmc": "connectors/marketing-connectors/google-merchant-center.md",
+  "connector.google-ads-transparency.ad_accounts": "connectors/exogenous-connectors/google-ads-transparency.md#step:Enter the advertisers to follow",
   "connector.google-mybusiness": "connectors/marketing-connectors/google-business-profile.md",
   "connector.googleadmanager": "connectors/marketing-connectors/google-ad-manager.md",
   "connector.googleads": "connectors/marketing-connectors/google-ads.md",
