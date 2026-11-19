@@ -10,7 +10,7 @@ description: 'Follow our setup guide to connect Chrome UX Report to QUANTI:'
 
 ## Overview
 
-The Chrome UX Report connector gives you the real-user web performance of the websites you follow, yours and your competitors', as measured by Google on Chrome users through the [Chrome UX Report](https://developer.chrome.com/docs/crux) (CrUX) API. Use it to track your Core Web Vitals (LCP, INP, CLS) day by day, compare your loading speed and responsiveness with your competitors', and relate them to your SEO and conversion results.
+The Chrome UX Report connector gives you the real-user web performance of the websites you follow, yours and your competitors', as measured by Google on Chrome users through the [Chrome UX Report](https://developer.chrome.com/docs/crux) (CrUX) API. Use it to track your Core Web Vitals (LCP, INP, CLS) day by day, see how they evolved over the last 10 months, compare your loading speed and responsiveness with your competitors', and relate them to your SEO and conversion results.
 
 {% hint style="info" %}
 Chrome UX Report is a **Market Insights** connector that runs in your own project: it uses **your** Google API key and loads the data into your own dataset, like a regular connector.
@@ -27,7 +27,7 @@ Chrome UX Report is a **Market Insights** connector that runs in your own projec
 
 ## Authentication
 
-The connector authenticates with a Google API key. The Chrome UX Report API is free; it allows 150 queries per minute per Google Cloud project.
+The connector authenticates with a Google API key. The same key reads the daily Chrome UX Report API and its History API. Both are free and share a quota of 150 queries per minute per Google Cloud project.
 
 {% stepper %}
 {% step %}
@@ -84,11 +84,27 @@ Review the available prebuilt reports and select the ones you want to activate.
 
 ## Prebuilt reports
 
-Every value covers a **rolling 28-day window** of page loads. Google refreshes the window once a day, about two days behind today. Each row is dated on the last day of its window (`_quanti_date`), so one row per day builds your history over time.
+Every value covers a **28-day window** of page loads. The Chrome UX Report API has no date parameter: it always returns the latest window, which Google refreshes once a day, about two days behind today. The connector therefore loads a **snapshot** on every run:
 
-Each website is queried for four devices: `PHONE`, `DESKTOP`, `TABLET`, and `ALL` for every device together.
+* `core_web_vitals` and `crux_metrics` get the latest window, so one daily run builds a day-by-day history over time.
+* `core_web_vitals_weekly` gets the last 40 weekly windows from the History API, so you have about 10 months of history from the first run.
 
-**core\_web\_vitals**: One row per website, device and day. The 75th percentile and the good / needs improvement / poor shares of the Core Web Vitals and the main loading metrics.
+Each website is queried for four devices: `PHONE`, `DESKTOP`, `TABLET`, and `ALL` for every device together. `collection_last_date` identifies the window of each row.
+
+{% hint style="info" %}
+Every run is **appended**: two runs that see the same window, or the weekly history loaded again on each run, give several copies of the same row. Keep the latest copy per website, device and window before aggregating:
+
+```sql
+SELECT * FROM core_web_vitals_weekly
+QUALIFY ROW_NUMBER() OVER (
+  PARTITION BY _quanti_ad_account, form_factor, collection_last_date
+  ORDER BY _quanti_loaded_at DESC) = 1
+```
+
+For `crux_metrics`, add `metric` and `bin_label` to the `PARTITION BY`.
+{% endhint %}
+
+**core\_web\_vitals**: One row per website, device and run. The 75th percentile and the good / needs improvement / poor shares of the Core Web Vitals and the main loading metrics.
 
 | Column | Type | Description |
 |---|---|---|
@@ -108,7 +124,7 @@ Each website is queried for four devices: `PHONE`, `DESKTOP`, `TABLET`, and `ALL
 
 The three buckets are the ones Google returns for each metric; their shares add up to about 1.
 
-**crux\_metrics**: The full distribution of every Chrome UX Report metric. One row per website, device, day, metric and bucket: histogram buckets with their share and the metric's 75th percentile, plus fraction metrics such as navigation types.
+**crux\_metrics**: The full distribution of every Chrome UX Report metric. One row per website, device, run, metric and bucket: histogram buckets with their share and the metric's 75th percentile, plus fraction metrics such as navigation types.
 
 | Column | Type | Description |
 |---|---|---|
@@ -122,11 +138,22 @@ The three buckets are the ones Google returns for each metric; their shares add 
 | `collection_first_date` | DATE | First day of the 28-day window (Pacific time). |
 | `collection_last_date` | DATE | Last day of the 28-day window (Pacific time). |
 
+**core\_web\_vitals\_weekly**: The weekly history of the Core Web Vitals, from the Chrome UX Report History API. One row per website, device and week over the last 40 weeks, each over a 28-day window ending on a Saturday. Same columns as `core_web_vitals`. A week without enough Chrome traffic is left empty.
+
+| Column | Type | Description |
+|---|---|---|
+| `form_factor` | STRING | Device the measure covers: PHONE, DESKTOP, TABLET, or ALL. |
+| `collection_first_date` | DATE | First day of the 28-day window (Pacific time). |
+| `collection_last_date` | DATE | Last day of the 28-day window, always a Saturday (Pacific time). |
+| `lcp_p75` … `ttfb_poor` | FLOAT | Same 20 metric columns as `core_web_vitals`. |
+
+Google adds a new week every Monday.
+
 ```mermaid
 erDiagram
     core_web_vitals {
         STRING _quanti_ad_account PK "website origin"
-        DATE   _quanti_date PK "last day of the window"
+        DATE   collection_last_date PK "last day of the window"
         STRING form_factor PK
         DATE   collection_first_date
         FLOAT  lcp_p75
@@ -138,7 +165,7 @@ erDiagram
     }
     crux_metrics {
         STRING _quanti_ad_account PK "website origin"
-        DATE   _quanti_date PK "last day of the window"
+        DATE   collection_last_date PK "last day of the window"
         STRING form_factor PK
         STRING metric PK
         STRING bin_label PK
@@ -147,7 +174,16 @@ erDiagram
         FLOAT  density
         FLOAT  p75
     }
-    core_web_vitals ||--o{ crux_metrics : "_quanti_ad_account, _quanti_date, form_factor"
+    core_web_vitals_weekly {
+        STRING _quanti_ad_account PK "website origin"
+        DATE   collection_last_date PK "a Saturday"
+        STRING form_factor PK
+        DATE   collection_first_date
+        FLOAT  lcp_p75
+        FLOAT  inp_p75
+        FLOAT  cls_p75
+    }
+    core_web_vitals ||--o{ crux_metrics : "_quanti_ad_account, collection_last_date, form_factor"
 ```
 
 ***
@@ -163,10 +199,10 @@ erDiagram
 | **Frequency** | Daily | Daily |
 | **Sync time** | 6:00 AM | — |
 | **Lookback window** | — | Not available |
-| **Historical load** | — | Not available |
+| **Historical load** | Last 40 weeks | Loaded by `core_web_vitals_weekly` on every run |
 
 {% hint style="warning" %}
-The Chrome UX Report API only returns the current 28-day window, with no date parameter. Your history starts on the day you create the connector, and a day that is not loaded cannot be reloaded later.
+The Chrome UX Report API only returns the current 28-day window, with no date parameter. The daily history of `core_web_vitals` and `crux_metrics` starts on the day you create the connector, and a day that is not loaded cannot be reloaded later. For the past, use the weekly points of `core_web_vitals_weekly`.
 {% endhint %}
 
 ***
