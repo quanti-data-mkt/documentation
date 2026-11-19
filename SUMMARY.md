@@ -77,6 +77,7 @@
     * [Google Ad Manager](connectors/marketing-connectors/google-ad-manager.md)
     * [Google Ads](connectors/marketing-connectors/google-ads.md)
       * [FAQ](connectors/marketing-connectors/faq/google-ads.md)
+    * [Google Ads Transparency](connectors/exogenous-connectors/google-ads-transparency.md)
     * [Google Analytics 4](connectors/analytics-connectors/google-analytics4.md)
       * [FAQ](connectors/analytics-connectors/faq/google-analytics4.md)
     * [Google Business Profile](connectors/marketing-connectors/google-business-profile.md)
