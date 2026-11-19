@@ -12,6 +12,7 @@
   "connector.calendar": "connectors/exogenous-connectors/calendar.md",
   "connector.cj": "connectors/marketing-connectors/cj.md",
   "connector.criteo": "connectors/marketing-connectors/criteo.md",
+  "connector.crux.api_key": "connectors/exogenous-connectors/chrome-ux-report.md#Authentication",
   "connector.csp": "connectors/exogenous-connectors/csp.md",
   "connector.dwh-database": "connectors/custom-connectors/semantic-connector.md",
   "connector.effinity": "connectors/marketing-connectors/effinity.md",
