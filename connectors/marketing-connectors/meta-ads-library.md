@@ -67,13 +67,13 @@ erDiagram
 
 ### Ads Archive
 
-Archived ads (active and past) delivered by the selected Page, with creative metadata, spend and impressions ranges for political/issue ads, and EU reach for ads delivered to the EU.
+One row per ad and per delivery day: the ads the selected Page delivered on each day of the sync window, with creative metadata, spend and impressions ranges for political/issue ads, and EU reach for ads delivered to the EU.
 
 #### Dimensions
 
 | Column | Type | Description |
 |---|---|---|
-| `id` | STRING | Ad Library ID of the archived ad (primary key) |
+| `id` | STRING | Ad Library ID of the ad. An ad appears once per day it was delivered |
 | `page_id` | STRING | Facebook Page ID that ran the ad |
 | `page_name` | STRING | Name of the Facebook Page that ran the ad |
 | `ad_creation_time` | DATETIME | UTC timestamp when the ad was created |
@@ -89,7 +89,11 @@ Archived ads (active and past) delivered by the selected Page, with creative met
 | `currency` | STRING | ISO currency code for spend, when available |
 | `bylines` | STRING | Funding source attribution disclosed for political/issue ads |
 
-#### Metrics
+#### Spend and reach ranges
+
+{% hint style="warning" %}
+These ranges are lifetime values, repeated on each delivery day. Do not sum them across days: keep one row per `id` (e.g. the latest `_quanti_date`).
+{% endhint %}
 
 | Column | Type | Description |
 |---|---|---|
@@ -131,6 +135,7 @@ Besides the Ads Archive report, you can build custom requests on the Ad Library 
 
 ## Notes
 
+* The table holds one row per ad and per delivery day: an ad delivered for 10 days has 10 rows.
 * Spend, impressions and audience size ranges are only populated for **political/issue ads**. `eu_total_reach` is only populated for ads delivered to the EU.
 * A commercial (non-political) ad that never reached the EU is not in the Ad Library archive at all.
 * List columns (`ad_creative_*`, `publisher_platforms`, `languages`) hold a JSON array serialized as a string.
