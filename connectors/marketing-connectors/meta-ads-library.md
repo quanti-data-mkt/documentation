@@ -12,7 +12,7 @@ Track archived Facebook and Instagram ads, yours or your competitors', from the 
 
 ## Prerequisites
 
-* The **ID** of each Facebook Page to track (numeric, e.g. `109061981944231`).
+* The **ID** of each Facebook Page to track (numeric, e.g. `109061981944231`). Find it in the Meta Ad Library URL, after `view_all_page_id=` (see "Where to find a Facebook Page ID" below).
 
 ***
 
@@ -29,6 +29,8 @@ No authentication is required: you only enter the IDs of the Facebook Pages to t
 **Enter your Facebook Pages**
 
 Enter the ID(s) of the Facebook Page(s) to track, yours or a competitor's. Page IDs are numeric.
+
+Open the Meta Ad Library (https://www.facebook.com/ads/library), search the brand and click its Page in the suggestions: the Page ID is the number after `view_all_page_id=` in the URL.
 {% endstep %}
 
 {% step %}
