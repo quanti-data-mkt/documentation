@@ -112,6 +112,7 @@
     * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
     * [Rakuten Advertising](connectors/marketing-connectors/rakuten.md)
     * [RTB House](connectors/marketing-connectors/rtbhouse.md)
+    * [Salesforce](connectors/sales-analytics-connectors/salesforce.md)
     * [Semrush](connectors/marketing-connectors/semrush.md)
     * [Shopify](connectors/sales-analytics-connectors/shopify.md)
     * [Snapchat](connectors/marketing-connectors/snapchat.md)
