@@ -42,39 +42,55 @@ In Salesforce **Setup**, go to **Users** and choose the user the connector will 
 {% step %}
 **Create an External Client App**
 
-In **Setup**, search for **External Client App Manager** and click **New External Client App**. Fill in the app name (for example `QUANTI`), the contact email, and keep the distribution state set to **Local**.
+1. In **Setup**, type **External Client App Manager** in the Quick Find box and open it.
+2. Click **New External Client App**.
+3. Enter a **Label** (for example `QUANTI Integration`). The **API Name** fills in automatically. Enter your **Contact Email**.
+4. Set **Distribution State** to **Local**. The app is then usable in this org only.
 {% endstep %}
 
 {% step %}
 **Enable OAuth and the Client Credentials flow**
 
-In the **API (Enable OAuth Settings)** section:
+Still on the creation form, in the **API (Enable OAuth Settings)** section:
 
-* Check **Enable OAuth**.
-* Enter any callback URL (it is not used by this flow), for example `https://login.salesforce.com`.
-* Add the OAuth scope **Manage user data via APIs (api)**.
-* Under **Flow Enablement**, check **Enable Client Credentials Flow** only.
-* Under **Security**, keep **Require secret for Web Server Flow** and **Require secret for Refresh Token Flow** checked.
-
-Click **Create**.
+1. Select **Enable OAuth**.
+2. In **Callback URL**, enter `https://login.salesforce.com`. Salesforce requires a valid callback URL, but the Client Credentials flow never uses it.
+3. In **OAuth Scopes**, select **Manage user data via APIs (api)**. No other scope is needed.
+4. In **Flow Enablement**, select **Enable Client Credentials Flow** only.
+5. Click **Create**.
 {% endstep %}
 
 {% step %}
-**Set the Run As user**
+**Set the integration user in the app policies**
 
-Open the app's **Policies** tab and click **Edit**. Under **OAuth Flows and External Client App Enhancements**, check **Enable Client Credentials Flow** and enter the integration user's username in **Run As (Username)**. Save.
+1. Open the app and go to the **Policies** tab, then click **Edit**.
+2. In **OAuth Policies**, under **OAuth Flows and External Client App Enhancements**, check that **Enable Client Credentials Flow** is selected.
+3. In **Run As (Username)**, enter the username of the integration user prepared in step 1. Every token issued to QUANTI: acts as this user.
+4. If your org restricts login IP ranges, go to **App Authorization** and set **IP Relaxation** to **Relax IP restrictions**.
+5. Click **Save**.
 {% endstep %}
 
 {% step %}
 **Copy the Consumer Key and Secret**
 
-Open the app's **Settings** tab, then **OAuth Settings**, and click **Consumer Key and Secret**. Salesforce sends you a verification code by email. Copy both values.
+1. Open the app and go to the **Settings** tab.
+2. Expand **OAuth Settings** and click **Consumer Key and Secret**. Salesforce sends you a verification code by email.
+3. Copy the **Consumer Key** and the **Consumer Secret**.
+{% endstep %}
+
+{% step %}
+**Find your My Domain URL**
+
+In **Setup**, type **My Domain** in the Quick Find box. Copy the **My Domain URL**: it starts with `https://` and ends with `my.salesforce.com`, with no path after it.
+
+* Production: `https://MyDomainName.my.salesforce.com`
+* Sandbox: `https://MyDomainName--SandboxName.sandbox.my.salesforce.com`
 {% endstep %}
 
 {% step %}
 **Enter your credentials in QUANTI:**
 
-Enter your **My Domain URL** (for example `https://acme.my.salesforce.com`, shown in **Setup > My Domain**), the **Consumer Key** and the **Consumer Secret**.
+Enter your **My Domain URL** (including `https://`), the **Consumer Key** and the **Consumer Secret**.
 
 {% hint style="info" %}
 Use your My Domain URL. `login.salesforce.com` and `test.salesforce.com` are not supported by the Client Credentials flow.
@@ -293,3 +309,5 @@ Salesforce users: sales reps and owners of CRM records.
 **"API access check failed"**: your Salesforce edition or the Run As user doesn't have API access. Check your edition and give the user the **API Enabled** permission.
 
 **A column is always empty**: the Run As user can't read that field. Grant read access to the field in the user's permission sets.
+
+**"INVALID_SESSION_ID"**: in **Setup > Session Settings**, uncheck **Lock sessions to the IP address from which they originated**.
