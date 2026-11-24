@@ -116,9 +116,31 @@ _quantiTag('hit', 'page_view', {
 
 ## <mark style="background-color:purple;">Server-side Tag install</mark>
 
-To install the server-side tag, simply use the GTM template available for download here :&#x20;
+To install the tag in a GTM **server** container, download the QUANTI: template from the
+QUANTI: app: open the webhook's page, *Server-side* tab, or download it directly at
+[app.quanti.io/quanti\_tag\_template\_server\_side.tpl](https://app.quanti.io/quanti_tag_template_server_side.tpl).
+Always take it from there: it is the up-to-date version.
 
-{% file src="../.gitbook/assets/2025-02-04 QUANTI - Server-side Tag Template (1).tpl" %}
+In the server container: *Templates* → *Tag Templates* → *New* → ⋮ → *Import*, then create a
+tag from the template:
+
+* **Quanti webhook URL** — the URL of your webhook. The account is read from it.
+* **Visitor ID** — by default the template sets its own first-party cookie (`_quanti_vid`,
+  13 months, written by the server). It requires the server to run on a subdomain of your
+  site. You can use the GA4 client ID instead.
+* **Consent** — Consent Mode values are read from the GA4 hit by default. A custom consent
+  string can be added.
+* **Allowed domains** and **URL parameters to exclude** — optional filters.
+* **Conversions** — `purchase` is sent by default, with `transaction_id` as conversion ID and
+  `value` as conversion value. Add other events if needed.
+
+Trigger it on the GA4 events received by the container (for example *Client Name equals
+GA4*): the template works with the **GA4 client** only. The session is computed by QUANTI:.
+
+{% hint style="warning" %}
+If the same webhook also receives hits from the page (JavaScript tag), use one or the
+other, never both: every hit would be counted twice.
+{% endhint %}
 
 ***
 
@@ -129,5 +151,5 @@ To install the server-side tag, simply use the GTM template available for downlo
 
 
 {% hint style="info" %}
-\*Informations automatically available through the browser and retrievable in JavaScript in a client-side configuration must be manually retrieved in a server-side configuration.
+\*Set automatically by the JavaScript tag. With the server-side template, they are read from the GA4 event (page URL, referrer, user agent, user ID, items), the device type is derived from the user agent and the session is computed by QUANTI:. Any field can still be forced in the template's *Parameter overrides*.
 {% endhint %}
