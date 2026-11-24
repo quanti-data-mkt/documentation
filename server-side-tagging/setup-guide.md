@@ -133,12 +133,12 @@ Go to **Tags** → **New**, select **Google Analytics: GA4**.
 Key settings:
 
 * **Measurement ID** — leave blank to forward whatever ID the web container sends, or enter a specific ID to force all server hits to a single GA4 property.
-* **Cookie management** — set to **Server-managed** so the server writes the GA4 cookie via `Set-Cookie`. This is what removes the Safari 7-day cap on cookie lifetime.
+* **Cookie management** — set to **Server-managed** so the server writes the GA4 cookie via `Set-Cookie`.
 
 {% hint style="info" %}
 **Why server-managed cookies matter**
 
-Safari's Intelligent Tracking Prevention caps cookies written by JavaScript to 7 days of activity. A cookie written by the server in a response header is not subject to this cap. Switching to server-managed cookies is one of the highest-impact changes you can make for measurement quality on Apple devices.
+Safari clears storage written in JavaScript after seven days of browsing without a visit to your site. A cookie set by the server in a `Set-Cookie` header is not subject to that rule. This is not a cap on the expiry date: measured under Safari 26, a first-party `_ga` cookie still expires after about thirteen months. What changes is the visitor who comes back after more than a week away.
 {% endhint %}
 {% endstep %}
 
