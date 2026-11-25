@@ -121,24 +121,35 @@ In the connector setup, click **Add custom report** and configure:
 * **Fields**: metrics and dimensions from the Meta Insights API (e.g. `impressions`, `spend`, `clicks`, `actions`, `conversions`, `reach`, `frequency`, `cpm`, `cpc`, `ctr`…). The full list is available in [Meta's documentation](https://developers.facebook.com/docs/marketing-api/insights/parameters/v21.0#fields).
 * **Breakdowns**: optional additional dimensions to split results by (e.g. `age`, `gender`, `country`, `region`, `device_platform`, `publisher_platform`, `impression_device`, `placement`…). Breakdowns must be compatible with the fields selected — the Graph API Explorer will flag incompatible combinations.
 * **Level**: granularity of the report — `ad`, `adset`, `campaign`, or `account`.
-* **Action attribution windows**: defines the conversion window used to attribute actions to ads. See the compatibility table below.
+* **Action attribution windows**: defines the conversion window used to attribute actions to ads. See the section below.
 
 ### Action attribution windows
 
-The `action_attribution_windows` parameter controls which click and view windows are used to count conversions. Not all windows are available on all conversion types:
+The `action_attribution_windows` parameter controls which click and view windows are used to count conversions (`actions`, `conversions`, `action_values`…). Since **January 12, 2026**, the Ads Insights API only returns data for the following windows, consistent with Meta Ads Manager:
 
-| Window | Web (Pixel) | Android | iOS 14+ |
-|---|:---:|:---:|:---:|
-| `1d_click` | ✅ | ✅ | ✅ |
-| `7d_click` | ✅ | ✅ | ✅ |
-| `1d_view` | ✅ | ✅ | ✅ |
-| `28d_click` | ✅ | ✅ | ❌ |
-| `28d_view` | ✅ | ✅ | ❌ |
-| `7d_view` | ✅ | ✅ | ❌ |
+| Window | Description |
+|---|---|
+| `1d_click` | Conversions within 1 day of a click |
+| `7d_click` | Conversions within 7 days of a click |
+| `28d_click` | Conversions within 28 days of a click |
+| `1d_view` | Conversions within 1 day of an ad view |
+| `1d_ev` | Conversions within 1 day of an engaged view (video) |
+
+If no window is specified, Meta applies the attribution setting of each ad set.
 
 {% hint style="warning" %}
-**`28d_click`, `28d_view` and `7d_view` are not available for iOS 14+ app campaigns.** Using these windows on app campaigns targeting iOS 14+ devices will result in empty or incomplete data. Use `1d_click` or `7d_click` for these campaigns.
+**`7d_view` and `28d_view` no longer return data.** Meta removed these two view-through windows from the Ads Insights API on January 12, 2026, for all campaigns and all versions of the API. Custom reports that still request them will return empty values for these windows. Use `1d_view` or a click window instead.
 {% endhint %}
+
+{% hint style="info" %}
+**iOS 14+ app campaigns**: these campaigns rely on Apple's SKAdNetwork. Their results follow the ad set's attribution setting rather than the windows requested through `action_attribution_windows`.
+{% endhint %}
+
+Sources:
+
+* [Meta — Ads Insights API Metric Availability Updates (October 2025)](https://developers.facebook.com/blog/post/2025/10/16/ads-insights-api-metric-availability-updates/)
+* [Meta — Marketing API 2025 Out-of-cycle changes](https://developers.facebook.com/docs/marketing-api/out-of-cycle-changes/occ-2025)
+* [Meta — Graph API changelog, January 19, 2021 (iOS 14 changes)](https://developers.facebook.com/docs/graph-api/changelog/non-versioned-changes/jan-19-2021/)
 
 ### Deprecated parameters
 
