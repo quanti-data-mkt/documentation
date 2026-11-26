@@ -107,6 +107,7 @@
     * [Piano Analytics](connectors/analytics-connectors/piano-analytics.md)
     * [Piano Analytics](connectors/analytics-connectors/piano-analytics-1.md)
     * [Pinterest](connectors/marketing-connectors/pinterest-advertising.md)
+    * [Pipedrive](connectors/sales-analytics-connectors/pipedrive.md)
     * [Piwik PRO](connectors/analytics-connectors/piwik-pro-analytics.md)
     * [PostgreSQL](connectors/custom-connectors/postgresql.md)
     * [Prestashop](connectors/sales-analytics-connectors/prestashop-api.md)
