@@ -51,6 +51,8 @@
   "connector.microsoftads": "connectors/marketing-connectors/microsoft-advertising.md",
   "connector.mirakl-seller": "connectors/sales-analytics-connectors/mirakl-seller.md",
   "connector.mysql": "connectors/custom-connectors/mysql.md",
+  "connector.openai-ads": "connectors/marketing-connectors/openai-ads.md",
+  "connector.openai-ads.api_key": "connectors/marketing-connectors/openai-ads.md#Authentication",
   "connector.outbrain": "connectors/marketing-connectors/outbrain.md",
   "connector.pennylane": "connectors/sales-analytics-connectors/pennylane.md",
   "connector.pennylane-api": "connectors/sales-analytics-connectors/pennylane-api.md",
