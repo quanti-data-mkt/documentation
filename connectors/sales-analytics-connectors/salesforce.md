@@ -12,20 +12,19 @@ Sync your Salesforce CRM data (accounts, contacts, leads, opportunities, users) 
 
 ## Prerequisites
 
-* A Salesforce org with **API access**. API access is included in Enterprise, Unlimited, Performance and Developer editions. Professional Edition requires the API add-on. Group and Essentials editions don't have API access.
-* A Salesforce administrator, to create an External Client App in your org.
-* A dedicated **integration user** that the connector will run as. We recommend a user with read-only access to the objects you want to sync.
+* A Salesforce org with **API access**: Enterprise, Unlimited, Performance or Developer edition, or Professional with the API add-on.
+* A Salesforce **administrator**, for about 10 minutes.
 
 ***
 
 ## Authentication
 
-The connector uses the **OAuth 2.0 Client Credentials flow**, which Salesforce designs for server-to-server integrations that run as a single integration identity.
+The connector uses the OAuth 2.0 **Client Credentials** flow, which Salesforce provides for server-to-server integrations. You create an app in your own Salesforce org, choose the user the connector runs as, and give QUANTI: three values: your **My Domain URL**, the app's **Consumer Key** and its **Consumer Secret**.
 
-You create an External Client App in your own Salesforce org and give QUANTI: three values: your **My Domain URL**, the app's **Consumer Key** and its **Consumer Secret**. The connector then reads data with the permissions of the integration user you chose. No Salesforce user login or refresh token is involved.
+The connector only reads data, with the permissions of that user. You can revoke its access at any time by disabling the app.
 
 {% hint style="warning" %}
-Anyone holding the Consumer Key and Consumer Secret can access your org as the integration user. Pick a user with read-only permissions, never an administrator.
+Anyone holding the Consumer Key and Secret can read your org as that user. Pick a dedicated read-only user, never an administrator.
 {% endhint %}
 
 ***
@@ -34,75 +33,61 @@ Anyone holding the Consumer Key and Consumer Secret can access your org as the i
 
 {% stepper %}
 {% step %}
-**Prepare an integration user**
+**Choose the integration user**
 
-In Salesforce **Setup**, go to **Users** and choose the user the connector will run as. We recommend a dedicated user with the **Minimum Access - API Only Integrations** profile (Salesforce Integration license, when your edition includes it) and permission sets granting read access to Accounts, Contacts, Leads, Opportunities and Users.
+In **Setup > Users**, pick or create the user the connector will run as. We recommend a dedicated user with the **Minimum Access - API Only Integrations** profile and a permission set with **Read** on Accounts, Contacts, Leads, Opportunities and Users.
 {% endstep %}
 
 {% step %}
-**Create an External Client App**
+**Create the app**
 
-1. In **Setup**, type **External Client App Manager** in the Quick Find box and open it.
-2. Click **New External Client App**.
-3. Enter a **Label** (for example `QUANTI Integration`). The **API Name** fills in automatically. Enter your **Contact Email**.
-4. Set **Distribution State** to **Local**. The app is then usable in this org only.
+In **Setup**, search **External Client App Manager**, then click **New External Client App**.
+
+* **Label**: `QUANTI Integration`, plus your contact email. **Distribution State**: **Local**.
+* Check **Enable OAuth**. **Callback URL**: `https://login.salesforce.com` (required by Salesforce, never used).
+* **OAuth Scopes**: **Manage user data via APIs (api)** only.
+* **Flow Enablement**: check **Enable Client Credentials Flow** only. Click **Create**.
+
+Salesforce guides: [create an External Client App](https://developer.salesforce.com/docs/platform/mobile-sdk/guide/eca-create.html), [OAuth settings](https://help.salesforce.com/s/articleView?id=sf.configure_external_client_app_oauth_settings.htm&language=en_US).
 {% endstep %}
 
 {% step %}
-**Enable OAuth and the Client Credentials flow**
+**Set the Run As user**
 
-Still on the creation form, in the **API (Enable OAuth Settings)** section:
+Open the app, **Policies** tab, **Edit**. Under **OAuth Policies**, check that **Enable Client Credentials Flow** is selected and enter the integration user's username in **Run As (Username)**. Click **Save**. Policy changes can take a few minutes to apply.
 
-1. Select **Enable OAuth**.
-2. In **Callback URL**, enter `https://login.salesforce.com`. Salesforce requires a valid callback URL, but the Client Credentials flow never uses it.
-3. In **OAuth Scopes**, select **Manage user data via APIs (api)**. No other scope is needed.
-4. In **Flow Enablement**, select **Enable Client Credentials Flow** only.
-5. Click **Create**.
+Salesforce guide: [client credentials policies](https://help.salesforce.com/s/articleView?id=xcloud.policies_configure_client_credentials_flow_for_external_client_apps.htm&language=en_US&type=5).
 {% endstep %}
 
 {% step %}
-**Set the integration user in the app policies**
+**Copy the keys**
 
-1. Open the app and go to the **Policies** tab, then click **Edit**.
-2. In **OAuth Policies**, under **OAuth Flows and External Client App Enhancements**, check that **Enable Client Credentials Flow** is selected.
-3. In **Run As (Username)**, enter the username of the integration user prepared in step 1. Every token issued to QUANTI: acts as this user.
-4. If your org restricts login IP ranges, go to **App Authorization** and set **IP Relaxation** to **Relax IP restrictions**.
-5. Click **Save**.
+**Settings** tab > **OAuth Settings** > **Consumer Key and Secret**. Enter the code Salesforce emails you, then copy the **Consumer Key** and the **Consumer Secret**.
+
+Salesforce guide: [OAuth 2.0 client credentials flow](https://help.salesforce.com/s/articleView?id=xcloud.remoteaccess_oauth_client_credentials_flow.htm&language=en_US&type=5).
 {% endstep %}
 
 {% step %}
-**Copy the Consumer Key and Secret**
+**Connect in QUANTI:**
 
-1. Open the app and go to the **Settings** tab.
-2. Expand **OAuth Settings** and click **Consumer Key and Secret**. Salesforce sends you a verification code by email.
-3. Copy the **Consumer Key** and the **Consumer Secret**.
-{% endstep %}
+Enter your **My Domain URL** (in **Setup**, search **My Domain**; it ends with `my.salesforce.com`), the **Consumer Key** and the **Consumer Secret**. Then choose the reports to sync.
 
-{% step %}
-**Find your My Domain URL**
-
-In **Setup**, type **My Domain** in the Quick Find box. Copy the **My Domain URL**: it starts with `https://` and ends with `my.salesforce.com`, with no path after it.
-
-* Production: `https://MyDomainName.my.salesforce.com`
-* Sandbox: `https://MyDomainName--SandboxName.sandbox.my.salesforce.com`
-{% endstep %}
-
-{% step %}
-**Enter your credentials in QUANTI:**
-
-Enter your **My Domain URL** (including `https://`), the **Consumer Key** and the **Consumer Secret**.
+* Production: `https://acme.my.salesforce.com`
+* Sandbox: `https://acme--uat.sandbox.my.salesforce.com`
 
 {% hint style="info" %}
-Use your My Domain URL. `login.salesforce.com` and `test.salesforce.com` are not supported by the Client Credentials flow.
+`login.salesforce.com`, `test.salesforce.com` and `lightning.force.com` addresses don't work with this flow: use your My Domain URL.
+{% endhint %}
+
+{% hint style="warning" %}
+**Sandboxes**: refreshing a sandbox doesn't copy apps created in it. After a refresh, create the app again in the sandbox and update the connector with the new keys.
 {% endhint %}
 {% endstep %}
-
-{% step %}
-**Choose your reports**
-
-Choose the reports to sync, then create the connector.
-{% endstep %}
 {% endstepper %}
+
+{% hint style="info" %}
+**Optional: restrict access to QUANTI:'s IP.** If your security policy requires it, set the integration user's profile **Login IP Ranges** to `51.158.117.103`, the address all QUANTI: syncs come from.
+{% endhint %}
 
 ***
 
@@ -302,12 +287,14 @@ Salesforce users: sales reps and owners of CRM records.
 
 ## Troubleshooting
 
-**"client credentials token request failed"**: check that **Enable Client Credentials Flow** is checked in both the app's **Settings** and **Policies** tabs, that a **Run As** user is set, and that the Consumer Key and Secret are correct.
+**"client credentials token request failed"**: check that **Enable Client Credentials Flow** is checked in both the app's **Settings** and **Policies** tabs, that a **Run As** user is set, and that the Consumer Key and Secret are correct. A new app can take a few minutes to become active.
 
 **"my_domain must be your org's My Domain"**: replace `login.salesforce.com` with your My Domain URL, shown in **Setup > My Domain**.
 
 **"API access check failed"**: your Salesforce edition or the Run As user doesn't have API access. Check your edition and give the user the **API Enabled** permission.
 
-**A column is always empty**: the Run As user can't read that field. Grant read access to the field in the user's permission sets.
+**A column is always empty**: the Run As user can't read that field, or your org doesn't have it. The connector leaves such fields empty instead of failing the report. Grant read access to the field in the user's permission sets if you need it.
 
 **"INVALID_SESSION_ID"**: in **Setup > Session Settings**, uncheck **Lock sessions to the IP address from which they originated**.
+
+**Your org restricts login IP ranges**: open the app, **Policies** tab, and under **App Authorization** set **IP Relaxation** to **Relax IP restrictions**, or allow `51.158.117.103`.
