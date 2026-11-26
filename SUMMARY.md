@@ -101,6 +101,7 @@
     * [Microsoft Advertising](connectors/marketing-connectors/microsoft-advertising.md)
     * [Mirakl Seller](connectors/sales-analytics-connectors/mirakl-seller.md)
     * [MySQL](connectors/custom-connectors/mysql.md)
+    * [OpenAI Ads](connectors/marketing-connectors/openai-ads.md)
     * [Outbrain](connectors/marketing-connectors/outbrain.md)
     * [Pennylane](connectors/sales-analytics-connectors/pennylane.md)
     * [Pennylane API](connectors/sales-analytics-connectors/pennylane-api.md)
