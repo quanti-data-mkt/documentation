@@ -28,15 +28,15 @@ Data is split into two types:
 * An active **OpenAI Ads Manager** account ([ads.openai.com](https://ads.openai.com))
 * An **Ads Manager API key**
 
-{% hint style="warning" %}
-The Ads Manager API key is **not** your OpenAI platform API key (the one used for the OpenAI API). Ads Manager keys start with `sk-ads-`.
-{% endhint %}
-
 ***
 
 ## Authentication
 
 Generate the API key in Ads Manager: **ads.openai.com > Settings > API Keys**.
+
+{% hint style="warning" %}
+The Ads Manager API key is **not** your OpenAI platform API key (the one used for the OpenAI API). Ads Manager keys start with `sk-ads-`.
+{% endhint %}
 
 One API key gives access to **one ad account**. To sync several ad accounts, create one connector per account, each with its own key.
 
