@@ -61,20 +61,6 @@ Choose the reports to sync, then create the connector.
 
 ***
 
-## How the data is loaded
-
-| Insertion | Reports |
-|---|---|
-| One row per version (deduplicate on `id`) | `deals`, `deals_archived`, `products`, `leads`, `persons`, `organizations`, `activities` |
-| Full reload, current state | `pipelines`, `stages`, `deal_products`, `installments`, `leads_archived`, `lead_labels`, `activity_types`, `users`, `projects`, `projects_archived`, `custom_fields` |
-| One row per pipeline and day | `pipeline_conversion_stats`, `pipeline_movement_stats` |
-
-{% hint style="info" %}
-**Why some tables contain several rows per record.** Pipedrive can only filter deals, persons, organizations, activities, products and leads on their **last update date**. QUANTI: therefore loads, each day, the records updated that day, and keeps every version. Keep the latest row per `id` to get the current state, or use the versions to follow how your pipeline evolves.
-{% endhint %}
-
-***
-
 ## Data Model
 
 ```mermaid
@@ -104,7 +90,9 @@ Deals updated on each day (one row per version, deduplicate on id with the lates
 
 Table: `deals` · Joins: `person_id` → persons, `org_id` → organizations, `owner_id` → users, `pipeline_id` → pipelines, `stage_id` → stages, `source_lead_id` → leads
 
-**How rows are inserted:** each day, QUANTI: fetches the records **updated** that day and adds them to the table. A record modified several times appears once per version. To get the current state, keep the latest row per `id` (most recent `update_time`). Pipedrive can only filter this list on its last update date, so QUANTI: loads each change as a new version instead of reloading everything.
+{% hint style="info" %}
+This table can hold several rows per record. Keep the latest row per `id` (most recent `update_time`) to get the current state.
+{% endhint %}
 
 <details>
 <summary>Columns</summary>
@@ -159,7 +147,9 @@ Archived deals updated on each day. Archived deals are no longer returned by the
 
 Table: `deals_archived` · Joins: same keys as deals. Archived deals are no longer returned with active deals since 15/07/2025: combine both tables (`UNION ALL`) for a full history
 
-**How rows are inserted:** each day, QUANTI: fetches the records **updated** that day and adds them to the table. A record modified several times appears once per version. To get the current state, keep the latest row per `id` (most recent `update_time`). Pipedrive can only filter this list on its last update date, so QUANTI: loads each change as a new version instead of reloading everything.
+{% hint style="info" %}
+This table can hold several rows per record. Keep the latest row per `id` (most recent `update_time`) to get the current state.
+{% endhint %}
 
 <details>
 <summary>Columns</summary>
@@ -214,7 +204,6 @@ All sales pipelines, fully reloaded on each run.
 
 Table: `pipelines` · Joins: `id` ← deals.pipeline_id, stages.pipeline_id
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -237,7 +226,6 @@ All pipeline stages, fully reloaded on each run.
 
 Table: `stages` · Joins: `id` ← deals.stage_id, `pipeline_id` → pipelines
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -263,7 +251,6 @@ Products attached to each deal (line items), fully reloaded on each run.
 
 Table: `deal_products` · Joins: `deal_id` → deals, `product_id` → products
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -307,7 +294,9 @@ Products updated on each day (one row per version, deduplicate on id).
 
 Table: `products` · Joins: `id` ← deal_products.product_id
 
-**How rows are inserted:** each day, QUANTI: fetches the records **updated** that day and adds them to the table. A record modified several times appears once per version. To get the current state, keep the latest row per `id` (most recent `update_time`). Pipedrive can only filter this list on its last update date, so QUANTI: loads each change as a new version instead of reloading everything.
+{% hint style="info" %}
+This table can hold several rows per record. Keep the latest row per `id` (most recent `update_time`) to get the current state.
+{% endhint %}
 
 <details>
 <summary>Columns</summary>
@@ -347,7 +336,6 @@ Installments of each deal, fully reloaded on each run. Requires the Pipedrive Gr
 
 Table: `installments` · Joins: `deal_id` → deals
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 {% hint style="warning" %}
 This report depends on your Pipedrive plan. If your plan doesn't include it, the sync shows a warning and the other reports are still loaded.
@@ -379,7 +367,6 @@ Stage conversion statistics of each pipeline, one row per pipeline and day.
 
 Table: `pipeline_conversion_stats` · Joins: `pipeline_id` → pipelines (cast to INTEGER), `stats_date`
 
-**How rows are inserted:** one row per pipeline and per day. Each day is **replaced** at each sync, so a re-synced day never creates duplicates. Pipedrive computes these statistics for a fixed period, so each day can be safely replaced.
 
 <details>
 <summary>Columns</summary>
@@ -407,7 +394,6 @@ Deal movement statistics of each pipeline (new, won, lost, left open), one row p
 
 Table: `pipeline_movement_stats` · Joins: `pipeline_id` → pipelines (cast to INTEGER), `stats_date`
 
-**How rows are inserted:** one row per pipeline and per day. Each day is **replaced** at each sync, so a re-synced day never creates duplicates. Pipedrive computes these statistics for a fixed period, so each day can be safely replaced.
 
 <details>
 <summary>Columns</summary>
@@ -447,7 +433,9 @@ Leads updated on each day (one row per version, deduplicate on id).
 
 Table: `leads` · Joins: `id` ← deals.source_lead_id, `person_id` → persons, `organization_id` → organizations, `label_ids` → lead_labels
 
-**How rows are inserted:** each day, QUANTI: fetches the records **updated** that day and adds them to the table. A record modified several times appears once per version. To get the current state, keep the latest row per `id` (most recent `update_time`). Pipedrive can only filter this list on its last update date, so QUANTI: loads each change as a new version instead of reloading everything.
+{% hint style="info" %}
+This table can hold several rows per record. Keep the latest row per `id` (most recent `update_time`) to get the current state.
+{% endhint %}
 
 <details>
 <summary>Columns</summary>
@@ -494,7 +482,6 @@ All archived leads, fully reloaded on each run.
 
 Table: `leads_archived` · Joins: same keys as leads: combine both tables for full lead conversion rates
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -541,7 +528,6 @@ All lead labels, fully reloaded on each run. Join on leads.label_ids.
 
 Table: `lead_labels` · Joins: `id` ∈ leads.label_ids
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -566,7 +552,9 @@ Persons (contacts) updated on each day (one row per version, deduplicate on id).
 
 Table: `persons` · Joins: `org_id` → organizations, `owner_id` → users
 
-**How rows are inserted:** each day, QUANTI: fetches the records **updated** that day and adds them to the table. A record modified several times appears once per version. To get the current state, keep the latest row per `id` (most recent `update_time`). Pipedrive can only filter this list on its last update date, so QUANTI: loads each change as a new version instead of reloading everything.
+{% hint style="info" %}
+This table can hold several rows per record. Keep the latest row per `id` (most recent `update_time`) to get the current state.
+{% endhint %}
 
 <details>
 <summary>Columns</summary>
@@ -613,7 +601,9 @@ Organizations updated on each day (one row per version, deduplicate on id).
 
 Table: `organizations` · Joins: `owner_id` → users
 
-**How rows are inserted:** each day, QUANTI: fetches the records **updated** that day and adds them to the table. A record modified several times appears once per version. To get the current state, keep the latest row per `id` (most recent `update_time`). Pipedrive can only filter this list on its last update date, so QUANTI: loads each change as a new version instead of reloading everything.
+{% hint style="info" %}
+This table can hold several rows per record. Keep the latest row per `id` (most recent `update_time`) to get the current state.
+{% endhint %}
 
 <details>
 <summary>Columns</summary>
@@ -660,7 +650,9 @@ Activities (calls, meetings, tasks…) updated on each day (one row per version,
 
 Table: `activities` · Joins: `deal_id` → deals, `lead_id` → leads, `person_id` → persons, `org_id` → organizations, `owner_id` → users, `type` → activity_types.key_string
 
-**How rows are inserted:** each day, QUANTI: fetches the records **updated** that day and adds them to the table. A record modified several times appears once per version. To get the current state, keep the latest row per `id` (most recent `update_time`). Pipedrive can only filter this list on its last update date, so QUANTI: loads each change as a new version instead of reloading everything.
+{% hint style="info" %}
+This table can hold several rows per record. Keep the latest row per `id` (most recent `update_time`) to get the current state.
+{% endhint %}
 
 <details>
 <summary>Columns</summary>
@@ -715,7 +707,6 @@ All activity types, fully reloaded on each run.
 
 Table: `activity_types` · Joins: `key_string` ← activities.type
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -741,7 +732,6 @@ All users of the Pipedrive company, fully reloaded on each run.
 
 Table: `users` · Joins: `id` ← `owner_id` of deals, leads, activities, persons, organizations, products
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -781,7 +771,6 @@ All projects, fully reloaded on each run. May require a higher Pipedrive plan.
 
 Table: `projects` · Joins: `deal_ids` → deals (JSON array)
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 {% hint style="warning" %}
 This report depends on your Pipedrive plan. If your plan doesn't include it, the sync shows a warning and the other reports are still loaded.
@@ -820,7 +809,6 @@ All archived projects, fully reloaded on each run (the projects endpoint returns
 
 Table: `projects_archived` · Joins: same keys as projects
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 {% hint style="warning" %}
 This report depends on your Pipedrive plan. If your plan doesn't include it, the sync shows a warning and the other reports are still loaded.
@@ -863,7 +851,6 @@ Definitions of the custom fields of every entity (deals, persons, organizations,
 
 Table: `custom_fields` · Joins: `entity` + `field_code` = key inside the `custom_fields` JSON column of each entity table
 
-**How rows are inserted:** the whole list is fetched at each sync and **replaces** the table. The table always shows the current state. Pipedrive offers no date filter on this list, so it is reloaded in full.
 
 <details>
 <summary>Columns</summary>
@@ -940,7 +927,6 @@ Table: `custom_fields` · Joins: `entity` + `field_code` = key inside the `custo
 {% hint style="info" %}
 **No intra-day sync.** Pipedrive doesn't document when the API data of a day is available, so QUANTI: offers daily and weekly syncs only.
 
-**Why 1,095 days of history?** Pipedrive documents no limit on how far back the API can read. QUANTI: caps the history at 3 years.
 {% endhint %}
 
 ***
